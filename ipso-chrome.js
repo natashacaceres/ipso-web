@@ -62,16 +62,17 @@ export function applyTheme(theme) {
     const base = el.__base === undefined ? now : el.__base;
     let v = base;
     if (light) {
-      const probe = document.createElement('div');
-      probe.setAttribute('style', base);
-      const st = probe.style;
-      for (let i = 0; i < st.length; i++) {
-        const prop = st[i];
-        const val = st.getPropertyValue(prop);
-        const lit = toLight(prop, val);
-        if (lit !== val) st.setProperty(prop, lit, st.getPropertyPriority(prop));
-      }
-      v = probe.getAttribute('style') || base;
+      v = base.split(';').map(function (decl) {
+        const k = decl.indexOf(':');
+        if (k < 0) return decl;
+        const prop = decl.slice(0, k).trim();
+        const raw = decl.slice(k + 1);
+        const bang = /!\s*important\s*$/.test(raw);
+        const val = raw.replace(/!\s*important\s*$/, '').trim();
+        const lit = toLight(prop.toLowerCase(), val);
+        if (lit === val) return decl;
+        return decl.slice(0, k) + ': ' + lit + (bang ? ' !important' : '');
+      }).join(';');
     }
     if (v !== now) el.setAttribute('style', v);
     el.__ours = v;
