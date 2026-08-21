@@ -133,6 +133,19 @@
   [data-late] { opacity: 0; transform: translateY(20px); transition: opacity 750ms cubic-bezier(.16,1,.3,1), transform 750ms cubic-bezier(.16,1,.3,1); }
   [data-late][data-in] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { [data-late] { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  [data-ind] { opacity: 0; transform: translateY(20px); }
+  [data-ind]:hover [data-indimg], [data-ind]:focus-visible [data-indimg] { transform: scale(1.07); }
+  [data-ind]:active [data-indimg] { transform: scale(1.04); }
+  @media (max-width: 760px) { [data-indrail] > a > div:last-child > span:first-child { font-size: 20px !important; } }
+  [data-ind][data-in] { opacity: 1; transform: none; }
+  [data-ind]:not(h2):not(p) { transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1); }
+  h2[data-ind], p[data-ind] { transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1); }
+  @media (max-width: 760px) {
+    [data-indrail] { display: flex !important; grid-template-columns: none !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px !important; padding-bottom: 6px; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; scrollbar-width: none; }
+    [data-indrail]::-webkit-scrollbar { display: none; }
+    [data-indrail] > a { width: 74%; }
+  }
+  @media (prefers-reduced-motion: reduce) { [data-ind] { opacity: 1 !important; transform: none !important; transition: none !important; } }
   /* ---- Así funciona: scrollytelling fijado ------------------------- */
   [data-afstate] { will-change: transform, opacity; }
   [data-afstate="2"] { opacity: 0; transform: translateY(30px) scale(.96); }
@@ -328,7 +341,7 @@
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
             <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-asistente-v3.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
+                <img src="assets/asi-asistente-v3.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%;">
               </div>
             </div>
           </div>
@@ -371,6 +384,37 @@ El mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nueva
         </div>
       </div>
     </div>
+    </div>
+
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 8px;">
+      <h2 data-ind="1" style="margin: 0; max-width: 22ch; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.06; font-weight: 600; letter-spacing: -0.042em;">Adaptado a tu local</h2>
+      <p data-ind="1" style="margin: 16px 0 0; max-width: 52ch; font-size: 17px; line-height: 1.55; color: #B7BDB5;">El mismo punto, programado para lo que tú haces. Si tu negocio no está aquí, pregúntanos igual.</p>
+      <div data-indrail="1" style="margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
+        <a href="#contacto" data-ind="1" data-cat="Hostelería" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-10px) scale(1.015); box-shadow: 0 38px 62px -32px rgba(0,0,0,.92);" style-active="transform: translateY(-4px) scale(.99);">
+          <img src="assets/ind-hosteleria.png" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Hostelería</span>
+            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          </div>
+        </a>
+        <a href="#contacto" data-ind="1" data-cat="Belleza y bienestar" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-10px) scale(1.015); box-shadow: 0 38px 62px -32px rgba(0,0,0,.92);" style-active="transform: translateY(-4px) scale(.99);">
+          <img src="assets/ind-belleza.png" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Belleza y bienestar</span>
+            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          </div>
+        </a>
+        <a href="#contacto" data-ind="1" data-cat="Comercio de barrio" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-10px) scale(1.015); box-shadow: 0 38px 62px -32px rgba(0,0,0,.92);" style-active="transform: translateY(-4px) scale(.99);">
+          <img src="assets/ind-comercio.png" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Comercio de barrio</span>
+            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div id="como-funciona" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 8px; scroll-margin-top: 90px;">
@@ -1050,6 +1094,23 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyTheme();
     setTimeout(() => {
+      const inds = Array.from(document.querySelectorAll('[data-ind]'));
+      if (inds.length) {
+        if ('IntersectionObserver' in window) {
+          const ioI = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              const i = inds.indexOf(e.target);
+              e.target.style.transitionDelay = (Math.max(0, i) * 90) + 'ms';
+              e.target.setAttribute('data-in', '1');
+              ioI.unobserve(e.target);
+            });
+          }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+          inds.forEach((el) => ioI.observe(el));
+        } else {
+          inds.forEach((el) => el.setAttribute('data-in', '1'));
+        }
+      }
       const late = Array.from(document.querySelectorAll('[data-late]'));
       if (late.length && 'IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries) => {
@@ -1256,10 +1317,16 @@ class Component extends DCLogic {
     if (this._raf) cancelAnimationFrame(this._raf);
   }
 
+  pickIndustria = (e) => {
+    const cat = e.currentTarget.getAttribute('data-cat');
+    const f = document.querySelector('#contacto input[name="tipo"]');
+    if (f) { f.value = cat; setTimeout(() => f.focus({ preventScroll: true }), 500); }
+  };
   renderVals() {
     const i = this.state.sel;
     const P = PAL[this.state.theme];
     return {
+      pickIndustria: this.pickIndustria,
       enviar: (e) => { e.currentTarget.action = 'https://formsubmit.co/' + this.destino(); },
       menuOpen: this.state.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
