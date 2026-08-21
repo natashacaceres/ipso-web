@@ -140,9 +140,13 @@
   @media (max-width: 899px) {
     [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 18px !important; }
     [data-afstate] p { max-width: 34ch; font-size: 15px !important; }
-    [data-afphone] { height: min(400px, 44vh) !important; width: auto !important; max-width: 100% !important; border-radius: 30px !important; padding: 6px !important; }
+    [data-afstate] h2 { font-size: clamp(24px, 6.4vw, 32px) !important; }
+    [data-afstate] > div:first-child > a { margin-top: 16px !important; padding: 11px 20px !important; }
+    [data-afstate="2"] > div:first-child > div:last-child { margin-top: 14px !important; justify-content: center; }
+    [data-afphone] { height: min(300px, 32vh) !important; width: auto !important; max-width: 100% !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-qr] { width: 54px !important; height: 54px !important; }
     [data-afphone] > div { border-radius: 25px !important; }
-    [data-waphone] { width: min(300px, 82vw) !important; height: auto !important; border-radius: 36px !important; padding: 7px !important; }
+    [data-waphone] { width: min(272px, 74vw) !important; height: auto !important; border-radius: 34px !important; padding: 7px !important; }
     [data-waphone] > div { border-radius: 27px !important; }
   }
   @media (max-width: 899px) and (min-width: 0px) { [data-afstate] h2 { font-size: clamp(26px, 7vw, 34px) !important; } }
@@ -292,11 +296,18 @@
             <div style="display: inline-block; background: transparent; color: #E8B84B; border: 1px solid #E8B84B; font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 5px 11px;">Así lo ve tu cliente</div>
             <h2 style="margin: 14px 0 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Todo tu local, en un escaneo.</h2>
             <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Asistente virtual, WiFi, carta con fotos y precios, reseñas y contacto. Siempre al día, sin apps.</p>
+            <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; font-size: 14.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 13px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
+            <div style="margin-top: 22px; display: flex; align-items: center; gap: 14px;">
+              <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2px;">
+                <img src="assets/qr-demo.png" alt="Código QR de la demo del IPSO HUB" style="display: block; width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <p style="margin: 0; max-width: 26ch; font-size: 13.5px; line-height: 1.45; color: #8B918A;">Escanéalo y pruébalo ahora. Es la demo real, con carta y asistente.</p>
+            </div>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
             <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-panel.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
+                <img src="assets/asi-panel-v2.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
               </div>
             </div>
           </div>
@@ -306,11 +317,18 @@
             <div style="display: inline-block; background: transparent; color: #E8B84B; border: 1px solid #E8B84B; font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 5px 11px;">El asistente</div>
             <h2 style="margin: 14px 0 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Se lo sabe todo. Y no duerme.</h2>
             <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Sabe cosas de tu local que ni ChatGPT: es un asistente local con su propia base de datos, más cercano. Monta el pedido según el presupuesto, avisa de alérgenos y recomienda postres y maridajes. En 30 idiomas.</p>
+            <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; font-size: 14.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 13px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
+            <div style="margin-top: 22px; display: flex; align-items: center; gap: 14px;">
+              <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2px;">
+                <img src="assets/qr-demo.png" alt="Código QR de la demo del IPSO HUB" style="display: block; width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <p style="margin: 0; max-width: 26ch; font-size: 13.5px; line-height: 1.45; color: #8B918A;">Escanéalo y pruébalo ahora. Es la demo real, con carta y asistente.</p>
+            </div>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
             <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-asistente.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
+                <img src="assets/asi-asistente-v2.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
               </div>
             </div>
           </div>
