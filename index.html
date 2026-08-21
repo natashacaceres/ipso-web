@@ -138,16 +138,12 @@
   [data-afstate="2"] { opacity: 0; transform: translateY(30px) scale(.96); }
   @media (min-width: 900px) { [data-afmirror] [data-afimgwrap] { grid-row: 1; grid-column: 1; } }
   @media (max-width: 899px) {
-    #asi-funciona { height: auto !important; }
-    [data-afsticky] { position: static !important; height: auto !important; display: block !important; overflow: visible !important; padding: 8px 0 72px; }
-    [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 24px !important; }
-    [data-afstate] p { max-width: 34ch; }
-    [data-afstate="1"] { padding-bottom: 64px; }
-    [data-afstate="2"] { position: static !important; opacity: 1 !important; transform: none !important; }
-    [data-afphone] { height: auto !important; width: min(252px, 66vw) !important; max-width: none !important; border-radius: 34px !important; padding: 7px !important; }
-    [data-afphone] > div { border-radius: 28px !important; }
-    [data-waphone] { height: auto !important; width: min(288px, 78vw) !important; max-width: none !important; border-radius: 36px !important; padding: 7px !important; }
-    [data-waphone] > div { border-radius: 30px !important; }
+    [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 18px !important; }
+    [data-afstate] p { max-width: 34ch; font-size: 15px !important; }
+    [data-afphone] { height: min(400px, 44vh) !important; width: auto !important; max-width: 100% !important; border-radius: 30px !important; padding: 6px !important; }
+    [data-afphone] > div { border-radius: 25px !important; }
+    [data-waphone] { width: min(300px, 82vw) !important; height: auto !important; border-radius: 36px !important; padding: 7px !important; }
+    [data-waphone] > div { border-radius: 27px !important; }
   }
   @media (max-width: 899px) and (min-width: 0px) { [data-afstate] h2 { font-size: clamp(26px, 7vw, 34px) !important; } }
   @media (prefers-reduced-motion: reduce) {
@@ -332,25 +328,25 @@
           <p style="margin: 16px 0 0; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #4E534C;">Cada mes te llega un WhatsApp con lo que pasó en tu punto. Y una cosa que nadie más puede decirte: qué pidieron tus clientes que no tienes.</p>
           <div style="margin-top: 22px; font-size: 14px; font-weight: 600; color: #0B0C0A;">Ni tu TPV ni Google saben esto.</div>
         </div>
-        <div data-waphone="1" style="justify-self: center; height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
+        <div data-waphone="1" style="justify-self: center; width: min(324px, 86vw); height: auto; aspect-ratio: 9 / 19; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
           <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #ECE5DD; display: flex; flex-direction: column; container-type: inline-size;">
             <div style="flex: none; display: flex; align-items: center; gap: 3.4cqw; padding: 4.4cqw 4.4cqw 3.8cqw; background: #008069;">
-              <img src="assets/wa-avatar.png" alt="IPSO" style="flex: none; width: 10.6cqw; height: 10.6cqw; border-radius: 999px; object-fit: cover; display: block;">
+              <img src="assets/wa-avatar.png" alt="IPSO" style="flex: none; width: max(32px, 10.6cqw); height: max(32px, 10.6cqw); border-radius: 999px; object-fit: cover; display: block;">
               <div style="min-width: 0;">
-                <div style="font-size: 4.5cqw; font-weight: 600; color: #FFFFFF; letter-spacing: 0;">IPSO</div>
-                <div style="margin-top: 0.3cqw; font-size: 3.6cqw; color: rgba(255,255,255,.78);">en línea</div>
+                <div style="font-size: max(14px, 4.5cqw); font-weight: 600; color: #FFFFFF; letter-spacing: 0;">IPSO</div>
+                <div style="margin-top: 0.3cqw; font-size: max(11px, 3.6cqw); color: rgba(255,255,255,.78);">en línea</div>
               </div>
             </div>
             <div style="flex: 1; min-height: 0; padding: 4.4cqw 3.2cqw; display: flex; align-items: flex-start;">
               <div style="max-width: 92%; background: #FFFFFF; border-radius: 2.5cqw 2.5cqw 2.5cqw 0.6cqw; padding: 2.5cqw 3.2cqw 1.9cqw; box-shadow: 0 1px 1px rgba(11,20,26,.13);">
-                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 4.2cqw; line-height: 1.42; color: #111B21; white-space: pre-line; letter-spacing: 0;">Hola Marta, te paso lo de julio.
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: max(13px, 4.2cqw); line-height: 1.42; color: #111B21; white-space: pre-line; letter-spacing: 0;">Hola Marta, te paso lo de julio.
 
 Lo más importante: 12 personas le preguntaron al asistente por opciones sin gluten y no tienes ninguna en la carta. Con una pizza sin gluten cubres esa demanda.
 
 El mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nuevas en Google, 26 consultas al asistente y 9 toques a tu Instagram. Tu mejor franja: de 19 a 21 h.
 
 ¿Cambio algo de la carta este mes?</div>
-                <div style="margin-top: 0.8cqw; text-align: right; font-size: 3.3cqw; color: #667781;">9:02</div>
+                <div style="margin-top: 0.8cqw; text-align: right; font-size: max(10px, 3.3cqw); color: #667781;">9:02</div>
               </div>
             </div>
           </div>
@@ -1054,14 +1050,13 @@ class Component extends DCLogic {
       const s2 = wrap.querySelector('[data-afstate="2"]');
       if (!s1 || !s2) return;
       const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const small = window.matchMedia('(max-width: 899px)');
       const clamp = (v) => v < 0 ? 0 : v > 1 ? 1 : v;
       const ease = (t) => t * t * (3 - 2 * t);
       const still = () => { [s1, s2].forEach((el) => { el.style.opacity = ''; el.style.transform = ''; el.style.pointerEvents = ''; }); };
       let queued = false;
       const paint = () => {
         queued = false;
-        if (rm.matches || small.matches) { still(); return; }
+        if (rm.matches) { still(); return; }
         const r = wrap.getBoundingClientRect();
         const vh = window.innerHeight || 1;
         const span = Math.max(1, r.height - vh);
@@ -1079,7 +1074,6 @@ class Component extends DCLogic {
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll);
       rm.addEventListener('change', paint);
-      small.addEventListener('change', paint);
       paint();
     }, 60);
     this._n = SOLUCIONES.length;
