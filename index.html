@@ -148,7 +148,7 @@
   @media (prefers-reduced-motion: reduce) { [data-ind] { opacity: 1 !important; transform: none !important; transition: none !important; } }
   /* ---- Así funciona: scrollytelling fijado ------------------------- */
   [data-afstate] { will-change: transform, opacity; }
-  [data-afstate="2"] { opacity: 0; transform: translateY(30px) scale(.96); }
+  [data-afstate="2"], [data-afstate="3"] { opacity: 0; transform: translateY(30px) scale(.96); }
   @media (min-width: 900px) { [data-afmirror] [data-afimgwrap] { grid-row: 1; grid-column: 1; } }
   @media (max-width: 899px) {
     [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 12px !important; }
@@ -160,14 +160,15 @@
     [data-afstate] > div:first-child > div:last-of-type p { font-size: 11.5px !important; max-width: 24ch !important; text-align: left; }
     [data-afphone] { width: min(206px, 54vw) !important; height: 42svh !important; aspect-ratio: auto !important; max-width: 100% !important; border-radius: 26px !important; padding: 5px !important; }
     [data-afphone] > div { border-radius: 25px !important; }
-    [data-waphone] { width: min(272px, 74vw) !important; height: auto !important; border-radius: 34px !important; padding: 7px !important; }
+    [data-waphone] { width: min(206px, 54vw) !important; height: auto !important; aspect-ratio: 9 / 19 !important; border-radius: 34px !important; padding: 7px !important; }
     [data-waphone] > div { border-radius: 27px !important; }
   }
   @media (prefers-reduced-motion: reduce) {
     #asi-funciona { height: auto !important; padding: 8px 0 64px; }
     [data-afsticky] { position: static !important; height: auto !important; display: block !important; }
     [data-afstate="1"] { padding-bottom: 72px; }
-    [data-afstate="2"] { position: static !important; opacity: 1 !important; transform: none !important; }
+    [data-afstate="2"], [data-afstate="3"] { position: static !important; opacity: 1 !important; transform: none !important; }
+    [data-afstate="2"] { padding-bottom: 72px; }
   }
   @media (max-width: 720px) {
     [data-reveal] { grid-template-columns: 1fr !important; }
@@ -254,7 +255,7 @@
   <!-- ============ HERO ============ -->
   <section id="top" data-hero="1" style="position: relative; overflow: hidden; scroll-margin-top: 80px;">
     <div data-heroimg="1" style="position: absolute; top: 0; bottom: 0; right: 0; left: 34%; overflow: hidden; pointer-events: none;">
-      <img src="assets/hero-hub.png" alt="" data-heropic="1" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; opacity: .72;">
+      <img src="assets/hero-hub-v2.png" alt="" data-heropic="1" style="width: 100%; height: 100%; object-fit: cover; object-position: 42% 50%; opacity: .82;">
     </div>
     <div data-herodim="1" style="position: absolute; inset: 0; background: linear-gradient(90deg, #000000 0%, #000000 30%, rgba(0,0,0,.82) 44%, rgba(0,0,0,.28) 62%, rgba(0,0,0,.12) 100%); pointer-events: none;"></div>
     <div data-herofade="1" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, transparent 24%, transparent 66%, #000000 100%); pointer-events: none;"></div>
@@ -291,7 +292,7 @@
             </div>
             <div style="display: flex; gap: 12px; align-items: flex-start; border-top: 1px solid #161815; padding-top: 9px;">
               <span style="flex: none; font-size: 11.5px; font-weight: 600; color: #2BE7FF; font-variant-numeric: tabular-nums; letter-spacing: .08em; padding-top: 2px;">03</span>
-              <div style="font-size: 15px; font-weight: 600; letter-spacing: -0.024em;">Tocan, y el asistente les recomienda</div>
+              <div style="font-size: 15px; font-weight: 600; letter-spacing: -0.024em;">Tocan, y todo tu local se abre en su móvil</div>
             </div>
           </div>
           <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px;">
@@ -301,7 +302,7 @@
       </div>
     </div>
 
-    <div id="asi-funciona" style="position: relative; height: 250svh; scroll-margin-top: 90px;">
+    <div id="asi-funciona" style="position: relative; height: 370svh; scroll-margin-top: 90px;">
       <div data-afsticky="1" style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden;">
         <div data-afinner="1" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
         <div data-afstate="1" style="display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px 64px; align-items: center;">
@@ -309,18 +310,11 @@
             <div style="display: inline-block; background: transparent; color: #E8B84B; border: 1px solid #E8B84B; font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 5px 11px;">Así lo ve tu cliente</div>
             <h2 style="margin: 14px 0 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Todo tu local, en un escaneo.</h2>
             <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Asistente virtual, WiFi, carta con fotos y precios, reseñas y contacto. Siempre al día, sin apps.</p>
-            <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; font-size: 14.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 13px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
-            <div style="margin-top: 22px; display: flex; align-items: center; gap: 14px;">
-              <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2px;">
-                <img src="assets/qr-demo.png" alt="Código QR de la demo del IPSO HUB" style="display: block; width: 100%; height: 100%; object-fit: contain;">
-              </a>
-              <p style="margin: 0; max-width: 26ch; font-size: 13.5px; line-height: 1.45; color: #8B918A;">Escanéalo y pruébalo ahora. Es la demo real, con carta y asistente.</p>
-            </div>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
             <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-panel-v3.png" alt="" style="display: block; width: 116%; height: 100%; margin: 0 -8%; object-fit: contain; object-position: 50% 50%;">
+                <img src="assets/asi-panel-v4.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
             </div>
           </div>
@@ -329,7 +323,7 @@
           <div>
             <div style="display: inline-block; background: transparent; color: #E8B84B; border: 1px solid #E8B84B; font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 5px 11px;">El asistente</div>
             <h2 style="margin: 14px 0 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Se lo sabe todo. Y no duerme.</h2>
-            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Sabe cosas de tu local que ni ChatGPT: es un asistente local con su propia base de datos, más cercano. Monta el pedido según el presupuesto, avisa de alérgenos y recomienda postres y maridajes. En 30 idiomas.</p>
+            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Configurado con tu carta, tus precios y lo que solo tu equipo sabe. Monta el pedido según el presupuesto, avisa de alérgenos, da el WiFi, cuenta las curiosidades de la casa y pide la reseña. En más de 30 idiomas.</p>
             <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; font-size: 14.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 13px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
             <div style="margin-top: 22px; display: flex; align-items: center; gap: 14px;">
               <a href="https://go.ipsoglobal.com/hub/21599df2ae630e78" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2px;">
@@ -341,7 +335,21 @@
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
             <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-asistente-v3.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%;">
+                <img src="assets/asi-asistente-v4.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-afstate="3" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px 64px; align-items: center;">
+          <div>
+            <div style="display: inline-block; background: transparent; color: #E8B84B; border: 1px solid #E8B84B; font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 5px 11px;">Te ayudo a elegir</div>
+            <h2 style="margin: 14px 0 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Para los que nunca saben qué pedir.</h2>
+            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Si tu cliente no sabe por dónde empezar entre tantas opciones, el HUB le guía con tres preguntas y le propone platos de tu carta, con tu sugerencia destacada.</p>
+          </div>
+          <div data-afimgwrap="1" style="display: flex; justify-content: center;">
+            <div data-afphone="1" style="height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
+              <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
+                <img src="assets/asi-elegir-v1.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
             </div>
           </div>
@@ -359,27 +367,9 @@
           <p style="margin: 16px 0 0; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #4E534C;">Cada mes te llega un WhatsApp con lo que pasó en tu punto. Y una cosa que nadie más puede decirte: qué pidieron tus clientes que no tienes.</p>
           <div style="margin-top: 22px; font-size: 14px; font-weight: 600; color: #0B0C0A;">Ni tu TPV ni Google saben esto.</div>
         </div>
-        <div data-waphone="1" style="justify-self: center; width: min(324px, 86vw); height: auto; aspect-ratio: 9 / 19; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
-          <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #ECE5DD; display: flex; flex-direction: column; container-type: inline-size;">
-            <div style="flex: none; display: flex; align-items: center; gap: 3.4cqw; padding: 4.4cqw 4.4cqw 3.8cqw; background: #008069;">
-              <img src="assets/wa-avatar.png" alt="IPSO" style="flex: none; width: max(32px, 10.6cqw); height: max(32px, 10.6cqw); border-radius: 999px; object-fit: cover; display: block;">
-              <div style="min-width: 0;">
-                <div style="font-size: max(14px, 4.5cqw); font-weight: 600; color: #FFFFFF; letter-spacing: 0;">IPSO</div>
-                <div style="margin-top: 0.3cqw; font-size: max(11px, 3.6cqw); color: rgba(255,255,255,.78);">en línea</div>
-              </div>
-            </div>
-            <div style="flex: 1; min-height: 0; padding: 4.4cqw 3.2cqw; display: flex; align-items: flex-start;">
-              <div style="max-width: 92%; background: #FFFFFF; border-radius: 2.5cqw 2.5cqw 2.5cqw 0.6cqw; padding: 2.5cqw 3.2cqw 1.9cqw; box-shadow: 0 1px 1px rgba(11,20,26,.13);">
-                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: max(13px, 4.2cqw); line-height: 1.42; color: #111B21; white-space: pre-line; letter-spacing: 0;">Hola Marta, te paso lo de julio.
-
-Lo más importante: 12 personas le preguntaron al asistente por opciones sin gluten y no tienes ninguna en la carta. Con una pizza sin gluten cubres esa demanda.
-
-El mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nuevas en Google, 26 consultas al asistente y 9 toques a tu Instagram. Tu mejor franja: de 19 a 21 h.
-
-¿Cambio algo de la carta este mes?</div>
-                <div style="margin-top: 0.8cqw; text-align: right; font-size: max(10px, 3.3cqw); color: #667781;">9:02</div>
-              </div>
-            </div>
+        <div data-waphone="1" style="justify-self: center; height: min(676px, 72vh); aspect-ratio: 9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
+          <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #ECE5DD;">
+            <img src="assets/wa-informe.png" alt="Informe mensual por WhatsApp" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
           </div>
         </div>
       </div>
@@ -560,7 +550,7 @@ El mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nueva
         </div>
       </div>
 
-      <form data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #1A1C19; background: #000000; border-radius: 20px; padding: 34px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 70px -50px rgba(0,0,0,.9);">
+      <form data-contact-form="1" data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #1A1C19; background: #000000; border-radius: 20px; padding: 34px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 70px -50px rgba(0,0,0,.9);">
         <div style="font-size: 15px; font-weight: 600; letter-spacing: -0.024em; margin-bottom: 6px;">Formulario de consulta</div>
         <input type="hidden" name="_subject" value="Nueva consulta desde la web de Ipso">
         <input type="hidden" name="_captcha" value="false">
@@ -720,6 +710,9 @@ const EN_PAIRS = [
   ['Lo que tu mostrador no te contaba.', 'What your counter never told you.'],
   ['Cada mes te llega un WhatsApp con lo que pasó en tu punto. Y una cosa que nadie más puede decirte: qué pidieron tus clientes que no tienes.', 'Every month you get a WhatsApp with what happened at your point. And one thing nobody else can tell you: what your customers asked for that you do not have.'],
   ['Ni tu TPV ni Google saben esto.', 'Neither your POS nor Google knows this.'],
+  ['Te ayudo a elegir', 'I help you choose'], ['Para los que nunca saben qué pedir.', 'For those who never know what to order.'],
+  ['Si tu cliente no sabe por dónde empezar entre tantas opciones, el HUB le guía con tres preguntas y le propone platos de tu carta, con tu sugerencia destacada.', 'If your customer does not know where to start among so many options, the HUB guides them with three questions and suggests dishes from your menu, with your pick highlighted.'],
+  ['Configurado con tu carta, tus precios y lo que solo tu equipo sabe. Monta el pedido según el presupuesto, avisa de alérgenos, da el WiFi, cuenta las curiosidades de la casa y pide la reseña. En más de 30 idiomas.', 'Set up with your menu, your prices and what only your team knows. It builds the order to the budget, flags allergens, hands out the Wi-Fi, tells the house stories and asks for the review. In more than 30 languages.'],
   ['en línea', 'online'],
   ['Hola Marta, te paso lo de julio.\n\nLo más importante: 12 personas le preguntaron al asistente por opciones sin gluten y no tienes ninguna en la carta. Con una pizza sin gluten cubres esa demanda.\n\nEl mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nuevas en Google, 26 consultas al asistente y 9 toques a tu Instagram. Tu mejor franja: de 19 a 21 h.\n\n¿Cambio algo de la carta este mes?', 'Hi Marta, here is July.\n\nThe key one: 12 people asked the assistant for gluten-free options and you have none on the menu. One gluten-free pizza covers that demand.\n\nThe month in numbers: 143 uses of the point, 31 Wi-Fi connections, 12 new Google reviews, 26 assistant queries and 9 taps to your Instagram. Your best slot: 7 to 9 pm.\n\nShall I change anything on the menu this month?'],
   ['Una placa en cada mesa que abre tu carta en el móvil.', 'A plate on every table that opens your menu on the phone.'],
@@ -733,7 +726,7 @@ const EN_PAIRS = [
   ['Producto estrella', 'Flagship product'], ['Un punto. Todos tus servicios digitales.', 'One point. All your digital services.'],
   ['El IPSO HUB reúne WiFi, reseñas y menú en una sola pieza. Y cuando el cliente no sabe qué pedir, el asistente le recomienda según lo que le apetece.', 'The IPSO HUB brings together Wi-Fi, reviews and menu in a single piece. And when a customer does not know what to order, the AI recommends based on what they feel like.'],
   ['Lo programamos con tu negocio', 'We programme it with your business'], ['Lo pones en tu mostrador', 'You place it on your counter'],
-  ['Tocan, y el asistente les recomienda', 'They tap, and the assistant recommends'],
+  ['Tocan, y todo tu local se abre en su móvil', 'They tap, and your whole venue opens on their phone'],
   ['WiFi, reseñas y menú en una sola pieza. Con IA que recomienda a cada cliente qué pedir.', 'Wi-Fi, reviews and menu in a single piece. With AI that recommends what to order to every customer.'],
   ['Cómo funciona la tecnología', 'How the technology works'], ['Preguntas frecuentes', 'Frequently asked questions'],
   ['Reúne tus servicios en una pieza', 'All your services in one piece'], ['Programación personalizada de tu negocio', 'Custom programming for your business'],
@@ -858,6 +851,9 @@ const CA_PAIRS = [
   ['Lo que tu mostrador no te contaba.', 'El que el teu taulell no t\u2019explicava.'],
   ['Cada mes te llega un WhatsApp con lo que pasó en tu punto. Y una cosa que nadie más puede decirte: qué pidieron tus clientes que no tienes.', 'Cada mes reps un WhatsApp amb el que va passar al teu punt. I una cosa que ningú més et pot dir: què van demanar els teus clients que no tens.'],
   ['Ni tu TPV ni Google saben esto.', 'Ni el teu TPV ni Google saben això.'],
+  ['Te ayudo a elegir', 'T\u2019ajudo a triar'], ['Para los que nunca saben qué pedir.', 'Per als que mai saben què demanar.'],
+  ['Si tu cliente no sabe por dónde empezar entre tantas opciones, el HUB le guía con tres preguntas y le propone platos de tu carta, con tu sugerencia destacada.', 'Si el teu client no sap per on començar entre tantes opcions, el HUB el guia amb tres preguntes i li proposa plats de la teva carta, amb el teu suggeriment destacat.'],
+  ['Configurado con tu carta, tus precios y lo que solo tu equipo sabe. Monta el pedido según el presupuesto, avisa de alérgenos, da el WiFi, cuenta las curiosidades de la casa y pide la reseña. En más de 30 idiomas.', 'Configurat amb la teva carta, els teus preus i el que només sap el teu equip. Munta la comanda segons el pressupost, avisa d\u2019al·lèrgens, dona el WiFi, explica les curiositats de la casa i demana la ressenya. En més de 30 idiomes.'],
   ['en línea', 'en línia'],
   ['Hola Marta, te paso lo de julio.\n\nLo más importante: 12 personas le preguntaron al asistente por opciones sin gluten y no tienes ninguna en la carta. Con una pizza sin gluten cubres esa demanda.\n\nEl mes en números: 143 usos del punto, 31 conexiones al WiFi, 12 reseñas nuevas en Google, 26 consultas al asistente y 9 toques a tu Instagram. Tu mejor franja: de 19 a 21 h.\n\n¿Cambio algo de la carta este mes?', 'Hola Marta, et passo el de juliol.\n\nEl més important: 12 persones van preguntar a l\u2019assistent per opcions sense gluten i no en tens cap a la carta. Amb una pizza sense gluten cobreixes aquesta demanda.\n\nEl mes en números: 143 usos del punt, 31 connexions al WiFi, 12 ressenyes noves a Google, 26 consultes a l\u2019assistent i 9 tocs al teu Instagram. La teva millor franja: de 19 a 21 h.\n\nCanvio res de la carta aquest mes?'],
   ['Una placa en cada mesa que abre tu carta en el móvil.', 'Una placa a cada taula que obre la teva carta al mòbil.'],
@@ -871,7 +867,7 @@ const CA_PAIRS = [
   ['Producto estrella', 'Producte estrella'], ['Un punto. Todos tus servicios digitales.', 'Un punt. Tots els teus serveis digitals.'],
   ['El IPSO HUB reúne WiFi, reseñas y menú en una sola pieza. Y cuando el cliente no sabe qué pedir, el asistente le recomienda según lo que le apetece.', 'L\u2019IPSO HUB aplega WiFi, ressenyes i menú en una sola peça. I quan el client no sap què demanar, l\u2019assistent li recomana segons el que li ve de gust.'],
   ['Lo programamos con tu negocio', 'El programem amb el teu negoci'], ['Lo pones en tu mostrador', 'El poses al teu taulell'],
-  ['Tocan, y el asistente les recomienda', 'Toquen, i l\u2019assistent els recomana'],
+  ['Tocan, y todo tu local se abre en su móvil', 'Toquen, i tot el teu local s\u2019obre al seu mòbil'],
   ['WiFi, reseñas y menú en una sola pieza. Con IA que recomienda a cada cliente qué pedir.', 'WiFi, ressenyes i menú en una sola peça. Amb IA que recomana a cada client què demanar.'],
   ['Cómo funciona la tecnología', 'Com funciona la tecnologia'], ['Preguntas frecuentes', 'Preguntes freqüents'],
   ['Reúne tus servicios en una pieza', 'Aplega els teus serveis en una peça'], ['Programación personalizada de tu negocio', 'Programació personalitzada del teu negoci'],
@@ -1030,7 +1026,7 @@ const LIGHT_CSS = [
   'details[open] summary [data-plus] { color: #0A7C93 !important; }',
   '[data-word] { filter: invert(1); }',
   '[data-heroimg] { -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 16%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 16%, #000 40%); }',
-  '[data-heropic] { opacity: .88 !important; }',
+  '[data-heropic] { opacity: .82 !important; }',
   '[data-herodim] { background: linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,.94) 20%, rgba(255,255,255,.72) 40%, rgba(255,255,255,.38) 60%, rgba(255,255,255,.14) 82%, rgba(255,255,255,.08) 100%) !important; }',
   '[data-herofade] { background: linear-gradient(180deg, rgba(255,255,255,.45) 0%, transparent 22%, transparent 72%, #FFFFFF 100%) !important; }',
   '@media (max-width: 760px) {',
@@ -1131,11 +1127,12 @@ class Component extends DCLogic {
       if (!wrap) return;
       const s1 = wrap.querySelector('[data-afstate="1"]');
       const s2 = wrap.querySelector('[data-afstate="2"]');
-      if (!s1 || !s2) return;
+      const s3 = wrap.querySelector('[data-afstate="3"]');
+      if (!s1 || !s2 || !s3) return;
       const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
       const clamp = (v) => v < 0 ? 0 : v > 1 ? 1 : v;
       const ease = (t) => t * t * (3 - 2 * t);
-      const still = () => { [s1, s2].forEach((el) => { el.style.opacity = ''; el.style.transform = ''; el.style.pointerEvents = ''; }); };
+      const still = () => { [s1, s2, s3].forEach((el) => { el.style.opacity = ''; el.style.transform = ''; el.style.pointerEvents = ''; }); };
       let queued = false;
       const paint = () => {
         queued = false;
@@ -1144,14 +1141,19 @@ class Component extends DCLogic {
         const vh = window.innerHeight || 1;
         const span = Math.max(1, r.height - vh);
         const p = clamp(-r.top / span);
-        const out = ease(clamp((p - 0.16) / 0.34));   // salida del estado 1
-        const inn = ease(clamp((p - 0.34) / 0.36));   // entrada del estado 2
+        const out = ease(clamp((p - 0.10) / 0.22));   // salida del estado 1
+        const inn = ease(clamp((p - 0.22) / 0.24));   // entrada del estado 2
+        const out2 = ease(clamp((p - 0.56) / 0.22));  // salida del estado 2
+        const inn3 = ease(clamp((p - 0.68) / 0.24));  // entrada del estado 3
         s1.style.opacity = String(1 - out);
         s1.style.transform = 'translateY(' + (-30 * out) + 'px)';
         s1.style.pointerEvents = out > 0.5 ? 'none' : 'auto';
-        s2.style.opacity = String(inn);
-        s2.style.transform = 'translateY(' + (30 * (1 - inn)) + 'px) scale(' + (0.96 + 0.04 * inn) + ')';
-        s2.style.pointerEvents = inn > 0.5 ? 'auto' : 'none';
+        s2.style.opacity = String(inn * (1 - out2));
+        s2.style.transform = 'translateY(' + (30 * (1 - inn) - 30 * out2) + 'px) scale(' + (0.96 + 0.04 * inn) + ')';
+        s2.style.pointerEvents = (inn > 0.5 && out2 < 0.5) ? 'auto' : 'none';
+        s3.style.opacity = String(inn3);
+        s3.style.transform = 'translateY(' + (30 * (1 - inn3)) + 'px) scale(' + (0.96 + 0.04 * inn3) + ')';
+        s3.style.pointerEvents = inn3 > 0.5 ? 'auto' : 'none';
       };
       const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(paint); } };
       window.addEventListener('scroll', onScroll, { passive: true });
@@ -1382,7 +1384,7 @@ class Component extends DCLogic {
 }
 </script>
 
-<style>.ipso-wa:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.28)}.ipso-wa-btn:hover{transform:translateY(-2px)}@media (max-width: 640px){ .ipso-wa{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: 14px !important; } } @media (prefers-reduced-motion: reduce){ .ipso-wa, .ipso-wa-btn{ transition: none !important; } }</style>
+<style>.ipso-wa:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.28)}.ipso-wa-btn:hover{transform:translateY(-2px)}@media (max-width: 640px){ .ipso-wa{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ .ipso-wa, .ipso-wa-btn{ transition: none !important; } }</style>
 <a class="ipso-wa" data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%20Ipso%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </body>
 </html>
