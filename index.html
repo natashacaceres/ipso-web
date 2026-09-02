@@ -60,11 +60,10 @@
   @media (min-width: 1080px) { [data-intro] { max-width: none !important; white-space: nowrap; } }
   @media (max-width: 760px) { [data-solfoto] { width: 118px !important; } }
   @media (max-width: 760px) {
-    [data-hero] > div:last-child { padding: 108px 24px 112px !important; }
-    [data-heroimg] { left: 0 !important; top: 0 !important; bottom: 0 !important; height: auto !important; }
-    [data-heroimg] img { object-position: 56% 48% !important; opacity: .5 !important; }
-    [data-herodim] { background: linear-gradient(180deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.6) 46%, rgba(0,0,0,.72) 100%) !important; }
-    [data-herofade] { background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, transparent 30%, transparent 72%, #000000 100%) !important; }
+    [data-herotext] { padding: 96px 24px 36px !important; }
+    [data-hero] { display: flex !important; flex-direction: column !important; }
+    [data-heromobile] { display: block !important; }
+    [data-heroimg], [data-herodim], [data-herofade] { display: none !important; }
     [data-trust] { flex-wrap: nowrap !important; gap: 8px !important; font-size: 11px !important; white-space: nowrap !important; }
   }
   @media (max-width: 1080px) {
@@ -152,16 +151,18 @@
   @media (min-width: 900px) { [data-afmirror] [data-afimgwrap] { grid-row: 1; grid-column: 1; } }
   @media (max-width: 899px) {
     [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 12px !important; }
-    [data-afstate] p { max-width: 36ch; font-size: 13px !important; line-height: 1.45 !important; margin-top: 9px !important; }
+    [data-afstate] p { max-width: 38ch; font-size: 12.5px !important; line-height: 1.4 !important; margin-top: 8px !important; }
     [data-afstate] h2 { font-size: clamp(21px, 5.4vw, 26px) !important; margin-top: 9px !important; }
     [data-afstate] > div:first-child > a { margin-top: 11px !important; padding: 9px 16px !important; font-size: 13px !important; }
     [data-afstate] > div:first-child > div:last-of-type { margin-top: 11px !important; gap: 10px !important; justify-content: center; }
     [data-qr] { width: 44px !important; height: 44px !important; padding: 2px !important; }
     [data-afstate] > div:first-child > div:last-of-type p { font-size: 11.5px !important; max-width: 24ch !important; text-align: left; }
-    [data-afphone] { width: min(206px, 54vw) !important; height: 42svh !important; aspect-ratio: auto !important; max-width: 100% !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-afphone] { width: min(210px, 54vw, calc((100svh - 300px) * 9 / 19)) !important; height: auto !important; aspect-ratio: 9 / 19 !important; max-width: 100% !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-afphone] img { object-fit: contain !important; object-position: 50% 50% !important; }
     [data-afphone] > div { border-radius: 25px !important; }
-    [data-waphone] { width: min(206px, 54vw) !important; height: auto !important; aspect-ratio: 9 / 19 !important; border-radius: 34px !important; padding: 7px !important; }
-    [data-waphone] > div { border-radius: 27px !important; }
+    [data-waphone] { width: min(210px, 54vw) !important; height: auto !important; aspect-ratio: 9 / 19 !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-waphone] img { object-fit: contain !important; object-position: 50% 50% !important; }
+    [data-waphone] > div { border-radius: 25px !important; }
   }
   @media (prefers-reduced-motion: reduce) {
     #asi-funciona { height: auto !important; padding: 8px 0 64px; }
@@ -259,7 +260,7 @@
     </div>
     <div data-herodim="1" style="position: absolute; inset: 0; background: linear-gradient(90deg, #000000 0%, #000000 30%, rgba(0,0,0,.82) 44%, rgba(0,0,0,.28) 62%, rgba(0,0,0,.12) 100%); pointer-events: none;"></div>
     <div data-herofade="1" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, transparent 24%, transparent 66%, #000000 100%); pointer-events: none;"></div>
-    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 132px 24px 128px;">
+    <div data-herotext="1" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 132px 24px 128px;">
       <div data-reveal="1" style="max-width: 620px;">
         <h1 style="margin: 0; font-size: clamp(40px, 5.8vw, 66px); line-height: 1.0; font-weight: 700; letter-spacing: -0.045em; text-shadow: 0 2px 30px rgba(0,0,0,.7);">Tu negocio, <span style="color: #A7ADA5;">en un solo punto.</span></h1>
         <p style="margin: 22px 0 0; max-width: 56ch; font-size: 17px; line-height: 1.6; color: #C3C8BF; text-shadow: 0 2px 20px rgba(0,0,0,.8);">WiFi, reseñas y carta en una sola pieza. Con un asistente que atiende a tus clientes en su idioma.</p>
@@ -269,6 +270,10 @@
         </div>
       </div>
     </div>
+    <div data-heromobile="1" style="display: none; position: relative; margin: 0 24px 40px; border-radius: 18px; overflow: hidden; aspect-ratio: 2048 / 1186; box-shadow: 0 30px 60px -40px rgba(0,0,0,.9);">
+      <img src="assets/hero-hub-v2.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
   </section>
 
   <!-- ============ SOLUCIONES (carrusel horizontal anclado) ============ -->
@@ -1030,9 +1035,7 @@ const LIGHT_CSS = [
   '[data-herodim] { background: linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,.94) 20%, rgba(255,255,255,.72) 40%, rgba(255,255,255,.38) 60%, rgba(255,255,255,.14) 82%, rgba(255,255,255,.08) 100%) !important; }',
   '[data-herofade] { background: linear-gradient(180deg, rgba(255,255,255,.45) 0%, transparent 22%, transparent 72%, #FFFFFF 100%) !important; }',
   '@media (max-width: 760px) {',
-  '  [data-heroimg] { left: 0 !important; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%) !important; mask-image: linear-gradient(180deg, transparent 0%, #000 34%) !important; }',
-  '  [data-herodim] { background: linear-gradient(180deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.68) 46%, rgba(255,255,255,.82) 100%) !important; }',
-  '  [data-herofade] { background: linear-gradient(180deg, rgba(255,255,255,.5) 0%, transparent 30%, transparent 70%, #FFFFFF 100%) !important; }',
+  '  [data-heroimg], [data-herodim], [data-herofade] { display: none !important; }',
   '}'
 ].join('\n');
 
