@@ -1,0 +1,23 @@
+# Ipso
+
+> Ipso es una empresa tecnológica de Barcelona (España). Somos el ADN de tu local: un punto NFC en el mostrador de bares, restaurantes, cafeterías, peluquerías, centros de belleza y comercios de barrio que, con un toque del móvil y sin instalar apps, abre todo el negocio en la pantalla del cliente.
+
+## Qué es el IPSO HUB
+- Una pieza física NFC (con código QR de respaldo) que se coloca en la barra, la mesa o el mostrador.
+- Al acercar el móvil (iPhone o Android) se abre una página web del local, sin app.
+- Incluye: WiFi para clientes sin escribir la contraseña; carta digital con fotos, precios y alérgenos siempre al día; enlace directo a dejar una reseña en Google; redes y contacto del local; tarjeta de fidelización digital ("Sella tu visita": el cliente deja su teléfono una vez y acumula visitas hasta un premio, sin cartón ni app); y un asistente con inteligencia artificial.
+- El asistente responde en 30 idiomas con la carta, los precios y "lo que solo sabe la casa": recomienda platos y maridajes, calcula presupuestos para una mesa, avisa de alérgenos y ayuda a elegir a quien no sabe qué pedir. No toma pedidos ni cobra: complementa al camarero.
+- El dueño recibe un informe mensual por WhatsApp: usos del punto, conexiones al WiFi, reseñas, consultas al asistente, clientes que repiten y qué pidieron los clientes que el local no tiene en carta.
+- Precio: cuota mensual (19 €/mes) sin permanencia; instalación y configuración en el local incluidas. Barcelona y alrededores.
+
+## Soluciones sueltas (pago único, sin cuota)
+- Punto NFC de WiFi: el cliente se conecta sin pedir la clave.
+- Stand de reseñas de Google: abre la ficha oficial del local con la reseña lista.
+- Placa de menú NFC: la carta digital en cada mesa.
+- Placa de reservas en la puerta: reservar con un toque, incluso con el local cerrado.
+
+## Datos
+- Web: https://ipsoglobal.com/ · Producto: https://ipsoglobal.com/hub.html · Nosotros: https://ipsoglobal.com/nosotros.html
+- Contacto: contacto@ipsoglobal.com · WhatsApp +34 603 924 226
+- Zona: Barcelona, Cataluña, España. Idiomas de atención: español, catalán, inglés.
+- No afiliado a Google. Cumplimiento RGPD: el teléfono del cliente solo se usa para la fidelización y puede borrarse a petición.
