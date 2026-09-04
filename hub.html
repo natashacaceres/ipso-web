@@ -167,14 +167,13 @@
             <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precio }}</span>
             <span style="font-size: 13px; color: #8B918A;">de alta + 19 €/mes</span>
           </div>
-          <div style="margin-top: 8px; max-width: 44ch; font-size: 14px; line-height: 1.5; color: #B7BDB5;">{{ precioIva }}</div>
-          <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío</span> <span style="color: #FF8A3D;">gratuito</span> <span>en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía de reembolso.</span></div>
-          <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
+          <div style="margin-top: 8px; max-width: 44ch; font-size: 14px; line-height: 1.5; color: #B7BDB5;">IVA incluido.</div>
+          <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Instalación en</span> <span style="color: #FF8A3D;">Barcelona.</span> <span>Envío</span> <span style="color: #FF8A3D;">gratuito</span> <span>al resto de España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía de reembolso.</span></div>
           <p style="margin: 20px 0 0; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #B7BDB5;">Un punto que reúne todos tus servicios digitales, con un asistente que atiende a tus clientes en su idioma.</p>
           <div style="margin-top: 26px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
             <div style="position: relative;">
               <button onClick="{{ toggleRuleta }}" aria-label="Cantidad" style="display: flex; align-items: center; gap: 8px; font-family: inherit; font-size: 15px; font-weight: 600; color: #F4F6F3; background: transparent; border: 1px solid #3A3E38; border-radius: 10px; padding: 14px 14px; cursor: pointer; transition: border-color 160ms ease;" style-hover="border-color: #2BE7FF;">
-                <span style="font-size: 12px; font-weight: 500; color: #8B918A;">Uds.</span>
+                <span style="font-size: 12px; font-weight: 500; color: #8B918A;">Cantidad</span>
                 <span style="font-variant-numeric: tabular-nums;">{{ cantidad }}</span>
                 <span style="font-size: 10px; color: #8B918A;">▾</span>
               </button>
@@ -306,7 +305,7 @@
       </details>
       <details style="border-bottom: 1px solid #1A1C19;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cómo funciona la tarjeta de sellos?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-        <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. En tu informe mensual ves cuántos clientes repiten.</p>
+        <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. El cliente acepta el uso de su número al dejarlo. Solo se usa para el premio. En tu informe mensual ves cuántos clientes repiten.</p>
       </details>
     </div>
   </section>
@@ -355,9 +354,9 @@ const EN_PAIRS = [
   ['Sabe lo que solo tu equipo sabe: tiempos, especialidades, curiosidades de la casa', 'It knows what only your team knows: timings, specialities, house details'],
   ['Cambios ilimitados, sin tocar nada tú', 'Unlimited changes, you touch nothing'],
   ['Informe mensual por WhatsApp', 'Monthly report on WhatsApp'], ['Garantía 30 días', '30-day guarantee'],
-  ['de alta', 'setup'], ['de alta, IVA incl.', 'setup, VAT incl.'], ['pago único', 'one-off'], ['119,79 € IVA incl.', '119.79 € VAT incl.'],
-  ['Envío', 'Shipping'], ['gratuito', 'free'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'within Spain and money-back guarantee within'], ['30 días', '30 days'],
-  ['Programación incluida.', 'Installation included.'],
+  ['de alta', 'setup'], ['de alta + 19 €/mes', 'setup + 19 €/month'], ['IVA incluido.', 'VAT included.'], ['pago único', 'one-off'],
+  ['Instalación en', 'Installation in'], ['Barcelona.', 'Barcelona.'], ['al resto de España.', 'to the rest of Spain.'], ['Envío', 'Shipping'], ['gratuito', 'free'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'within Spain and money-back guarantee within'], ['30 días', '30 days'],
+  ['Programación incluida.', 'Installation included.'], ['Cantidad', 'Quantity'],
   ['Un punto que reúne todos tus servicios digitales, con IA que recomienda a cada cliente, y lo cambias cuando quieras.', 'One point that brings together all your digital services, with AI that recommends to every customer, and you change it whenever you want.'],
   ['Añadir a la cesta', 'Add to basket'], ['Paga tu pedido con tarjeta o móvil', 'Pay your order by card or phone'], ['Sin app', 'No app'], ['Funciona en cualquier móvil', 'Works on any phone'], ['iPhone y Android', 'iPhone and Android'],
   ['Todos tus servicios, en un punto', 'All your services, in one point'],
@@ -374,7 +373,7 @@ const EN_PAIRS = [
   ['No depende de tu WiFi ni de la cobertura del local.', 'It does not depend on your Wi-Fi or on coverage inside your premises.'],
   ['Asistente en más de 30 idiomas, configurado con tu carta y con lo que nos cuentes.', 'Assistant in more than 30 languages, set up with your menu and with what you tell us.'],
   ['Fidelización: el cliente deja su número una vez y acumula visitas. Tú fijas el premio.', 'Loyalty: the customer leaves their number once and builds up visits. You set the reward.'],
-  ['¿Cómo funciona la tarjeta de sellos?', 'How does the stamp card work?'], ['El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. En tu informe mensual ves cuántos clientes repiten.', 'The customer taps the HUB, leaves their number once and every visit is logged on its own. You decide the rule, for example 9 visits and the 10th is free. When they reach it, they get a single WhatsApp to redeem the reward at the venue. No app, no changes to your POS. Your monthly report shows how many customers come back.'],
+  ['¿Cómo funciona la tarjeta de sellos?', 'How does the stamp card work?'], ['El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. El cliente acepta el uso de su número al dejarlo. Solo se usa para el premio. En tu informe mensual ves cuántos clientes repiten.', 'The customer taps the HUB, leaves their number once and every visit is logged on its own. You decide the rule, for example 9 visits and the 10th is free. When they reach it, they get a single WhatsApp to redeem the reward at the venue. No app, no changes to your POS. The customer consents to the use of their number when they leave it. It is only used for the reward. Your monthly report shows how many customers come back.'],
   ['WiFi, reseñas, carta y tarjeta de sellos en una sola pieza, y los cambias cuando quieras. Y un asistente que recomienda a cada cliente qué pedir, en su idioma.', 'Wi-Fi, reviews, menu and stamp card in a single piece, and you change them whenever you want. Plus an assistant that recommends what to order to every customer, in their language.'],
   ['Contenido reprogramable sin cambiar el soporte. Cambios ilimitados.', 'Reprogrammable content without replacing the piece. Unlimited changes.'],
   ['Informe mensual por WhatsApp.', 'Monthly report on WhatsApp.'],
@@ -388,7 +387,7 @@ const EN_PAIRS = [
   ['En directo', 'Live'], ['toques hoy · en vivo', 'taps today · live'],
   ['Cámbialo cuando quieras', 'Change it whenever you want'],
   ['Reprogramamos lo que ofrece sin comprar nada nuevo. Crece con tu negocio.', 'We reprogram what it offers without buying anything new. It grows with your business.'],
-  ['Lo programamos con tu negocio', 'We programme it with your business'], ['Llega listo, con los servicios que nos digas.', 'It arrives ready, with the services you tell us.'],
+  ['Lo cargamos con tu carta y tus secretos', 'We load it with your menu and your secrets'], ['Llega listo, con los servicios que nos digas.', 'It arrives ready, with the services you tell us.'],
   ['Lo pones en tu mostrador', 'You place it on your counter'], ['Donde se paga. Ocupa lo que un vaso.', 'Where people pay. It takes up as much room as a glass.'],
   ['Tocan y eligen qué hacer', 'They tap and choose what to do'], ['Acercan el móvil y se abre en su navegador. Si quieren, suman su visita.', 'They tap their phone and it opens in their browser. If they want, they log their visit.'],
   ['Qué incluye', 'What is included'], ['El HUB programado con tus servicios', 'The HUB programmed with your services'],
@@ -446,9 +445,9 @@ const CA_PAIRS = [
   ['Sabe lo que solo tu equipo sabe: tiempos, especialidades, curiosidades de la casa', 'Sap el que només sap el teu equip: temps, especialitats, curiositats de la casa'],
   ['Cambios ilimitados, sin tocar nada tú', 'Canvis il·limitats, sense tocar res tu'],
   ['Informe mensual por WhatsApp', 'Informe mensual per WhatsApp'], ['Garantía 30 días', 'Garantia 30 dies'],
-  ['de alta', 'd\u2019alta'], ['de alta, IVA incl.', 'd\u2019alta, IVA incl.'], ['pago único', 'pagament únic'], ['119,79 € IVA incl.', '119,79 € IVA incl.'],
-  ['Envío', 'Enviament'], ['gratuito', 'gratuït'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'dins d\u2019Espanya i garantia de devolució dels teus diners fins a'], ['30 días', '30 dies'],
-  ['Programación incluida.', 'Instal·lació inclosa.'],
+  ['de alta', 'd\u2019alta'], ['de alta + 19 €/mes', 'd\u2019alta + 19 €/mes'], ['IVA incluido.', 'IVA inclòs.'], ['pago único', 'pagament únic'],
+  ['Instalación en', 'Instal·lació a'], ['Barcelona.', 'Barcelona.'], ['al resto de España.', 'a la resta d\u2019Espanya.'], ['Envío', 'Enviament'], ['gratuito', 'gratuït'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'dins d\u2019Espanya i garantia de devolució dels teus diners fins a'], ['30 días', '30 dies'],
+  ['Programación incluida.', 'Instal·lació inclosa.'], ['Cantidad', 'Quantitat'],
   ['Un punto que reúne todos tus servicios digitales, con IA que recomienda a cada cliente, y lo cambias cuando quieras.', 'Un punt que aplega tots els teus serveis digitals, amb IA que recomana a cada client, i el canvies quan vulguis.'],
   ['Añadir a la cesta', 'Afegir a la cistella'], ['Paga tu pedido con tarjeta o móvil', 'Paga la teva comanda amb targeta o mòbil'], ['Sin app', 'Sense app'], ['Funciona en cualquier móvil', 'Funciona a qualsevol mòbil'], ['iPhone y Android', 'iPhone i Android'],
   ['Todos tus servicios, en un punto', 'Tots els teus serveis, en un punt'],
@@ -465,7 +464,7 @@ const CA_PAIRS = [
   ['No depende de tu WiFi ni de la cobertura del local.', 'No depèn del teu WiFi ni de la cobertura del local.'],
   ['Asistente en más de 30 idiomas, configurado con tu carta y con lo que nos cuentes.', 'Assistent en més de 30 idiomes, configurat amb la teva carta i amb el que ens expliquis.'],
   ['Fidelización: el cliente deja su número una vez y acumula visitas. Tú fijas el premio.', 'Fidelització: el client deixa el seu número un cop i acumula visites. Tu fixes el premi.'],
-  ['¿Cómo funciona la tarjeta de sellos?', 'Com funciona la targeta de segells?'], ['El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. En tu informe mensual ves cuántos clientes repiten.', 'El client toca el HUB, deixa el seu número un cop i cada visita s\u2019apunta sola. Tu decideixes la regla, per exemple 9 visites i la 10a gratis. Quan hi arriba, rep un sol WhatsApp per bescanviar el premi al local. Sense app, sense tocar el teu TPV. A l\u2019informe mensual veus quants clients repeteixen.'],
+  ['¿Cómo funciona la tarjeta de sellos?', 'Com funciona la targeta de segells?'], ['El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. El cliente acepta el uso de su número al dejarlo. Solo se usa para el premio. En tu informe mensual ves cuántos clientes repiten.', 'El client toca el HUB, deixa el seu número un cop i cada visita s\u2019apunta sola. Tu decideixes la regla, per exemple 9 visites i la 10a gratis. Quan hi arriba, rep un sol WhatsApp per bescanviar el premi al local. Sense app, sense tocar el teu TPV. El client accepta l\u2019ús del seu número en deixar-lo. Només es fa servir per al premi. A l\u2019informe mensual veus quants clients repeteixen.'],
   ['WiFi, reseñas, carta y tarjeta de sellos en una sola pieza, y los cambias cuando quieras. Y un asistente que recomienda a cada cliente qué pedir, en su idioma.', 'WiFi, ressenyes, carta i targeta de segells en una sola peça, i els canvies quan vulguis. I un assistent que recomana a cada client què demanar, en el seu idioma.'],
   ['Contenido reprogramable sin cambiar el soporte. Cambios ilimitados.', 'Contingut reprogramable sense canviar el suport. Canvis il·limitats.'],
   ['Informe mensual por WhatsApp.', 'Informe mensual per WhatsApp.'],
@@ -479,7 +478,7 @@ const CA_PAIRS = [
   ['En directo', 'En directe'], ['toques hoy · en vivo', 'tocs avui · en directe'],
   ['Cámbialo cuando quieras', 'Canvia\u2019l quan vulguis'],
   ['Reprogramamos lo que ofrece sin comprar nada nuevo. Crece con tu negocio.', 'Reprogramem el que ofereix sense comprar res nou. Creix amb el teu negoci.'],
-  ['Lo programamos con tu negocio', 'El programem amb el teu negoci'], ['Llega listo, con los servicios que nos digas.', 'Arriba llest, amb els serveis que ens diguis.'],
+  ['Lo cargamos con tu carta y tus secretos', 'El carreguem amb la teva carta i els teus secrets'], ['Llega listo, con los servicios que nos digas.', 'Arriba llest, amb els serveis que ens diguis.'],
   ['Lo pones en tu mostrador', 'El poses al teu taulell'], ['Donde se paga. Ocupa lo que un vaso.', 'On es paga. Ocupa el que un got.'],
   ['Tocan y eligen qué hacer', 'Toquen i trien què fer'], ['Acercan el móvil y se abre en su navegador. Si quieren, suman su visita.', 'Acosten el mòbil i s\u2019obre al seu navegador. Si volen, sumen la seva visita.'],
   ['Qué incluye', 'Què inclou'], ['El HUB programado con tus servicios', 'El HUB programat amb els teus serveis'],
@@ -664,7 +663,7 @@ class Component extends DCLogic {
       { title: 'Panel de datos en vivo incluido', body: 'Ves cada toque, cada consulta al asistente y cada reseña en el momento en que pasan.' }
     ];
     const PASOS = [
-      { n: '01', t: 'Lo programamos con tu negocio', d: 'Llega listo, con los servicios que nos digas.' },
+      { n: '01', t: 'Lo cargamos con tu carta y tus secretos', d: 'Llega listo, con los servicios que nos digas.' },
       { n: '02', t: 'Lo pones en tu mostrador', d: 'Donde se paga. Ocupa lo que un vaso.' },
       { n: '03', t: 'Tocan y eligen qué hacer', d: 'Acercan el móvil y se abre en su navegador. Si quieren, suman su visita.' }
     ];
@@ -714,7 +713,6 @@ class Component extends DCLogic {
         pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => this.applyLang(prev)); }
       })),
       precio: this.eur(99 * this.state.cantidad),
-      precioIva: this.eur(Math.round(99 * this.state.cantidad * 1.21 * 100) / 100) + ' de alta, IVA incl. Después, 19 €/mes con todo incluido: cambios, soporte y panel en vivo. Cancela cuando quieras.',
       cantidad: this.state.cantidad,
       agotado: !!this.state.tocado,
       ruletaOpen: this.state.ruleta,
