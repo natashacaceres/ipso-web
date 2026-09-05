@@ -24,8 +24,6 @@
   <link rel="icon" href="/favicon.png?v=2" type="image/png">
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
-  
-  
 <meta charset="utf-8">
 <script src="./support.js"></script>
 </head>
@@ -135,9 +133,9 @@
         <p style="margin: 14px 0 0; max-width: 30ch; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.15; font-weight: 600; letter-spacing: -0.036em; color: #E2E5DE;">Tu carta, desde la mesa. Cambias un precio y está cambiado.</p>
         <div style="margin-top: 22px; display: flex; align-items: baseline; gap: 8px; font-variant-numeric: tabular-nums;">
           <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</span>
-          <span style="font-size: 13px; color: #8B918A;">pago único</span>
+          <span style="font-size: 13px; color: #8B918A;">pago único, + IVA</span>
         </div>
-        <div style="margin-top: 8px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">{{ precioIva }} IVA incl.</div>
+        <div style="margin-top: 8px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">Con IVA: {{ precioIva }}</div>
         <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío</span> <span style="color: #FF8A3D;">gratuito</span> <span>dentro de España y garantía de reembolso de tu dinero en hasta</span> <span style="color: #FF8A3D;">30 días</span><span>.</span></div>
         <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
         <div style="margin-top: 26px;">
@@ -218,9 +216,9 @@
           <span style="font-size: 38px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ total }}</span>
           <span style="font-size: 15px; color: #8B918A; text-decoration: line-through;">{{ antes }}</span>
         </div>
-        <div style="margin-top: 6px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">{{ totalIva }} IVA incl.</div>
+        <div style="margin-top: 6px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">Con IVA: {{ totalIva }}</div>
         <div style="margin-top: 8px; font-size: 13.5px; font-weight: 600; color: #FF8A3D;">{{ ahorro }}</div>
-        <div style="margin-top: 10px; font-size: 12.5px; color: #8B918A;">Pago único · Programación incluida · Garantía comercial 30 días</div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #8B918A;">Pago único, + IVA · Programación incluida · Garantía comercial 30 días</div>
         <a href="#comprar" style="display: block; text-align: center; margin-top: 20px; font-size: 15px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 14px 20px; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-1px);">Añadir a la cesta</a>
         <a href="hub.html" style="display: block; margin-top: 14px; max-width: 44ch; font-size: 13.5px; line-height: 1.5; font-weight: 600; color: #9CA39A;" style-hover="color: #2BE7FF;">¿Quieres que además recomiende y atienda en su idioma? Eso es el IPSO HUB →</a>
       </div>
