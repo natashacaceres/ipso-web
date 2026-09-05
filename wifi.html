@@ -24,15 +24,12 @@
   <link rel="icon" href="/favicon.png?v=2" type="image/png">
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente virtual para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
-  
-  
 <meta charset="utf-8">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -219,7 +216,7 @@
         </div>
         <div style="margin-top: 6px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">{{ totalIva }} IVA incl.</div>
         <div style="margin-top: 8px; font-size: 13.5px; font-weight: 600; color: #FF8A3D;">{{ ahorro }}</div>
-        <div style="margin-top: 10px; font-size: 12.5px; color: #8B918A;">Pago único · Programación incluida · Garantía 30 días</div>
+        <div style="margin-top: 10px; font-size: 12.5px; color: #8B918A;">Pago único · Programación incluida · Garantía comercial 30 días</div>
         <a href="index.html#contacto" style="display: block; text-align: center; margin-top: 20px; font-size: 15px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 14px 20px; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-1px);">Añadir a la cesta</a>
       </div>
     </div>
@@ -314,7 +311,7 @@ const S = {
     { n: '02', t: 'Lo pones en mesa o barra', d: 'Donde la gente se sienta y saca el móvil.' },
     { n: '03', t: 'Tocan o escanean, copian y dentro', d: 'La clave se copia sola. Funciona en todos los iPhone y Android.' }
   ],
-  incluye: ['Punto NFC de WiFi programado', 'Programación personalizada', 'Primer mes de panel y estadísticas', 'Cambio de clave cuando quieras', 'Código de respaldo para escanear', 'Garantía 30 días'],
+  incluye: ['Punto NFC de WiFi programado', 'Programación personalizada', 'Primer mes de panel y estadísticas', 'Cambio de clave cuando quieras', 'Código de respaldo para escanear', 'Garantía comercial 30 días'],
   specs: [
     'NFC (acercar el móvil) → funciona en Android.',
     'QR → funciona en iPhone y Android.',
@@ -460,5 +457,8 @@ class Component extends DCLogic {
   }
 }
 </script>
+
+<style>.ipso-wa:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.28)}.ipso-wa-btn:hover{transform:translateY(-2px)}@media (max-width: 640px){ .ipso-wa{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ .ipso-wa, .ipso-wa-btn{ transition: none !important; } }</style>
+<a class="ipso-wa" data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </body>
 </html>

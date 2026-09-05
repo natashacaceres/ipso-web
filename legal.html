@@ -24,15 +24,12 @@
   <link rel="icon" href="/favicon.png?v=2" type="image/png">
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente virtual para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
-  
-  
 <meta charset="utf-8">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -181,7 +178,7 @@ const ES = {
   backHome: 'Inicio',
   docs: [
     {
-      id: 'aviso-legal', title: 'Aviso legal', updated: 'Última actualización: agosto de 2026',
+      id: 'aviso-legal', title: 'Aviso legal', updated: 'Última actualización: septiembre de 2026',
       clauses: [
         { h: '1. Titular del sitio web', p: [
           'En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que este sitio web es titularidad de ' + TITULAR + ', con domicilio a efectos de notificaciones en ' + DOM + ' y correo electrónico de contacto ' + MAIL + '.',
@@ -216,7 +213,7 @@ const ES = {
       ]
     },
     {
-      id: 'privacidad', title: 'Política de privacidad', updated: 'Última actualización: agosto de 2026',
+      id: 'privacidad', title: 'Política de privacidad', updated: 'Última actualización: septiembre de 2026',
       clauses: [
         { h: '1. Responsable del tratamiento', p: [
           'Responsable: ' + TITULAR + '. Domicilio: ' + DOM + '. Correo electrónico: ' + MAIL + '.',
@@ -234,19 +231,25 @@ const ES = {
         { h: '3 bis. Programas de fidelización de los locales', p: [
           'Algunos negocios que usan el IPSO HUB activan una tarjeta de sellos digital. Al tocar el punto, el cliente puede dejar voluntariamente su número de teléfono para acumular visitas.',
           'Datos tratados: número de teléfono y contador de visitas. No se recogen nombre, correo ni datos de pago.',
-          'Responsable: el titular del local donde se registra la visita. Ipso actúa como encargado del tratamiento, con contrato conforme al artículo 28 del RGPD. [REVISAR ABOGADO: confirmar el reparto de roles responsable/encargado y formalizar el contrato con cada local.]',
+          'Responsable: el titular del local donde se registra la visita. Ipso actúa como encargado del tratamiento, con contrato conforme al artículo 28 del RGPD.',
           'Finalidad: contar las visitas del cliente en ese local y avisarle, mediante un único mensaje de WhatsApp, cuando alcance el premio fijado por el local. No se envían campañas, promociones ni recordatorios adicionales.',
-          'Base jurídica: consentimiento del interesado (artículo 6.1.a del RGPD), prestado al introducir su número. [REVISAR ABOGADO: valorar si procede añadir ejecución de contrato, art. 6.1.b, y el encaje del mensaje de premio en el art. 21.2 de la LSSI-CE.]',
-          'Conservación: mientras el cliente participe y, como máximo, doce meses desde su última visita; después el número se elimina y solo se conservan cifras agregadas sin identificar. [REVISAR ABOGADO: fijar el plazo definitivo.]',
+          'Base jurídica: consentimiento del interesado (artículo 6.1.a del RGPD), prestado al introducir su número.',
+          'Conservación: mientras el cliente participe y, como máximo, veinticuatro meses desde su última visita; después el número se elimina y solo se conservan cifras agregadas sin identificar.',
           'Comunicación a terceros: el número no se comparte con otros locales ni se usa para descuentos cruzados. Para enviar el mensaje de premio se utiliza WhatsApp (Meta Platforms Ireland Ltd.), que trata el número según sus propias condiciones.',
-          'Derechos: el cliente puede pedir en cualquier momento el borrado de su número escribiendo a ' + MAIL + ' o al propio local, sin perder ningún derecho ya obtenido. El resto de derechos se ejercen según la cláusula correspondiente de esta política.'
+          'Derechos: el cliente puede pedir en cualquier momento el borrado de su número escribiendo a ' + MAIL + ' o al propio local, sin perder ningún derecho ya obtenido. El resto de derechos se ejercen según la cláusula correspondiente de esta política.',
+          'El número se guarda cifrado y el cliente puede borrarlo él mismo desde la opción \u201cBorrar mis datos\u201d del propio punto.'
+        ]},
+        { h: '3 ter. Asistente con inteligencia artificial', p: [
+          'El IPSO HUB incluye un asistente conversacional basado en inteligencia artificial, identificado como tal en pantalla.',
+          'Responde con la carta y la información que facilita cada local, mediante un modelo de lenguaje de Google (Gemini) que puede tratar la consulta fuera del Espacio Económico Europeo bajo las garantías del apartado 6.',
+          'Al asistente no se le envían el número de teléfono ni los datos de fidelización del cliente; las conversaciones se usan solo para responder y no para publicidad ni perfilado.'
         ]},
         { h: '4. Plazos de conservación', p: [
           'Los datos de las consultas se conservan mientras se gestiona la solicitud y, posteriormente, durante el plazo de prescripción de las acciones que pudieran derivarse. La documentación con relevancia fiscal se conserva durante los plazos legalmente exigidos.',
           'Los datos estadísticos de navegación se conservan de forma agregada durante un máximo de veintiséis meses.'
         ]},
         { h: '5. Destinatarios y encargados del tratamiento', p: [
-          'No se ceden datos a terceros salvo obligación legal. Para prestar el servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento con contrato conforme al artículo 28 del RGPD: Cloudflare, Inc. (alojamiento del sitio y analítica agregada) y FormSubmit (tramitación técnica del envío del formulario al correo de Ipso).',
+          'No se ceden datos a terceros salvo obligación legal. Para prestar el servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento con contrato conforme al artículo 28 del RGPD: Cloudflare, Inc. (alojamiento del sitio y analítica agregada), FormSubmit (tramitación técnica del envío del formulario al correo de Ipso) y Google Ireland Ltd. (modelo de lenguaje del asistente).',
           'Si en el futuro se incorporase una herramienta de analítica con cookies, se informará en esta política y se solicitará el consentimiento previo del usuario.',
           'Para el envío del único mensaje de premio de los programas de fidelización interviene WhatsApp (Meta Platforms Ireland Ltd.), como proveedor del canal de mensajería.'
         ]},
@@ -266,7 +269,7 @@ const ES = {
       ]
     },
     {
-      id: 'cookies', title: 'Política de cookies', updated: 'Última actualización: agosto de 2026',
+      id: 'cookies', title: 'Política de cookies', updated: 'Última actualización: septiembre de 2026',
       clauses: [
         { h: '1. Qué son las cookies', p: [
           'Una cookie es un pequeño archivo que se descarga en el dispositivo del usuario al visitar una página web y que permite almacenar y recuperar información sobre la navegación. Esta política se rige por el artículo 22.2 de la LSSI-CE y por la Guía sobre el uso de las cookies de la Agencia Española de Protección de Datos.'
@@ -274,7 +277,8 @@ const ES = {
         { h: '2. Cookies utilizadas en este sitio', p: [
           'Cookies técnicas y de seguridad, exentas de consentimiento: son necesarias para servir el sitio, equilibrar la carga y proteger frente a tráfico malicioso. Las gestiona el proveedor de alojamiento (Cloudflare) y su duración va desde la sesión hasta un máximo de treinta minutos de inactividad.',
           'Analítica agregada sin cookies: la infraestructura del sitio genera estadísticas de visitas sin instalar cookies ni identificar a personas concretas.',
-          'Este sitio no instala cookies de analítica, publicidad ni perfilado. Al no existir cookies sujetas a consentimiento, no se muestra aviso de cookies. Si en algún momento se incorporasen, se solicitaría el consentimiento previo mediante un aviso con opciones de aceptar, rechazar y configurar.'
+          'Este sitio no instala cookies de analítica, publicidad ni perfilado. Al no existir cookies sujetas a consentimiento, no se muestra aviso de cookies. Si en algún momento se incorporasen, se solicitaría el consentimiento previo mediante un aviso con opciones de aceptar, rechazar y configurar.',
+          'En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento.'
         ]},
         { h: '3. Consentimiento', p: [
           'Con la configuración actual del sitio solo se utilizan cookies técnicas y de seguridad, exentas del deber de consentimiento previo conforme al artículo 22.2 de la LSSI-CE, por lo que no se muestra ningún aviso de cookies.',
@@ -300,7 +304,7 @@ const EN = {
   backHome: 'Home',
   docs: [
     {
-      id: 'aviso-legal', title: 'Legal notice', updated: 'Last updated: August 2026',
+      id: 'aviso-legal', title: 'Legal notice', updated: 'Last updated: September 2026',
       clauses: [
         { h: '1. Website owner', p: [
           'In accordance with article 10 of Spanish Act 34/2002 on Information Society Services and Electronic Commerce, this website is owned by ' + TITULAR + ', with address for notices at ' + DOM + ' and contact email ' + MAIL + '.',
@@ -335,7 +339,7 @@ const EN = {
       ]
     },
     {
-      id: 'privacidad', title: 'Privacy policy', updated: 'Last updated: August 2026',
+      id: 'privacidad', title: 'Privacy policy', updated: 'Last updated: September 2026',
       clauses: [
         { h: '1. Data controller', p: [
           'Controller: ' + TITULAR + '. Address: ' + DOM + '. Email: ' + MAIL + '.',
@@ -350,13 +354,30 @@ const EN = {
           'Managing the contractual relationship and the resulting tax and accounting obligations, based on performance of the contract and compliance with legal obligations (articles 6.1.b and 6.1.c GDPR).',
           'Measuring website usage for statistical and improvement purposes, based on consent where cookies or non-exempt identifiers are used, and on legitimate interest where measurement is aggregated and does not identify the user.'
         ]},
+        { h: '3 bis. Venue loyalty programmes', p: [
+          'Some businesses using the IPSO HUB activate a digital stamp card. When tapping the point, the customer may voluntarily leave their phone number to accumulate visits.',
+          'Data processed: phone number and visit counter. No name, email or payment data is collected.',
+          'Controller: the owner of the venue where the visit is recorded. Ipso acts as processor under a contract compliant with article 28 GDPR.',
+          'Purpose: counting the customer\u2019s visits at that venue and notifying them, by a single WhatsApp message, when they reach the reward set by the venue. No campaigns, promotions or additional reminders are sent.',
+          'Legal basis: the data subject\u2019s consent (article 6.1.a GDPR), given when entering their number.',
+          'Retention: while the customer participates and for a maximum of twenty-four months from their last visit; the number is then deleted and only aggregated, non-identifying figures are kept.',
+          'Disclosure to third parties: the number is not shared with other venues or used for cross-venue discounts. The reward message is sent via WhatsApp (Meta Platforms Ireland Ltd.), which processes the number under its own terms.',
+          'Rights: the customer may at any time request deletion of their number by writing to ' + MAIL + ' or to the venue itself, without losing any reward already earned. Other rights are exercised as set out in the relevant clause of this policy.',
+          'The number is stored encrypted and the customer can delete it themselves using the \u201cDelete my data\u201d option on the point.'
+        ]},
+        { h: '3 ter. Artificial-intelligence assistant', p: [
+          'The IPSO HUB includes a conversational assistant based on artificial intelligence, identified as such on screen.',
+          'It answers using the menu and information provided by each venue, through a Google language model (Gemini) that may process the query outside the European Economic Area under the safeguards in section 6.',
+          'The customer\u2019s phone number and loyalty data are not sent to the assistant; conversations are used only to answer and not for advertising or profiling.'
+        ]},
         { h: '4. Retention periods', p: [
           'Enquiry data is kept while the request is handled and thereafter for the limitation period of any actions that may arise. Documentation of tax relevance is kept for the legally required periods.',
           'Aggregated browsing statistics are kept for a maximum of twenty-six months.'
         ]},
         { h: '5. Recipients and processors', p: [
-          'Data is not disclosed to third parties except where legally required. The following providers act as processors under article 28 GDPR: Cloudflare, Inc. (website hosting and aggregated analytics) and FormSubmit (technical delivery of form submissions to Ipso\u2019s inbox).',
-          'Should a cookie-based analytics tool be added in the future, this policy will be updated and prior user consent will be requested.'
+          'Data is not disclosed to third parties except where legally required. The following providers act as processors under article 28 GDPR: Cloudflare, Inc. (website hosting and aggregated analytics), FormSubmit (technical delivery of form submissions to Ipso\u2019s inbox) and Google Ireland Ltd. (language model for the assistant).',
+          'Should a cookie-based analytics tool be added in the future, this policy will be updated and prior user consent will be requested.',
+          'The single reward message of the loyalty programmes is sent through WhatsApp (Meta Platforms Ireland Ltd.), as messaging channel provider.'
         ]},
         { h: '6. International transfers', p: [
           'Some providers may process data outside the European Economic Area. In such cases the transfer relies on European Commission adequacy decisions or on standard contractual clauses, with any additional safeguards required.'
@@ -374,7 +395,7 @@ const EN = {
       ]
     },
     {
-      id: 'cookies', title: 'Cookie policy', updated: 'Last updated: August 2026',
+      id: 'cookies', title: 'Cookie policy', updated: 'Last updated: September 2026',
       clauses: [
         { h: '1. What cookies are', p: [
           'A cookie is a small file downloaded onto the user\u2019s device when visiting a website, allowing information about browsing to be stored and retrieved. This policy follows article 22.2 LSSI-CE and the Spanish Data Protection Agency\u2019s guidance on the use of cookies.'
@@ -382,7 +403,8 @@ const EN = {
         { h: '2. Cookies used on this website', p: [
           'Technical and security cookies, exempt from consent: necessary to serve the site, balance load and protect against malicious traffic. They are managed by the hosting provider (Cloudflare) and last from the session up to thirty minutes of inactivity.',
           'Cookieless aggregated analytics: the site infrastructure produces visit statistics without installing cookies or identifying individuals.',
-          'This website installs no analytics, advertising or profiling cookies. As there are no cookies subject to consent, no cookie banner is displayed. Should any be added, prior consent would be requested through a notice offering accept, reject and configure options.'
+          'This website installs no analytics, advertising or profiling cookies. As there are no cookies subject to consent, no cookie banner is displayed. Should any be added, prior consent would be requested through a notice offering accept, reject and configure options.',
+          'IPSO HUB points (go.ipsoglobal.com) use technical cookies only: the chosen language, recognising the customer on the stamp card and verifying that they have physically tapped the point. They are necessary for the service the customer requests, are not used for advertising or analytics and therefore require no consent notice.'
         ]},
         { h: '3. Consent', p: [
           'Under the current configuration the website only uses technical and security cookies, which are exempt from the prior consent requirement under article 22.2 LSSI-CE, so no cookie banner is displayed.',
@@ -409,7 +431,7 @@ const CA = {
   menu: ['Solucions', 'Plans', 'Dubtes', 'Contacte'],
   docs: [
     {
-      id: 'aviso-legal', title: 'Avís legal', updated: 'Última actualització: agost de 2026',
+      id: 'aviso-legal', title: 'Avís legal', updated: 'Última actualització: setembre de 2026',
       clauses: [
         { h: '1. Titular del lloc web', p: [
           'En compliment de l\u2019article 10 de la Llei 34/2002, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE), s\u2019informa que aquest lloc web és titularitat de ' + TITULAR + ', amb domicili a efectes de notificacions a ' + DOM + ' i adreça electrònica de contacte ' + MAIL + '.',
@@ -444,7 +466,7 @@ const CA = {
       ]
     },
     {
-      id: 'privacidad', title: 'Política de privacitat', updated: 'Última actualització: agost de 2026',
+      id: 'privacidad', title: 'Política de privacitat', updated: 'Última actualització: setembre de 2026',
       clauses: [
         { h: '1. Responsable del tractament', p: [
           'Responsable: ' + TITULAR + '. Domicili: ' + DOM + '. Adreça electrònica: ' + MAIL + '.',
@@ -459,13 +481,30 @@ const CA = {
           'Gestionar la relació contractual i les obligacions fiscals i comptables derivades de la prestació del servei, sobre la base de l\u2019execució del contracte i del compliment d\u2019obligacions legals (articles 6.1.b i 6.1.c del RGPD).',
           'Mesurar l\u2019ús del lloc web amb finalitats estadístiques i de millora, sobre la base del consentiment quan s\u2019utilitzen cookies o identificadors no exempts, i de l\u2019interès legítim quan la mesura és agregada i no permet identificar l\u2019usuari.'
         ]},
+        { h: '3 bis. Programes de fidelització dels locals', p: [
+          'Alguns negocis que fan servir l\u2019IPSO HUB activen una targeta de segells digital. En tocar el punt, el client pot deixar voluntàriament el seu número de telèfon per acumular visites.',
+          'Dades tractades: número de telèfon i comptador de visites. No es recullen nom, correu ni dades de pagament.',
+          'Responsable: el titular del local on es registra la visita. Ipso actua com a encarregat del tractament, amb contracte conforme a l\u2019article 28 del RGPD.',
+          'Finalitat: comptar les visites del client en aquell local i avisar-lo, mitjançant un únic missatge de WhatsApp, quan assoleixi el premi fixat pel local. No s\u2019envien campanyes, promocions ni recordatoris addicionals.',
+          'Base jurídica: consentiment de l\u2019interessat (article 6.1.a del RGPD), prestat en introduir el seu número.',
+          'Conservació: mentre el client participi i, com a màxim, vint-i-quatre mesos des de la seva darrera visita; després el número s\u2019elimina i només es conserven xifres agregades sense identificar.',
+          'Comunicació a tercers: el número no es comparteix amb altres locals ni es fa servir per a descomptes creuats. Per enviar el missatge de premi s\u2019utilitza WhatsApp (Meta Platforms Ireland Ltd.), que tracta el número segons les seves pròpies condicions.',
+          'Drets: el client pot demanar en qualsevol moment l\u2019esborrat del seu número escrivint a ' + MAIL + ' o al mateix local, sense perdre cap dret ja obtingut. La resta de drets s\u2019exerceixen segons la clàusula corresponent d\u2019aquesta política.',
+          'El número es guarda xifrat i el client pot esborrar-lo ell mateix des de l\u2019opció \u201cEsborrar les meves dades\u201d del mateix punt.'
+        ]},
+        { h: '3 ter. Assistent amb intel·ligència artificial', p: [
+          'L\u2019IPSO HUB inclou un assistent conversacional basat en intel·ligència artificial, identificat com a tal en pantalla.',
+          'Respon amb la carta i la informació que facilita cada local, mitjançant un model de llenguatge de Google (Gemini) que pot tractar la consulta fora de l\u2019Espai Econòmic Europeu sota les garanties de l\u2019apartat 6.',
+          'A l\u2019assistent no se li envien el número de telèfon ni les dades de fidelització del client; les converses es fan servir només per respondre i no per a publicitat ni perfilat.'
+        ]},
         { h: '4. Terminis de conservació', p: [
           'Les dades de les consultes es conserven mentre es gestiona la sol·licitud i, després, durant el termini de prescripció de les accions que se\u2019n puguin derivar. La documentació amb rellevància fiscal es conserva durant els terminis legalment exigits.',
           'Les dades estadístiques de navegació es conserven de manera agregada durant un màxim de vint-i-sis mesos.'
         ]},
         { h: '5. Destinataris i encarregats del tractament', p: [
-          'No se cedeixen dades a tercers excepte per obligació legal. Per prestar el servei intervenen els proveïdors següents, que actuen com a encarregats del tractament amb contracte conforme a l\u2019article 28 del RGPD: Cloudflare, Inc. (allotjament del lloc i analítica agregada) i FormSubmit (tramitació tècnica de l\u2019enviament del formulari al correu d\u2019Ipso).',
-          'Si en el futur s\u2019incorporés una eina d\u2019analítica amb cookies, s\u2019informaria en aquesta política i se sol·licitaria el consentiment previ de l\u2019usuari.'
+          'No se cedeixen dades a tercers excepte per obligació legal. Per prestar el servei intervenen els proveïdors següents, que actuen com a encarregats del tractament amb contracte conforme a l\u2019article 28 del RGPD: Cloudflare, Inc. (allotjament del lloc i analítica agregada), FormSubmit (tramitació tècnica de l\u2019enviament del formulari al correu d\u2019Ipso) i Google Ireland Ltd. (model de llenguatge de l\u2019assistent).',
+          'Si en el futur s\u2019incorporés una eina d\u2019analítica amb cookies, s\u2019informaria en aquesta política i se sol·licitaria el consentiment previ de l\u2019usuari.',
+          'Per a l\u2019enviament de l\u2019únic missatge de premi dels programes de fidelització intervé WhatsApp (Meta Platforms Ireland Ltd.), com a proveïdor del canal de missatgeria.'
         ]},
         { h: '6. Transferències internacionals', p: [
           'Alguns proveïdors poden tractar dades fora de l\u2019Espai Econòmic Europeu. En aquests casos la transferència s\u2019empara en decisions d\u2019adequació de la Comissió Europea o en clàusules contractuals tipus, amb les garanties addicionals que resultin exigibles.'
@@ -483,7 +522,7 @@ const CA = {
       ]
     },
     {
-      id: 'cookies', title: 'Política de cookies', updated: 'Última actualització: agost de 2026',
+      id: 'cookies', title: 'Política de cookies', updated: 'Última actualització: setembre de 2026',
       clauses: [
         { h: '1. Què són les cookies', p: [
           'Una cookie és un fitxer petit que es descarrega al dispositiu de l\u2019usuari en visitar una pàgina web i que permet emmagatzemar i recuperar informació sobre la navegació. Aquesta política es regeix per l\u2019article 22.2 de la LSSI-CE i per la Guia sobre l\u2019ús de les cookies de l\u2019Agència Espanyola de Protecció de Dades.'
@@ -491,7 +530,8 @@ const CA = {
         { h: '2. Cookies utilitzades en aquest lloc', p: [
           'Cookies tècniques i de seguretat, exemptes de consentiment: són necessàries per servir el lloc, equilibrar la càrrega i protegir davant trànsit maliciós. Les gestiona el proveïdor d\u2019allotjament (Cloudflare) i la seva durada va des de la sessió fins a un màxim de trenta minuts d\u2019inactivitat.',
           'Analítica agregada sense cookies: la infraestructura del lloc genera estadístiques de visites sense instal·lar cookies ni identificar persones concretes.',
-          'Aquest lloc no instal·la cookies d\u2019analítica, publicitat ni perfilat. En no existir cookies subjectes a consentiment, no es mostra cap avís de cookies. Si en algun moment s\u2019incorporessin, se sol·licitaria el consentiment previ mitjançant un avís amb opcions d\u2019acceptar, rebutjar i configurar.'
+          'Aquest lloc no instal·la cookies d\u2019analítica, publicitat ni perfilat. En no existir cookies subjectes a consentiment, no es mostra cap avís de cookies. Si en algun moment s\u2019incorporessin, se sol·licitaria el consentiment previ mitjançant un avís amb opcions d\u2019acceptar, rebutjar i configurar.',
+          'Als punts IPSO HUB (go.ipsoglobal.com) només es fan servir cookies tècniques: l\u2019idioma triat, el reconeixement del client a la targeta de segells i la comprovació que ha tocat el punt físicament. Són necessàries per al servei que el mateix client sol·licita, no es fan servir per a publicitat ni analítica i per això no requereixen avís de consentiment.'
         ]},
         { h: '3. Consentiment', p: [
           'Amb la configuració actual del lloc només s\u2019utilitzen cookies tècniques i de seguretat, exemptes del deure de consentiment previ d\u2019acord amb l\u2019article 22.2 de la LSSI-CE, per la qual cosa no es mostra cap avís de cookies.',
