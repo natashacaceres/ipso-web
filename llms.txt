@@ -17,7 +17,7 @@
 - Placa de reservas en la puerta: reservar con un toque, incluso con el local cerrado.
 
 ## Datos
-- Web: https://ipsoglobal.com/ · Producto: https://ipsoglobal.com/hub.html · Nosotros: https://ipsoglobal.com/nosotros.html
+- Web: https://ipsoglobal.com/ · Producto: https://ipsoglobal.com/hub · Nosotros: https://ipsoglobal.com/nosotros
 - Contacto: contacto@ipsoglobal.com · WhatsApp +34 603 924 226
 - Zona: Barcelona, Cataluña, España. Idiomas de atención: español, catalán, inglés.
 - No afiliado a Google. Cumplimiento RGPD: el teléfono del cliente solo se usa para la fidelización y puede borrarse a petición.
