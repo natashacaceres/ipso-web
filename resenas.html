@@ -159,8 +159,13 @@
         </div>
         <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío gratuito en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía: si no te convence, te devolvemos el importe.</span></div>
         <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
-        <div style="margin-top: 26px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <a href="[ENLACE_RESENAS]" target="_blank" rel="noopener" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
+        <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="2">
+            <button onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+        <div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <a href="{{ compraLink }}" target="_blank" rel="noopener" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
           <a href="/#contacto" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 15px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Pedir presupuesto</a>
         </div>
         <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: #9CA39A;">
@@ -276,8 +281,7 @@ const S = {
   rotuloCantidad: 'Cantidad',
   tipos: [
     { label: 'Stand blanco', img: 'assets/sol-resenas.jpg', imgs: ['assets/sol-resenas.jpg', 'assets/sol-resenas-blanco2.jpg'] },
-    { label: 'Stand negro', img: 'assets/sol-resenas-negro.jpg', imgs: ['assets/sol-resenas-negro.jpg', 'assets/sol-resenas-negro2.jpg'] },
-    { label: 'Plate', img: 'assets/sol-resenas-plate.jpg', imgs: ['assets/sol-resenas-plate.jpg', 'assets/sol-resenas-plate2.jpg'] }
+    { label: 'Placa', img: 'assets/sol-resenas-plate.jpg', imgs: ['assets/sol-resenas-plate.jpg', 'assets/sol-resenas-plate2.jpg'] }
   ],
   pasos: [
     { n: '01', t: 'Lo conectamos a tu ficha', d: 'Llega programado con tu negocio. Tú no configuras nada.' },
@@ -382,6 +386,7 @@ class Component extends DCLogic {
         pick: () => { if (this._hero) this._hero.src = g.src; this.setState({ tipo: g.ti, vista: g.vi }); }
       })),
       heroRef: (el) => { this._hero = el; },
+      compraLink: this.state.tipo === 1 ? '[ENLACE_PLACA]' : '[ENLACE_STAND]',
       tipos: S.tipos.map((t, k) => ({
         label: t.label,
         style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',

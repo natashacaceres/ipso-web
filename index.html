@@ -275,7 +275,7 @@
   </section>
 
   <!-- ============ SOLUCIONES (carrusel horizontal anclado) ============ -->
-  <section id="soluciones" style="scroll-margin-top: 72px;">
+  <section style="scroll-margin-top: 72px;">
     <div id="hub" style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 120px; scroll-margin-top: 90px;">
       <div data-reveal="1" style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; align-items: stretch;">
         <div style="position: relative; border-radius: 20px; overflow: hidden; min-height: 340px;">
@@ -439,7 +439,7 @@
     <div id="sol-spacer" style="position: relative; padding-top: 88px; scroll-margin-top: 0;">
       <div id="sol-pin" style="display: flex; flex-direction: column; justify-content: flex-start;">
         <div id="sol-intro" style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 64px 24px 0;">
-          <p data-intro="1" style="margin: 0; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; color: #F4F6F3; max-width: 34ch;">¿Solo necesitas una?</p>
+          <p id="soluciones" data-intro="1" style="margin: 0; scroll-margin-top: 90px; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; color: #F4F6F3; max-width: 34ch;">¿Solo necesitas una?</p>
         </div>
         <div id="sol-rail" data-rail="1" style="max-width: 1200px; width: 100%; margin: 0 auto; display: flex; gap: 10px; overflow-x: auto; padding: 20px 24px 16px; scroll-behavior: auto;">
             <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
@@ -507,7 +507,10 @@
                             <span>{{ f }}</span>
                           </sc-for>
                         </div>
-                        <a href="{{ s.link }}" style="display: block; text-align: center; margin-top: auto; font-size: 14px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 11px 18px; white-space: nowrap; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-1px);">Lo quiero</a>
+                        <sc-if value="{{ s.agotado }}" hint-placeholder-val="{{ false }}">
+                          <div style="margin-top: 12px; display: flex;"><span style="font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: #8B918A; border: 1px solid #262924; border-radius: 999px; padding: 4px 10px; white-space: nowrap;">Agotado por ahora</span></div>
+                        </sc-if>
+                        <a href="{{ s.link }}" style="display: block; text-align: center; margin-top: auto; font-size: 14px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 11px 18px; white-space: nowrap; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-1px);">{{ s.cta }}</a>
                         </div>
                       </div>
                     </div>
@@ -756,7 +759,7 @@ const EN_PAIRS = [
   ['Reservar mesa', 'Book a table'], ['Hoy · 2 personas', 'Today · 2 people'], ['Nombre y teléfono', 'Name and phone'],
   ['Confirmar reserva', 'Confirm booking'], ['Reseña en Google', 'Google review'], ['Reserva en 2 toques', 'Booking in two taps'],
   ['Diferentes soluciones, misma tecnología.', 'Different solutions, one technology.'],
-  ['Recomendado', 'Recommended'], ['pago único', 'one-off'], ['Lo quiero', 'I want it'], ['Lo quiero completo', 'I want the full plan'],
+  ['Recomendado', 'Recommended'], ['pago único', 'one-off'], ['Lo quiero', 'I want it'], ['Agotado por ahora', 'Sold out for now'], ['Avísame cuando vuelva', 'Let me know when it is back'], ['Lo quiero completo', 'I want the full plan'],
   ['Pago único. Sin permanencia.', 'One-off payment. No lock-in.'], ['Factura con IVA', 'Invoice with VAT'],
   ['Programación incluida', 'Installation included in Barcelona and surrounding area'],
   ['Garantía de devolución', 'Money-back guarantee'],
@@ -900,7 +903,7 @@ const CA_PAIRS = [
   ['Reservar mesa', 'Reservar taula'], ['Hoy · 2 personas', 'Avui · 2 persones'], ['Nombre y teléfono', 'Nom i telèfon'],
   ['Confirmar reserva', 'Confirmar reserva'], ['Reseña en Google', 'Ressenya a Google'], ['Reserva en 2 toques', 'Reserva en 2 tocs'],
   ['Diferentes soluciones, misma tecnología.', 'Diferents solucions, la mateixa tecnologia.'],
-  ['Recomendado', 'Recomanat'], ['pago único', 'pagament únic'], ['Lo quiero', 'El vull'], ['Lo quiero completo', 'El vull complet'],
+  ['Recomendado', 'Recomanat'], ['pago único', 'pagament únic'], ['Lo quiero', 'El vull'], ['Agotado por ahora', 'Exhaurit per ara'], ['Avísame cuando vuelva', 'Avisa\u2019m quan torni'], ['Lo quiero completo', 'El vull complet'],
   ['Pago único. Sin permanencia.', 'Pagament únic. Sense permanència.'], ['Factura con IVA', 'Factura amb IVA'],
   ['Programación incluida', 'Instal·lació inclosa a Barcelona i rodalies'],
   ['Garantía de devolución', 'Garantia de devolució'],
@@ -1393,7 +1396,9 @@ class Component extends DCLogic {
       sel: SOLUCIONES[i],
       panels: SOLUCIONES.map((x, k) => Object.assign({}, x, {
         destacado: false,
-        link: x.fotoWifi ? 'wifi.html' : x.fotoResenas ? 'resenas.html' : x.fotoMenu ? 'menu.html' : x.fotoReservas ? 'reservas.html' : '#contacto'
+        agotado: !x.fotoResenas,
+        cta: x.fotoResenas ? 'Lo quiero' : 'Avísame cuando vuelva',
+        link: x.fotoResenas ? 'resenas.html' : '#contacto'
       })),
       tabs: SOLUCIONES.map((s, k) => ({
         name: s.name,

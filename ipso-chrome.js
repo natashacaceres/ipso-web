@@ -83,7 +83,7 @@ export function applyTheme(theme) {
 
 /* Textos comunes de las fichas de solución. */
 const EN_PAIRS = [
-  ['Comprar', 'Buy'], ['Pedir presupuesto', 'Request a quote'], ['Envío gratuito en España.', 'Free shipping in Spain.'], ['de garantía: si no te convence, te devolvemos el importe.', 'guarantee: if it does not convince you, we refund the amount.'],
+  ['Comprar', 'Buy'], ['Agotado por ahora', 'Sold out for now'], ['Avísame cuando vuelva', 'Let me know when it is back'], ['Placa', 'Plate'], ['Pedir presupuesto', 'Request a quote'], ['Envío gratuito en España.', 'Free shipping in Spain.'], ['de garantía: si no te convence, te devolvemos el importe.', 'guarantee: if it does not convince you, we refund the amount.'],
   ['Pieza programada con tus datos', 'Piece programmed with your details'], ['Envío gratuito o instalación en Barcelona', 'Free shipping or installation in Barcelona'], ['30 días de garantía de reembolso', '30-day money-back guarantee'],
   ['¿Puedo cambiar la programación más adelante?', 'Can I change the programming later?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'The piece arrives programmed with your details. If you later want to change it, we reprogram it for 15 €. If you want unlimited changes, an assistant and a monthly report, that is the IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Each piece is one plate. Order as many as tables you want to cover.'],
@@ -107,7 +107,7 @@ const EN_PAIRS = [
   ['Reseñas Google', 'Google Reviews'], ['Más reseñas en Google, sin pedirlas a mano.', 'More Google reviews, without asking one by one.'],
   ['Reservas', 'Bookings'], ['Que reserven antes de salir del local.', 'Let them book before they leave.'],
   ['Menú', 'Menu'], ['Tu carta, desde la mesa. Cambias un precio y está cambiado.', 'Your menu, from the table. Change a price and it is changed.'], ['¿Quieres que además recomiende y atienda en su idioma? Eso es el IPSO HUB →', 'Want it to also recommend and serve in their language? That is the IPSO HUB →'],
-  ['Stand blanco', 'White stand'], ['Stand negro', 'Black stand'], ['Plate', 'Plate'],
+  ['Stand blanco', 'White stand'],
   ['Programamos tu red', 'We programme your network'], ['Con tu nombre de red y tu clave.', 'With your network name and password.'],
   ['Lo pones en mesa o barra', 'You place it on a table or the bar'], ['Donde la gente se sienta y saca el móvil.', 'Where people sit down and take out their phone.'],
   ['Tocan o escanean, copian y dentro', 'They tap or scan, copy and they are in'], ['La clave se copia sola. Funciona en todos los iPhone y Android.', 'The password copies itself. Works on every iPhone and Android.'],
@@ -145,7 +145,7 @@ const EN_PAIRS = [
 ];
 
 const CA_PAIRS = [
-  ['Comprar', 'Comprar'], ['Pedir presupuesto', 'Demanar pressupost'], ['Envío gratuito en España.', 'Enviament gratuït a Espanya.'], ['de garantía: si no te convence, te devolvemos el importe.', 'de garantia: si no et convenç, et retornem l\u2019import.'],
+  ['Comprar', 'Comprar'], ['Agotado por ahora', 'Exhaurit per ara'], ['Avísame cuando vuelva', 'Avisa\u2019m quan torni'], ['Placa', 'Placa'], ['Pedir presupuesto', 'Demanar pressupost'], ['Envío gratuito en España.', 'Enviament gratuït a Espanya.'], ['de garantía: si no te convence, te devolvemos el importe.', 'de garantia: si no et convenç, et retornem l\u2019import.'],
   ['Pieza programada con tus datos', 'Peça programada amb les teves dades'], ['Envío gratuito o instalación en Barcelona', 'Enviament gratuït o instal·lació a Barcelona'], ['30 días de garantía de reembolso', '30 dies de garantia de devolució'],
   ['¿Puedo cambiar la programación más adelante?', 'Puc canviar la programació més endavant?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'La peça arriba programada amb les teves dades. Si més endavant vols canviar-la, la reprogramem per 15 €. Si vols canvis il·limitats, assistent i informe mensual, això és l\u2019IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Cada peça és una placa. Demana\u2019n tantes com taules vulguis cobrir.'],
@@ -169,7 +169,7 @@ const CA_PAIRS = [
   ['Reseñas Google', 'Ressenyes Google'], ['Más reseñas en Google, sin pedirlas a mano.', 'Més ressenyes a Google, sense demanar-les una a una.'],
   ['Reservas', 'Reserves'], ['Que reserven antes de salir del local.', 'Que reservin abans de sortir del local.'],
   ['Menú', 'Menú'], ['Tu carta, desde la mesa. Cambias un precio y está cambiado.', 'La teva carta, des de la taula. Canvies un preu i està canviat.'], ['¿Quieres que además recomiende y atienda en su idioma? Eso es el IPSO HUB →', 'Vols que a més recomani i atengui en el seu idioma? Això és l\u2019IPSO HUB →'],
-  ['Stand blanco', 'Stand blanc'], ['Stand negro', 'Stand negre'], ['Plate', 'Plate'],
+  ['Stand blanco', 'Stand blanc'],
   ['Programamos tu red', 'Programem la teva xarxa'], ['Con tu nombre de red y tu clave.', 'Amb el nom de la teva xarxa i la clau.'],
   ['Lo pones en mesa o barra', 'El poses a taula o barra'], ['Donde la gente se sienta y saca el móvil.', 'On la gent s\u2019asseu i treu el mòbil.'],
   ['Tocan o escanean, copian y dentro', 'Toquen o escanegen, copien i dins'], ['La clave se copia sola. Funciona en todos los iPhone y Android.', 'La clau es copia sola. Funciona a tots els iPhone i Android.'],
