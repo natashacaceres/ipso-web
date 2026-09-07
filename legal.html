@@ -59,13 +59,13 @@
 
   <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
-      <a href="/index" style="flex: none; display: block;">
+      <a href="/" style="flex: none; display: block;">
         <img src="assets/ipso-lockup-alpha.png" alt="Ipso" style="height: 40px; width: auto; display: block;">
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
         <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nHub }}</a>
         <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
+          <a href="/#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
           <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
             <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
             <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
@@ -74,7 +74,7 @@
           </div>
         </div>
       </nav>
-      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -100,16 +100,15 @@
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nHub }}</a>
-          <a href="{{ mSol }}" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nSol }}</a>
+          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nSol }}</a>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid #161815;">
             <a href="/wifi" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">WiFi</a>
             <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reseñas Google</a>
             <a href="/menu" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Menú</a>
             <a href="/reservas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reservas</a>
           </div>
-          <a href="index.html#como-funciona" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nCom }}</a>
-          <a href="{{ mPla }}" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
-          <a href="{{ mCon }}" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">{{ nCon }}</a>
+          <a href="/#precios" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">{{ nCon }}</a>
         </div>
       </div>
     </sc-if>
@@ -165,9 +164,9 @@
     <div style="max-width: 900px; margin: 0 auto; padding: 36px 24px 72px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; font-size: 12.5px; color: #767B75;">
       <span>© 2026 Ipso · Barcelona</span>
       <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <a href="/index" style="color: #767B75;" style-hover="color: #FFFFFF;">{{ backHome }}</a>
+        <a href="/" style="color: #767B75;" style-hover="color: #FFFFFF;">{{ backHome }}</a>
         <a href="/nosotros" style="color: #767B75;" style-hover="color: #FFFFFF;">Nosotros</a>
-        <a href="index.html#contacto" style="color: #767B75;" style-hover="color: #FFFFFF;">Contacto</a>
+        <a href="/#contacto" style="color: #767B75;" style-hover="color: #FFFFFF;">Contacto</a>
       </div>
     </div>
   </footer>
@@ -194,11 +193,11 @@ const ES = {
       clauses: [
         { h: '1. Titular del sitio web', p: [
           'En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que este sitio web es titularidad de ' + TITULAR + ', con domicilio a efectos de notificaciones en ' + DOM + ' y correo electrónico de contacto ' + MAIL + '.',
-          'Ipso es la marca comercial bajo la que se presta la actividad de instalación y configuración de soluciones de tecnología de contacto para negocios, así como los servicios de consultoría asociados.'
+          'Ipso es la marca comercial bajo la que se presta la actividad de instalación y configuración de soluciones de tecnología de contacto para negocios.'
         ]},
         { h: '2. Objeto', p: [
           'El presente aviso legal regula el acceso, la navegación y el uso de este sitio web. La navegación atribuye la condición de usuario e implica la aceptación plena de estas condiciones en la versión publicada en cada momento.',
-          'El sitio web tiene finalidad informativa y comercial: describe los servicios ofrecidos y permite solicitar información mediante un formulario de contacto. No se realizan ventas ni pagos en línea a través de esta web.'
+          'El sitio web tiene finalidad informativa y comercial: describe los servicios ofrecidos y permite solicitar información mediante un formulario de contacto. La contratación y el pago en línea se rigen por las Condiciones de contratación publicadas en esta misma página.'
         ]},
         { h: '3. Condiciones de uso', p: [
           'El usuario se compromete a utilizar el sitio de forma diligente y conforme a la ley, absteniéndose de introducir contenidos ilícitos, dañar los sistemas o intentar acceder a áreas restringidas.',
@@ -311,7 +310,8 @@ const ES = {
           "La contratación del IPSO HUB a través de esta web se realiza mediante la plataforma de pago Stripe. Al completar el pago aceptas estas condiciones y el aviso legal."
         ]},
         { h: "Qué contratas", p: [
-          "Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y la instalación en tu local en Barcelona o el envío a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta."
+          "Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y la instalación en tu local en Barcelona o el envío a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta.",
+          "Las soluciones sueltas (WiFi, Reseñas, Menú y Reservas) se contratan con un pago único, sin cuota, e incluyen la pieza programada con tus datos y el envío. La reprogramación posterior tiene un coste de 15 € + IVA. Tienen la misma garantía de 30 días de reembolso."
         ]},
         { h: "Plazos", p: [
           "Instalación o envío en un plazo de 48 a 72 horas laborables desde que recibimos los datos de tu local. Si el punto llega dañado o no funciona, lo reponemos sin coste."
@@ -346,11 +346,11 @@ const EN = {
       clauses: [
         { h: '1. Website owner', p: [
           'In accordance with article 10 of Spanish Act 34/2002 on Information Society Services and Electronic Commerce, this website is owned by ' + TITULAR + ', with address for notices at ' + DOM + ' and contact email ' + MAIL + '.',
-          'Ipso is the trade name under which contact-technology solutions for businesses are installed and configured, together with the related advisory services.'
+          'Ipso is the trade name under which contact-technology solutions for businesses are installed and configured.'
         ]},
         { h: '2. Purpose', p: [
           'This legal notice governs access to, browsing of and use of this website. Browsing the site grants user status and implies full acceptance of these terms as published at any given time.',
-          'The website is informative and commercial in nature: it describes the services offered and allows visitors to request information through a contact form. No sales or payments are processed on this website.'
+          'The website is informative and commercial in nature: it describes the services offered and allows visitors to request information through a contact form. Online purchases and payments are governed by the Purchase terms published on this same page.'
         ]},
         { h: '3. Terms of use', p: [
           'Users undertake to use the website diligently and lawfully, refraining from uploading unlawful content, damaging the systems or attempting to access restricted areas.',
@@ -463,7 +463,8 @@ const EN = {
           "The IPSO HUB is purchased through this website via the Stripe payment platform. By completing the payment you accept these terms and the legal notice."
         ]},
         { h: "What you are purchasing", p: [
-          "A one-off setup fee (99 € + VAT) that includes one NFC point, its configuration with the details you provide, and installation at your venue in Barcelona or shipping anywhere in Spain. Additional points at 25 € + VAT each. A monthly fee of 19 € + VAT per venue, charged automatically every month to the same card."
+          "A one-off setup fee (99 € + VAT) that includes one NFC point, its configuration with the details you provide, and installation at your venue in Barcelona or shipping anywhere in Spain. Additional points at 25 € + VAT each. A monthly fee of 19 € + VAT per venue, charged automatically every month to the same card.",
+          "Standalone solutions (WiFi, Reviews, Menu and Bookings) are purchased with a one-off payment, no monthly fee, and include the piece programmed with your details and shipping. Later reprogramming costs 15 € + VAT. They carry the same 30-day money-back guarantee."
         ]},
         { h: "Timing", p: [
           "Installation or shipping within 48 to 72 working hours from receipt of your venue details. If the point arrives damaged or does not work, we replace it at no cost."
@@ -499,11 +500,11 @@ const CA = {
       clauses: [
         { h: '1. Titular del lloc web', p: [
           'En compliment de l\u2019article 10 de la Llei 34/2002, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE), s\u2019informa que aquest lloc web és titularitat de ' + TITULAR + ', amb domicili a efectes de notificacions a ' + DOM + ' i adreça electrònica de contacte ' + MAIL + '.',
-          'Ipso és la marca comercial sota la qual es presta l\u2019activitat d\u2019instal·lació i configuració de solucions de tecnologia de contacte per a negocis, així com els serveis de consultoria associats.'
+          'Ipso és la marca comercial sota la qual es presta l\u2019activitat d\u2019instal·lació i configuració de solucions de tecnologia de contacte per a negocis.'
         ]},
         { h: '2. Objecte', p: [
           'Aquest avís legal regula l\u2019accés, la navegació i l\u2019ús d\u2019aquest lloc web. La navegació atribueix la condició d\u2019usuari i implica l\u2019acceptació plena d\u2019aquestes condicions en la versió publicada en cada moment.',
-          'El lloc web té finalitat informativa i comercial: descriu els serveis oferts i permet sol·licitar informació mitjançant un formulari de contacte. No s\u2019hi fan vendes ni pagaments en línia.'
+          'El lloc web té finalitat informativa i comercial: descriu els serveis oferts i permet sol·licitar informació mitjançant un formulari de contacte. La contractació i el pagament en línia es regeixen per les Condicions de contractació publicades en aquesta mateixa pàgina.'
         ]},
         { h: '3. Condicions d\u2019ús', p: [
           'L\u2019usuari es compromet a fer servir el lloc de manera diligent i conforme a la llei, i s\u2019absté d\u2019introduir continguts il·lícits, danyar els sistemes o intentar accedir a àrees restringides.',
@@ -616,7 +617,8 @@ const CA = {
           "La contractació de l’IPSO HUB a través d’aquest web es fa mitjançant la plataforma de pagament Stripe. En completar el pagament acceptes aquestes condicions i l’avís legal."
         ]},
         { h: "Què contractes", p: [
-          "Una alta única (99 € + IVA) que inclou un punt NFC, la seva configuració amb les dades que ens facilitis i la instal·lació al teu local a Barcelona o l’enviament a qualsevol punt d’Espanya. Punts addicionals a 25 € + IVA cadascun. Una quota de 19 € + IVA al mes per local, que es cobra de manera automàtica cada mes a la mateixa targeta."
+          "Una alta única (99 € + IVA) que inclou un punt NFC, la seva configuració amb les dades que ens facilitis i la instal·lació al teu local a Barcelona o l’enviament a qualsevol punt d’Espanya. Punts addicionals a 25 € + IVA cadascun. Una quota de 19 € + IVA al mes per local, que es cobra de manera automàtica cada mes a la mateixa targeta.",
+          "Les solucions soltes (WiFi, Ressenyes, Menú i Reserves) es contracten amb un pagament únic, sense quota, i inclouen la peça programada amb les teves dades i l’enviament. La reprogramació posterior té un cost de 15 € + IVA. Tenen la mateixa garantia de 30 dies de devolució."
         ]},
         { h: "Terminis", p: [
           "Instal·lació o enviament en un termini de 48 a 72 hores laborables des que rebem les dades del teu local. Si el punt arriba danyat o no funciona, el reposem sense cost."

@@ -43,10 +43,13 @@
   summary::-webkit-details-marker { display: none; }
   summary { list-style: none; }
   details[open] summary [data-plus] { transform: rotate(45deg); color: #2BE7FF; }
-  @media (max-width: 1180px) {
-    [data-navrow] { flex-wrap: wrap; gap: 10px 16px; }
-    [data-navlinks] { order: 3; flex: 1 0 100% !important; justify-content: flex-start !important; gap: 18px !important; flex-wrap: wrap; }
-    [data-navlinks] a { font-size: 12.5px !important; }
+  @media (max-width: 1080px) {
+    [data-navrow] { flex-wrap: nowrap; gap: 14px; }
+    [data-navrow] > a:first-child { margin-right: auto; }
+    [data-navlinks] { display: none !important; }
+    [data-cta] { display: none !important; }
+    [data-burger] { display: flex !important; }
+    [data-themepills] { display: none !important; }
   }
   [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
@@ -81,13 +84,13 @@
 
   <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
     <div data-navrow="1" style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 24px;">
-      <a href="/index" style="flex: none; display: block;">
+      <a href="/" style="flex: none; display: block;">
         <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
         <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">IPSO HUB</a>
         <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Soluciones</a>
+          <a href="/#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Soluciones</a>
           <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
             <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
             <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
@@ -96,7 +99,7 @@
           </div>
         </div>
       </nav>
-      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -112,7 +115,28 @@
             </sc-for>
           </div>
       </div>
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
+        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
+        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
+        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
+      </button>
     </div>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">IPSO HUB</a>
+          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">Soluciones</a>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid #161815;">
+            <a href="/wifi" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">WiFi</a>
+            <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reseñas Google</a>
+            <a href="/menu" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Menú</a>
+            <a href="/reservas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reservas</a>
+          </div>
+          <a href="/#precios" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">Planes</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">Contacto</a>
+        </div>
+      </div>
+    </sc-if>
   </header>
 
   <!-- ============ 1 · CABECERA ============ -->
@@ -133,11 +157,11 @@
           <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</span>
           <span style="font-size: 13px; color: #8B918A;">pago único, + IVA</span>
         </div>
-        <div style="margin-top: 8px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">Con IVA: {{ precioIva }}</div>
-        <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío</span> <span style="color: #FF8A3D;">gratuito</span> <span>dentro de España y garantía de reembolso de tu dinero en hasta</span> <span style="color: #FF8A3D;">30 días</span><span>.</span></div>
+        <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío gratuito en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía: si no te convence, te devolvemos el importe.</span></div>
         <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
-        <div style="margin-top: 26px;">
-          <a href="#comprar" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Añadir a la cesta</a>
+        <div style="margin-top: 26px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <a href="[ENLACE_RESENAS]" target="_blank" rel="noopener" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
+          <a href="/#contacto" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 15px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Pedir presupuesto</a>
         </div>
         <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: #9CA39A;">
           <span>Sin app</span><span style="color: #3A3E38;">·</span><span>Funciona en cualquier móvil</span><span style="color: #3A3E38;">·</span><span>iPhone y Android</span>
@@ -154,61 +178,6 @@
               <img data-paymark="1" src="assets/pay-contactless.png" alt="Contactless" style="height: 22px; width: auto; display: block;">
             </div>
           </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 5 · SELECTOR DE COMPRA ============ -->
-  <section id="comprar" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 0; scroll-margin-top: 80px;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Elige tu pedido</h2>
-    <div data-reveal="1" style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 48px; align-items: start;">
-      <div>
-        <div style="font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">{{ rotuloCantidad }}</div>
-        <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px; max-width: 440px;">
-          <sc-for list="{{ lineas }}" as="t" hint-placeholder-count="3">
-            <div style="{{ t.rowStyle }}">
-              <button onClick="{{ t.ver }}" style="flex: 1; min-width: 0; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: {{ t.fg }}; background: transparent; border: none; padding: 0; cursor: pointer;">{{ t.label }}</button>
-              <div style="position: relative; flex: none;">
-                <button onClick="{{ t.toggle }}" aria-label="Unidades" style="display: flex; align-items: center; gap: 8px; font-family: inherit; font-size: 15px; font-weight: 600; color: #F4F6F3; background: transparent; border: 1px solid #3A3E38; border-radius: 10px; padding: 8px 12px; cursor: pointer; transition: border-color 160ms ease;" style-hover="border-color: #2BE7FF;">
-                  <span style="font-size: 11.5px; font-weight: 500; color: #8B918A;">Uds.</span>
-                  <span style="font-variant-numeric: tabular-nums;">{{ t.cantidad }}</span>
-                  <span style="font-size: 10px; color: #8B918A;">▾</span>
-                </button>
-                <sc-if value="{{ t.abierto }}" hint-placeholder-val="{{ false }}">
-                  <div ref="{{ t.ref }}" style="position: absolute; z-index: 40; top: calc(100% + 8px); right: 0; width: 120px; max-height: 200px; overflow-y: auto; scroll-snap-type: y mandatory; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 6px; box-shadow: 0 26px 54px -30px rgba(0,0,0,1);">
-                    <sc-for list="{{ t.opciones }}" as="q" hint-placeholder-count="6">
-                      <button onClick="{{ q.pick }}" style="display: block; width: 100%; scroll-snap-align: center; font-family: inherit; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: center; color: {{ q.fg }}; background: {{ q.bg }}; border: none; border-radius: 8px; padding: 9px 0; cursor: pointer; transition: background 140ms ease, color 140ms ease;">{{ q.n }}</button>
-                    </sc-for>
-                  </div>
-                </sc-if>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="margin-top: 28px;">
-      <div data-reveal="1" style="max-width: 780px; border-top: 1px solid #1A1C19;">
-        <details style="border-bottom: 1px solid #1A1C19;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">Especificaciones<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <div style="margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; max-width: 62ch;">
-            <sc-for list="{{ specs }}" as="e" hint-placeholder-count="3">
-              <span style="font-size: 15.5px; line-height: 1.55; color: #9CA39A;">{{ e }}</span>
-            </sc-for>
-          </div>
-        </details>
-      </div>
-        </div>
-      </div>
-      <div style="border: 1.5px solid #2BE7FF; border-radius: 18px; padding: 24px; background: linear-gradient(168deg, #06141A, #000000 62%); box-shadow: 0 20px 44px -34px rgba(43,231,255,.9);">
-        <div style="font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #B7BDB5;">Tu pedido</div>
-        <div style="margin-top: 12px; font-size: 15.5px; line-height: 1.5; color: #D2D6CF;">{{ resumen }}</div>
-        <div style="margin-top: 16px; display: flex; align-items: baseline; gap: 10px; font-variant-numeric: tabular-nums;">
-          <span style="font-size: 38px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ total }}</span>
-          <span style="font-size: 15px; color: #8B918A; text-decoration: line-through;">{{ antes }}</span>
-        </div>
-        <div style="margin-top: 6px; font-size: 14px; color: #B7BDB5; font-variant-numeric: tabular-nums;">Con IVA: {{ totalIva }}</div>
-        <div style="margin-top: 8px; font-size: 13.5px; font-weight: 600; color: #FF8A3D;">{{ ahorro }}</div>
-        <div style="margin-top: 10px; font-size: 12.5px; color: #8B918A;">Pago único, + IVA · Programación incluida · Garantía comercial 30 días</div>
-        <a href="index.html#contacto" style="display: block; text-align: center; margin-top: 20px; font-size: 15px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 14px 20px; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-1px);">Añadir a la cesta</a>
       </div>
     </div>
   </section>
@@ -241,6 +210,16 @@
         </div>
       </sc-for>
     </div>
+    <div data-reveal="1" style="margin-top: 28px; max-width: 780px; border-top: 1px solid #1A1C19;">
+      <details style="border-bottom: 1px solid #1A1C19;">
+        <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">Especificaciones<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+        <div style="margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; max-width: 62ch;">
+          <sc-for list="{{ specs }}" as="e" hint-placeholder-count="3">
+            <span style="font-size: 15.5px; line-height: 1.55; color: #9CA39A;">{{ e }}</span>
+          </sc-for>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- ============ 7 · DUDAS ============ -->
@@ -264,18 +243,18 @@
           <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="index.html#soluciones" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Soluciones</a>
-          <a href="index.html#precios" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Planes</a>
+          <a href="/#soluciones" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Soluciones</a>
+          <a href="/#precios" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Planes</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="index.html#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
-          <a href="index.html#contacto" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
+          <a href="/#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
+          <a href="/#contacto" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
           <a href="/nosotros" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Nosotros</a>
-          <a href="legal.html#aviso-legal" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Aviso legal</a>
-          <a href="legal.html#privacidad" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Privacidad</a>
-          <a href="legal.html#cookies" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Cookies</a>
+          <a href="/legal#aviso-legal" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Aviso legal</a>
+          <a href="/legal#privacidad" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Privacidad</a>
+          <a href="/legal#cookies" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Cookies</a>
         </div>
       </div>
       <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
@@ -305,7 +284,7 @@ const S = {
     { n: '02', t: 'Lo pones donde se paga', d: 'Mostrador, barra o recepción. Ocupa lo que un vaso.' },
     { n: '03', t: 'Tocan y opinan cuando quieren', d: 'Se abre tu ficha oficial de Google.' }
   ],
-  incluye: ['Stand o plate programado', 'Programación personalizada', 'Primer mes de panel y estadísticas', 'Ficha de Google conectada', 'Cambios y ajustes el primer año', 'Garantía comercial 30 días'],
+  incluye: ['Pieza programada con tus datos', 'Envío gratuito o instalación en Barcelona', '30 días de garantía de reembolso'],
   specs: [
     'NFC (acercar el móvil) → funciona en Android.',
     'QR → funciona en iPhone y Android.',
@@ -314,7 +293,8 @@ const S = {
   faq: [
     { q: '¿Esto está permitido por Google?', a: 'Sí. El punto abre tu ficha oficial de Google, la misma que enviarías por WhatsApp. No pedimos, no filtramos, no premiamos reseñas: Google lo prohíbe y nosotros tampoco lo hacemos.' },
     { q: '¿Necesito una app?', a: 'No. Ni tú ni tus clientes. Acercan el móvil y se abre tu ficha.' },
-    { q: '¿Hay cuota mensual?', a: 'No, pago único. Incluye el primer mes de panel y estadísticas.' }
+    { q: '¿Hay cuota mensual?', a: 'No, pago único. Incluye el primer mes de panel y estadísticas.' },
+    { q: '¿Puedo cambiar la programación más adelante?', a: 'La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.' }
   ]
 };
 
@@ -327,7 +307,7 @@ const FLAGS = { es: 'assets/flag-es.png', en: 'assets/flag-en.png', ca: 'assets/
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, theme: 'dark', lang: 'es' };
+  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, theme: 'dark', lang: 'es', menu: false };
 
   componentDidMount() {
     import('./ipso-chrome.js').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
@@ -356,6 +336,13 @@ class Component extends DCLogic {
         pick: () => { if (this.state.theme === t.id) return; this.setState({ theme: t.id }); }
       })),
       iconFg: this.state.theme === 'light' ? '#0B0C0A' : '#F4F6F3',
+      menuOpen: !!this.state.menu,
+      toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      burgerFg: this.state.theme === 'light' ? '#0B0C0A' : '#F4F6F3',
+      burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
+      burgerO: this.state.menu ? 0 : 1,
+      burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
       toggleTheme: () => { const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
       langMenuOpen: !!this.state.langMenu,
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })),

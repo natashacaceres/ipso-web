@@ -83,6 +83,10 @@ export function applyTheme(theme) {
 
 /* Textos comunes de las fichas de solución. */
 const EN_PAIRS = [
+  ['Comprar', 'Buy'], ['Pedir presupuesto', 'Request a quote'], ['Envío gratuito en España.', 'Free shipping in Spain.'], ['de garantía: si no te convence, te devolvemos el importe.', 'guarantee: if it does not convince you, we refund the amount.'],
+  ['Pieza programada con tus datos', 'Piece programmed with your details'], ['Envío gratuito o instalación en Barcelona', 'Free shipping or installation in Barcelona'], ['30 días de garantía de reembolso', '30-day money-back guarantee'],
+  ['¿Puedo cambiar la programación más adelante?', 'Can I change the programming later?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'The piece arrives programmed with your details. If you later want to change it, we reprogram it for 15 €. If you want unlimited changes, an assistant and a monthly report, that is the IPSO HUB.'],
+  ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Each piece is one plate. Order as many as tables you want to cover.'],
   ['Soluciones', 'Solutions'], ['Cómo funciona', 'How it works'], ['Precios', 'Prices'], ['Contacto', 'Contact'], ['Dudas', 'FAQ'],
   ['Oscuro', 'Dark'], ['Claro', 'Light'], 
   ['pago único, + IVA', 'one-off, + VAT'], ['Con IVA:', 'With VAT:'], ['pago único', 'one-off'], ['Programación incluida · Garantía comercial 30 días', 'Programming included · 30-day commercial guarantee'],
@@ -141,6 +145,10 @@ const EN_PAIRS = [
 ];
 
 const CA_PAIRS = [
+  ['Comprar', 'Comprar'], ['Pedir presupuesto', 'Demanar pressupost'], ['Envío gratuito en España.', 'Enviament gratuït a Espanya.'], ['de garantía: si no te convence, te devolvemos el importe.', 'de garantia: si no et convenç, et retornem l\u2019import.'],
+  ['Pieza programada con tus datos', 'Peça programada amb les teves dades'], ['Envío gratuito o instalación en Barcelona', 'Enviament gratuït o instal·lació a Barcelona'], ['30 días de garantía de reembolso', '30 dies de garantia de devolució'],
+  ['¿Puedo cambiar la programación más adelante?', 'Puc canviar la programació més endavant?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'La peça arriba programada amb les teves dades. Si més endavant vols canviar-la, la reprogramem per 15 €. Si vols canvis il·limitats, assistent i informe mensual, això és l\u2019IPSO HUB.'],
+  ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Cada peça és una placa. Demana\u2019n tantes com taules vulguis cobrir.'],
   ['Soluciones', 'Solucions'], ['Cómo funciona', 'Com funciona'], ['Precios', 'Preus'], ['Contacto', 'Contacte'], ['Dudas', 'Dubtes'],
   ['Oscuro', 'Fosc'], ['Claro', 'Clar'], 
   ['pago único, + IVA', 'pagament únic, + IVA'], ['Con IVA:', 'Amb IVA:'], ['pago único', 'pagament únic'], ['Programación incluida · Garantía comercial 30 días', 'Programació inclosa · Garantia comercial 30 dies'],
