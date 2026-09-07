@@ -49,7 +49,10 @@
     [data-burger] { display: flex !important; }
   }
   ::selection { background: #2BE7FF; color: #0B0C0A; }
+  [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
+  [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
 </style>
+<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -59,13 +62,19 @@
       <a href="/index" style="flex: none; display: block;">
         <img src="assets/ipso-lockup-alpha.png" alt="Ipso" style="height: 40px; width: auto; display: block;">
       </a>
-      <nav data-rail="1" data-navlinks="1" style="flex: 0 1 auto; min-width: 0; margin-left: auto; display: flex; align-items: center; justify-content: flex-start; gap: 18px; overflow-x: auto;">
-        <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nHub }}</a>
-        <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nSol }}</a>
-        <a href="index.html#como-funciona" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nCom }}</a>
-        <a href="index.html#precios" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nPla }}</a>
+      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
+        <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nHub }}</a>
+        <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
+          <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
+          <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
+            <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
+            <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+            <a href="/menu" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Menú</a>
+            <a href="/reservas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reservas</a>
+          </div>
+        </div>
       </nav>
-      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 8px; padding: 10px 16px; white-space: nowrap; transition: background 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF;">{{ nCon }}</a>
+      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -115,6 +124,7 @@
       <a href="#aviso-legal" style="font-size: 13.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #262924; border-radius: 999px; padding: 10px 16px;" style-hover="color: #FFFFFF; border-color: #2BE7FF;">{{ nav1 }}</a>
       <a href="#privacidad" style="font-size: 13.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #262924; border-radius: 999px; padding: 10px 16px;" style-hover="color: #FFFFFF; border-color: #2BE7FF;">{{ nav2 }}</a>
       <a href="#cookies" style="font-size: 13.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #262924; border-radius: 999px; padding: 10px 16px;" style-hover="color: #FFFFFF; border-color: #2BE7FF;">{{ nav3 }}</a>
+      <a href="#contratacion" style="font-size: 13.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #262924; border-radius: 999px; padding: 10px 16px;" style-hover="color: #FFFFFF; border-color: #2BE7FF;">{{ nav4 }}</a>
     </div>
 
     <sc-if value="{{ hasPend }}" hint-placeholder-val="{{ false }}">
@@ -163,6 +173,8 @@
   </footer>
 
 </div>
+
+  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const TITULAR = 'Natasha Cáceres Gómez, que opera bajo la marca comercial Ipso · NIF 61759305G';
@@ -172,7 +184,7 @@ const MAIL = 'contacto@ipsoglobal.com';
 const ES = {
   h1: 'Información legal',
   intro: 'Aviso legal, política de privacidad y política de cookies de Ipso. Documentos redactados conforme al RGPD (UE) 2016/679, la LOPDGDD 3/2018 y la LSSI-CE 34/2002.',
-  nav: ['Aviso legal', 'Política de privacidad', 'Política de cookies'],
+  nav: ['Aviso legal', 'Política de privacidad', 'Política de cookies', 'Condiciones de contratación'],
   pendTitle: 'Pendiente de completar antes de publicar',
   pendientes: [],
   backHome: 'Inicio',
@@ -291,6 +303,32 @@ const ES = {
           'Esta política puede modificarse cuando cambien las cookies utilizadas o la normativa aplicable. Recomendamos revisarla periódicamente. Para cualquier duda: ' + MAIL + '.'
         ]}
       ]
+    },
+    {
+      id: 'contratacion', title: "Condiciones de contratación online", updated: "Última actualización: septiembre de 2026",
+      clauses: [
+        { h: "Contratación a través de esta web", p: [
+          "La contratación del IPSO HUB a través de esta web se realiza mediante la plataforma de pago Stripe. Al completar el pago aceptas estas condiciones y el aviso legal."
+        ]},
+        { h: "Qué contratas", p: [
+          "Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y la instalación en tu local en Barcelona o el envío a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta."
+        ]},
+        { h: "Plazos", p: [
+          "Instalación o envío en un plazo de 48 a 72 horas laborables desde que recibimos los datos de tu local. Si el punto llega dañado o no funciona, lo reponemos sin coste."
+        ]},
+        { h: "Garantía, cuota y baja", p: [
+          "Si en los 30 días siguientes a la instalación o entrega el servicio no te convence, nos lo dices y te devolvemos el importe de la alta; retiramos o recogemos el punto sin coste. La primera cuota se cobra el día que el punto queda operativo. Pasados esos 30 días, puedes darte de baja en cualquier momento avisando con 15 días por WhatsApp o correo; no se cobrará la cuota siguiente. Las cuotas ya cobradas no se devuelven. Al terminar, tus datos de clientes se te entregan o se eliminan, según nos indiques."
+        ]},
+        { h: "Empresas", p: [
+          "Este servicio se dirige a negocios y profesionales. Al contratar declaras actuar en el ejercicio de tu actividad, por lo que no resulta de aplicación el derecho de desistimiento previsto para consumidores."
+        ]},
+        { h: "Facturas", p: [
+          "Recibirás la factura de cada cobro por correo electrónico, emitida a nombre y NIF que indiques en el pago."
+        ]},
+        { h: "Propiedad", p: [
+          "El software, los diseños y la marca son de Ipso. Recibes una licencia de uso mientras el servicio esté activo. El soporte físico es tuyo desde el pago de la alta."
+        ]}
+      ]
     }
   ]
 };
@@ -298,7 +336,7 @@ const ES = {
 const EN = {
   h1: 'Legal information',
   intro: 'Legal notice, privacy policy and cookie policy for Ipso. Drafted in accordance with the GDPR (EU) 2016/679, Spanish Act 3/2018 (LOPDGDD) and Spanish Act 34/2002 (LSSI-CE). The Spanish version prevails in case of discrepancy.',
-  nav: ['Legal notice', 'Privacy policy', 'Cookie policy'],
+  nav: ['Legal notice', 'Privacy policy', 'Cookie policy', 'Purchase terms'],
   pendTitle: 'To be completed before publication',
   pendientes: [],
   backHome: 'Home',
@@ -417,6 +455,32 @@ const EN = {
           'This policy may be amended when the cookies used or the applicable rules change. We recommend reviewing it periodically. For any questions: ' + MAIL + '.'
         ]}
       ]
+    },
+    {
+      id: 'contratacion', title: "Online purchase terms", updated: "Last updated: September 2026",
+      clauses: [
+        { h: "Purchasing through this website", p: [
+          "The IPSO HUB is purchased through this website via the Stripe payment platform. By completing the payment you accept these terms and the legal notice."
+        ]},
+        { h: "What you are purchasing", p: [
+          "A one-off setup fee (99 € + VAT) that includes one NFC point, its configuration with the details you provide, and installation at your venue in Barcelona or shipping anywhere in Spain. Additional points at 25 € + VAT each. A monthly fee of 19 € + VAT per venue, charged automatically every month to the same card."
+        ]},
+        { h: "Timing", p: [
+          "Installation or shipping within 48 to 72 working hours from receipt of your venue details. If the point arrives damaged or does not work, we replace it at no cost."
+        ]},
+        { h: "Guarantee, fee and cancellation", p: [
+          "If within 30 days of installation or delivery the service does not convince you, let us know and we refund the setup fee; we remove or collect the point at no cost. The first monthly fee is charged on the day the point becomes operational. After those 30 days, you can cancel at any time with 15 days’ notice by WhatsApp or email; the following fee will not be charged. Fees already charged are not refunded. On termination, your customer data is handed over to you or deleted, as you instruct."
+        ]},
+        { h: "Businesses", p: [
+          "This service is aimed at businesses and professionals. By purchasing you declare that you act in the course of your business activity, so the right of withdrawal provided for consumers does not apply."
+        ]},
+        { h: "Invoices", p: [
+          "You will receive an invoice for each charge by email, issued to the name and tax ID you provide at payment."
+        ]},
+        { h: "Ownership", p: [
+          "The software, designs and brand belong to Ipso. You receive a licence to use them while the service is active. The physical device is yours from payment of the setup fee."
+        ]}
+      ]
     }
   ]
 };
@@ -424,7 +488,7 @@ const EN = {
 const CA = {
   h1: 'Informació legal',
   intro: 'Avís legal, política de privacitat i política de cookies d\u2019Ipso. Documents redactats d\u2019acord amb el RGPD (UE) 2016/679, la LOPDGDD 3/2018 i la LSSI-CE 34/2002.',
-  nav: ['Avís legal', 'Política de privacitat', 'Política de cookies'],
+  nav: ['Avís legal', 'Política de privacitat', 'Política de cookies', 'Condicions de contractació'],
   pendTitle: 'Pendent de completar abans de publicar',
   pendientes: [],
   backHome: 'Inici',
@@ -544,6 +608,32 @@ const CA = {
           'Aquesta política pot modificar-se quan canviïn les cookies utilitzades o la normativa aplicable. Recomanem revisar-la periòdicament. Per a qualsevol dubte: ' + MAIL + '.'
         ]}
       ]
+    },
+    {
+      id: 'contratacion', title: "Condicions de contractació en línia", updated: "Última actualització: setembre de 2026",
+      clauses: [
+        { h: "Contractació a través d’aquest web", p: [
+          "La contractació de l’IPSO HUB a través d’aquest web es fa mitjançant la plataforma de pagament Stripe. En completar el pagament acceptes aquestes condicions i l’avís legal."
+        ]},
+        { h: "Què contractes", p: [
+          "Una alta única (99 € + IVA) que inclou un punt NFC, la seva configuració amb les dades que ens facilitis i la instal·lació al teu local a Barcelona o l’enviament a qualsevol punt d’Espanya. Punts addicionals a 25 € + IVA cadascun. Una quota de 19 € + IVA al mes per local, que es cobra de manera automàtica cada mes a la mateixa targeta."
+        ]},
+        { h: "Terminis", p: [
+          "Instal·lació o enviament en un termini de 48 a 72 hores laborables des que rebem les dades del teu local. Si el punt arriba danyat o no funciona, el reposem sense cost."
+        ]},
+        { h: "Garantia, quota i baixa", p: [
+          "Si en els 30 dies següents a la instal·lació o el lliurament el servei no et convenç, ens ho dius i et retornem l’import de l’alta; retirem o recollim el punt sense cost. La primera quota es cobra el dia que el punt queda operatiu. Passats aquests 30 dies, pots donar-te de baixa en qualsevol moment avisant amb 15 dies per WhatsApp o correu; no es cobrarà la quota següent. Les quotes ja cobrades no es retornen. En acabar, les teves dades de clients se’t lliuren o s’eliminen, segons ens indiquis."
+        ]},
+        { h: "Empreses", p: [
+          "Aquest servei s’adreça a negocis i professionals. En contractar declares actuar en l’exercici de la teva activitat, per la qual cosa no resulta d’aplicació el dret de desistiment previst per a consumidors."
+        ]},
+        { h: "Factures", p: [
+          "Rebràs la factura de cada cobrament per correu electrònic, emesa a nom i NIF que indiquis en el pagament."
+        ]},
+        { h: "Propietat", p: [
+          "El programari, els dissenys i la marca són d’Ipso. Reps una llicència d’ús mentre el servei estigui actiu. El suport físic és teu des del pagament de l’alta."
+        ]}
+      ]
     }
   ]
 };
@@ -572,7 +662,7 @@ class Component extends DCLogic {
     return {
       h1: L.h1,
       intro: L.intro,
-      nav1: L.nav[0], nav2: L.nav[1], nav3: L.nav[2],
+      nav1: L.nav[0], nav2: L.nav[1], nav3: L.nav[2], nav4: L.nav[3],
       pendTitle: L.pendTitle,
       pendientes: L.pendientes,
       hasPend: L.pendientes.length > 0,
@@ -615,8 +705,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-<style>.ipso-wa:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.28)}.ipso-wa-btn:hover{transform:translateY(-2px)}@media (max-width: 640px){ .ipso-wa{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ .ipso-wa, .ipso-wa-btn{ transition: none !important; } }</style>
-<a class="ipso-wa" data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </body>
 </html>

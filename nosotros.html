@@ -49,7 +49,10 @@
     [data-burger] { display: flex !important; }
   }
   ::selection { background: #2BE7FF; color: #0B0C0A; }
+  [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
+  [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
 </style>
+<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -59,13 +62,19 @@
       <a href="/index" style="flex: none; display: block;">
         <img src="assets/ipso-lockup-alpha.png" alt="Ipso" style="height: 40px; width: auto; display: block;">
       </a>
-      <nav data-rail="1" data-navlinks="1" style="flex: 0 1 auto; min-width: 0; margin-left: auto; display: flex; align-items: center; justify-content: flex-start; gap: 18px; overflow-x: auto;">
-        <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nHub }}</a>
-        <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nSol }}</a>
-        <a href="index.html#como-funciona" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nCom }}</a>
-        <a href="index.html#precios" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0;" style-hover="color: #FFFFFF;">{{ nPla }}</a>
+      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
+        <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nHub }}</a>
+        <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
+          <a href="index.html#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
+          <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
+            <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
+            <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+            <a href="/menu" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Menú</a>
+            <a href="/reservas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reservas</a>
+          </div>
+        </div>
       </nav>
-      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 8px; padding: 10px 16px; white-space: nowrap; transition: background 160ms ease;" style-hover="color: #0B0C0A; background: #84F0FF;">{{ nCon }}</a>
+      <a href="index.html#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -158,6 +167,8 @@
   </footer>
 
 </div>
+
+  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const ES = {
@@ -326,8 +337,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-<style>.ipso-wa:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.28)}.ipso-wa-btn:hover{transform:translateY(-2px)}@media (max-width: 640px){ .ipso-wa{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ .ipso-wa, .ipso-wa-btn{ transition: none !important; } }</style>
-<a class="ipso-wa" data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </body>
 </html>
