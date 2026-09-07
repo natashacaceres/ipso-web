@@ -386,7 +386,7 @@ class Component extends DCLogic {
         pick: () => { if (this._hero) this._hero.src = g.src; this.setState({ tipo: g.ti, vista: g.vi }); }
       })),
       heroRef: (el) => { this._hero = el; },
-      compraLink: this.state.tipo === 1 ? '[ENLACE_PLACA]' : '[ENLACE_STAND]',
+      compraLink: this.state.tipo === 1 ? 'https://buy.stripe.com/cNi00l2R2bPm0vl7YS8so02' : 'https://buy.stripe.com/eVqfZj9fqaLiguj3IC8so01',
       tipos: S.tipos.map((t, k) => ({
         label: t.label,
         style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',
