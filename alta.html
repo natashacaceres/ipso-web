@@ -245,6 +245,7 @@
                       <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                     </select>
                   </div>
+                <sc-if value="{{ err.h2_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h2_dia }}</div></sc-if>
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                   <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -261,6 +262,7 @@
                       <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                     </select>
                   </div>
+                <sc-if value="{{ err.h2_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h2_hora }}</div></sc-if>
                 </div>
               </div>
             </sc-if>
@@ -304,10 +306,12 @@
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="wifi_ssid" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Nombre de la red</label>
               <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.wifi_ssid }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="wifi_pass" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Clave</label>
               <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.wifi_pass }}</div></sc-if>
             </div>
           </div>
           </sc-if>
@@ -334,10 +338,12 @@
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="instagram" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Instagram</label>
               <input id="instagram" name="instagram" type="text" autoComplete="off" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.instagram }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="web" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Web</label>
               <input id="web" name="web" type="url" inputMode="url" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              <sc-if value="{{ err.web }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.web }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="otro_enlace" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Otro enlace</label>
@@ -368,6 +374,7 @@
                   <div style="display: flex; flex-direction: column; gap: 8px;">
                     <label for="fid_visitas" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Visitas para el premio</label>
                     <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; font-variant-numeric: tabular-nums; transition: border-color 160ms ease;">
+                    <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.fid_visitas }}</div></sc-if>
                   </div>
                   <div style="display: flex; flex-direction: column; gap: 8px;">
                     <label for="fid_pin" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">PIN del equipo (4 cifras)</label>
@@ -395,21 +402,25 @@
               <label for="q_estrella" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Qué recomiendas siempre?</label>
               <textarea id="q_estrella" name="q_estrella" rows="2" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
               <div style="font-size: 13px; color: #767B75;">Ej.: la parmigiana, y el vino de la casa con ella</div>
+              <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_estrella }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="q_preguntas" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Qué preguntan más los clientes?</label>
               <textarea id="q_preguntas" name="q_preguntas" rows="2" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
               <div style="font-size: 13px; color: #767B75;">Ej.: si hay opciones sin gluten, si hay terraza</div>
+              <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_preguntas }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="q_no" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Algo que el asistente no deba decir ni prometer?</label>
               <textarea id="q_no" name="q_no" rows="2" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
               <div style="font-size: 13px; color: #767B75;">Ej.: no reservamos por teléfono, no hay menú del día</div>
+              <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_no }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="q_curiosidad" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Una curiosidad de la casa</label>
               <textarea id="q_curiosidad" name="q_curiosidad" rows="2" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
               <div style="font-size: 13px; color: #767B75;">Ej.: la receta es de la abuela de Nápoles</div>
+              <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_curiosidad }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <span style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Tono del asistente</span>
@@ -419,6 +430,7 @@
                   <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
                 </sc-for>
               </div>
+              <sc-if value="{{ err.tono }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.tono }}</div></sc-if>
             </div>
           </div>
           </sc-if>
@@ -484,9 +496,9 @@ const SECCIONES = [
 ];
 
 const MSG = {
-  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'Falta algo. Revisa los campos marcados.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados' },
-  en: { req: 'This field is required.', tipo: 'Choose a venue type.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'Something is missing. Check the highlighted fields.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected' },
-  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Falta alguna cosa. Revisa els camps marcats.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats' }
+  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados' },
+  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected' },
+  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats' }
 };
 
 const EN_PAIRS = [
@@ -583,25 +595,38 @@ class Component extends DCLogic {
     this.setState((s) => {
       const v = Object.assign({}, s.v, { [name]: value });
       try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
-      return { v };
+      const errors = Object.keys(s.errors).length ? this.validateWith(v) : s.errors;
+      return { v, errors };
     });
   }
 
-  validate() {
-    const v = this.state.v, M = MSG[this.state.lang], e = {};
-    if (!v.local_nombre || !v.local_nombre.trim()) e.local_nombre = M.req;
+  validate() { return this.validateWith(this.state.v); }
+
+  validateWith(v) {
+    const M = MSG[this.state.lang], e = {};
+    const has = (k) => !!(v[k] && String(v[k]).trim());
+    const req = (k) => { if (!has(k)) e[k] = M.req; };
+    req('local_nombre');
     if (!v.local_tipo) e.local_tipo = M.tipo;
     if (!v.tel || v.tel.replace(/\D/g, '').length < 9) e.tel = M.req;
     if (!v.email_pago || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email_pago)) e.email_pago = M.email;
-    if (!v.h_dia_de || !v.h_dia_a) e.h_dia = M.dia;
-    if (!v.h_hora_de || !v.h_hora_a) e.h_hora = M.hora;
-    if (!v.omit_carta && this.state.filesTooBig) e.carta_files = M.size;
-    if (!v.omit_carta && !this.state.files && !(v.carta_url && v.carta_url.trim())) e.carta = M.carta;
-    if (!v.omit_google && !v.google_buscar && !(v.google_url && v.google_url.trim())) e.google_url = M.google;
+    if (!has('h_dia_de') || !has('h_dia_a')) e.h_dia = M.dia;
+    if (!has('h_hora_de') || !has('h_hora_a')) e.h_hora = M.hora;
+    if (v.h_extendido) {
+      if (!has('h2_dia_de') || !has('h2_dia_a')) e.h2_dia = M.dia;
+      if (!has('h2_hora_de') || !has('h2_hora_a')) e.h2_hora = M.hora;
+    }
+    if (!v.omit_carta) {
+      if (this.state.filesTooBig) e.carta_files = M.size;
+      if (!this.state.files && !has('carta_url')) e.carta = M.carta;
+    }
+    if (!v.omit_wifi) { req('wifi_ssid'); req('wifi_pass'); }
     if (!v.omit_fidelizacion) {
-      if (!v.fid_premio || !v.fid_premio.trim()) e.fid_premio = M.req;
+      req('fid_premio');
+      if (!has('fid_visitas') || !(parseInt(v.fid_visitas, 10) >= 2)) e.fid_visitas = M.req;
       if (!/^\d{4}$/.test(v.fid_pin || '')) e.fid_pin = M.pin;
     }
+    if (!v.omit_equipo) { req('q_estrella'); req('q_preguntas'); req('q_no'); req('q_curiosidad'); if (!v.tono) e.tono = M.tono; }
     if (Object.keys(e).length) e.global = M.global;
     return e;
   }
@@ -616,12 +641,12 @@ class Component extends DCLogic {
     const has = (k) => !!(v[k] && String(v[k]).trim());
     const done = {
       's-local': has('local_nombre') && has('local_tipo') && has('tel') && has('email_pago'),
-      's-horario': has('h_dia_de') && has('h_dia_a') && has('h_hora_de') && has('h_hora_a'),
+      's-horario': has('h_dia_de') && has('h_dia_a') && has('h_hora_de') && has('h_hora_a') && (!v.h_extendido || (has('h2_dia_de') && has('h2_dia_a') && has('h2_hora_de') && has('h2_hora_a'))),
       's-carta': !!v.omit_carta || this.state.files > 0 || has('carta_url'),
       's-wifi': !!v.omit_wifi || (has('wifi_ssid') && has('wifi_pass')),
-      's-google': !!v.omit_google || !!v.google_buscar || has('google_url'),
-      's-fidelizacion': !!v.omit_fidelizacion || (has('fid_premio') && /^\d{4}$/.test(v.fid_pin || '')),
-      's-equipo': !!v.omit_equipo || has('q_estrella') || has('q_preguntas') || has('q_no') || has('q_curiosidad') || has('tono')
+      's-google': !!v.omit_google || !!v.google_buscar || has('google_url') || has('instagram') || has('web') || has('otro_enlace'),
+      's-fidelizacion': !!v.omit_fidelizacion || (has('fid_premio') && has('fid_visitas') && /^\d{4}$/.test(v.fid_pin || '')),
+      's-equipo': !!v.omit_equipo || (has('q_estrella') && has('q_preguntas') && has('q_no') && has('q_curiosidad') && has('tono'))
     };
     return {
       v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo }),
