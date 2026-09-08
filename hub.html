@@ -154,14 +154,12 @@
     <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 0;">
       <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 32px; align-items: stretch;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <div data-hero-photo="1" style="position: relative; border-radius: 20px; overflow: hidden; min-height: 380px; flex: 1;">
-            <img data-hubfoto="1" src="assets/hub-logo.jpg" ref="{{ fotoRef }}" alt="IPSO HUB" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;">
-            <button onClick="{{ fotoPrev }}" aria-label="Foto anterior" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-family: inherit; font-size: 17px; color: #F4F6F3; background: rgba(0,0,0,.55); border: 1px solid #3A3E38; border-radius: 999px; cursor: pointer; transition: background 160ms ease;" style-hover="background: rgba(0,0,0,.8);">‹</button>
-            <button onClick="{{ fotoNext }}" aria-label="Foto siguiente" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-family: inherit; font-size: 17px; color: #F4F6F3; background: rgba(0,0,0,.55); border: 1px solid #3A3E38; border-radius: 999px; cursor: pointer; transition: background 160ms ease;" style-hover="background: rgba(0,0,0,.8);">›</button>
+          <div data-hero-photo="1" style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 3; width: 100%; max-width: 520px; background: #0E100D;">
+            <img data-hubfoto="1" src="assets/hub-disc.png" ref="{{ fotoRef }}" alt="IPSO HUB" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{ fotoFit }}; object-position: 50% 50%; display: block; background: {{ fotoBg }}; padding: {{ fotoPad }}; box-sizing: border-box;">
           </div>
-          <div style="display: flex; gap: 8px;">
-            <sc-for list="{{ fotos }}" as="p" hint-placeholder-count="3">
-              <button onClick="{{ p.pick }}" aria-label="Ver foto" style="flex: 1; height: 3px; padding: 0; border: none; border-radius: 999px; background: {{ p.bg }}; cursor: pointer; transition: background 160ms ease;"></button>
+          <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
+            <sc-for list="{{ galeria }}" as="g" hint-placeholder-count="3">
+              <button onClick="{{ g.pick }}" aria-label="Ver foto" style="{{ g.style }}"></button>
             </sc-for>
           </div>
         </div>
@@ -362,24 +360,24 @@
   <!-- ============ 7 · DUDAS ============ -->
   <section id="dudas" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 0; scroll-margin-top: 90px;">
     <h2 data-reveal="1" style="margin: 0; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas sobre el HUB.</h2>
-    <div data-reveal="1" style="margin-top: 48px; max-width: 780px; border-top: 1px solid #1A1C19;">
-      <details style="border-bottom: 1px solid #1A1C19;">
+    <div data-reveal="1" style="margin-top: 48px; max-width: 780px;">
+      <details style="border-bottom: none;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cuál es la diferencia entre HUB y HUB Pro?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
         <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El HUB abre WiFi, carta, ficha de Google, redes y horarios con un pago único. El HUB Pro añade asistente con IA, tarjeta de sellos, panel en tiempo real, cambios ilimitados e informe mensual por 19 €/mes.</p>
       </details>
-      <details style="border-bottom: 1px solid #1A1C19;">
+      <details style="border-bottom: none;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cómo cancelo?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
         <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Desde tu panel, en un clic, sin llamar ni escribir. Dejas de pagar el mes siguiente y el punto sigue siendo tuyo.</p>
       </details>
-      <details style="border-bottom: 1px solid #1A1C19;">
+      <details style="border-bottom: none;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿En cualquier móvil?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
         <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Sí, iPhone y Android. El cliente solo acerca el móvil.</p>
       </details>
-      <details style="border-bottom: 1px solid #1A1C19;">
+      <details style="border-bottom: none;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cómo funciona la tarjeta de sellos?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
         <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El cliente toca el HUB, deja su número una vez y cada visita se apunta sola. Tú decides la regla, por ejemplo 9 visitas y la 10.ª gratis. Cuando la alcanza, recibe un solo WhatsApp para canjear el premio en el local. Sin app, sin tocar tu TPV. El cliente acepta el uso de su número al dejarlo. Solo se usa para el premio. En tu informe mensual ves cuántos clientes repiten.</p>
       </details>
-      <details style="border-bottom: 1px solid #1A1C19;">
+      <details style="border-bottom: none;">
         <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Puedo pasar de HUB a Pro más adelante?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
         <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Sí, desde tu panel, sin cambiar el punto.</p>
       </details>
@@ -394,8 +392,8 @@
           <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="/#soluciones" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Soluciones</a>
-          <a href="/#precios" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Planes</a>
+          <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
+          <a href="/resenas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Reseñas Google</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
           <a href="/#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
@@ -410,7 +408,6 @@
       </div>
       <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
         <span>© 2026 Ipso · Barcelona</span>
-        <span>No afiliado a Google</span>
         <a href="/nosotros" style="color: #8B918A;" style-hover="color: #FFFFFF;">Nosotros →</a>
       </div>
     </div>
@@ -580,7 +577,7 @@ const EN_PAIRS = [
   ['¿Y si cambio de servicios más adelante?', 'What if I change services later on?'],
   ['Soluciones NFC para comercios. Barcelona.', 'NFC solutions for local businesses. Barcelona.'],
   ['Nosotros', 'About us'], ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['Cookies', 'Cookies'],
-  ['No afiliado a Google', 'Not affiliated with Google'], ['Volver a la home →', 'Back to home →']
+  ['Volver a la home →', 'Back to home →']
 ];
 
 const CA_PAIRS = [
@@ -740,7 +737,7 @@ const CA_PAIRS = [
   ['¿Y si cambio de servicios más adelante?', 'I si canvio de serveis més endavant?'],
   ['Soluciones NFC para comercios. Barcelona.', 'Solucions NFC per a comerços. Barcelona.'],
   ['Nosotros', 'Nosaltres'], ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['Cookies', 'Cookies'],
-  ['No afiliado a Google', 'No afiliat a Google'], ['Volver a la home →', 'Tornar a la home →']
+  ['Volver a la home →', 'Tornar a la home →']
 ];
 
 const DICTS = { es: null, en: {}, ca: {} };
@@ -863,7 +860,10 @@ class Component extends DCLogic {
   }
 
 
-  componentDidMount() { this.applyTheme(); }
+  componentDidMount() {
+    this.applyTheme();
+    try { const v = new URLSearchParams(window.location.search).get('v'); if (v === 'pro' || v === 'hub') this.setState({ version: v === 'pro' ? 'pro' : 'base' }); } catch (e) {}
+  }
   componentDidUpdate() {
     this.applyTheme();
     if (this.state.lang !== 'es') this.applyLang('es');
@@ -872,8 +872,9 @@ class Component extends DCLogic {
   renderVals() {
     const open = this.state.menu;
     const P = PAL[this.state.theme];
-    const FOTOS = ['assets/hub-logo.jpg', 'assets/hub-iso2.jpg', 'assets/hub-cafe2.jpg'];
+    const FOTOS = ['assets/hub-disc.png', 'assets/hub-lateral.png', 'assets/hub-salon.png', 'assets/hub-cafe.png'];
     const i = this.state.foto;
+    const isDisc = FOTOS[i] === 'assets/hub-disc.png';
     const BEN = [
       { title: 'Todos tus servicios, en un punto', body: 'WiFi, reseñas, carta y tarjeta de sellos en una sola pieza, y los cambias cuando quieras. Y un asistente que recomienda a cada cliente qué pedir, en su idioma.' },
       { title: '99 € de alta + 19 €/mes', body: 'Sin permanencia. La cuota mantiene vivo el asistente, los cambios de tu carta, tu tarjeta de sellos y tu informe mensual.' },
@@ -907,6 +908,8 @@ class Component extends DCLogic {
       esPro: this.state.version === 'pro',
       esBase: this.state.version === 'base',
       versiones: [['base', 'HUB'], ['pro', 'HUB Pro']].map(([k, label]) => { const on = this.state.version === k; const ac = k === 'pro' ? '#E8B84B' : '#2BE7FF'; return { label, pick: () => this.setState({ version: k }), style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-weight: 600; background: ' + (on ? ac : 'transparent') + '; color: ' + (on ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (on ? ac : '#262924') + '; transition: all 160ms ease;' }; }),
+      fotoFit: 'cover', fotoBg: 'transparent', fotoPad: '0',
+      galeria: FOTOS.map((src, k) => ({ pick: () => show(k), style: 'width: 64px; height: 64px; padding: 0; cursor: pointer; border-radius: 10px; border: 1.5px solid ' + (k === i ? '#2BE7FF' : '#262924') + '; background-image: url(' + src + '); background-size: cover; background-position: 50% 50%; transition: border-color 160ms ease;' })),
       fotoRef: (el) => { this._img = el; },
       fotoPrev: () => show((this.state.foto + FOTOS.length - 1) % FOTOS.length),
       fotoNext: () => show((this.state.foto + 1) % FOTOS.length),
