@@ -60,19 +60,10 @@
   <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <img src="assets/ipso-lockup-alpha.png" alt="Ipso" style="height: 40px; width: auto; display: block;">
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
         <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nHub }}</a>
-        <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
-          <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
-            <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
-            <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
-            <a href="/menu" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Menú</a>
-            <a href="/reservas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reservas</a>
-          </div>
-        </div>
       </nav>
       <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
@@ -100,14 +91,7 @@
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nHub }}</a>
-          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nSol }}</a>
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid #161815;">
-            <a href="/wifi" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">WiFi</a>
-            <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reseñas Google</a>
-            <a href="/menu" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Menú</a>
-            <a href="/reservas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reservas</a>
-          </div>
-          <a href="/#precios" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
+          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
           <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">{{ nCon }}</a>
         </div>
       </div>
@@ -166,7 +150,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 20px;">
         <a href="/" style="color: #767B75;" style-hover="color: #FFFFFF;">{{ backHome }}</a>
         <a href="/nosotros" style="color: #767B75;" style-hover="color: #FFFFFF;">Nosotros</a>
-        <a href="/#contacto" style="color: #767B75;" style-hover="color: #FFFFFF;">Contacto</a>
+        <a href="/#contacto" style="color: #767B75;" style-hover="color: #FFFFFF;">{{ nCon }}</a>
       </div>
     </div>
   </footer>
@@ -665,6 +649,7 @@ class Component extends DCLogic {
   renderVals() {
     const L = LANGS[this.state.lang];
     return {
+      nHub: ({ es: 'Productos', en: 'Products', ca: 'Productes' })[this.state.lang] || 'Productos', nPla: ({ es: 'Planes', en: 'Plans', ca: 'Plans' })[this.state.lang] || 'Planes', nCon: ({ es: 'Contacto', en: 'Contact', ca: 'Contacte' })[this.state.lang] || 'Contacto',
       h1: L.h1,
       intro: L.intro,
       nav1: L.nav[0], nav2: L.nav[1], nav3: L.nav[2], nav4: L.nav[3],
@@ -673,7 +658,7 @@ class Component extends DCLogic {
       hasPend: L.pendientes.length > 0,
       docs: L.docs,
       backHome: L.backHome,
-      nSol: L.menu[0], nPla: L.menu[1], nDud: L.menu[2], nCon: L.menu[3],
+      nSol: L.menu[0], nDud: L.menu[2],
       mSol: 'index.html#soluciones', mPla: 'index.html#precios', mDud: 'index.html#dudas', mCon: 'index.html#contacto',
       temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
         label: t.label,

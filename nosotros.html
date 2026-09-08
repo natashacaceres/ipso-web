@@ -60,19 +60,10 @@
   <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <img src="assets/ipso-lockup-alpha.png" alt="Ipso" style="height: 40px; width: auto; display: block;">
+        <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
         <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nHub }}</a>
-        <div data-solmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/#soluciones" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">{{ nSol }}</a>
-          <div data-solpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 4px;">
-            <a href="/wifi" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">WiFi</a>
-            <a href="/resenas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
-            <a href="/menu" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Menú</a>
-            <a href="/reservas" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 10px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reservas</a>
-          </div>
-        </div>
       </nav>
       <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
@@ -100,14 +91,7 @@
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nHub }}</a>
-          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nSol }}</a>
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid #161815;">
-            <a href="/wifi" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">WiFi</a>
-            <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reseñas Google</a>
-            <a href="/menu" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Menú</a>
-            <a href="/reservas" onClick="{{ closeMenu }}" style="font-size: 14.5px; font-weight: 500; color: #C3C8BF; background: #0E100D; border: 1px solid #1A1C19; border-radius: 10px; padding: 12px 14px;">Reservas</a>
-          </div>
-          <a href="/#precios" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
+          <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">{{ nPla }}</a>
           <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">{{ nCon }}</a>
         </div>
       </div>
@@ -179,7 +163,7 @@ const ES = {
       "Instalamos un punto NFC en la barra o el mostrador. El cliente lo toca y se abre el WiFi, la carta, la ficha de Google, la tarjeta de sellos y un asistente que responde en su idioma. El dueño recibe cada mes un informe de lo que pasó en su local."
     ]},
     { h: "Quién está detrás", p: [
-      "Natasha Cáceres, doctora en innovación financiera. Tras años estudiando cómo la tecnología cambia la forma en que pagamos y nos relacionamos con los negocios, Ipso nace para llevar esa tecnología al comercio de barrio, que es donde más falta hace."
+      "Natasha Cáceres, doctora en economía, especializada en mercados financieros digitales: cómo la regulación más innovadora y la tecnología cambian la forma de pagar y de hacer negocio. Ipso nace para llevar esa innovación al comercio de barrio, que es donde más falta hace."
     ]},
     { h: "Cómo trabajamos", p: [
       "Vamos al local, lo instalamos y lo explicamos en el mostrador. Y si estás fuera de Barcelona, te lo enviamos programado y listo para poner. Sin permanencia: el día que no lo quieras, lo dejas."
@@ -208,7 +192,7 @@ const EN = {
       "We install an NFC point on the bar or the counter. The customer taps it and the Wi-Fi, the menu, the Google listing, the stamp card and an assistant that answers in their language all open. The owner receives a monthly report of what happened in their venue."
     ]},
     { h: "Who is behind it", p: [
-      "Natasha Cáceres, PhD in financial innovation. After years studying how technology changes the way we pay and interact with businesses, Ipso was born to bring that technology to the local shop, where it is needed most."
+      "Natasha Cáceres, PhD in economics, specialised in digital financial markets: how the most innovative regulation and technology change the way we pay and do business. Ipso was born to bring that innovation to the local shop, where it is needed most."
     ]},
     { h: "How we work", p: [
       "We come to your venue, install it and explain it at the counter. And if you are outside Barcelona, we ship it programmed and ready to place. No lock-in: the day you no longer want it, you leave."
@@ -237,7 +221,7 @@ const CA = {
       "Instal·lem un punt NFC a la barra o al taulell. El client el toca i s’obre el WiFi, la carta, la fitxa de Google, la targeta de segells i un assistent que respon en el seu idioma. El propietari rep cada mes un informe del que ha passat al seu local."
     ]},
     { h: "Qui hi ha al darrere", p: [
-      "Natasha Cáceres, doctora en innovació financera. Després d’anys estudiant com la tecnologia canvia la manera com paguem i ens relacionem amb els negocis, Ipso neix per portar aquesta tecnologia al comerç de barri, que és on més falta fa."
+      "Natasha Cáceres, doctora en economia, especialitzada en mercats financers digitals: com la regulació més innovadora i la tecnologia canvien la manera de pagar i de fer negoci. Ipso neix per portar aquesta innovació al comerç de barri, que és on més falta fa."
     ]},
     { h: "Com treballem", p: [
       "Anem al local, l’instal·lem i l’expliquem al taulell. I si ets fora de Barcelona, te l’enviem programat i a punt per posar. Sense permanència: el dia que no el vulguis, el deixes."
@@ -284,7 +268,7 @@ class Component extends DCLogic {
       ctaTitle: L.ctaTitle, ctaText: L.ctaText, ctaBtn: L.ctaBtn,
       backHome: L.backHome,
       l1: L.l[0], l2: L.l[1], l3: L.l[2],
-      nHub: 'IPSO HUB', nSol: L.nav[0], nCom: L.nav[4], nPla: L.nav[1], nCon: L.nav[3],
+      nHub: ({ es: 'Productos', en: 'Products', ca: 'Productes' })[this.state.lang] || 'Productos', nSol: L.nav[0], nCom: L.nav[4], nPla: ({ es: 'Planes', en: 'Plans', ca: 'Plans' })[this.state.lang] || 'Planes', nCon: L.nav[3],
       mSol: 'index.html#soluciones', mPla: 'index.html#precios', mDud: 'index.html#dudas', mCon: 'index.html#contacto',
       temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
         label: t.label,
