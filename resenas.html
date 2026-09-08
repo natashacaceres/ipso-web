@@ -79,6 +79,8 @@
     [data-oneline], [data-nowrap-desktop] { white-space: normal !important; }
     h1 { overflow-wrap: anywhere; }
   }
+  [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
+  [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
 </style>
 <style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
 </helmet>
@@ -91,7 +93,19 @@
         <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
-        <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos</a>
+        <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
+          <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+              <a href="/hub" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+              <a href="/resenas" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+            </div>
+          </div>
+        </div>
       </nav>
       <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
@@ -118,7 +132,11 @@
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
-          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">Productos</a>
+          <div style="padding: 14px 0 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Productos</div>
+          <div style="padding: 10px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">IPSO HUB</a>
+          <div style="padding: 12px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">Reseñas Google</a>
           <a href="/#soluciones" onClick="{{ closeMenu }}" style="font-size: 16px; font-weight: 500; color: #F4F6F3; padding: 14px 0; border-bottom: 1px solid #161815;">Planes</a>
           <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">Contacto</a>
         </div>
@@ -139,34 +157,37 @@
       </div>
       <div>
         <h1 style="margin: 14px 0 0; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em;">Reseñas Google</h1>
-        <p style="margin: 14px 0 0; max-width: 30ch; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.15; font-weight: 600; letter-spacing: -0.036em; color: #E2E5DE;">Tu ficha de Google, a un toque.</p>
-        <div style="margin-top: 22px; display: flex; align-items: baseline; gap: 8px; font-variant-numeric: tabular-nums;">
-          <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</span>
-          <span style="font-size: 13px; color: #8B918A;">pago único, + IVA</span>
+        <div style="margin-top: 32px; font-variant-numeric: tabular-nums;">
+          <div style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</div>
+          <div style="margin-top: 8px; font-size: 12.5px; color: #8B918A;">{{ precioIva }}</div>
+          <div style="margin-top: 8px; font-size: 15px; color: #F4F6F3;">Pago único. Programación incluida.</div>
         </div>
-        <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío gratuito en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía: si no te convence, te devolvemos el importe.</span></div>
-        <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
-        <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px;">
+        <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17.5" cy="18" r="1.6"></circle></svg>
+            <div style="font-size: 15px; line-height: 1.45;"><div style="font-weight: 600; color: #F4F6F3;">Envío gratuito</div><div style="color: #8B918A;">en 2-4 días laborables</div></div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M4 9h10a6 6 0 0 1 0 12h-3"></path></svg>
+            <div style="font-size: 15px; line-height: 1.45; color: #F4F6F3;">Garantía de reembolso 30 días</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
           <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="2">
             <button onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
           </sc-for>
         </div>
-        <div style="margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
           <a href="{{ compraLink }}" target="_blank" rel="noopener" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
-          <a href="/#contacto" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 15px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Pedir presupuesto</a>
         </div>
-        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: #9CA39A;">
-          <span>Sin app</span><span style="color: #3A3E38;">·</span><span>Funciona en cualquier móvil</span><span style="color: #3A3E38;">·</span><span>iPhone y Android</span>
-        </div>
-          <div style="margin-top: 24px; border-top: 1px solid #1A1C19; padding-top: 16px;">
-            <div style="font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">Paga tu pedido con tarjeta o móvil</div>
-            <div style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; opacity: .85;">
-              <img data-paymark="1" src="assets/pay-visa.png" alt="Visa" style="height: 16px; width: auto; display: block;">
-              <img data-paymark="1" src="assets/pay-mastercard.png" alt="Mastercard" style="height: 24px; width: auto; display: block;">
-              <img data-paymark="1" src="assets/pay-maestro.png" alt="Maestro" style="height: 24px; width: auto; display: block;">
-              <img data-paymark="1" src="assets/pay-amex.png" alt="American Express" style="height: 26px; width: auto; display: block;">
-              <img data-paymark="1" src="assets/pay-applepay.png" alt="Apple Pay" style="height: 18px; width: auto; display: block;">
-              <img data-paymark="1" src="assets/pay-gpay.png" alt="Google Pay" style="height: 17px; width: auto; display: block;">
+          <div style="margin-top: 18px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; opacity: .85;">
+              <img data-paymark="1" src="assets/pay-visa.png" alt="Visa" style="height: 13px; width: auto; display: block;">
+              <img data-paymark="1" src="assets/pay-mastercard.png" alt="Mastercard" style="height: 19px; width: auto; display: block;">
+              <img data-paymark="1" src="assets/pay-maestro.png" alt="Maestro" style="height: 19px; width: auto; display: block;">
+              <img data-paymark="1" src="assets/pay-amex.png" alt="American Express" style="height: 21px; width: auto; display: block;">
+              <img data-paymark="1" src="assets/pay-applepay.png" alt="Apple Pay" style="height: 14px; width: auto; display: block;">
+              <img data-paymark="1" src="assets/pay-gpay.png" alt="Google Pay" style="height: 14px; width: auto; display: block;">
             </div>
           </div>
       </div>
@@ -191,27 +212,6 @@
   </section>
 
   <!-- ============ 3 · QUÉ INCLUYE ============ -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Qué incluye</h2>
-    <div data-reveal="1" style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px 44px;">
-      <sc-for list="{{ incluye }}" as="i" hint-placeholder-count="5">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none; width: 18px; height: 18px; margin-top: 3px; display: block;"><path d="M4 12.5l5 5 11-11"/></svg>
-          <span style="font-size: 17px; line-height: 1.4; color: #E2E5DE;">{{ i }}</span>
-        </div>
-      </sc-for>
-    </div>
-    <div data-reveal="1" style="margin-top: 28px; max-width: 780px; border-top: 1px solid #1A1C19;">
-      <details style="border-bottom: 1px solid #1A1C19;">
-        <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">Especificaciones<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-        <div style="margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; max-width: 62ch;">
-          <sc-for list="{{ specs }}" as="e" hint-placeholder-count="3">
-            <span style="font-size: 15.5px; line-height: 1.55; color: #9CA39A;">{{ e }}</span>
-          </sc-for>
-        </div>
-      </details>
-    </div>
-  </section>
 
   <!-- ============ 7 · DUDAS ============ -->
   <section style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0;">
@@ -283,7 +283,7 @@ const S = {
   faq: [
     { q: '¿Esto está permitido por Google?', a: 'Sí. El punto abre tu ficha oficial de Google, la misma que enviarías por WhatsApp. No pedimos, no filtramos, no premiamos reseñas: Google lo prohíbe y nosotros tampoco lo hacemos.' },
     { q: '¿Necesito una app?', a: 'No. Ni tú ni tus clientes. Acercan el móvil y se abre tu ficha.' },
-    { q: '¿Hay cuota mensual?', a: 'No, pago único. Incluye el primer mes de panel y estadísticas.' },
+    { q: '¿Hay cuota mensual?', a: 'No, pago único. La pieza llega programada y es tuya.' },
     { q: '¿Puedo cambiar la programación más adelante?', a: 'La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.' }
   ]
 };
@@ -351,7 +351,7 @@ class Component extends DCLogic {
         pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => { if (this._chrome) this._chrome.applyLang(prev, code); }); }
       })),
       precioLabel: eur(S.precio),
-      precioIva: eur(S.precio * 1.21),
+      precioIva: eur(S.precio * 1.21) + ' incl. IVA',
       rotuloCantidad: S.rotuloCantidad,
       lineaStyle: 'position: absolute; left: 11px; top: 6px; width: 1px; background: #2BE7FF; height: ' + Math.round(((this.state.paso + 1) / S.pasos.length) * 100) + '%; transition: height 360ms cubic-bezier(.16,.84,.44,1);',
       pasos: S.pasos.map((p, k) => ({
