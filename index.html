@@ -62,9 +62,10 @@
     [data-herotext] { padding: 300px 24px 56px !important; }
     [data-herotext] h1 { font-size: clamp(44px, 13vw, 60px) !important; }
     [data-herotext] p { white-space: normal !important; text-wrap: pretty !important; font-size: 17px !important; }
-    [data-heroimg] { left: 0 !important; top: 0 !important; bottom: auto !important; height: 360px !important; -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent 100%); mask-image: linear-gradient(180deg, #000 40%, transparent 100%); }
-    [data-heroimg] img { object-position: 50% 40% !important; opacity: 1 !important; }
-    [data-herodim] { background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.55) 62%, #000000 84%) !important; }
+    [data-heroimg] { left: 0 !important; top: 64px !important; bottom: auto !important; height: auto !important; aspect-ratio: 2414 / 1276; -webkit-mask-image: none; mask-image: none; }
+    [data-heroimg] img { object-fit: contain !important; object-position: 50% 0 !important; opacity: 1 !important; }
+    [data-herotext] { padding-top: calc(64px + 100vw / 1.89 + 8px) !important; }
+    [data-herodim] { background: none !important; }
     [data-herofade] { display: none !important; }
     [data-trust] { flex-wrap: nowrap !important; gap: 8px !important; font-size: 11px !important; white-space: nowrap !important; }
   }
@@ -460,6 +461,7 @@
                             <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.45; color: #F4F6F3;"><svg viewBox="0 0 24 24" fill="none" stroke="{{ s.tick }}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; width: 16px; height: 16px; display: block; margin-top: 3px;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>{{ it }}</span></li>
                           </sc-for>
                         </ul>
+                        <div style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #B7BDB5;">{{ s.cambios }}</div>
                         <a href="{{ s.link }}" style="display: block; text-align: center; margin-top: 20px; font-size: 14px; font-weight: 600; color: #0B0C0A; background: {{ s.btnBg }}; border-radius: 10px; padding: 11px 18px; white-space: nowrap; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: {{ s.btnHover }}; transform: translateY(-1px);">{{ s.cta }}</a>
                         <div style="margin-top: 10px; text-align: center; font-size: 12.5px; line-height: 1.45; color: #8B918A;">{{ s.nota }}</div>
                       </div>
@@ -627,6 +629,7 @@ const SOLUCIONES = [
     sub: 'pago único · 119,79 € incl. IVA',
     items: ['WiFi sin contraseña', 'Carta con fotos y precios', 'Reseñas y redes', 'Te ayudo a elegir', 'Envío gratuito'],
     cta: 'Quiero el HUB', link: 'hub.html?v=hub#precios',
+    cambios: '1 cambio al mes incluido (carta, horario, foto o enlaces). Cambios extra: 9 €.',
     nota: 'Sin permanencia. Garantía de reembolso 30 días.'
   },
   {
@@ -636,6 +639,7 @@ const SOLUCIONES = [
     sub: '+ 19 €/mes · primer mes incluido',
     items: ['Asistente con IA en 30 idiomas', 'Sella tu visita: fidelización', 'Panel en tiempo real', 'Cambios de carta y ofertas ilimitados', 'Informe mensual por WhatsApp'],
     cta: 'Quiero el HUB Pro', link: 'hub.html?v=pro#precios',
+    cambios: 'Cambios ilimitados. Precios y platos agotados los cambias tú desde la app.',
     nota: 'Sin permanencia. Cancelas desde tu panel. Pasa de HUB a Pro cuando quieras.'
   }];
 
@@ -692,6 +696,7 @@ const EN_PAIRS = [
   ['Panel en tiempo real', 'Real-time dashboard'],
   ['Cambios de carta y ofertas ilimitados', 'Unlimited menu and offer changes'],
   ['Quiero el HUB Pro', 'I want the HUB Pro'],
+  ['1 cambio al mes incluido (carta, horario, foto o enlaces). Cambios extra: 9 €.', '1 change a month included (menu, opening hours, photo or links). Extra changes: 9 €.'], ['Cambios ilimitados. Precios y platos agotados los cambias tú desde la app.', 'Unlimited changes. Prices and sold-out dishes you change yourself from the app.'],
   ['Sin permanencia. Garantía de reembolso 30 días.', 'No lock-in. 30-day money-back guarantee.'],
   ['Sin permanencia. Cancelas desde tu panel. Pasa de HUB a Pro cuando quieras.', 'No lock-in. Cancel from your dashboard. Move from HUB to Pro whenever you want.'],
   ['Activa el asistente cuando quieras.', 'Activate the assistant whenever you want.'],
@@ -899,6 +904,7 @@ const CA_PAIRS = [
   ['Panel en tiempo real', 'Tauler en temps real'],
   ['Cambios de carta y ofertas ilimitados', 'Canvis de carta i ofertes il·limitats'],
   ['Quiero el HUB Pro', 'Vull el HUB Pro'],
+  ['1 cambio al mes incluido (carta, horario, foto o enlaces). Cambios extra: 9 €.', '1 canvi al mes inclòs (carta, horari, foto o enllaços). Canvis extra: 9 €.'], ['Cambios ilimitados. Precios y platos agotados los cambias tú desde la app.', 'Canvis il·limitats. Preus i plats esgotats els canvies tu des de l’app.'],
   ['Sin permanencia. Garantía de reembolso 30 días.', 'Sense permanència. Garantia de devolució 30 dies.'],
   ['Sin permanencia. Cancelas desde tu panel. Pasa de HUB a Pro cuando quieras.', 'Sense permanència. Cancel·les des del teu tauler. Passa de HUB a Pro quan vulguis.'],
   ['Activa el asistente cuando quieras.', 'Activa l’assistent quan vulguis.'],
@@ -1123,8 +1129,9 @@ const LIGHT_CSS = [
   '[data-herodim] { background: linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,.94) 20%, rgba(255,255,255,.72) 40%, rgba(255,255,255,.38) 60%, rgba(255,255,255,.14) 82%, rgba(255,255,255,.08) 100%) !important; }',
   '[data-herofade] { background: linear-gradient(180deg, rgba(255,255,255,.45) 0%, transparent 22%, transparent 72%, #FFFFFF 100%) !important; }',
   '@media (max-width: 760px) {',
-  '  [data-heroimg] { left: 0 !important; -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent 100%) !important; mask-image: linear-gradient(180deg, #000 40%, transparent 100%) !important; }',
-  '  [data-herodim] { background: linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,.6) 62%, #FFFFFF 84%) !important; }',
+  '  [data-heroimg] { left: 0 !important; -webkit-mask-image: none !important; mask-image: none !important; }',
+  '  [data-heropic] { opacity: 1 !important; }',
+  '  [data-herodim] { background: none !important; }',
   '  [data-herofade] { display: none !important; }',
   '}'
 ].join('\n');
