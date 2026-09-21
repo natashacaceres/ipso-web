@@ -234,10 +234,32 @@
               <input id="email_pago" name="email_pago" type="email" autoComplete="email" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
               <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.email_pago }}</div></sc-if>
             </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Tu local tiene web?</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <button type="button" onClick="{{ setWebSi }}" style="font-family: inherit; cursor: pointer; border-radius: 10px; padding: 13px 18px; font-size: 14.5px; font-weight: 600; background: {{ webSiBg }}; color: {{ webSiFg }}; border: 1px solid {{ webSiBd }}; transition: all 160ms ease;">Sí, tengo web</button>
+                <button type="button" onClick="{{ setWebNo }}" style="font-family: inherit; cursor: pointer; border-radius: 10px; padding: 13px 18px; font-size: 14.5px; font-weight: 600; background: {{ webNoBg }}; color: {{ webNoFg }}; border: 1px solid {{ webNoBd }}; transition: all 160ms ease;">No tengo web</button>
+              </div>
+              <input type="hidden" name="desde_web" value="{{ desdeWeb }}">
+            </div>
+            <sc-if value="{{ tieneWeb }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label for="web" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Web del local</label>
+                <input id="web" name="web" type="text" inputMode="url" autoComplete="url" placeholder="ejemplo.com" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              </div>
+            </sc-if>
           </div>
         </section>
 
+        <sc-if value="{{ fromWeb }}" hint-placeholder-val="{{ false }}">
+        <section style="border-top: 1px solid #1A1C19; padding: 28px 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px;">
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #B7BDB5;">Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.</p>
+          <button type="button" onClick="{{ fillMyself }}" style="font-family: inherit; cursor: pointer; background: none; border: none; padding: 0; font-size: 13.5px; font-weight: 500; color: #8B918A; border-bottom: 1px solid #2E3A38; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF;">Prefiero rellenarlo yo</button>
+        </section>
+        </sc-if>
+
         <!-- 2 · Horario -->
+        <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
         <section id="s-horario" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
           <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Horario</h2>
           <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
@@ -320,8 +342,10 @@
             </sc-if>
           </div>
         </section>
+        </sc-if>
 
         <!-- 3 · Carta -->
+        <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
         <section id="s-carta" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
           <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Carta</h2>
           <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
@@ -345,6 +369,7 @@
           </div>
           </sc-if>
         </section>
+        </sc-if>
 
         <!-- 4 · WiFi -->
         <section id="s-wifi" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
@@ -370,6 +395,7 @@
         </section>
 
         <!-- 5 · Google y redes -->
+        <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
         <section id="s-google" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
           <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Google y redes</h2>
           <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
@@ -392,10 +418,7 @@
               <input id="instagram" name="instagram" type="text" autoComplete="off" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
               <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.instagram }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="web" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Web</label>
-              <input id="web" name="web" type="url" inputMode="url" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.web }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.web }}</div></sc-if>
+            </sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
               <label for="otro_enlace" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Otro enlace</label>
@@ -405,6 +428,7 @@
           </div>
           </sc-if>
         </section>
+        </sc-if>
 
         <!-- 6 · Fidelización -->
         <section id="s-fidelizacion" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
@@ -532,8 +556,8 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const KEY = 'ipso-alta-v1';
-const TEXT_FIELDS = ['local_nombre','local_tipo','tel_prefijo','tel','h2_dia_de','h2_dia_a','h2_hora_de','h2_hora_a','email_pago','h_dia_de','h_dia_a','h_hora_de','h_hora_a','carta_url','wifi_ssid','wifi_pass','google_url','instagram','web','otro_enlace','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad','tono'];
-const BOOL_FIELDS = ['google_buscar','h_extendido','omit_carta','omit_wifi','omit_google','omit_fidelizacion','omit_equipo'];
+const TEXT_FIELDS = ['tiene_web','local_nombre','local_tipo','tel_prefijo','tel','h2_dia_de','h2_dia_a','h2_hora_de','h2_hora_a','email_pago','h_dia_de','h_dia_a','h_hora_de','h_hora_a','carta_url','wifi_ssid','wifi_pass','google_url','instagram','web','otro_enlace','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad','tono'];
+const BOOL_FIELDS = ['manual_web','google_buscar','h_extendido','omit_carta','omit_wifi','omit_google','omit_fidelizacion','omit_equipo'];
 const DEFAULTS = { fid_visitas: '5', tel_prefijo: '+34' };
 const PREFIJOS = [['+34','ES'],['+351','PT'],['+33','FR'],['+39','IT'],['+49','DE'],['+44','GB'],['+353','IE'],['+31','NL'],['+32','BE'],['+41','CH'],['+43','AT'],['+45','DK'],['+46','SE'],['+47','NO'],['+358','FI'],['+48','PL'],['+420','CZ'],['+36','HU'],['+40','RO'],['+30','GR'],['+90','TR'],['+376','AD'],['+212','MA'],['+213','DZ'],['+1','US/CA'],['+52','MX'],['+54','AR'],['+55','BR'],['+56','CL'],['+57','CO'],['+51','PE'],['+58','VE'],['+593','EC'],['+591','BO'],['+595','PY'],['+598','UY'],['+506','CR'],['+507','PA'],['+502','GT'],['+503','SV'],['+504','HN'],['+505','NI'],['+53','CU'],['+1809','DO'],['+61','AU'],['+64','NZ'],['+81','JP'],['+82','KR'],['+86','CN'],['+91','IN'],['+971','AE'],['+972','IL'],['+27','ZA']];
 
@@ -562,7 +586,8 @@ const EN_PAIRS = [
   ['Reseñas Google', 'Google Reviews'], ['Menú', 'Menu'], ['Reservas', 'Bookings'],
   ['Cuéntanos cómo es tu local.', 'Tell us about your venue.'], ['10 minutos', '10 minutes'],
   ['El local', 'The venue'], ['Nombre del local', 'Venue name'], ['Tipo', 'Type'], ['Hostelería', 'Hospitality'], ['Belleza y bienestar', 'Beauty and wellness'], ['Comercio', 'Retail'], ['Otro', 'Other'],
-  ['Correo del pago', 'Payment email'],
+  ['Correo del pago', 'Payment email'], ['¿Tu local tiene web?', 'Does your venue have a website?'], ['Sí, tengo web', 'Yes, I have a website'], ['No tengo web', 'No website'], ['Web del local', 'Venue website'],
+  ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'We take opening hours, menu, Instagram and Google listing from your website. You review it before sending.'], ['Prefiero rellenarlo yo', 'I prefer to fill it in myself'],
   ['Horario', 'Opening hours'], ['Horario extendido', 'Extended hours'], ['Segundo tramo', 'Second period'], ['De', 'From'], ['a', 'to'], ['Abre', 'Opens'], ['cierra', 'closes'],
   ['Lunes', 'Monday'], ['Martes', 'Tuesday'], ['Miércoles', 'Wednesday'], ['Jueves', 'Thursday'], ['Viernes', 'Friday'], ['Sábado', 'Saturday'], ['Domingo', 'Sunday'],
   ['Carta', 'Menu'], ['Eliminar esta sección del HUB', 'Remove this section from the HUB'], ['Sube la carta', 'Upload the menu'], ['O pega el enlace donde está', 'Or paste the link where it is'],
@@ -592,7 +617,8 @@ const CA_PAIRS = [
   ['Reseñas Google', 'Ressenyes Google'], ['Reservas', 'Reserves'],
   ['Cuéntanos cómo es tu local.', 'Explica\u2019ns com és el teu local.'], ['10 minutos', '10 minuts'],
   ['El local', 'El local'], ['Nombre del local', 'Nom del local'], ['Tipo', 'Tipus'], ['Hostelería', 'Hostaleria'], ['Belleza y bienestar', 'Bellesa i benestar'], ['Comercio', 'Comerç'], ['Otro', 'Altre'],
-  ['Correo del pago', 'Correu del pagament'],
+  ['Correo del pago', 'Correu del pagament'], ['¿Tu local tiene web?', 'El teu local té web?'], ['Sí, tengo web', 'Sí, tinc web'], ['No tengo web', 'No tinc web'], ['Web del local', 'Web del local'],
+  ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'Horari, carta, Instagram i fitxa de Google els traiem de la teva web. Ho revises abans d\u2019enviar-ho.'], ['Prefiero rellenarlo yo', 'Prefereixo omplir-ho jo'],
   ['Horario', 'Horari'], ['Horario extendido', 'Horari estès'], ['Segundo tramo', 'Segon tram'], ['Abre', 'Obre'], ['cierra', 'tanca'],
   ['Lunes', 'Dilluns'], ['Martes', 'Dimarts'], ['Miércoles', 'Dimecres'], ['Jueves', 'Dijous'], ['Viernes', 'Divendres'], ['Sábado', 'Dissabte'], ['Domingo', 'Diumenge'],
   ['Eliminar esta sección del HUB', 'Eliminar aquesta secció del HUB'], ['Sube la carta', 'Puja la carta'], ['O pega el enlace donde está', 'O enganxa l\u2019enllaç on és'],
@@ -673,7 +699,9 @@ class Component extends DCLogic {
       if (!has('h2_dia_de') || !has('h2_dia_a')) e.h2_dia = M.dia;
       if (!has('h2_hora_de') || !has('h2_hora_a')) e.h2_hora = M.hora;
     }
-    if (!v.omit_carta) {
+    const fromWeb = v.tiene_web === 'si' && !v.manual_web;
+    if (fromWeb) { delete e.h_dia; delete e.h_hora; delete e.h2_dia; delete e.h2_hora; }
+    if (!v.omit_carta && !fromWeb) {
       if (this.state.filesTooBig) e.carta_files = M.size;
       if (!this.state.files && !has('carta_url')) e.carta = M.carta;
     }
@@ -696,17 +724,23 @@ class Component extends DCLogic {
     TEXT_FIELDS.forEach((k) => { on[k] = (ev) => this.set(k, ev.target.value); });
     BOOL_FIELDS.forEach((k) => { on[k] = (ev) => this.set(k, !!ev.target.checked); });
     const has = (k) => !!(v[k] && String(v[k]).trim());
+    const tieneWeb = v.tiene_web === 'si', noWeb = v.tiene_web === 'no';
+    const fromWeb = tieneWeb && !v.manual_web;
     const done = {
       's-local': has('local_nombre') && has('local_tipo') && has('tel') && has('email_pago'),
-      's-horario': has('h_dia_de') && has('h_dia_a') && has('h_hora_de') && has('h_hora_a') && (!v.h_extendido || (has('h2_dia_de') && has('h2_dia_a') && has('h2_hora_de') && has('h2_hora_a'))),
-      's-carta': !!v.omit_carta || this.state.files > 0 || has('carta_url'),
+      's-horario': fromWeb || has('h_dia_de') && has('h_dia_a') && has('h_hora_de') && has('h_hora_a') && (!v.h_extendido || (has('h2_dia_de') && has('h2_dia_a') && has('h2_hora_de') && has('h2_hora_a'))),
+      's-carta': fromWeb || !!v.omit_carta || this.state.files > 0 || has('carta_url'),
       's-wifi': !!v.omit_wifi || (has('wifi_ssid') && has('wifi_pass')),
-      's-google': !!v.omit_google || !!v.google_buscar || has('google_url') || has('instagram') || has('web') || has('otro_enlace'),
+      's-google': fromWeb || !!v.omit_google || !!v.google_buscar || has('google_url') || has('instagram') || has('web') || has('otro_enlace'),
       's-fidelizacion': !!v.omit_fidelizacion || (has('fid_premio') && has('fid_visitas') && /^\d{4}$/.test(v.fid_pin || '')),
       's-equipo': !!v.omit_equipo || (has('q_estrella') && has('q_preguntas') && has('q_no') && has('q_curiosidad') && has('tono'))
     };
     return {
       v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo }),
+      tieneWeb, fromWeb, showSec: !fromWeb, desdeWeb: tieneWeb ? '1' : '0',
+      webSiFg: tieneWeb ? '#0B0C0A' : '#9CA39A', webSiBg: tieneWeb ? '#2BE7FF' : 'transparent', webSiBd: tieneWeb ? '#2BE7FF' : '#262924',
+      webNoFg: noWeb ? '#0B0C0A' : '#9CA39A', webNoBg: noWeb ? '#2BE7FF' : 'transparent', webNoBd: noWeb ? '#2BE7FF' : '#262924',
+      setWebSi: () => { this.set('manual_web', false); this.set('tiene_web', 'si'); }, setWebNo: () => { this.set('manual_web', false); this.set('tiene_web', 'no'); }, fillMyself: () => this.set('manual_web', true),
       show: { carta: !v.omit_carta, wifi: !v.omit_wifi, google: !v.omit_google, fidelizacion: !v.omit_fidelizacion, equipo: !v.omit_equipo },
       prefijos: PREFIJOS.map((p) => ({ v: p[0], label: p[0] + ' ' + p[1] })),
       on, err: this.state.errors,

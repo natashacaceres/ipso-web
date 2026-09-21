@@ -205,7 +205,7 @@
       <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 32px; align-items: stretch;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div data-hero-photo="1" style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 3; width: 100%; max-width: 520px; background: #0E100D;">
-            <img data-hubfoto="1" src="assets/hub-disc.png" ref="{{ fotoRef }}" alt="IPSO HUB" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{ fotoFit }}; object-position: 50% 50%; display: block; background: {{ fotoBg }}; padding: {{ fotoPad }}; box-sizing: border-box;">
+            <img data-hubfoto="1" src="assets/hub-disc.jpg" ref="{{ fotoRef }}" alt="IPSO HUB" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{ fotoFit }}; object-position: 50% 50%; display: block; background: {{ fotoBg }}; padding: {{ fotoPad }}; box-sizing: border-box;">
           </div>
           <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;">
             <sc-for list="{{ galeria }}" as="g" hint-placeholder-count="3">
@@ -924,9 +924,9 @@ class Component extends DCLogic {
   renderVals() {
     const open = this.state.menu;
     const P = PAL[this.state.theme];
-    const FOTOS = ['assets/hub-disc.png', 'assets/hub-lateral.png', 'assets/hub-salon.png', 'assets/hub-cafe.png'];
+    const FOTOS = ['assets/hub-disc.jpg', 'assets/hub-lateral.jpg', 'assets/hub-salon.jpg', 'assets/hub-cafe.jpg'];
     const i = this.state.foto;
-    const isDisc = FOTOS[i] === 'assets/hub-disc.png';
+    const isDisc = FOTOS[i] === 'assets/hub-disc.jpg';
     const BEN = [
       { title: 'Todos tus servicios, en un punto', body: 'WiFi, reseñas, carta y tarjeta de sellos en una sola pieza, y los cambias cuando quieras. Y un asistente que recomienda a cada cliente qué pedir, en su idioma.' },
       { title: '99 € de alta + 19 €/mes', body: 'Sin permanencia. La cuota mantiene vivo el asistente, los cambios de tu carta, tu tarjeta de sellos y tu informe mensual.' },
