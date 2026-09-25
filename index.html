@@ -320,6 +320,19 @@
   @media (max-width: 760px) { [data-rv="0"] { transform: translate3d(0, 22px, 0); filter: blur(4px); } }
   @media (prefers-reduced-motion: reduce) { [data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; } }
 </style>
+<style data-mob5="1">
+@media (max-width: 760px) {
+  section[data-hero2] h1 { font-size: clamp(50px, 15vw, 65px) !important; }
+  section[data-hero2] p { font-size: 21px !important; margin-top: 18px !important; }
+  section[data-hero2] [data-reveal] > div { margin-top: 28px !important; }
+  section[data-hero2] [data-reveal] > div > a { font-size: 18px !important; padding: .95em .5em !important; }
+  [data-heroimg2] { aspect-ratio: 15 / 14 !important; }
+  section h2[data-ind] { font-size: 50px !important; }
+  [data-indrail] > a { width: 92% !important; }
+  [data-indrail] > a > div:last-child > span:first-child { font-size: 30px !important; }
+  [data-indrail] > a > div:last-child > span:last-child { font-size: 37px !important; }
+}
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
