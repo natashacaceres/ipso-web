@@ -81,6 +81,10 @@
   }
   [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
+
+  [data-wa-fab]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: 0 0 0 0 rgba(37, 211, 102, .45); animation: ipsoWaPulse 2.8s ease-out infinite; }
+  @keyframes ipsoWaPulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .45); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+  @media (prefers-reduced-motion: reduce) { [data-wa-fab]::after { animation: none; } }
 </style>
 <style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
 <style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 40px 24px 96px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 22px 20px !important; padding-bottom: 26px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 10px !important; } footer > div > div:first-child a { padding: 4px 0; } footer > div > div:last-child { margin-top: 18px !important; } }</style>
@@ -362,6 +366,7 @@ class Component extends DCLogic {
   state = { cants: [1], abierto: -1, paso: 0, tipo: 0, vista: 0, cant: 1, theme: 'dark', lang: 'es', menu: false };
 
   componentDidMount() {
+    try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
     import('./ipso-chrome.js').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
@@ -410,7 +415,7 @@ class Component extends DCLogic {
         esCa: code === 'ca',
         fg: this.state.lang === code ? '#0B0C0A' : dim,
         bg: this.state.lang === code ? '#2BE7FF' : 'transparent',
-        pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => { if (this._chrome) this._chrome.applyLang(prev, code); }); }
+        pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => { if (this._chrome) this._chrome.applyLang(prev, code); }); }
       })),
       precioLabel: eur(S.precio),
       precioIva: eur(S.precio * 1.21),

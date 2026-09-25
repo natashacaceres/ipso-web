@@ -705,6 +705,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
     try {
       const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
       if (saved && typeof saved === 'object') this.setState({ v: Object.assign({}, DEFAULTS, saved) });
@@ -857,7 +858,7 @@ class Component extends DCLogic {
         name: LANGNAMES[code],
         fw: st.lang === code ? 600 : 400,
         bg: st.lang === code ? '#F2F2F2' : 'transparent',
-        pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false, errors: {}, submitted: false }, () => this.applyLang(prev)); }
+        pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false, errors: {}, submitted: false }, () => this.applyLang(prev)); }
       }))
     };
   }
