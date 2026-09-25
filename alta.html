@@ -34,21 +34,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  html { scroll-behavior: smooth; background: #000000; }
-  body { margin: 0; background: #000000; color: #F4F6F3; font-family: Inter, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; }
+  html { background: #FFFFFF; }
+  body { margin: 0; background: #FFFFFF; color: #1A1A1A; font-family: Inter, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   * { box-sizing: border-box; }
-  a { color: #2BE7FF; text-decoration: none; }
-  a:hover { color: #84F0FF; }
-  ::selection { background: #2BE7FF; color: #0B0C0A; }
+  a { color: #0A7C93; text-decoration: none; }
+  a:hover { color: #075E70; }
+  ::selection { background: #CDEFF5; color: #1A1A1A; }
   input, select, textarea, button { font-family: inherit; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: #2BE7FF !important; }
-  select option { background: #000000; color: #F4F6F3; }
-  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .7; }
-  input[type="file"]::file-selector-button { font-family: inherit; font-size: 13.5px; font-weight: 600; color: #F4F6F3; background: transparent; border: 1px solid #3A3E38; border-radius: 8px; padding: 8px 12px; margin-right: 12px; cursor: pointer; }
+  input:not([type="checkbox"]):not([type="radio"]):focus, select:focus, textarea:focus { outline: none; border-color: #1A1A1A !important; box-shadow: 0 0 0 3px rgba(26,26,26,.12); }
+  input[type="checkbox"]:focus-visible, input[type="radio"]:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid #1A1A1A; outline-offset: 2px; }
+  [aria-invalid="true"] { border-color: #C62828 !important; }
+  [aria-invalid="true"]:focus { box-shadow: 0 0 0 3px rgba(198,40,40,.15) !important; }
+  select option { background: #FFFFFF; color: #1A1A1A; }
+  input[type="file"]::file-selector-button { font-family: inherit; font-size: 14px; font-weight: 500; color: #1A1A1A; background: #F4F4F4; border: 1px solid #D0D0D0; border-radius: 0; padding: 7px 12px; margin-right: 12px; cursor: pointer; }
+  input::placeholder, textarea::placeholder { color: #9A9A9A; }
+  input:disabled { background: #F6F6F6 !important; color: #9A9A9A !important; }
+  [data-alta-submit]:disabled { opacity: .65; cursor: progress !important; }
+  [data-word] { filter: invert(1); }
   [data-langmenu]:hover [data-langpanel], [data-langmenu]:focus-within [data-langpanel] { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
   [data-langmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
-  [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
-  [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
+  [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
+  [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
   @media (max-width: 1080px) {
     [data-navrow] { flex-wrap: nowrap; gap: 14px; }
     [data-navrow] > a:first-child { margin-right: auto; }
@@ -57,286 +63,269 @@
     [data-burger] { display: flex !important; }
   }
   @media (max-width: 900px) {
-    [data-alta-grid] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; }
-    [data-alta-index] { position: static !important; flex-direction: row !important; overflow-x: auto !important; gap: 6px 22px !important; padding: 0 0 18px !important; margin: 36px 0 0 !important; border-bottom: 1px solid #1A1C19; scrollbar-width: none; }
-    [data-alta-index]::-webkit-scrollbar { display: none; }
-    [data-alta-index] a { white-space: nowrap; }
+    [data-alta-grid] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; margin-top: 28px !important; }
+    [data-alta-index] { display: none !important; }
+    [data-mprog] { display: block !important; }
     [data-alta-form] { max-width: none !important; }
-    main { padding-left: 20px !important; padding-right: 20px !important; }
+    main { padding-left: 16px !important; padding-right: 16px !important; padding-top: 36px !important; }
     main h1 { white-space: normal !important; }
-    [data-alta-submit] { display: block !important; width: 100%; text-align: center; }
+    [data-card] { padding: 22px 18px !important; }
+    [data-alta-submit] { width: 100% !important; }
   }
-  [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
-  [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
+  @media (max-width: 480px) { [data-two] { grid-template-columns: minmax(0, 1fr) !important; } }
 </style>
-<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 40px 24px 96px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 22px 20px !important; padding-bottom: 26px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 10px !important; } footer > div > div:first-child a { padding: 4px 0; } footer > div > div:last-child { margin-top: 18px !important; } }</style>
 <style data-a11y="1">
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
 @media (max-width: 760px) {
-  [style*="font-size: 10.5px"] { font-size: 11px !important; }
-  [style*="font-size: 11px"], [style*="font-size: 11.5px"], [style*="font-size: 12px"], [style*="font-size: 12.5px"] { font-size: 13px !important; }
-  p[style*="font-size: 14px"], p[style*="font-size: 14.5px"], p[style*="font-size: 15px"], p[style*="font-size: 15.5px"] { font-size: 16px !important; }
-  [data-afstate] p { font-size: 13px !important; }
   input, textarea, select { font-size: 16px !important; }
-  [data-navrow] { gap: 18px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -10px !important; }
+  [data-navrow] { gap: 18px !important; padding-left: max(20px, env(safe-area-inset-left)) !important; padding-right: max(20px, env(safe-area-inset-right)) !important; }
   button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -10px !important; }
   [data-burger] { width: 44px !important; height: 44px !important; margin: -4px -4px -4px 0 !important; }
   [data-mobile] a { min-height: 44px; display: flex; align-items: center; }
-  [data-mobile] > div { padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button:not([aria-label]), details summary { min-height: 44px; }
-  label:has(input[type="checkbox"]) { min-height: 44px; }
-  footer a { min-height: 44px; display: inline-flex; align-items: center; }
-  footer > div > div:first-child > div { gap: 0 !important; }
-  footer > div { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  [data-cta-main] + a { min-height: 44px; display: inline-flex; align-items: center; }
-}
-</style>
-<style data-mobfix2="1">
-@media (max-width: 760px) {
-  /* ritmo vertical */
-  section > div[style*="max-width: 1200px"][style*="padding: 80px 24px"], section > div[style*="max-width: 1200px"][style*="padding: 96px 24px"], section > div > div[style*="max-width: 1200px"][style*="padding: 96px 24px"] { padding-top: 32px !important; padding-bottom: 32px !important; }
-  div[style*="padding: 96px 24px 8px"] { padding-top: 32px !important; padding-bottom: 8px !important; }
-  #hub { padding-top: 8px !important; padding-bottom: 32px !important; }
-  section[data-hero] [data-herotext] { padding-bottom: 24px !important; }
-  section[style*="padding: 88px 24px 0"], section[style*="padding: 80px 24px 0"], section[style*="padding: 72px 24px 0"] { padding-top: 64px !important; }
-  section[style*="padding: 56px 24px 0"] { padding-top: 40px !important; }
-  section[style*="padding: 80px 24px 96px"], section[style*="padding: 64px 24px 96px"] { padding-top: 56px !important; padding-bottom: 64px !important; }
-  main[style*="padding: 120px 24px 140px"] { padding-top: 80px !important; padding-bottom: 96px !important; }
-  section h2 + div[style*="margin-top: 48px"], section h2 + div[style*="margin-top: 36px"], section h2 + div[style*="margin-top: 40px"] { margin-top: 28px !important; }
-  #sol-intro { padding-top: 32px !important; }
-  /* footer: dos columnas alineadas */
-  footer > div { padding: 48px 24px calc(28px + env(safe-area-inset-bottom, 0px)) !important; }
+  footer > div { padding: 40px 20px calc(40px + env(safe-area-inset-bottom, 0px)) !important; }
   footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 20px !important; padding-bottom: 20px !important; }
   footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 20px; }
-  footer > div > div:first-child > div:not(:first-child) { display: flex !important; flex-direction: column !important; gap: 0 !important; align-items: stretch !important; }
-  footer > div > div:first-child > div:nth-child(2) { grid-column: 1; grid-row: 2; }
-  footer > div > div:first-child > div:nth-child(3) { grid-column: 1; grid-row: 3; }
-  footer > div > div:first-child > div:nth-child(4) { grid-column: 2; grid-row: 2 / span 2; }
-  footer > div > div:first-child a { display: flex !important; align-items: center !important; min-height: 44px !important; padding: 0 !important; margin: 0 !important; line-height: 1.3 !important; }
-  footer > div > div:last-child { margin-top: 16px !important; padding-right: 76px; gap: 6px 16px !important; }
-  footer > div > div:last-child a { min-height: 44px; display: inline-flex; align-items: center; }
-  /* WhatsApp: derecha, zona segura */
-  [data-wa-fab] { right: 20px !important; bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important; left: auto !important; width: 54px !important; height: 54px !important; }
+  footer > div > div:first-child > div:not(:first-child) { gap: 0 !important; }
+  footer a { min-height: 44px; display: inline-flex; align-items: center; }
 }
 </style>
 </helmet>
 
-<div style="width: 100%; overflow-x: clip;">
+<div style="width: 100%; overflow-x: clip; background: #FFFFFF;">
 
-  <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
+  <header style="position: sticky; top: 0; z-index: 50; background: #FFFFFF; border-bottom: 1px solid #E6E6E6;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
         <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
-          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
+          <a href="/hub" style="font-size: 14px; font-weight: 500; color: #4A4A4A; white-space: nowrap; padding: 6px 0; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #1A1A1A;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 10px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <div style="padding: 4px 12px 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
+              <a href="/hub" style="font-size: 14px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 8px 12px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <div style="padding: 4px 12px 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Piezas</div>
+              <a href="/resenas" style="font-size: 14px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 8px 12px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
-      <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
-      </button>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 14px; font-weight: 500; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 8px; padding: 8px 14px; white-space: nowrap;" style-hover="color: #1A1A1A; background: #F4F4F4;">Contacto</a>
       <div data-langmenu="1" style="flex: none; position: relative;">
-        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; font-family: inherit; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
+        <button type="button" onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; font-family: inherit; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: #1A1A1A; background: transparent; border: none; padding: 4px 0; cursor: pointer;">
           <span>{{ langCode }}</span>
         </button>
-          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 6px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2px;">
-            <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 9px; width: 100%; font-family: inherit; font-size: 13.5px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
-                <span>{{ l.name }}</span>
-              </button>
-            </sc-for>
-          </div>
+        <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 6px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: flex; flex-direction: column; gap: 2px;">
+          <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
+            <button type="button" onClick="{{ l.pick }}" style="display: flex; align-items: center; width: 100%; font-family: inherit; font-size: 14px; font-weight: {{ l.fw }}; text-align: left; color: #1A1A1A; background: {{ l.bg }}; border: none; border-radius: 6px; padding: 8px 10px; cursor: pointer;" style-hover="background: #F2F2F2;">
+              <span>{{ l.name }}</span>
+            </button>
+          </sc-for>
+        </div>
       </div>
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
-        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
-        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
-        <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #D0D0D0; border-radius: 8px; cursor: pointer;">
+        <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: transform 200ms ease; transform: {{ burgerT1 }};"></span>
+        <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
+        <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: transform 200ms ease; transform: {{ burgerT3 }};"></span>
       </button>
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
+      <div data-mobile="1" style="border-top: 1px solid #E6E6E6; background: #FFFFFF;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
-          <div style="padding: 14px 0 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Productos</div>
-          <div style="padding: 10px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">IPSO HUB</a>
-          <div style="padding: 12px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">Contacto</a>
+          <div style="padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Productos</div>
+          <div style="padding: 10px 0 2px 14px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 500; color: #1A1A1A; padding: 8px 0 12px 14px; border-bottom: 1px solid #EEEEEE;">IPSO HUB</a>
+          <div style="padding: 12px 0 2px 14px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Piezas</div>
+          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 500; color: #1A1A1A; padding: 8px 0 12px 14px; border-bottom: 1px solid #EEEEEE;">Reseñas Google</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border-radius: 8px; padding: 14px 20px; justify-content: center;">Contacto</a>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showAlert }}" hint-placeholder-val="{{ false }}">
+      <div role="alert" style="background: #FDECEC; border-top: 1px solid #F5C2C2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #B3261E;">
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="flex: none; width: 18px; height: 18px; display: block;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5"></path><path d="M12 16.5h.01"></path></svg>
+          <span>Faltan campos por rellenar, marcados en rojo</span>
         </div>
       </div>
     </sc-if>
   </header>
 
-  <main style="max-width: 1200px; margin: 0 auto; padding: 72px clamp(20px, 4vw, 24px) 120px clamp(20px, 9vw, 132px);">
+  <main style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 96px;">
 
-    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px;">
-      <h1 style="margin: 0; font-size: clamp(28px, 4vw, 46px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em; white-space: nowrap;">Cuéntanos cómo es tu local.</h1>
-      <span style="flex: none; font-size: 14px; font-weight: 600; letter-spacing: .02em; color: #B7BDB5; border: 1px solid #262924; border-radius: 8px; padding: 8px 14px; white-space: nowrap;">10 minutos</span>
+    <div style="max-width: 640px; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+        <h1 style="margin: 0; font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; color: #1A1A1A;">Cuéntanos cómo es tu local.</h1>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; color: #6B6B6B;">
+          <span style="font-weight: 500; color: #1A1A1A; background: #F2F2F2; border-radius: 6px; padding: 4px 10px;">10 minutos</span>
+          <span>Los campos con * son obligatorios.</span>
+        </div>
+      </div>
     </div>
 
-    <div data-alta-grid="1" style="margin-top: 56px; display: grid; grid-template-columns: 230px minmax(0, 560px); gap: 0 72px; align-items: start;">
+    <div style="max-width: 640px; margin: 36px auto 0;">
 
-      <nav data-alta-index="1" style="position: sticky; top: 96px; display: flex; flex-direction: column; gap: 14px; padding: 6px 0;">
-        <sc-for list="{{ index }}" as="s" hint-placeholder-count="7">
-          <a href="{{ s.href }}" style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: {{ s.fg }}; transition: color 160ms ease;" style-hover="color: #FFFFFF;">
-            <span style="flex: none; width: 9px; height: 9px; border-radius: 999px; background: {{ s.bg }}; border: 1px solid {{ s.bd }}; transition: background 200ms ease, border-color 200ms ease;"></span>
-            <span>{{ s.label }}</span>
-          </a>
-        </sc-for>
-      </nav>
 
-      <form data-alta-form="1" method="POST" action="https://go.ipsoglobal.com/alta" enctype="multipart/form-data" noValidate="{{ true }}" onSubmit="{{ onSubmit }}" style="max-width: 560px; display: flex; flex-direction: column;">
+      <form data-alta-form="1" method="POST" action="https://go.ipsoglobal.com/alta" enctype="multipart/form-data" noValidate="{{ true }}" onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 20px;">
 
-        <!-- 1 · Tu local -->
-        <section id="s-local" style="padding: 0 0 40px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">El local</h2>
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="local_nombre" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Nombre del local</label>
-              <input id="local_nombre" name="local_nombre" type="text" autoComplete="organization" value="{{ v.local_nombre }}" onChange="{{ on.local_nombre }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.local_nombre }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.local_nombre }}</div></sc-if>
+        <!-- 1 · El local -->
+        <section id="s-local" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">El local</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Datos básicos del negocio y cómo contactarte.</p>
+          <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="local_nombre" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="local_nombre" name="local_nombre" type="text" autoComplete="organization" aria-invalid="{{ inv.local_nombre }}" value="{{ v.local_nombre }}" onChange="{{ on.local_nombre }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.local_nombre }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.local_nombre }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <span style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Tipo</span>
-              <input type="hidden" name="local_tipo" value="{{ v.local_tipo }}">
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="3">
-                  <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+            <div role="radiogroup" aria-labelledby="lbl_tipo" style="display: flex; flex-direction: column; gap: 8px;">
+              <span id="lbl_tipo" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Tipo<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
+              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
+                <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="4">
+                  <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                    <input type="radio" name="local_tipo" value="{{ t.value }}" checked="{{ t.on }}" onChange="{{ t.pick }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
+                    <span>{{ t.label }}</span>
+                  </label>
                 </sc-for>
               </div>
-              <sc-if value="{{ err.local_tipo }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.local_tipo }}</div></sc-if>
+              <sc-if value="{{ err.local_tipo }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.local_tipo }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="tel" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">WhatsApp</label>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="tel" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">WhatsApp<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
               <div style="display: flex; gap: 8px;">
-                <select name="tel_prefijo" aria-label="Prefijo" value="{{ v.tel_prefijo }}" onChange="{{ on.tel_prefijo }}" style="flex: none; width: 118px; font-variant-numeric: tabular-nums; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 34px 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
+                <select name="tel_prefijo" aria-label="Prefijo" value="{{ v.tel_prefijo }}" onChange="{{ on.tel_prefijo }}" style="flex: none; width: 118px; height: 44px; font-variant-numeric: tabular-nums; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                   <sc-for list="{{ prefijos }}" as="p" hint-placeholder-count="10"><option value="{{ p.v }}">{{ p.label }}</option></sc-for>
                 </select>
-                <input id="tel" name="tel" type="tel" autoComplete="tel-national" inputMode="tel" value="{{ v.tel }}" onChange="{{ on.tel }}" style="flex: 1; min-width: 0; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+                <input id="tel" name="tel" type="tel" autoComplete="tel-national" inputMode="tel" aria-invalid="{{ inv.tel }}" value="{{ v.tel }}" onChange="{{ on.tel }}" style="flex: 1; min-width: 0; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               </div>
-              <sc-if value="{{ err.tel }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.tel }}</div></sc-if>
+              <sc-if value="{{ err.tel }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.tel }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="email_pago" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Correo del pago</label>
-              <input id="email_pago" name="email_pago" type="email" autoComplete="email" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.email_pago }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="email_pago" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Correo del pago<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="email_pago" name="email_pago" type="email" autoComplete="email" aria-invalid="{{ inv.email_pago }}" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.email_pago }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Tu local tiene web?</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <button type="button" onClick="{{ setWebSi }}" style="font-family: inherit; cursor: pointer; border-radius: 10px; padding: 13px 18px; font-size: 14.5px; font-weight: 600; background: {{ webSiBg }}; color: {{ webSiFg }}; border: 1px solid {{ webSiBd }}; transition: all 160ms ease;">Sí, tengo web</button>
-                <button type="button" onClick="{{ setWebNo }}" style="font-family: inherit; cursor: pointer; border-radius: 10px; padding: 13px 18px; font-size: 14.5px; font-weight: 600; background: {{ webNoBg }}; color: {{ webNoFg }}; border: 1px solid {{ webNoBd }}; transition: all 160ms ease;">No tengo web</button>
+            <div role="radiogroup" aria-labelledby="lbl_web" style="display: flex; flex-direction: column; gap: 8px;">
+              <span id="lbl_web" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Tu local tiene web?</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 24px;">
+                <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                  <input type="radio" checked="{{ tieneWeb }}" onChange="{{ setWebSi }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
+                  <span>Sí, tengo web</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                  <input type="radio" checked="{{ noWeb }}" onChange="{{ setWebNo }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
+                  <span>No tengo web</span>
+                </label>
               </div>
               <input type="hidden" name="desde_web" value="{{ desdeWeb }}">
             </div>
             <sc-if value="{{ tieneWeb }}" hint-placeholder-val="{{ false }}">
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label for="web" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Web del local</label>
-                <input id="web" name="web" type="text" inputMode="url" autoComplete="url" placeholder="ejemplo.com" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="web" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Web del local</label>
+                <input id="web" name="web" type="text" inputMode="url" autoComplete="url" placeholder="ejemplo.com" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               </div>
             </sc-if>
           </div>
         </section>
 
         <sc-if value="{{ fromWeb }}" hint-placeholder-val="{{ false }}">
-        <section style="border-top: 1px solid #1A1C19; padding: 28px 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px;">
-          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #B7BDB5;">Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.</p>
-          <button type="button" onClick="{{ fillMyself }}" style="font-family: inherit; cursor: pointer; background: none; border: none; padding: 0; font-size: 13.5px; font-weight: 500; color: #8B918A; border-bottom: 1px solid #2E3A38; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF;">Prefiero rellenarlo yo</button>
+        <section id="s-fromweb" style="background: #F6F6F6; border: 1px solid #E3E3E3; border-radius: 0; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; scroll-margin-top: 96px;">
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #1A1A1A;">Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.</p>
+          <button type="button" onClick="{{ fillMyself }}" style="font-family: inherit; cursor: pointer; background: none; border: none; padding: 0; font-size: 14px; font-weight: 500; color: #0A7C93; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #075E70;">Prefiero rellenarlo yo</button>
         </section>
         </sc-if>
 
         <!-- 2 · Horario -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-horario" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Horario</h2>
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label for="h_dia_de" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">De</label>
-                <select id="h_dia_de" name="h_dia_de" value="{{ v.h_dia_de }}" onChange="{{ on.h_dia_de }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                  <option value=""></option>
-                  <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
-                </select>
+        <section id="s-horario" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">Horario</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Los días y horas en que abres.</p>
+          <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 18px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="h_dia_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_dia_de" name="h_dia_de" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_de }}" onChange="{{ on.h_dia_de }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <option value=""></option>
+                    <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
+                  </select>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="h_dia_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_dia_a" name="h_dia_a" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_a }}" onChange="{{ on.h_dia_a }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <option value=""></option>
+                    <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
+                  </select>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label for="h_dia_a" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">a</label>
-                <select id="h_dia_a" name="h_dia_a" value="{{ v.h_dia_a }}" onChange="{{ on.h_dia_a }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                  <option value=""></option>
-                  <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
-                </select>
-              </div>
+              <sc-if value="{{ err.h_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h_dia }}</div></sc-if>
             </div>
-            <sc-if value="{{ err.h_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h_dia }}</div></sc-if>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label for="h_hora_de" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Abre</label>
-                <select id="h_hora_de" name="h_hora_de" value="{{ v.h_hora_de }}" onChange="{{ on.h_hora_de }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; appearance: none; -webkit-appearance: none; font-variant-numeric: tabular-nums; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                  <option value=""></option>
-                  <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
-                </select>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="h_hora_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_hora_de" name="h_hora_de" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_de }}" onChange="{{ on.h_hora_de }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <option value=""></option>
+                    <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
+                  </select>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="h_hora_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_hora_a" name="h_hora_a" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_a }}" onChange="{{ on.h_hora_a }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <option value=""></option>
+                    <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
+                  </select>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label for="h_hora_a" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">cierra</label>
-                <select id="h_hora_a" name="h_hora_a" value="{{ v.h_hora_a }}" onChange="{{ on.h_hora_a }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; appearance: none; -webkit-appearance: none; font-variant-numeric: tabular-nums; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                  <option value=""></option>
-                  <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
-                </select>
-              </div>
+              <sc-if value="{{ err.h_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h_hora }}</div></sc-if>
             </div>
-            <sc-if value="{{ err.h_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h_hora }}</div></sc-if>
-            <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #F4F6F3; cursor: pointer;">
-              <input type="checkbox" name="h_extendido" value="1" checked="{{ v.h_extendido }}" onChange="{{ on.h_extendido }}" style="width: 16px; height: 16px; margin: 0; accent-color: #2BE7FF;">
+            <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+              <input type="checkbox" name="h_extendido" value="1" checked="{{ v.h_extendido }}" onChange="{{ on.h_extendido }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
               <span>Horario extendido</span>
             </label>
             <sc-if value="{{ v.h_extendido }}" hint-placeholder-val="{{ false }}">
-              <div style="display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #1A1C19; padding-top: 22px;">
-                <div style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Segundo tramo</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="h2_dia_de" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">De</label>
-                    <select id="h2_dia_de" name="h2_dia_de" value="{{ v.h2_dia_de }}" onChange="{{ on.h2_dia_de }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 34px 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                      <option value=""></option>
-                      <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
-                    </select>
+              <div style="display: flex; flex-direction: column; gap: 18px; border-top: 1px solid #EEEEEE; padding-top: 18px;">
+                <div style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Segundo tramo</div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <label for="h2_dia_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_dia_de" name="h2_dia_de" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_de }}" onChange="{{ on.h2_dia_de }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                        <option value=""></option>
+                        <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
+                      </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <label for="h2_dia_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_dia_a" name="h2_dia_a" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_a }}" onChange="{{ on.h2_dia_a }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                        <option value=""></option>
+                        <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
+                      </select>
+                    </div>
                   </div>
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="h2_dia_a" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">a</label>
-                    <select id="h2_dia_a" name="h2_dia_a" value="{{ v.h2_dia_a }}" onChange="{{ on.h2_dia_a }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 34px 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                      <option value=""></option>
-                      <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
-                    </select>
-                  </div>
-                <sc-if value="{{ err.h2_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h2_dia }}</div></sc-if>
+                  <sc-if value="{{ err.h2_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h2_dia }}</div></sc-if>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="h2_hora_de" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Abre</label>
-                    <select id="h2_hora_de" name="h2_hora_de" value="{{ v.h2_hora_de }}" onChange="{{ on.h2_hora_de }}" style="width: 100%; font-variant-numeric: tabular-nums; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 34px 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                      <option value=""></option>
-                      <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
-                    </select>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <label for="h2_hora_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_hora_de" name="h2_hora_de" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_de }}" onChange="{{ on.h2_hora_de }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                        <option value=""></option>
+                        <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
+                      </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <label for="h2_hora_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_hora_a" name="h2_hora_a" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_a }}" onChange="{{ on.h2_hora_a }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                        <option value=""></option>
+                        <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
+                      </select>
+                    </div>
                   </div>
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="h2_hora_a" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">cierra</label>
-                    <select id="h2_hora_a" name="h2_hora_a" value="{{ v.h2_hora_a }}" onChange="{{ on.h2_hora_a }}" style="width: 100%; font-variant-numeric: tabular-nums; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 34px 13px 14px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%238B918A%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
-                      <option value=""></option>
-                      <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
-                    </select>
-                  </div>
-                <sc-if value="{{ err.h2_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="margin-top: -14px; font-size: 13px; color: #FF6B6B;">{{ err.h2_hora }}</div></sc-if>
+                  <sc-if value="{{ err.h2_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h2_hora }}</div></sc-if>
                 </div>
               </div>
             </sc-if>
@@ -346,49 +335,51 @@
 
         <!-- 3 · Carta -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-carta" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Carta</h2>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
-            <input type="checkbox" name="omit_carta" value="1" checked="{{ v.omit_carta }}" onChange="{{ on.omit_carta }}" style="width: 15px; height: 15px; margin: 0; accent-color: #2BE7FF;">
+        <section id="s-carta" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.carta }};">Carta</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Tu carta tal como la tienes ahora.</p>
+          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_carta" value="1" checked="{{ v.omit_carta }}" onChange="{{ on.omit_carta }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.carta }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="carta_files" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Sube la carta</label>
-              <input id="carta_files" name="carta_files" type="file" accept="application/pdf,image/*" multiple="{{ true }}" onChange="{{ onFiles }}" style="width: 100%; font-size: 14px; color: #B7BDB5; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 10px 12px;">
-              <div style="font-size: 13px; color: #767B75;">{{ filesNote }}</div>
-              <sc-if value="{{ err.carta_files }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.carta_files }}</div></sc-if>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="carta_files" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Sube la carta</label>
+              <input id="carta_files" name="carta_files" type="file" accept="application/pdf,image/*" multiple="{{ true }}" aria-invalid="{{ inv.carta }}" onChange="{{ onFiles }}" style="width: 100%; font-size: 14px; color: #4A4A4A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 8px 10px;">
+              <div style="font-size: 13px; color: #6B6B6B;">{{ filesNote }}</div>
+              <sc-if value="{{ err.carta_files }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.carta_files }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="carta_url" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">O pega el enlace donde está</label>
-              <input id="carta_url" name="carta_url" type="url" inputMode="url" value="{{ v.carta_url }}" onChange="{{ on.carta_url }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.carta }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.carta }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="carta_url" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">O pega el enlace donde está</label>
+              <input id="carta_url" name="carta_url" type="url" inputMode="url" aria-invalid="{{ inv.carta }}" value="{{ v.carta_url }}" onChange="{{ on.carta_url }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.carta }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.carta }}</div></sc-if>
             </div>
-            <div style="margin-top: -8px; font-size: 13.5px; line-height: 1.55; color: #8B918A;">Vale la foto de la carta impresa. Nosotros la digitalizamos.</div>
+            <div style="font-size: 13px; line-height: 1.5; color: #6B6B6B;">Vale la foto de la carta impresa. Nosotros la digitalizamos.</div>
           </div>
           </sc-if>
         </section>
         </sc-if>
 
         <!-- 4 · WiFi -->
-        <section id="s-wifi" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">WiFi</h2>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
-            <input type="checkbox" name="omit_wifi" value="1" checked="{{ v.omit_wifi }}" onChange="{{ on.omit_wifi }}" style="width: 15px; height: 15px; margin: 0; accent-color: #2BE7FF;">
+        <section id="s-wifi" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.wifi }};">WiFi</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Para que los clientes se conecten sin preguntar.</p>
+          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_wifi" value="1" checked="{{ v.omit_wifi }}" onChange="{{ on.omit_wifi }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.wifi }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="wifi_ssid" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Nombre de la red</label>
-              <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.wifi_ssid }}</div></sc-if>
+          <div data-two="1" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="wifi_ssid" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Nombre de la red<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" aria-invalid="{{ inv.wifi_ssid }}" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.wifi_ssid }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="wifi_pass" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Clave</label>
-              <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.wifi_pass }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="wifi_pass" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Clave<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" aria-invalid="{{ inv.wifi_pass }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.wifi_pass }}</div></sc-if>
             </div>
           </div>
           </sc-if>
@@ -396,34 +387,33 @@
 
         <!-- 5 · Google y redes -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-google" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Google y redes</h2>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
-            <input type="checkbox" name="omit_google" value="1" checked="{{ v.omit_google }}" onChange="{{ on.omit_google }}" style="width: 15px; height: 15px; margin: 0; accent-color: #2BE7FF;">
+        <section id="s-google" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.google }};">Google y redes</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Dónde te encuentran y te dejan reseñas.</p>
+          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_google" value="1" checked="{{ v.omit_google }}" onChange="{{ on.omit_google }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.google }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="google_url" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Enlace de la ficha de Google</label>
-              <input id="google_url" name="google_url" type="url" inputMode="url" value="{{ v.google_url }}" onChange="{{ on.google_url }}" disabled="{{ v.google_buscar }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease, opacity 160ms ease; opacity: {{ googleOpacity }};">
-              <label style="display: flex; align-items: center; gap: 10px; margin-top: 4px; font-size: 14px; color: #B7BDB5; cursor: pointer;">
-                <input type="checkbox" name="google_buscar" value="1" checked="{{ v.google_buscar }}" onChange="{{ on.google_buscar }}" style="width: 16px; height: 16px; margin: 0; accent-color: #2BE7FF;">
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="google_url" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Enlace de la ficha de Google</label>
+              <input id="google_url" name="google_url" type="url" inputMode="url" aria-invalid="{{ inv.google_url }}" value="{{ v.google_url }}" onChange="{{ on.google_url }}" disabled="{{ v.google_buscar }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; margin-top: 2px; font-size: 14px; color: #1A1A1A; cursor: pointer;">
+                <input type="checkbox" name="google_buscar" value="1" checked="{{ v.google_buscar }}" onChange="{{ on.google_buscar }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                 <span>No lo sé, buscadla por mí</span>
               </label>
-              <sc-if value="{{ err.google_url }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.google_url }}</div></sc-if>
+              <sc-if value="{{ err.google_url }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.google_url }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="instagram" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Instagram</label>
-              <input id="instagram" name="instagram" type="text" autoComplete="off" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.instagram }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="instagram" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Instagram</label>
+              <input id="instagram" name="instagram" type="text" autoComplete="off" aria-invalid="{{ inv.instagram }}" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.instagram }}</div></sc-if>
             </div>
-            </sc-if>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="otro_enlace" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Otro enlace</label>
-              <input id="otro_enlace" name="otro_enlace" type="url" inputMode="url" value="{{ v.otro_enlace }}" onChange="{{ on.otro_enlace }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-              <div style="font-size: 13px; color: #767B75;">Ej.: TikTok, Facebook, TripAdvisor</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="otro_enlace" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Otro enlace</label>
+              <input id="otro_enlace" name="otro_enlace" type="url" inputMode="url" value="{{ v.otro_enlace }}" onChange="{{ on.otro_enlace }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: TikTok, Facebook, TripAdvisor</div>
             </div>
           </div>
           </sc-if>
@@ -431,123 +421,126 @@
         </sc-if>
 
         <!-- 6 · Fidelización -->
-        <section id="s-fidelizacion" style="border-top: 1px solid #1A1C19; padding: 40px 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Fidelización</h2>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
-            <input type="checkbox" name="omit_fidelizacion" value="1" checked="{{ v.omit_fidelizacion }}" onChange="{{ on.omit_fidelizacion }}" style="width: 15px; height: 15px; margin: 0; accent-color: #2BE7FF;">
+        <section id="s-fidelizacion" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.fidelizacion }};">Fidelización</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">La tarjeta de sellos para los clientes que repiten.</p>
+          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_fidelizacion" value="1" checked="{{ v.omit_fidelizacion }}" onChange="{{ on.omit_fidelizacion }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.fidelizacion }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-              <div style="display: flex; flex-direction: column; gap: 22px;">
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                  <label for="fid_premio" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Premio</label>
-                  <input id="fid_premio" name="fid_premio" type="text" value="{{ v.fid_premio }}" onChange="{{ on.fid_premio }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; transition: border-color 160ms ease;">
-                  <div style="font-size: 13px; color: #767B75;">Ej.: un café gratis</div>
-                  <sc-if value="{{ err.fid_premio }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.fid_premio }}</div></sc-if>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="fid_visitas" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Visitas para el premio</label>
-                    <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; font-variant-numeric: tabular-nums; transition: border-color 160ms ease;">
-                    <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.fid_visitas }}</div></sc-if>
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <label for="fid_pin" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">PIN del equipo (4 cifras)</label>
-                    <input id="fid_pin" name="fid_pin" type="text" inputMode="numeric" maxLength="4" pattern="[0-9]{4}" autoComplete="off" value="{{ v.fid_pin }}" onChange="{{ on.fid_pin }}" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; font-variant-numeric: tabular-nums; letter-spacing: .12em; transition: border-color 160ms ease;">
-                    <div style="font-size: 13px; color: #767B75;">Para canjear premios en el local</div>
-                    <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.fid_pin }}</div></sc-if>
-                  </div>
-                </div>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="fid_premio" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="fid_premio" name="fid_premio" type="text" aria-invalid="{{ inv.fid_premio }}" value="{{ v.fid_premio }}" onChange="{{ on.fid_premio }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: un café gratis</div>
+              <sc-if value="{{ err.fid_premio }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_premio }}</div></sc-if>
+            </div>
+            <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="fid_visitas" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Visitas para el premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" aria-invalid="{{ inv.fid_visitas }}" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+                <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_visitas }}</div></sc-if>
               </div>
-            <div style="margin-top: -8px; font-size: 13.5px; line-height: 1.55; color: #8B918A;">Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.</div>
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="fid_pin" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">PIN del equipo (4 cifras)<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                <input id="fid_pin" name="fid_pin" type="text" inputMode="numeric" maxLength="4" pattern="[0-9]{4}" autoComplete="off" aria-invalid="{{ inv.fid_pin }}" value="{{ v.fid_pin }}" onChange="{{ on.fid_pin }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; letter-spacing: .12em; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+                <div style="font-size: 13px; color: #6B6B6B;">Para canjear premios en el local</div>
+                <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_pin }}</div></sc-if>
+              </div>
+            </div>
+            <div style="font-size: 13px; line-height: 1.5; color: #6B6B6B;">Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.</div>
           </div>
           </sc-if>
         </section>
 
-        <!-- 7 · Lo que solo tu equipo sabe -->
-        <section id="s-equipo" style="border-top: 1px solid #1A1C19; padding: 40px 0 0; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 21px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Lo que solo el equipo sabe</h2>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #8B918A; cursor: pointer;">
-            <input type="checkbox" name="omit_equipo" value="1" checked="{{ v.omit_equipo }}" onChange="{{ on.omit_equipo }}" style="width: 15px; height: 15px; margin: 0; accent-color: #2BE7FF;">
+        <!-- 7 · Lo que solo el equipo sabe -->
+        <section id="s-equipo" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
+          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.equipo }};">Lo que solo el equipo sabe</h2>
+          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Lo que el asistente necesita saber para responder como vosotros.</p>
+          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_equipo" value="1" checked="{{ v.omit_equipo }}" onChange="{{ on.omit_equipo }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.equipo }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 22px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="q_estrella" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Qué recomiendas siempre?</label>
-              <textarea id="q_estrella" name="q_estrella" rows="2" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
-              <div style="font-size: 13px; color: #767B75;">Ej.: la parmigiana, y el vino de la casa con ella</div>
-              <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_estrella }}</div></sc-if>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="q_estrella" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_estrella" name="q_estrella" rows="2" aria-invalid="{{ inv.q_estrella }}" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: la parmigiana, y el vino de la casa con ella</div>
+              <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_estrella }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="q_preguntas" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Qué preguntan más los clientes?</label>
-              <textarea id="q_preguntas" name="q_preguntas" rows="2" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
-              <div style="font-size: 13px; color: #767B75;">Ej.: si hay opciones sin gluten, si hay terraza</div>
-              <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_preguntas }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="q_preguntas" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Qué preguntan más los clientes?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_preguntas" name="q_preguntas" rows="2" aria-invalid="{{ inv.q_preguntas }}" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: si hay opciones sin gluten, si hay terraza</div>
+              <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_preguntas }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="q_no" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">¿Algo que el asistente no deba decir ni prometer?</label>
-              <textarea id="q_no" name="q_no" rows="2" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
-              <div style="font-size: 13px; color: #767B75;">Ej.: no reservamos por teléfono, no hay menú del día</div>
-              <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_no }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="q_no" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Algo que el asistente no deba decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_no" name="q_no" rows="2" aria-invalid="{{ inv.q_no }}" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: no reservamos por teléfono, no hay menú del día</div>
+              <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_no }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="q_curiosidad" style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Una curiosidad de la casa</label>
-              <textarea id="q_curiosidad" name="q_curiosidad" rows="2" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; font-size: 15.5px; line-height: 1.5; color: #F4F6F3; background: #000000; border: 1px solid #262924; border-radius: 10px; padding: 13px 14px; resize: vertical; transition: border-color 160ms ease;"></textarea>
-              <div style="font-size: 13px; color: #767B75;">Ej.: la receta es de la abuela de Nápoles</div>
-              <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.q_curiosidad }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="q_curiosidad" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_curiosidad" name="q_curiosidad" rows="2" aria-invalid="{{ inv.q_curiosidad }}" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 13px; color: #6B6B6B;">Ej.: la receta es de la abuela de Nápoles</div>
+              <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_curiosidad }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <span style="font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #767B75;">Tono del asistente</span>
-              <input type="hidden" name="tono" value="{{ v.tono }}">
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <div role="radiogroup" aria-labelledby="lbl_tono" style="display: flex; flex-direction: column; gap: 8px;">
+              <span id="lbl_tono" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Tono del asistente<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
+              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
                 <sc-for list="{{ tonos }}" as="t" hint-placeholder-count="4">
-                  <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+                  <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                    <input type="radio" name="tono" value="{{ t.value }}" checked="{{ t.on }}" onChange="{{ t.pick }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
+                    <span>{{ t.label }}</span>
+                  </label>
                 </sc-for>
               </div>
-              <sc-if value="{{ err.tono }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #FF6B6B;">{{ err.tono }}</div></sc-if>
+              <sc-if value="{{ err.tono }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.tono }}</div></sc-if>
             </div>
           </div>
           </sc-if>
         </section>
 
-
-        <div style="margin-top: 48px; border-top: 1px solid #1A1C19; padding-top: 32px;">
-          <button data-alta-submit="1" type="submit" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border: none; border-radius: 10px; padding: 16px 26px; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Enviar</button>
-          <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="margin-top: 14px; font-size: 13.5px; color: #FF6B6B;">{{ err.global }}</div></sc-if>
-          <p style="margin: 18px 0 0; font-size: 13.5px; line-height: 1.6; color: #8B918A;">Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.</p>
+        <div style="margin-top: 8px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px;">
+          <button data-alta-submit="1" type="submit" disabled="{{ submitting }}" style="min-width: 220px; height: 52px; font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border: none; border-radius: 8px; padding: 0 28px; cursor: pointer; transition: background 140ms ease;" style-hover="background: #000000;">
+            <sc-if value="{{ submitting }}" hint-placeholder-val="{{ false }}"><span>Enviando…</span></sc-if>
+            <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}"><span>Enviar</span></sc-if>
+          </button>
+          <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="font-size: 14px; line-height: 1.5; color: #C62828;">{{ err.global }}</div></sc-if>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B6B6B;">Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.</p>
         </div>
 
       </form>
     </div>
   </main>
 
-  <footer style="color: #9CA39A;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px 32px; border-bottom: 1px solid #1A1C19; padding-bottom: 40px;">
+  <footer style="color: #6B6B6B; background: #FFFFFF;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 56px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding-bottom: 36px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
+          <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
-          <a href="/resenas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Reseñas Google</a>
+        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+          <a href="/hub" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">IPSO HUB</a>
+          <a href="/resenas" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Reseñas Google</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="/#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
-          <a href="/#contacto" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
+        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+          <a href="/#dudas" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Dudas</a>
+          <a href="/#contacto" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Contacto</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
-          <a href="/nosotros" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Nosotros</a>
-          <a href="/legal#aviso-legal" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Aviso legal</a>
-          <a href="/legal#privacidad" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Privacidad</a>
-          <a href="/legal#cookies" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Cookies</a>
+        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+          <a href="/nosotros" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Nosotros</a>
+          <a href="/legal#aviso-legal" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Aviso legal</a>
+          <a href="/legal#privacidad" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Privacidad</a>
+          <a href="/legal#cookies" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Cookies</a>
         </div>
       </div>
-      <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
+      <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 13px; color: #6B6B6B;">
         <span>© 2026 Ipso · Barcelona</span>
-        <a href="/nosotros" style="color: #8B918A;" style-hover="color: #FFFFFF;">Nosotros →</a>
       </div>
     </div>
   </footer>
@@ -566,14 +559,20 @@ const HORAS = []; for (let h = 0; h < 24; h++) { for (const m of ['00','30']) HO
 const TIPOS = ['Hostelería','Belleza y bienestar','Comercio','Otro'];
 const TONOS = ['Cercano y familiar','Profesional y claro','Elegante y discreto','Divertido y desenfadado'];
 const SECCIONES = [
-  { id: 's-local', label: 'El local' }, { id: 's-horario', label: 'Horario' }, { id: 's-carta', label: 'Carta' }, { id: 's-wifi', label: 'WiFi' },
-  { id: 's-google', label: 'Google y redes' }, { id: 's-fidelizacion', label: 'Fidelización' }, { id: 's-equipo', label: 'Lo que solo el equipo sabe' }
+  { id: 's-local', label: 'El local', keys: ['local_nombre','local_tipo','tel','email_pago'] },
+  { id: 's-horario', label: 'Horario', keys: ['h_dia','h_hora','h2_dia','h2_hora'], web: true },
+  { id: 's-carta', label: 'Carta', keys: ['carta_files','carta'], omit: 'omit_carta', web: true },
+  { id: 's-wifi', label: 'WiFi', keys: ['wifi_ssid','wifi_pass'], omit: 'omit_wifi' },
+  { id: 's-google', label: 'Google y redes', keys: ['google_url','instagram'], omit: 'omit_google', web: true },
+  { id: 's-fidelizacion', label: 'Fidelización', keys: ['fid_premio','fid_visitas','fid_pin'], omit: 'omit_fidelizacion' },
+  { id: 's-equipo', label: 'Lo que solo el equipo sabe', keys: ['q_estrella','q_preguntas','q_no','q_curiosidad','tono'], omit: 'omit_equipo' }
 ];
+const INV_FIELDS = ['local_nombre','local_tipo','tel','email_pago','h_dia','h_hora','h2_dia','h2_hora','carta','wifi_ssid','wifi_pass','google_url','instagram','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad'];
 
 const MSG = {
-  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados' },
-  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected' },
-  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats' }
+  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados', prog: (n) => n + ' de 7 secciones listas' },
+  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected', prog: (n) => n + ' of 7 sections ready' },
+  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats', prog: (n) => n + ' de 7 seccions llestes' }
 };
 
 const EN_PAIRS = [
@@ -603,8 +602,17 @@ const EN_PAIRS = [
   ['¿Algo que el asistente no deba decir ni prometer?', 'Anything the assistant should not say or promise?'], ['Ej.: no reservamos por teléfono, no hay menú del día', 'E.g.: we do not take phone bookings, there is no set lunch menu'],
   ['Una curiosidad de la casa', 'A house curiosity'], ['Ej.: la receta es de la abuela de Nápoles', 'E.g.: the recipe is from grandma in Naples'],
   ['Tono del asistente', 'Assistant tone'], ['Cercano y familiar', 'Warm and familiar'], ['Profesional y claro', 'Professional and clear'], ['Elegante y discreto', 'Elegant and discreet'], ['Divertido y desenfadado', 'Fun and casual'],
-  ['Enviar', 'Send'],
-  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Once we receive the form, we ship the HUB within 2-4 working days.']
+  ['Enviar', 'Send'], ['Enviando…', 'Sending…'],
+  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Once we receive the form, we ship the HUB within 2-4 working days.'],
+  ['Los campos con * son obligatorios.', 'Fields marked * are required.'],
+  ['Faltan campos por rellenar, marcados en rojo', 'Some fields are missing, marked in red'],
+  ['Datos básicos del negocio y cómo contactarte.', 'Basic details of the business and how to reach you.'],
+  ['Los días y horas en que abres.', 'The days and hours you are open.'],
+  ['Tu carta tal como la tienes ahora.', 'Your menu as it is now.'],
+  ['Para que los clientes se conecten sin preguntar.', 'So customers can connect without asking.'],
+  ['Dónde te encuentran y te dejan reseñas.', 'Where people find you and leave reviews.'],
+  ['La tarjeta de sellos para los clientes que repiten.', 'The stamp card for returning customers.'],
+  ['Lo que el asistente necesita saber para responder como vosotros.', 'What the assistant needs to know to answer like you do.']
 ];
 
 const CA_PAIRS = [
@@ -634,8 +642,17 @@ const CA_PAIRS = [
   ['¿Algo que el asistente no deba decir ni prometer?', 'Alguna cosa que l\u2019assistent no hagi de dir ni prometre?'], ['Ej.: no reservamos por teléfono, no hay menú del día', 'Ex.: no reservem per telèfon, no hi ha menú del dia'],
   ['Una curiosidad de la casa', 'Una curiositat de la casa'], ['Ej.: la receta es de la abuela de Nápoles', 'Ex.: la recepta és de l\u2019àvia de Nàpols'],
   ['Tono del asistente', 'To de l\u2019assistent'], ['Cercano y familiar', 'Proper i familiar'], ['Profesional y claro', 'Professional i clar'], ['Elegante y discreto', 'Elegant i discret'], ['Divertido y desenfadado', 'Divertit i desimbolt'],
-  ['Enviar', 'Envia'],
-  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Un cop rebut el formulari, enviem el HUB en 2-4 dies laborables.']
+  ['Enviar', 'Envia'], ['Enviando…', 'Enviant…'],
+  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Un cop rebut el formulari, enviem el HUB en 2-4 dies laborables.'],
+  ['Los campos con * son obligatorios.', 'Els camps amb * són obligatoris.'],
+  ['Faltan campos por rellenar, marcados en rojo', 'Falten camps per omplir, marcats en vermell'],
+  ['Datos básicos del negocio y cómo contactarte.', 'Dades bàsiques del negoci i com contactar-te.'],
+  ['Los días y horas en que abres.', 'Els dies i les hores en què obres.'],
+  ['Tu carta tal como la tienes ahora.', 'La teva carta tal com la tens ara.'],
+  ['Para que los clientes se conecten sin preguntar.', 'Perquè els clients es connectin sense preguntar.'],
+  ['Dónde te encuentran y te dejan reseñas.', 'On et troben i et deixen ressenyes.'],
+  ['La tarjeta de sellos para los clientes que repiten.', 'La targeta de segells per als clients que repeteixen.'],
+  ['Lo que el asistente necesita saber para responder como vosotros.', 'El que l\u2019assistent necessita saber per respondre com vosaltres.']
 ];
 
 const DICTS = { es: null, en: {}, ca: {} };
@@ -644,10 +661,8 @@ EN_PAIRS.forEach((p) => { DICTS.en[p[0]] = p[1]; REV.en[p[1]] = p[0]; });
 CA_PAIRS.forEach((p) => { DICTS.ca[p[0]] = p[1]; REV.ca[p[1]] = p[0]; });
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
-const PILL = (on) => 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-weight: 600; background: ' + (on ? '#2BE7FF' : 'transparent') + '; color: ' + (on ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (on ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;';
-
 class Component extends DCLogic {
-  state = { lang: 'es', menu: false, theme: 'dark', langMenu: false, v: Object.assign({}, DEFAULTS), errors: {}, files: 0, filesTooBig: false };
+  state = { lang: 'es', menu: false, langMenu: false, v: Object.assign({}, DEFAULTS), errors: {}, submitted: false, submitting: false, active: 's-local', files: 0, filesTooBig: false };
 
   swap(map) {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
@@ -662,15 +677,51 @@ class Component extends DCLogic {
     document.documentElement.lang = lang;
   }
 
+  headerH() { const h = document.querySelector('header'); return h ? h.getBoundingClientRect().height : 64; }
+
+  sectionEl(id) { return document.getElementById(id) || (SECCIONES.find((s) => s.id === id && s.web) ? document.getElementById('s-fromweb') : null); }
+
+  goTo(id) {
+    const el = this.sectionEl(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - this.headerH() - 16;
+    this._lock = Date.now() + 900;
+    this.setState({ active: id });
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }
+
+  spy() {
+    if (this._lock && Date.now() < this._lock) return;
+    const line = this.headerH() + 48;
+    let active = SECCIONES[0].id;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    for (const s of SECCIONES) {
+      const el = document.getElementById(s.id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= line) active = s.id;
+    }
+    if (atBottom) { const vis = SECCIONES.filter((s) => document.getElementById(s.id)); if (vis.length) active = vis[vis.length - 1].id; }
+    if (active !== this.state.active) this.setState({ active });
+  }
+
   componentDidMount() {
-    import('./ipso-chrome.js').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
     try {
       const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
       if (saved && typeof saved === 'object') this.setState({ v: Object.assign({}, DEFAULTS, saved) });
     } catch (e) {}
+    this._onScroll = () => { if (this._raf) return; this._raf = requestAnimationFrame(() => { this._raf = 0; this.spy(); }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._onShow = () => { if (this.state.submitting) this.setState({ submitting: false }); };
+    window.addEventListener('pageshow', this._onShow);
+    setTimeout(() => this.spy(), 60);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    window.removeEventListener('pageshow', this._onShow);
   }
   componentDidUpdate() {
-    if (this._chrome) this._chrome.applyTheme(this.state.theme);
     if (this.state.lang !== 'es') this.applyLang('es');
   }
 
@@ -678,15 +729,16 @@ class Component extends DCLogic {
     this.setState((s) => {
       const v = Object.assign({}, s.v, { [name]: value });
       try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
-      const errors = Object.keys(s.errors).length ? this.validateWith(v) : s.errors;
+      const errors = s.submitted ? this.validateWith(v, s) : s.errors;
       return { v, errors };
     });
   }
 
-  validate() { return this.validateWith(this.state.v); }
+  validate() { return this.validateWith(this.state.v, this.state); }
 
-  validateWith(v) {
-    const M = MSG[this.state.lang], e = {};
+  validateWith(v, st) {
+    st = st || this.state;
+    const M = MSG[st.lang || this.state.lang], e = {};
     const has = (k) => !!(v[k] && String(v[k]).trim());
     const req = (k) => { if (!has(k)) e[k] = M.req; };
     req('local_nombre');
@@ -702,8 +754,8 @@ class Component extends DCLogic {
     const fromWeb = v.tiene_web === 'si' && !v.manual_web;
     if (fromWeb) { delete e.h_dia; delete e.h_hora; delete e.h2_dia; delete e.h2_hora; }
     if (!v.omit_carta && !fromWeb) {
-      if (this.state.filesTooBig) e.carta_files = M.size;
-      if (!this.state.files && !has('carta_url')) e.carta = M.carta;
+      if (st.filesTooBig) e.carta_files = M.size;
+      if (!st.files && !has('carta_url')) e.carta = M.carta;
     }
     if (!v.omit_wifi) { req('wifi_ssid'); req('wifi_pass'); }
     if (!v.omit_fidelizacion) {
@@ -717,71 +769,95 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const v = this.state.v, light = this.state.theme === 'light';
-    const dim = light ? '#5A605C' : '#9CA39A';
-    const M = MSG[this.state.lang];
+    const st = this.state, v = st.v;
+    const M = MSG[st.lang];
     const on = {};
     TEXT_FIELDS.forEach((k) => { on[k] = (ev) => this.set(k, ev.target.value); });
     BOOL_FIELDS.forEach((k) => { on[k] = (ev) => this.set(k, !!ev.target.checked); });
     const has = (k) => !!(v[k] && String(v[k]).trim());
     const tieneWeb = v.tiene_web === 'si', noWeb = v.tiene_web === 'no';
     const fromWeb = tieneWeb && !v.manual_web;
-    const done = {
-      's-local': has('local_nombre') && has('local_tipo') && has('tel') && has('email_pago'),
-      's-horario': fromWeb || has('h_dia_de') && has('h_dia_a') && has('h_hora_de') && has('h_hora_a') && (!v.h_extendido || (has('h2_dia_de') && has('h2_dia_a') && has('h2_hora_de') && has('h2_hora_a'))),
-      's-carta': fromWeb || !!v.omit_carta || this.state.files > 0 || has('carta_url'),
-      's-wifi': !!v.omit_wifi || (has('wifi_ssid') && has('wifi_pass')),
-      's-google': fromWeb || !!v.omit_google || !!v.google_buscar || has('google_url') || has('instagram') || has('web') || has('otro_enlace'),
-      's-fidelizacion': !!v.omit_fidelizacion || (has('fid_premio') && has('fid_visitas') && /^\d{4}$/.test(v.fid_pin || '')),
-      's-equipo': !!v.omit_equipo || (has('q_estrella') && has('q_preguntas') && has('q_no') && has('q_curiosidad') && has('tono'))
+    const live = this.validateWith(v, st);
+    const shown = st.errors;
+    const secState = (s) => {
+      if (s.omit && v[s.omit]) return 'removed';
+      if (st.submitted && s.keys.some((k) => shown[k])) return 'err';
+      if (s.web && fromWeb) return 'done';
+      if (s.keys.some((k) => live[k])) return 'empty';
+      if (s.id === 's-google') return (v.google_buscar || has('google_url') || has('instagram') || has('otro_enlace')) ? 'done' : 'empty';
+      return 'done';
     };
+    const states = SECCIONES.map(secState);
+    const ready = states.filter((x) => x === 'done' || x === 'removed').length;
+    const activeSec = SECCIONES.find((s) => s.id === st.active) || SECCIONES[0];
+    const inv = {};
+    INV_FIELDS.forEach((k) => { inv[k] = shown[k] ? 'true' : 'false'; });
+    if (shown.carta_files) inv.carta = 'true';
+    const deco = {};
+    ['carta', 'wifi', 'google', 'fidelizacion', 'equipo'].forEach((k) => { deco[k] = v['omit_' + k] ? 'line-through' : 'none'; });
+    const hasErr = Object.keys(shown).length > 0;
     return {
       v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo }),
-      tieneWeb, fromWeb, showSec: !fromWeb, desdeWeb: tieneWeb ? '1' : '0',
-      webSiFg: tieneWeb ? '#0B0C0A' : '#9CA39A', webSiBg: tieneWeb ? '#2BE7FF' : 'transparent', webSiBd: tieneWeb ? '#2BE7FF' : '#262924',
-      webNoFg: noWeb ? '#0B0C0A' : '#9CA39A', webNoBg: noWeb ? '#2BE7FF' : 'transparent', webNoBd: noWeb ? '#2BE7FF' : '#262924',
+      tieneWeb, noWeb, fromWeb, showSec: !fromWeb, desdeWeb: tieneWeb ? '1' : '0',
       setWebSi: () => { this.set('manual_web', false); this.set('tiene_web', 'si'); }, setWebNo: () => { this.set('manual_web', false); this.set('tiene_web', 'no'); }, fillMyself: () => this.set('manual_web', true),
       show: { carta: !v.omit_carta, wifi: !v.omit_wifi, google: !v.omit_google, fidelizacion: !v.omit_fidelizacion, equipo: !v.omit_equipo },
+      deco,
       prefijos: PREFIJOS.map((p) => ({ v: p[0], label: p[0] + ' ' + p[1] })),
-      on, err: this.state.errors,
-      googleOpacity: v.google_buscar ? 0.45 : 1,
-      filesNote: this.state.files ? (this.state.files + ' ' + (this.state.files === 1 ? M.files1 : M.filesN)) : M.files0,
-      onFiles: (ev) => { const fl = Array.from(ev.target.files || []); this.setState({ files: fl.length, filesTooBig: fl.some((f) => f.size > 8 * 1024 * 1024) }); },
+      on, err: shown, inv,
+      filesNote: st.files ? (st.files + ' ' + (st.files === 1 ? M.files1 : M.filesN)) : M.files0,
+      onFiles: (ev) => {
+        const fl = Array.from(ev.target.files || []);
+        this.setState((s) => {
+          const ns = Object.assign({}, s, { files: fl.length, filesTooBig: fl.some((f) => f.size > 8 * 1024 * 1024) });
+          return { files: ns.files, filesTooBig: ns.filesTooBig, errors: s.submitted ? this.validateWith(s.v, ns) : s.errors };
+        });
+      },
       dias: DIAS.map((d) => ({ v: d[0], label: d[1] })),
       horas: HORAS,
-      tipos: TIPOS.map((t) => ({ label: t, style: PILL(v.local_tipo === t), pick: () => this.set('local_tipo', t) })),
-      tonos: TONOS.map((t) => ({ label: t, style: PILL(v.tono === t), pick: () => this.set('tono', t) })),
-      index: SECCIONES.map((s) => ({ href: '#' + s.id, label: s.label, fg: done[s.id] ? '#F4F6F3' : '#8B918A', bg: done[s.id] ? '#F4F6F3' : 'transparent', bd: done[s.id] ? '#F4F6F3' : '#3A3E38' })),
+      tipos: TIPOS.map((t) => ({ label: t, value: t, on: v.local_tipo === t, pick: () => this.set('local_tipo', t) })),
+      tonos: TONOS.map((t) => ({ label: t, value: t, on: v.tono === t, pick: () => this.set('tono', t) })),
+      index: SECCIONES.map((s, i) => {
+        const x = states[i], cur = s.id === activeSec.id;
+        return {
+          href: '#' + s.id, label: s.label, current: cur ? 'true' : 'false',
+          go: (ev) => { ev.preventDefault(); this.goTo(s.id); },
+          isEmpty: x === 'empty', isDone: x === 'done', isErr: x === 'err', isRemoved: x === 'removed',
+          fg: x === 'err' ? '#C62828' : x === 'removed' ? '#9A9A9A' : cur ? '#1A1A1A' : '#4A4A4A',
+          fw: cur ? 600 : 400,
+          deco: x === 'removed' ? 'line-through' : 'none',
+          bar: cur ? (x === 'err' ? '#C62828' : '#1A1A1A') : 'transparent'
+        };
+      }),
+      progText: M.prog(ready), progShort: ready + '/7', progPct: Math.round(ready / 7 * 100) + '%',
+      activeLabel: activeSec.label,
+      showAlert: st.submitted && hasErr,
+      submitting: st.submitting, idle: !st.submitting,
       onSubmit: (ev) => {
+        if (this.state.submitting) { ev.preventDefault(); return; }
         const errors = this.validate();
         if (Object.keys(errors).length) {
           ev.preventDefault();
-          this.setState({ errors }, () => {
-            const first = document.querySelector('[data-err]');
-            if (!first) return;
-            const field = first.closest('section') || first;
-            const y = field.getBoundingClientRect().top + window.scrollY - 96;
-            window.scrollTo({ top: y, behavior: 'smooth' });
+          this.setState({ errors, submitted: true }, () => {
+            const first = SECCIONES.find((s) => s.keys.some((k) => errors[k]) && !(s.omit && this.state.v[s.omit]));
+            if (first) this.goTo(first.id);
           });
           return;
         }
-        this.setState({ errors: {} });
+        this.setState({ errors: {}, submitting: true });
       },
-      iconFg: light ? '#0B0C0A' : '#F4F6F3',
-      toggleTheme: () => { const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
-      menuOpen: this.state.menu,
+      menuOpen: st.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
-      burgerFg: light ? '#0B0C0A' : '#F4F6F3',
-      burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
-      burgerO: this.state.menu ? 0 : 1,
-      burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
+      burgerT1: st.menu ? 'translateY(6px) rotate(45deg)' : 'none',
+      burgerO: st.menu ? 0 : 1,
+      burgerT3: st.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })),
-      langCode: this.state.lang === 'ca' ? 'CAT' : this.state.lang.toUpperCase(),
+      langCode: st.lang === 'ca' ? 'CAT' : st.lang.toUpperCase(),
       langs: ['es', 'en', 'ca'].map((code) => ({
         name: LANGNAMES[code],
-        fg: this.state.lang === code ? '#0B0C0A' : dim,
-        pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false, errors: {} }, () => this.applyLang(prev)); }
+        fw: st.lang === code ? 600 : 400,
+        bg: st.lang === code ? '#F2F2F2' : 'transparent',
+        pick: () => { const prev = this.state.lang; if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false, errors: {}, submitted: false }, () => this.applyLang(prev)); }
       }))
     };
   }

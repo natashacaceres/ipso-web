@@ -214,7 +214,7 @@
 
   <footer style="color: #9CA39A;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px 32px; border-bottom: 1px solid #1A1C19; padding-bottom: 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px 32px; padding-bottom: 40px;">
         <div>
           <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
           <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
@@ -236,7 +236,6 @@
       </div>
       <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
         <span>© 2026 Ipso · Barcelona</span>
-        <a href="/nosotros" style="color: #8B918A;" style-hover="color: #FFFFFF;">Nosotros →</a>
       </div>
     </div>
   </footer>
@@ -279,7 +278,7 @@ const ES = {
         ]},
         { h: '5. Ausencia de vinculación con terceros', p: [
           'Ipso no está afiliada, patrocinada ni respaldada por Google LLC ni por ninguna otra plataforma que pueda mencionarse con fines meramente descriptivos. Los servicios de Ipso consisten en configurar puntos de contacto que abren enlaces oficiales de dichas plataformas, respetando en todo momento sus políticas.',
-          'Ipso no filtra, condiciona ni retiene opiniones de clientes finales. Cualquier valoración se publica directamente por el usuario en la plataforma correspondiente.'
+          'El punto abre la ficha oficial de Google del local: Ipso no solicita, filtra, condiciona, retiene ni premia opiniones de clientes finales. Cualquier valoración se publica directamente por el usuario en la plataforma correspondiente.'
         ]},
         { h: '6. Enlaces', p: [
           'Este sitio puede incluir enlaces a páginas de terceros. Ipso no controla sus contenidos ni asume responsabilidad por ellos. La inclusión de un enlace no implica relación, recomendación ni supervisión.'
@@ -318,7 +317,8 @@ const ES = {
           'Conservación: mientras el cliente participe y, como máximo, veinticuatro meses desde su última visita; después el número se elimina y solo se conservan cifras agregadas sin identificar.',
           'Comunicación a terceros: el número no se comparte con otros locales ni se usa para descuentos cruzados. Para enviar el mensaje de premio se utiliza WhatsApp (Meta Platforms Ireland Ltd.), que trata el número según sus propias condiciones.',
           'Derechos: el cliente puede pedir en cualquier momento el borrado de su número escribiendo a ' + MAIL + ' o al propio local, sin perder ningún derecho ya obtenido. El resto de derechos se ejercen según la cláusula correspondiente de esta política.',
-          'El número se guarda cifrado y el cliente puede borrarlo él mismo desde la opción \u201cBorrar mis datos\u201d del propio punto.'
+          'El número se guarda cifrado y el cliente puede borrarlo él mismo desde la opción \u201cBorrar mis datos\u201d del propio punto.',
+          'Comparte tu visita: en los locales con HUB Pro, al tocar el punto el sistema registra el toque (fecha, hora, tipo de dispositivo y ciudad aproximada; sin IP ni teléfono) y deja en el navegador del cliente un pase firmado de un solo uso que caduca a las 3 horas. Con él, el cliente puede generar, si quiere, una imagen con el nombre del local, la ciudad, su número de visita, la fecha y la hora. Si añade una foto, se procesa en su propio móvil y nunca se envía ni se guarda en los servidores de Ipso. Solo se registra que pulsó compartir, no a dónde ni qué publicó. No se trata ningún dato personal.'
         ]},
         { h: '3 ter. Asistente con inteligencia artificial', p: [
           'El IPSO HUB incluye un asistente conversacional basado en inteligencia artificial, identificado como tal en pantalla.',
@@ -359,7 +359,7 @@ const ES = {
           'Cookies técnicas y de seguridad, exentas de consentimiento: son necesarias para servir el sitio, equilibrar la carga y proteger frente a tráfico malicioso. Las gestiona el proveedor de alojamiento (Cloudflare) y su duración va desde la sesión hasta un máximo de treinta minutos de inactividad.',
           'Analítica agregada sin cookies: la infraestructura del sitio genera estadísticas de visitas sin instalar cookies ni identificar a personas concretas.',
           'Este sitio no instala cookies de analítica, publicidad ni perfilado. Al no existir cookies sujetas a consentimiento, no se muestra aviso de cookies. Si en algún momento se incorporasen, se solicitaría el consentimiento previo mediante un aviso con opciones de aceptar, rechazar y configurar.',
-          'En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento.'
+          'En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente y, en Comparte tu visita, un pase de un solo uso que caduca a las 3 horas. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento. El hub guarda además en el almacenamiento local del navegador el idioma elegido, las últimas preguntas al asistente y el contador de sellos, sin enviarlos a ningún servidor.'
         ]},
         { h: '3. Consentimiento', p: [
           'Con la configuración actual del sitio solo se utilizan cookies técnicas y de seguridad, exentas del deber de consentimiento previo conforme al artículo 22.2 de la LSSI-CE, por lo que no se muestra ningún aviso de cookies.',
@@ -382,7 +382,8 @@ const ES = {
         { h: "Qué contratas", p: [
           "El HUB se contrata en dos versiones: HUB (99 € + IVA, pago único, sin cuota) y HUB Pro (99 € + IVA de alta y 19 € + IVA al mes, primer mes incluido).",
           "Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y el envío gratuito a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta.",
-          "Las soluciones sueltas (WiFi, Reseñas, Menú y Reservas) se contratan con un pago único, sin cuota, e incluyen la pieza programada con tus datos y el envío. La reprogramación posterior tiene un coste de 15 € + IVA. Tienen la misma garantía de 30 días de reembolso."
+          "La placa y el stand de reseñas de Google se contratan con un pago único, sin cuota, e incluyen la pieza programada con tus datos y el envío. La reprogramación posterior tiene un coste de 15 € + IVA. Tienen la misma garantía de 30 días de reembolso.",
+          "El hub y la carta se muestran en 5 idiomas (español, catalán, inglés, francés y alemán); el asistente con IA responde en 30."
         ]},
         { h: "Cambios incluidos", p: [
           "HUB: 1 cambio al mes incluido (carta, horario, foto o enlaces). Cambios extra: 9 €.",
@@ -392,7 +393,7 @@ const ES = {
           "Envío en 2-4 días laborables desde que recibimos los datos de tu local. Si el punto llega dañado o no funciona, lo reponemos sin coste."
         ]},
         { h: "Garantía, cuota y baja", p: [
-          "Si en los 30 días siguientes a la instalación o entrega el servicio no te convence, nos lo dices y te devolvemos el importe de la alta; retiramos o recogemos el punto sin coste. El primer mes está incluido: la primera cuota se cobra 30 días después del pago de la alta y, a partir de ahí, cada mes. Pasados esos 30 días, puedes darte de baja en cualquier momento avisando con 15 días por WhatsApp o correo; no se cobrará la cuota siguiente. Las cuotas ya cobradas no se devuelven. Al terminar, tus datos de clientes se te entregan o se eliminan, según nos indiques. Puedes cancelar, cambiar la tarjeta o descargar tus facturas desde el portal del cliente, cuyo enlace recibes en cada factura."
+          "Si en los 30 días siguientes a la entrega el servicio no te convence, nos lo dices y te devolvemos el importe de la alta; retiramos o recogemos el punto sin coste. El primer mes está incluido: la primera cuota se cobra 30 días después del pago de la alta y, a partir de ahí, cada mes. Puedes darte de baja cuando quieras desde el portal del cliente o por WhatsApp; la baja es efectiva al final del mes ya pagado y no se cobra el siguiente. El punto sigue siendo tuyo y pasa a funcionar como HUB. Las cuotas ya cobradas no se devuelven. Al terminar, tus datos de clientes se te entregan o se eliminan, según nos indiques. Puedes cancelar, cambiar la tarjeta o descargar tus facturas desde el portal del cliente, cuyo enlace recibes en cada factura."
         ]},
         { h: "Empresas", p: [
           "Este servicio se dirige a negocios y profesionales. Al contratar declaras actuar en el ejercicio de tu actividad, por lo que no resulta de aplicación el derecho de desistimiento previsto para consumidores."
@@ -437,7 +438,7 @@ const EN = {
         ]},
         { h: '5. No affiliation with third parties', p: [
           'Ipso is not affiliated with, sponsored by or endorsed by Google LLC or any other platform that may be mentioned for descriptive purposes only. Ipso\u2019s services consist of configuring contact points that open the official links of those platforms, always respecting their policies.',
-          'Ipso does not filter, condition or withhold end-customer reviews. Any review is published directly by the user on the relevant platform.'
+          'The point opens the venue\u2019s official Google listing: Ipso does not solicit, filter, condition, withhold or reward end-customer reviews. Any review is published directly by the user on the relevant platform.'
         ]},
         { h: '6. Links', p: [
           'This website may contain links to third-party pages. Ipso does not control their content and accepts no liability for it. The inclusion of a link implies no relationship, recommendation or supervision.'
@@ -476,7 +477,8 @@ const EN = {
           'Retention: while the customer participates and for a maximum of twenty-four months from their last visit; the number is then deleted and only aggregated, non-identifying figures are kept.',
           'Disclosure to third parties: the number is not shared with other venues or used for cross-venue discounts. The reward message is sent via WhatsApp (Meta Platforms Ireland Ltd.), which processes the number under its own terms.',
           'Rights: the customer may at any time request deletion of their number by writing to ' + MAIL + ' or to the venue itself, without losing any reward already earned. Other rights are exercised as set out in the relevant clause of this policy.',
-          'The number is stored encrypted and the customer can delete it themselves using the \u201cDelete my data\u201d option on the point.'
+          'The number is stored encrypted and the customer can delete it themselves using the \u201cDelete my data\u201d option on the point.',
+          'Share your visit: at venues with HUB Pro, when the point is tapped the system records the tap (date, time, device type and approximate city; no IP or phone number) and leaves a signed single-use pass in the customer\u2019s browser that expires after 3 hours. With it, the customer can, if they wish, generate an image with the venue name, the city, their visit number, the date and the time. If they add a photo, it is processed on their own phone and is never sent to or stored on Ipso\u2019s servers. Only the fact that they pressed share is recorded, not where or what they posted. No personal data is processed.'
         ]},
         { h: '3 ter. Artificial-intelligence assistant', p: [
           'The IPSO HUB includes a conversational assistant based on artificial intelligence, identified as such on screen.',
@@ -517,7 +519,7 @@ const EN = {
           'Technical and security cookies, exempt from consent: necessary to serve the site, balance load and protect against malicious traffic. They are managed by the hosting provider (Cloudflare) and last from the session up to thirty minutes of inactivity.',
           'Cookieless aggregated analytics: the site infrastructure produces visit statistics without installing cookies or identifying individuals.',
           'This website installs no analytics, advertising or profiling cookies. As there are no cookies subject to consent, no cookie banner is displayed. Should any be added, prior consent would be requested through a notice offering accept, reject and configure options.',
-          'IPSO HUB points (go.ipsoglobal.com) use technical cookies only: the chosen language, recognising the customer on the stamp card and verifying that they have physically tapped the point. They are necessary for the service the customer requests, are not used for advertising or analytics and therefore require no consent notice.'
+          'IPSO HUB points (go.ipsoglobal.com) use technical cookies only: the chosen language, recognising the customer on the stamp card and verifying that they have physically tapped the point and, in Share your visit, a single-use pass that expires after 3 hours. They are necessary for the service the customer requests, are not used for advertising or analytics and therefore require no consent notice. The hub also stores in the browser\u2019s local storage the chosen language, the latest questions to the assistant and the stamp counter, without sending them to any server.'
         ]},
         { h: '3. Consent', p: [
           'Under the current configuration the website only uses technical and security cookies, which are exempt from the prior consent requirement under article 22.2 LSSI-CE, so no cookie banner is displayed.',
@@ -540,7 +542,8 @@ const EN = {
         { h: "What you are purchasing", p: [
           "The HUB is available in two versions: HUB (99 € + VAT, one-off payment, no fee) and HUB Pro (99 € + VAT setup and 19 € + VAT per month, first month included).",
           "A one-off setup fee (99 € + VAT) that includes one NFC point, its configuration with the details you provide, and free shipping anywhere in Spain. Additional points at 25 € + VAT each. A monthly fee of 19 € + VAT per venue, charged automatically every month to the same card.",
-          "Standalone solutions (WiFi, Reviews, Menu and Bookings) are purchased with a one-off payment, no monthly fee, and include the piece programmed with your details and shipping. Later reprogramming costs 15 € + VAT. They carry the same 30-day money-back guarantee."
+          "The Google reviews plaque and stand are purchased with a one-off payment, no monthly fee, and include the piece programmed with your details and shipping. Later reprogramming costs 15 € + VAT. They carry the same 30-day money-back guarantee.",
+          "The hub and the menu are shown in 5 languages (Spanish, Catalan, English, French and German); the AI assistant replies in 30."
         ]},
         { h: "Included changes", p: [
           "HUB: 1 change a month included (menu, opening hours, photo or links). Extra changes: 9 €.",
@@ -550,7 +553,7 @@ const EN = {
           "Shipping within 2-4 working days from receipt of your venue details. If the point arrives damaged or does not work, we replace it at no cost."
         ]},
         { h: "Guarantee, fee and cancellation", p: [
-          "If within 30 days of installation or delivery the service does not convince you, let us know and we refund the setup fee; we remove or collect the point at no cost. The first month is included: the first fee is charged 30 days after the setup payment and monthly thereafter. After those 30 days, you can cancel at any time with 15 days’ notice by WhatsApp or email; the following fee will not be charged. Fees already charged are not refunded. On termination, your customer data is handed over to you or deleted, as you instruct. You can cancel, change your card or download your invoices from the customer portal, linked in every invoice."
+          "If within 30 days of delivery the service does not convince you, let us know and we refund the setup fee; we remove or collect the point at no cost. The first month is included: the first fee is charged 30 days after the setup payment and monthly thereafter. You can cancel whenever you like from the customer portal or by WhatsApp; cancellation takes effect at the end of the month already paid and the next one is not charged. The point remains yours and switches to working as a HUB. Fees already charged are not refunded. On termination, your customer data is handed over to you or deleted, as you instruct. You can cancel, change your card or download your invoices from the customer portal, linked in every invoice."
         ]},
         { h: "Businesses", p: [
           "This service is aimed at businesses and professionals. By purchasing you declare that you act in the course of your business activity, so the right of withdrawal provided for consumers does not apply."
@@ -596,7 +599,7 @@ const CA = {
         ]},
         { h: '5. Absència de vinculació amb tercers', p: [
           'Ipso no està afiliada, patrocinada ni avalada per Google LLC ni per cap altra plataforma que pugui esmentar-se amb finalitats merament descriptives. Els serveis d\u2019Ipso consisteixen a configurar punts de contacte que obren enllaços oficials d\u2019aquestes plataformes, respectant en tot moment les seves polítiques.',
-          'Ipso no filtra, condiciona ni reté opinions de clients finals. Qualsevol valoració la publica directament l\u2019usuari a la plataforma corresponent.'
+          'El punt obre la fitxa oficial de Google del local: Ipso no sol·licita, filtra, condiciona, reté ni premia opinions de clients finals. Qualsevol valoració la publica directament l\u2019usuari a la plataforma corresponent.'
         ]},
         { h: '6. Enllaços', p: [
           'Aquest lloc pot incloure enllaços a pàgines de tercers. Ipso no en controla els continguts ni assumeix responsabilitat per aquests. La inclusió d\u2019un enllaç no implica relació, recomanació ni supervisió.'
@@ -635,7 +638,8 @@ const CA = {
           'Conservació: mentre el client participi i, com a màxim, vint-i-quatre mesos des de la seva darrera visita; després el número s\u2019elimina i només es conserven xifres agregades sense identificar.',
           'Comunicació a tercers: el número no es comparteix amb altres locals ni es fa servir per a descomptes creuats. Per enviar el missatge de premi s\u2019utilitza WhatsApp (Meta Platforms Ireland Ltd.), que tracta el número segons les seves pròpies condicions.',
           'Drets: el client pot demanar en qualsevol moment l\u2019esborrat del seu número escrivint a ' + MAIL + ' o al mateix local, sense perdre cap dret ja obtingut. La resta de drets s\u2019exerceixen segons la clàusula corresponent d\u2019aquesta política.',
-          'El número es guarda xifrat i el client pot esborrar-lo ell mateix des de l\u2019opció \u201cEsborrar les meves dades\u201d del mateix punt.'
+          'El número es guarda xifrat i el client pot esborrar-lo ell mateix des de l\u2019opció \u201cEsborrar les meves dades\u201d del mateix punt.',
+          'Comparteix la teva visita: als locals amb HUB Pro, en tocar el punt el sistema registra el toc (data, hora, tipus de dispositiu i ciutat aproximada; sense IP ni telèfon) i deixa al navegador del client una passada signada d\u2019un sol ús que caduca al cap de 3 hores. Amb ella, el client pot generar, si vol, una imatge amb el nom del local, la ciutat, el seu número de visita, la data i l\u2019hora. Si hi afegeix una foto, es processa al seu propi mòbil i mai no s\u2019envia ni es desa als servidors d\u2019Ipso. Només es registra que va prémer compartir, no on ni què va publicar. No es tracta cap dada personal.'
         ]},
         { h: '3 ter. Assistent amb intel·ligència artificial', p: [
           'L\u2019IPSO HUB inclou un assistent conversacional basat en intel·ligència artificial, identificat com a tal en pantalla.',
@@ -676,7 +680,7 @@ const CA = {
           'Cookies tècniques i de seguretat, exemptes de consentiment: són necessàries per servir el lloc, equilibrar la càrrega i protegir davant trànsit maliciós. Les gestiona el proveïdor d\u2019allotjament (Cloudflare) i la seva durada va des de la sessió fins a un màxim de trenta minuts d\u2019inactivitat.',
           'Analítica agregada sense cookies: la infraestructura del lloc genera estadístiques de visites sense instal·lar cookies ni identificar persones concretes.',
           'Aquest lloc no instal·la cookies d\u2019analítica, publicitat ni perfilat. En no existir cookies subjectes a consentiment, no es mostra cap avís de cookies. Si en algun moment s\u2019incorporessin, se sol·licitaria el consentiment previ mitjançant un avís amb opcions d\u2019acceptar, rebutjar i configurar.',
-          'Als punts IPSO HUB (go.ipsoglobal.com) només es fan servir cookies tècniques: l\u2019idioma triat, el reconeixement del client a la targeta de segells i la comprovació que ha tocat el punt físicament. Són necessàries per al servei que el mateix client sol·licita, no es fan servir per a publicitat ni analítica i per això no requereixen avís de consentiment.'
+          'Als punts IPSO HUB (go.ipsoglobal.com) només es fan servir cookies tècniques: l\u2019idioma triat, el reconeixement del client a la targeta de segells i la comprovació que ha tocat el punt físicament i, a Comparteix la teva visita, una passada d\u2019un sol ús que caduca al cap de 3 hores. Són necessàries per al servei que el mateix client sol·licita, no es fan servir per a publicitat ni analítica i per això no requereixen avís de consentiment. El hub desa a més a l\u2019emmagatzematge local del navegador l\u2019idioma triat, les últimes preguntes a l\u2019assistent i el comptador de segells, sense enviar-los a cap servidor.'
         ]},
         { h: '3. Consentiment', p: [
           'Amb la configuració actual del lloc només s\u2019utilitzen cookies tècniques i de seguretat, exemptes del deure de consentiment previ d\u2019acord amb l\u2019article 22.2 de la LSSI-CE, per la qual cosa no es mostra cap avís de cookies.',
@@ -699,7 +703,8 @@ const CA = {
         { h: "Què contractes", p: [
           "El HUB es contracta en dues versions: HUB (99 € + IVA, pagament únic, sense quota) i HUB Pro (99 € + IVA d’alta i 19 € + IVA al mes, primer mes inclòs).",
           "Una alta única (99 € + IVA) que inclou un punt NFC, la seva configuració amb les dades que ens facilitis i l’enviament gratuït a qualsevol punt d’Espanya. Punts addicionals a 25 € + IVA cadascun. Una quota de 19 € + IVA al mes per local, que es cobra de manera automàtica cada mes a la mateixa targeta.",
-          "Les solucions soltes (WiFi, Ressenyes, Menú i Reserves) es contracten amb un pagament únic, sense quota, i inclouen la peça programada amb les teves dades i l’enviament. La reprogramació posterior té un cost de 15 € + IVA. Tenen la mateixa garantia de 30 dies de devolució."
+          "La placa i l’estand de ressenyes de Google es contracten amb un pagament únic, sense quota, i inclouen la peça programada amb les teves dades i l’enviament. La reprogramació posterior té un cost de 15 € + IVA. Tenen la mateixa garantia de 30 dies de devolució.",
+          "El hub i la carta es mostren en 5 idiomes (espanyol, català, anglès, francès i alemany); l’assistent amb IA respon en 30."
         ]},
         { h: "Canvis inclosos", p: [
           "HUB: 1 canvi al mes inclòs (carta, horari, foto o enllaços). Canvis extra: 9 €.",
@@ -709,7 +714,7 @@ const CA = {
           "Enviament en 2-4 dies laborables des que rebem les dades del teu local. Si el punt arriba danyat o no funciona, el reposem sense cost."
         ]},
         { h: "Garantia, quota i baixa", p: [
-          "Si en els 30 dies següents a la instal·lació o el lliurament el servei no et convenç, ens ho dius i et retornem l’import de l’alta; retirem o recollim el punt sense cost. El primer mes està inclòs: la primera quota es cobra 30 dies després del pagament de l’alta i, a partir d’aquí, cada mes. Passats aquests 30 dies, pots donar-te de baixa en qualsevol moment avisant amb 15 dies per WhatsApp o correu; no es cobrarà la quota següent. Les quotes ja cobrades no es retornen. En acabar, les teves dades de clients se’t lliuren o s’eliminen, segons ens indiquis. Pots cancel·lar, canviar la targeta o descarregar les teves factures des del portal del client, l’enllaç del qual reps a cada factura."
+          "Si en els 30 dies següents al lliurament el servei no et convenç, ens ho dius i et retornem l’import de l’alta; retirem o recollim el punt sense cost. El primer mes està inclòs: la primera quota es cobra 30 dies després del pagament de l’alta i, a partir d’aquí, cada mes. Pots donar-te de baixa quan vulguis des del portal del client o per WhatsApp; la baixa és efectiva al final del mes ja pagat i no es cobra el següent. El punt continua sent teu i passa a funcionar com a HUB. Les quotes ja cobrades no es retornen. En acabar, les teves dades de clients se’t lliuren o s’eliminen, segons ens indiquis. Pots cancel·lar, canviar la targeta o descarregar les teves factures des del portal del client, l’enllaç del qual reps a cada factura."
         ]},
         { h: "Empreses", p: [
           "Aquest servei s’adreça a negocis i professionals. En contractar declares actuar en l’exercici de la teva activitat, per la qual cosa no resulta d’aplicació el dret de desistiment previst per a consumidors."
