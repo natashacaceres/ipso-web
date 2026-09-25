@@ -57,20 +57,20 @@
   [data-solcard] { transition: transform 420ms cubic-bezier(.22,.61,.36,1), border-color 420ms ease, box-shadow 420ms ease; will-change: transform; }
   [data-solcard]:hover { transform: translateY(-3px); border-color: #2E3A38; box-shadow: 0 28px 56px -46px rgba(43,231,255,.5); }
   @media (min-width: 1080px) { [data-intro] { max-width: none !important; white-space: nowrap; } }
-  @media (max-width: 760px) { [data-solfoto] { width: 118px !important; } #sol-intro { padding-top: 112px !important; } }
+  @media (max-width: 760px) { [data-solfoto] { width: 118px !important; } #sol-intro { padding-top: 134.4px !important; } }
   @media (max-width: 760px) {
     section[data-hero] { min-height: 88svh !important; display: flex !important; align-items: flex-end !important; }
-    [data-herotext] { width: 100%; padding: 116px 24px 40px !important; }
-    [data-herotext] h1 { font-size: clamp(44px, 13vw, 60px) !important; }
-    [data-herotext] p { white-space: normal !important; text-wrap: pretty !important; font-size: 17px !important; }
+    [data-herotext] { width: 100%; padding: 139.2px 24px 48px !important; }
+    [data-herotext] h1 { font-size: clamp(52.8px, 15.6vw, 72px) !important; }
+    [data-herotext] p { white-space: normal !important; text-wrap: pretty !important; font-size: 20.4px !important; }
     [data-heroimg] { left: 0 !important; top: 0 !important; bottom: 0 !important; height: auto !important; aspect-ratio: auto !important; -webkit-mask-image: none !important; mask-image: none !important; }
     [data-heroimg] img { object-fit: cover !important; object-position: 66% 42% !important; opacity: 1 !important; }
     [data-herodim] { background: linear-gradient(180deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.58) 34%, rgba(0,0,0,.34) 62%, rgba(0,0,0,.2) 100%) !important; }
     [data-herofade] { display: block !important; background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, transparent 30%, transparent 60%, rgba(0,0,0,.74) 88%, #000000 100%) !important; }
-    [data-trust] { flex-wrap: nowrap !important; gap: 8px !important; font-size: 11px !important; white-space: nowrap !important; }
+    [data-trust] { flex-wrap: nowrap !important; gap: 9.6px !important; font-size: 13.2px !important; white-space: nowrap !important; }
   }
   @media (max-width: 1080px) {
-    [data-navrow] { flex-wrap: nowrap; gap: 14px; }
+    [data-navrow] { flex-wrap: nowrap; gap: 16.8px; }
     [data-navrow] > a:first-child { margin-right: auto; }
     [data-navlinks] { display: none !important; }
     [data-cta] { display: none !important; }
@@ -84,7 +84,7 @@
   html[data-theming] section, html[data-theming] [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
   @keyframes sectionIn { from { opacity: 0; transform: translateY(46px) scale(.99); } to { opacity: 1; transform: none; } }
   @supports (animation-timeline: view()) {
-    section { animation: sectionIn 1200ms cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
+    section[data-anim] { animation: sectionIn 1200ms cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
   }
   @media (prefers-reduced-motion: reduce) {
     section { animation: none !important; opacity: 1 !important; transform: none !important; }
@@ -136,12 +136,12 @@
   [data-ind] { opacity: 0; transform: translateY(8px); }
   [data-ind]:hover [data-indimg], [data-ind]:focus-visible [data-indimg] { transform: scale(1.02); }
   [data-ind]:active [data-indimg] { transform: scale(1.015); }
-  @media (max-width: 760px) { [data-indrail] > a > div:last-child > span:first-child { font-size: 20px !important; } }
+  @media (max-width: 760px) { [data-indrail] > a > div:last-child > span:first-child { font-size: 24px !important; } }
   [data-ind][data-in] { opacity: 1; transform: none; }
   [data-ind]:not(h2):not(p) { transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1); }
   h2[data-ind], p[data-ind] { transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1); }
   @media (max-width: 760px) {
-    [data-indrail] { display: flex !important; grid-template-columns: none !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px !important; padding-bottom: 6px; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; scrollbar-width: none; }
+    [data-indrail] { display: flex !important; grid-template-columns: none !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16.8px !important; padding-bottom: 7.2px; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; scrollbar-width: none; }
     [data-indrail]::-webkit-scrollbar { display: none; }
     [data-indrail] > a { width: 74%; }
   }
@@ -151,28 +151,28 @@
   [data-afstate="2"], [data-afstate="3"], [data-afstate="4"] { opacity: 0; transform: translateY(30px) scale(.96); }
   @media (min-width: 900px) { [data-afmirror] [data-afimgwrap] { grid-row: 1; grid-column: 1; } }
   @media (max-width: 899px) {
-    [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 12px !important; }
-    [data-afstate] p { max-width: 38ch; font-size: 12.5px !important; line-height: 1.4 !important; margin-top: 8px !important; }
-    [data-afstate] h2 { font-size: clamp(21px, 5.4vw, 26px) !important; margin-top: 9px !important; }
-    [data-afstate] > div:first-child > a { margin-top: 11px !important; padding: 9px 16px !important; font-size: 13px !important; }
-    [data-afstate] > div:first-child > div:last-of-type { margin-top: 11px !important; gap: 10px !important; justify-content: center; }
-    [data-qr] { width: 44px !important; height: 44px !important; padding: 2px !important; }
-    [data-afstate] > div:first-child > div:last-of-type p { font-size: 11.5px !important; max-width: 24ch !important; text-align: left; }
-    [data-afphone] { width: min(196px, 50vw, calc((100svh - 62px - 340px) * 9.9 / 19)) !important; height: auto !important; aspect-ratio: 9.9 / 19 !important; max-width: 100% !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-afstate] { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 14.4px !important; }
+    [data-afstate] p { max-width: 38ch; font-size: 15px !important; line-height: 1.4 !important; margin-top: 9.6px !important; }
+    [data-afstate] h2 { font-size: clamp(25.2px, 6.5vw, 31.2px) !important; margin-top: 10.8px !important; }
+    [data-afstate] > div:first-child > a { margin-top: 13.2px !important; padding: 10.8px 19.2px !important; font-size: 15.6px !important; }
+    [data-afstate] > div:first-child > div:last-of-type { margin-top: 13.2px !important; gap: 12px !important; justify-content: center; }
+    [data-qr] { width: 44px !important; height: 44px !important; padding: 2.4px !important; }
+    [data-afstate] > div:first-child > div:last-of-type p { font-size: 13.8px !important; max-width: 24ch !important; text-align: left; }
+    [data-afphone] { width: min(196px, 50vw, calc((100svh - 62px - 340px) * 9.9 / 19)) !important; height: auto !important; aspect-ratio: 9.9 / 19 !important; max-width: 100% !important; border-radius: 26px !important; padding: 6px !important; }
     [data-afphone] img { object-fit: cover !important; object-position: 50% 0% !important; }
     [data-afphone] > div { border-radius: 25px !important; }
-    [data-waphone] { width: min(196px, 50vw) !important; height: auto !important; aspect-ratio: 9.9 / 18.07 !important; border-radius: 26px !important; padding: 5px !important; }
+    [data-waphone] { width: min(196px, 50vw) !important; height: auto !important; aspect-ratio: 9.9 / 18.07 !important; border-radius: 26px !important; padding: 6px !important; }
     [data-waphone] img { object-fit: cover !important; object-position: 50% 0% !important; }
     [data-waphone] > div { border-radius: 25px !important; }
     #asi-funciona { height: 490svh !important; }
     [data-afsticky] { top: 62px !important; height: calc(100svh - 62px) !important; }
   }
   @media (prefers-reduced-motion: reduce) {
-    #asi-funciona { height: auto !important; padding: 8px 0 64px; }
+    #asi-funciona { height: auto !important; padding: 9.6px 0 76.8px; }
     [data-afsticky] { position: static !important; height: auto !important; display: block !important; }
-    [data-afstate="1"] { padding-bottom: 72px; }
+    [data-afstate="1"] { padding-bottom: 86.4px; }
     [data-afstate="2"], [data-afstate="3"], [data-afstate="4"] { position: static !important; opacity: 1 !important; transform: none !important; }
-    [data-afstate="2"], [data-afstate="3"], [data-afstate="4"] { padding-bottom: 72px; }
+    [data-afstate="2"], [data-afstate="3"], [data-afstate="4"] { padding-bottom: 86.4px; }
   }
   @media (max-width: 720px) {
     [data-reveal] { grid-template-columns: 1fr !important; }
@@ -191,7 +191,7 @@
   }
   [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 86.4px; }
   [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 600ms ease-out, transform 600ms ease-out; }
   [data-reveal][data-shown] { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; } }
@@ -200,56 +200,84 @@
   @keyframes ipsoWaPulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .45); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
   @media (prefers-reduced-motion: reduce) { [data-wa-fab]::after { animation: none; } }
 </style>
-<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
-<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 40px 24px 96px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 22px 20px !important; padding-bottom: 26px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 10px !important; } footer > div > div:first-child a { padding: 4px 0; } footer > div > div:last-child { margin-top: 18px !important; } }</style>
+<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4.8px; } [data-contact-form]{ padding-bottom: 86.4px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
+<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 48px 24px 115.2px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: clamp(22px, 1.8330000000000002vw, 35.2px) clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 31.2px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 12px !important; } footer > div > div:first-child a { padding: 4.8px 0; } footer > div > div:last-child { margin-top: 21.6px !important; } }</style>
 <style data-a11y="1">
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
 @media (max-width: 760px) {
-  [style*="font-size: 10.5px"] { font-size: 11px !important; }
-  [style*="font-size: 11px"], [style*="font-size: 11.5px"], [style*="font-size: 12px"], [style*="font-size: 12.5px"] { font-size: 13px !important; }
-  p[style*="font-size: 14px"], p[style*="font-size: 14.5px"], p[style*="font-size: 15px"], p[style*="font-size: 15.5px"] { font-size: 16px !important; }
-  [data-afstate] p { font-size: 13px !important; }
-  input, textarea, select { font-size: 16px !important; }
-  [data-navrow] { gap: 18px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -10px !important; }
-  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -10px !important; }
-  [data-burger] { width: 44px !important; height: 44px !important; margin: -4px -4px -4px 0 !important; }
+  [style*="font-size: 12.6px"] { font-size: 13.2px !important; }
+  [style*="font-size: 13.2px"], [style*="font-size: 13.8px"], [style*="font-size: 14.4px"], [style*="font-size: 15px"] { font-size: 15.6px !important; }
+  p[style*="font-size: 16.8px"], p[style*="font-size: 17.4px"], p[style*="font-size: 18px"], p[style*="font-size: 18.6px"] { font-size: 19.2px !important; }
+  [data-afstate] p { font-size: 15.6px !important; }
+  input, textarea, select { font-size: 19.2px !important; }
+  [data-navrow] { gap: 21.6px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
+  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -12px !important; }
+  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; }
+  [data-burger] { width: 44px !important; height: 44px !important; margin: -4.8px -4.8px -4.8px 0 !important; }
   [data-mobile] a { min-height: 44px; display: flex; align-items: center; }
   [data-mobile] > div { padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
   button:not([aria-label]), details summary { min-height: 44px; }
   label:has(input[type="checkbox"]) { min-height: 44px; }
   footer a { min-height: 44px; display: inline-flex; align-items: center; }
   footer > div > div:first-child > div { gap: 0 !important; }
-  footer > div { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
+  footer > div { padding-bottom: calc(115.2px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
   [data-cta-main] + a { min-height: 44px; display: inline-flex; align-items: center; }
 }
 </style>
 <style data-mobfix2="1">
 @media (max-width: 760px) {
   /* ritmo vertical */
-  section > div[style*="max-width: 1200px"][style*="padding: 80px 24px"], section > div[style*="max-width: 1200px"][style*="padding: 96px 24px"], section > div > div[style*="max-width: 1200px"][style*="padding: 96px 24px"] { padding-top: 32px !important; padding-bottom: 32px !important; }
-  div[style*="padding: 96px 24px 8px"] { padding-top: 32px !important; padding-bottom: 8px !important; }
-  section[data-hero] [data-herotext] { padding-bottom: 40px !important; }
-  section[style*="padding: 88px 24px 0"], section[style*="padding: 80px 24px 0"], section[style*="padding: 72px 24px 0"] { padding-top: 64px !important; }
-  section[style*="padding: 56px 24px 0"] { padding-top: 40px !important; }
-  section[style*="padding: 80px 24px 96px"], section[style*="padding: 64px 24px 96px"] { padding-top: 56px !important; padding-bottom: 64px !important; }
-  main[style*="padding: 120px 24px 140px"] { padding-top: 80px !important; padding-bottom: 96px !important; }
-  section h2 + div[style*="margin-top: 48px"], section h2 + div[style*="margin-top: 36px"], section h2 + div[style*="margin-top: 40px"] { margin-top: 28px !important; }
-  #sol-intro { padding-top: 32px !important; }
+  section > div[style*="max-width: 1920px"][style*="padding: 96px 24px"], section > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"], section > div > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"] { padding-top: 38.4px !important; padding-bottom: 38.4px !important; }
+  div[style*="padding: 115.2px 24px 9.6px"] { padding-top: 38.4px !important; padding-bottom: 9.6px !important; }
+  section[data-hero] [data-herotext] { padding-bottom: 48px !important; }
+  section[style*="padding: 105.6px 24px 0"], section[style*="padding: 96px 24px 0"], section[style*="padding: 86.4px 24px 0"] { padding-top: 76.8px !important; }
+  section[style*="padding: 67.2px 24px 0"] { padding-top: 48px !important; }
+  section[style*="padding: 96px 24px 115.2px"], section[style*="padding: 76.8px 24px 115.2px"] { padding-top: 67.2px !important; padding-bottom: 76.8px !important; }
+  main[style*="padding: 144px 24px 168px"] { padding-top: 96px !important; padding-bottom: 115.2px !important; }
+  section h2 + div[style*="margin-top: 57.6px"], section h2 + div[style*="margin-top: 43.2px"], section h2 + div[style*="margin-top: 48px"] { margin-top: 33.6px !important; }
+  #sol-intro { padding-top: 38.4px !important; }
   /* footer: dos columnas alineadas */
-  footer > div { padding: 48px 24px calc(28px + env(safe-area-inset-bottom, 0px)) !important; }
-  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 20px !important; padding-bottom: 20px !important; }
-  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 20px; }
+  footer > div { padding: 57.6px 24px calc(33.6px + env(safe-area-inset-bottom, 0px)) !important; }
+  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 24px !important; }
+  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 24px; }
   footer > div > div:first-child > div:not(:first-child) { display: flex !important; flex-direction: column !important; gap: 0 !important; align-items: stretch !important; }
   footer > div > div:first-child > div:nth-child(2) { grid-column: 1; grid-row: 2; }
   footer > div > div:first-child > div:nth-child(3) { grid-column: 1; grid-row: 3; }
   footer > div > div:first-child > div:nth-child(4) { grid-column: 2; grid-row: 2 / span 2; }
   footer > div > div:first-child a { display: flex !important; align-items: center !important; min-height: 44px !important; padding: 0 !important; margin: 0 !important; line-height: 1.3 !important; }
-  footer > div > div:last-child { margin-top: 16px !important; padding-right: 76px; gap: 6px 16px !important; }
+  footer > div > div:last-child { margin-top: 19.2px !important; padding-right: 91.2px; gap: 7.2px 19.2px !important; }
   footer > div > div:last-child a { min-height: 44px; display: inline-flex; align-items: center; }
   /* WhatsApp: derecha, zona segura */
   [data-wa-fab] { right: 20px !important; bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important; left: auto !important; width: 54px !important; height: 54px !important; }
 }
+</style>
+<style data-wide="1">
+  [style*="max-width: 1920px"] { padding-left: max(24px, 5vw) !important; padding-right: max(24px, 5vw) !important; }
+  [style*="max-width: 1920px"] [style*="max-width: 1920px"] { padding-left: 0 !important; padding-right: 0 !important; }
+  h1, h2, h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  img { max-width: 100%; }
+</style>
+<style data-apple="1">
+  @media (min-width: 900px) {
+    #sol-track { display: grid !important; grid-template-columns: 1fr 1fr; gap: clamp(20px, 1.8vw, 36px) !important; max-width: 1920px; margin: 0 auto; padding: 0 max(24px, 5vw); transform: none !important; }
+    #sol-track [style*="max-width: 1920px"] { padding-left: 0 !important; padding-right: 0 !important; height: 100%; }
+    #sol-track > div { width: auto !important; }
+    #sol-track [data-solcard] { grid-template-columns: 1fr !important; height: 100%; }
+    #sol-rail { justify-content: center; }
+    #sol-track { max-width: calc(1920px * .8); padding: 0 max(24px, 5vw); }
+    #sol-track > div { zoom: .8; }
+  }
+  #sol-spacer { padding-bottom: clamp(96px, 8vw, 144px); }
+  @media (max-width: 760px) {
+    [data-sec] { padding-top: 56px !important; padding-bottom: 56px !important; }
+    section[data-hero2] [data-sec] { padding-bottom: 0 !important; }
+    #sol-spacer { padding-bottom: 56px; }
+  }
+  @media (min-width: 900px) { #asi-funciona [data-afstate]:not([data-afstate="1"]) { left: max(24px, 5vw) !important; right: max(24px, 5vw) !important; } }
+  @keyframes mascotFloat { 0% { transform: translate(0, 0) rotate(-6deg); } 25% { transform: translate(-14px, -22px) rotate(-1deg); } 50% { transform: translate(-4px, -38px) rotate(5deg); } 75% { transform: translate(10px, -16px) rotate(1deg); } 100% { transform: translate(0, 0) rotate(-6deg); } }
+  [data-mascot] { animation: mascotFloat 9s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { [data-mascot] { animation: none; } }
+  @media (max-width: 899px) { [data-mascot] { width: 120px !important; top: 40% !important; right: 0 !important; } }
 </style>
 </helmet>
 
@@ -260,43 +288,43 @@
   </div>
 
   <!-- ============ HEADER ============ -->
-  <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
+  <header style="position: sticky; top: 0; z-index: 50; background: #000000;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 14.4px 24px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="#top" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
-      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
+      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(20px, 1.6669999999999998vw, 32px); min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
-          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
+          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 7.2px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 7.2px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 12px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
+      <a href="#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
       <div data-langmenu="1" style="flex: none; position: relative;">
-        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; font-family: inherit; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
+        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 13.2px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
           <span>{{ langCode }}</span>
         </button>
-          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 6px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2px;">
+          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 9px; width: 100%; font-family: inherit; font-size: 13.5px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
+              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
                 <span>{{ l.name }}</span>
               </button>
             </sc-for>
           </div>
       </div>
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
@@ -304,63 +332,61 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
-          <div style="padding: 14px 0 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">{{ nHub }}</div>
-          <div style="padding: 10px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">IPSO HUB</a>
-          <div style="padding: 12px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="{{ mCon }}" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">{{ nCon }}</a>
+        <div style="max-width: 1920px; margin: 0 auto; padding: 12px 24px 21.6px; display: flex; flex-direction: column;">
+          <div style="padding: 16.8px 0 7.2px; font-size: 13.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">{{ nHub }}</div>
+          <div style="padding: 12px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">IPSO HUB</a>
+          <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">Reseñas Google</a>
+          <a href="{{ mCon }}" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">{{ nCon }}</a>
         </div>
       </div>
     </sc-if>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="top" data-hero="1" style="position: relative; overflow: hidden; scroll-margin-top: 80px;">
-    <div data-heroimg="1" style="position: absolute; top: 0; bottom: 0; right: 0; left: 20%; overflow: hidden; pointer-events: none;">
-      <img src="assets/hero-hub-v8.jpg" alt="" data-heropic="1" style="width: 100%; height: 100%; object-fit: cover; object-position: 70% 55%; opacity: 1;">
-    </div>
-    <div data-herodim="1" style="position: absolute; inset: 0; background: linear-gradient(90deg, #000000 0%, #000000 22%, rgba(0,0,0,.92) 32%, rgba(0,0,0,.7) 42%, rgba(0,0,0,.42) 52%, rgba(0,0,0,.2) 62%, rgba(0,0,0,.08) 74%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
-    <div data-herofade="1" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, transparent 24%, transparent 66%, #000000 100%); pointer-events: none;"></div>
-    <div data-herotext="1" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 132px 24px 128px;">
-      <div data-reveal="1" style="max-width: 760px;">
-        <h1 style="margin: 0; font-size: clamp(52px, 7vw, 100px); line-height: 0.9; font-weight: 700; letter-spacing: -0.02em; text-shadow: 0 2px 30px rgba(0,0,0,.7); color: #FFFFFF;">El <span style="color: #2BE7FF;">ADN</span><br>de tu local</h1>
-        <p style="margin: 26px 0 0; max-width: none; font-size: 18px; line-height: 1.5; color: #A7ADA5; text-shadow: 0 2px 20px rgba(0,0,0,.8); text-wrap: nowrap; white-space: nowrap;">Un punto en tu mostrador que hace de tu local una experiencia.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;">
-          <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 16px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Pruébalo en vivo</a>
-          <a href="#soluciones" onClick="{{ goPrecios }}" style="font-size: 16px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 16px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease, box-shadow 170ms ease;" style-hover="color: #FFFFFF; border-color: #F4F6F3; transform: translateY(-2px);">Ver planes</a>
+  <section id="top" data-hero2="1" style="position: relative; overflow: hidden; scroll-margin-top: 96px; background: #000000;">
+    <div data-sec="1" style="position: relative; max-width: 1920px; margin: 0 auto; padding: clamp(96px, 9vw, 168px) 24px 0; text-align: center;">
+      <div data-reveal="1" style="display: flex; flex-direction: column; align-items: center;">
+        <h1 style="margin: 0; font-size: clamp(3rem, 7vw, 7.5rem); line-height: 0.95; font-weight: 700; letter-spacing: -0.03em; color: #FFFFFF; text-wrap: balance;">El <span style="color: #2BE7FF;">ADN</span><br>de tu local</h1>
+        <p style="margin: clamp(20px, 2vw, 36px) 0 0; max-width: 36ch; font-size: clamp(20px, 1.8vw, 30px); line-height: 1.4; color: #A7ADA5; text-wrap: balance;">Un punto en tu mostrador que hace de tu local una experiencia.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: clamp(28px, 2.6vw, 48px);">
+          <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="font-size: 19.2px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Pruébalo en vivo</a>
+          <a href="#soluciones" onClick="{{ goPrecios }}" style="font-size: 19.2px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 19.2px 31.2px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease, box-shadow 170ms ease;" style-hover="color: #FFFFFF; border-color: #F4F6F3; transform: translateY(-2px);">Ver planes</a>
         </div>
       </div>
     </div>
+    <div style="max-width: none; margin: clamp(56px, 5vw, 96px) 0 0; padding: 0;">
+      <img src="assets/hero-hub-v9.png" alt="" data-heroimg2="1" style="display: block; width: 100%; height: auto; aspect-ratio: 2414 / 1180; object-fit: cover; object-position: 60% 50%;">
+    </div>
   </section>
 
-  <section>
-    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 8px;">
-      <h2 data-ind="1" style="margin: 0; max-width: 22ch; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.06; font-weight: 600; letter-spacing: -0.042em;">Adaptado a tu local</h2>
-      <div data-indrail="1" style="margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
+  <section style="background: #FBFBFA; color: #0B0C0A;">
+    <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px;">
+      <h2 data-ind="1" style="margin: 0 auto; max-width: 22ch; text-align: center; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; font-weight: 600; letter-spacing: -0.042em; color: #0B0C0A;">Adaptado a tu local</h2>
+      <div data-indrail="1" style="margin-top: clamp(48px, 4.5vw, 80px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 21.6px;">
         <a href="#contacto" data-ind="1" data-cat="Hostelería" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);" style-active="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);">
           <img src="assets/ind-hosteleria.jpg" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
-          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Hostelería</span>
-            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14.4px;">
+            <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Hostelería</span>
+            <span style="font-size: 30px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
           </div>
         </a>
         <a href="#contacto" data-ind="1" data-cat="Belleza y bienestar" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);" style-active="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);">
           <img src="assets/ind-belleza.jpg" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
-          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Belleza y bienestar</span>
-            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14.4px;">
+            <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Belleza y bienestar</span>
+            <span style="font-size: 30px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
           </div>
         </a>
         <a href="#contacto" data-ind="1" data-cat="Comercio de barrio" onClick="{{ pickIndustria }}" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D; cursor: pointer; transition: opacity 700ms cubic-bezier(.16,1,.3,1), transform 240ms cubic-bezier(.22,.9,.3,1), box-shadow 240ms ease;" style-hover="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);" style-active="transform: translateY(-3px); box-shadow: 0 22px 40px -30px rgba(0,0,0,.8);">
           <img src="assets/ind-comercio.jpg" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.001); transition: transform 380ms cubic-bezier(.22,.9,.3,1);">
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.88), rgba(6,7,6,.28) 42%, rgba(6,7,6,0) 68%);"></div>
-          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-            <span style="font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Comercio de barrio</span>
-            <span style="font-size: 25px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
+          <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14.4px;">
+            <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Comercio de barrio</span>
+            <span style="font-size: 30px; line-height: 1; color: rgba(255,255,255,.78);">›</span>
           </div>
         </a>
       </div>
@@ -368,72 +394,73 @@
   </section>
 
   <!-- ============ SOLUCIONES (carrusel horizontal anclado) ============ -->
-  <section style="scroll-margin-top: 72px;">
-    <div id="asi-funciona" style="position: relative; height: 490svh; scroll-margin-top: 90px;">
+  <section style="scroll-margin-top: 86.4px;">
+    <div id="asi-funciona" style="position: relative; height: 490svh; scroll-margin-top: 108px;">
       <div data-afsticky="1" style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden;">
-        <div data-afinner="1" style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-        <div data-afstate="1" style="display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px 64px; align-items: center;">
+        <div data-afinner="1" style="position: relative; width: 100%; max-width: 1920px; margin: 0 auto; padding: 0 24px;">
+        <div data-afstate="1" style="display: grid; min-height: 0; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;">
           <div>
-            <h2 style="margin: 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Un solo toque.</h2>
-            <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5a11 11 0 0 1 16 0"></path><path d="M7.5 13a6.5 6.5 0 0 1 9 0"></path><circle cx="12" cy="17" r="1"></circle></svg><span>WiFi sin contraseña</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span>Carta en 5 idiomas</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.8l-5.3 2.8 1.1-5.8L3.5 9.7l5.9-.8z"></path></svg><span>Reseñas de Google</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.5" cy="7.5" r=".8" fill="#2BE7FF"></circle></svg><span>Redes sociales</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#2BE7FF"></circle></svg><span>Te ayudo a elegir</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 7px; font-size: 12.1px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 7px; font-size: 12.1px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: 17.6px; line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 22px; height: 22px; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 7px; font-size: 12.1px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Un solo toque.</h2>
+            <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: 14.4px;">
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5a11 11 0 0 1 16 0"></path><path d="M7.5 13a6.5 6.5 0 0 1 9 0"></path><circle cx="12" cy="17" r="1"></circle></svg><span>WiFi sin contraseña</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span>Carta en 5 idiomas</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.8l-5.3 2.8 1.1-5.8L3.5 9.7l5.9-.8z"></path></svg><span>Reseñas de Google</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.5" cy="7.5" r=".8" fill="#2BE7FF"></circle></svg><span>Redes sociales</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#2BE7FF"></circle></svg><span>Te ayudo a elegir</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
             </div>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(575px, 61vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
+            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-panel-v6.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
+                <img src="assets/asi-panel-v7.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
             </div>
           </div>
         </div>
-        <div data-afstate="2" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: .95fr 1.05fr; gap: 40px 64px; align-items: center;" data-afmirror="1">
+        <div data-afstate="2" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;" data-afmirror="1">
           <div>
-            <h2 style="margin: 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Que <span style="white-space: nowrap;">vuelvan.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Tu tarjeta de sellos. Sin cartón, sin app, sin wallet.</p>
+            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Que <span style="white-space: nowrap;">vuelvan.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Tu tarjeta de sellos. Sin cartón, sin app, sin wallet.</p>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(575px, 61vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
+            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-fidel-v1.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
+                <img src="assets/asi-fidel-v2.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
             </div>
           </div>
         </div>
-        <div data-afstate="3" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px 64px; align-items: center;">
+        <div data-afstate="3" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;">
           <div>
-            <h2 style="margin: 0; font-size: clamp(25px, 3.5vw, 44px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Publicidad que no <span style="white-space: nowrap;">pagas.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Tu cliente comparte su visita en sus redes. Su recuerdo, tu publicidad.</p>
+            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Publicidad que no <span style="white-space: nowrap;">pagas.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Tu cliente comparte su visita en sus redes. Su recuerdo, tu publicidad.</p>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(575px, 61vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
+            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-estampa-v2.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
+                <img src="assets/asi-estampa-v3.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
             </div>
           </div>
         </div>
-        <div data-afstate="4" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: .95fr 1.05fr; gap: 40px 64px; align-items: center;" data-afmirror="1">
-          <div>
-            <h2 style="margin: 0; font-size: clamp(28px, 4vw, 50px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em;">Se lo sabe <span style="white-space: nowrap;">todo.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 18px 0 0; max-width: 44ch; font-size: 17px; line-height: 1.62; color: #B7BDB5;">Recomienda, marida y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.</p>
-            <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="display: inline-block; margin-top: 24px; font-size: 14.5px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 13px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
-            <div style="margin-top: 22px; display: flex; align-items: center; gap: 14px;">
-              <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2px;">
+        <div data-afstate="4" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;" data-afmirror="1">
+          <img src="assets/asistente-flota.png" alt="" aria-hidden="true" data-mascot="1" style="position: absolute; z-index: 0; right: -1vw; top: 46%; width: clamp(150px, 17vw, 330px); height: auto; opacity: .5; image-rendering: auto; pointer-events: none;">
+          <div style="position: relative; z-index: 1;">
+            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Se lo sabe <span style="white-space: nowrap;">todo.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Recomienda, marida, calcula y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.</p>
+            <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="display: inline-block; margin-top: 28.8px; font-size: 17.4px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 15.6px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
+            <div style="margin-top: 26.4px; display: flex; align-items: center; gap: 16.8px;">
+              <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2.4px;">
                 <img src="assets/qr-demo.png" alt="Código QR de la demo del IPSO HUB" style="display: block; width: 100%; height: 100%; object-fit: contain;">
               </a>
-              <p style="margin: 0; max-width: 26ch; font-size: 13.5px; line-height: 1.45; color: #8B918A;">Escanéalo. Es la demo real.</p>
+              <p style="margin: 0; max-width: 26ch; font-size: 16.2px; line-height: 1.45; color: #8B918A;">Escanéalo. Es la demo real.</p>
             </div>
           </div>
           <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(575px, 61vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
+            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
               <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
                 <img src="assets/asi-asistente-v4.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
               </div>
@@ -445,13 +472,13 @@
     </div>
 
     <div style="background: #EEF0EC;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 104px;">
-      <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 44px; align-items: center;">
+    <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px;">
+      <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(44px, 3.667vw, 70.4px); align-items: center;">
         <div>
-          <h2 style="margin: 0; max-width: 20ch; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.06; font-weight: 600; letter-spacing: -0.042em; color: #0B0C0A;">Todo a la <span style="white-space: nowrap;">vista.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-          <p style="margin: 16px 0 0; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #4E534C;">Cada mes, un WhatsApp con lo que pasó. Y qué pidieron que no tienes. En Mi local, en vivo.</p>
+          <h2 style="margin: 0; max-width: 14ch; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.042em; color: #0B0C0A;">Todo a la <span style="white-space: nowrap;">vista.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+          <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #4E534C;">Cada mes, un WhatsApp con lo que pasó. Y qué pidieron que no tienes.</p>
         </div>
-        <div data-waphone="1" style="justify-self: center; height: min(547px, 58vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 9px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
+        <div data-waphone="1" style="justify-self: center; height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
           <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #ECE5DD;">
             <img src="assets/wa-informe-v4.jpg" alt="Informe mensual por WhatsApp" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scaleY(1.05); transform-origin: 50% 0%;">
           </div>
@@ -462,30 +489,30 @@
 
     <div id="sol-spacer" style="position: relative; padding-top: 0; scroll-margin-top: 0;">
       <div id="sol-pin" style="display: flex; flex-direction: column; justify-content: flex-start;">
-        <div id="sol-intro" style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 24px 0;">
-          <p id="soluciones" data-intro="1" style="margin: 0; scroll-margin-top: 90px; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; color: #F4F6F3; max-width: 34ch;">Planes</p>
+        <div id="sol-intro" style="max-width: 1920px; width: 100%; margin: 0 auto; padding: 96px 24px 0;">
+          <p id="soluciones" data-intro="1" style="margin: 0 auto; text-align: center; scroll-margin-top: 108px; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; font-weight: 600; letter-spacing: -0.042em; color: #F4F6F3; max-width: 34ch;">Planes</p>
         </div>
-        <div id="sol-rail" data-rail="1" style="max-width: 1200px; width: 100%; margin: 0 auto; display: flex; gap: 10px; overflow-x: auto; padding: 36px 24px 16px; scroll-behavior: auto;">
+        <div id="sol-rail" data-rail="1" style="max-width: 1920px; width: 100%; margin: 0 auto; display: flex; gap: 12px; overflow-x: auto; padding: 43.2px 24px 19.2px; scroll-behavior: auto;">
             <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
-              <button onClick="{{ t.pick }}" style="flex: none; font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: -0.015em; color: {{ t.fg }}; background: {{ t.bg }}; border: 1px solid {{ t.bd }}; border-radius: 999px; padding: 11px 18px; cursor: pointer; white-space: nowrap; transition: all 170ms cubic-bezier(.16,.84,.44,1);" style-hover="border-color: #84F0FF;">{{ t.name }}</button>
+              <button onClick="{{ t.pick }}" style="flex: none; font-family: inherit; font-size: 16.8px; font-weight: 600; letter-spacing: -0.015em; color: {{ t.fg }}; background: {{ t.bg }}; border: 1px solid {{ t.bd }}; border-radius: 999px; padding: 13.2px 21.6px; cursor: pointer; white-space: nowrap; transition: all 170ms cubic-bezier(.16,.84,.44,1);" style-hover="border-color: #84F0FF;">{{ t.name }}</button>
             </sc-for>
         </div>
         <div style="overflow: hidden;">
-          <div id="sol-track" style="display: flex; flex-direction: column; gap: 28px; transition: transform 60ms linear;">
+          <div id="sol-track" style="display: flex; flex-direction: column; gap: clamp(28px, 2.333vw, 44.8px); transition: transform 60ms linear;">
             <sc-for list="{{ panels }}" as="s" hint-placeholder-count="2">
-              <div style="flex: none; width: 100%;">
-                <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-                  <div data-solcard="1" style="border: 1px solid #1A1C19; position: relative; border-radius: 22px; padding: 40px; box-shadow: 0 30px 70px -50px rgba(0,0,0,.9); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px; align-items: start;">
+              <div onClick="{{ s.pick }}" style="flex: none; width: 100%; opacity: {{ s.op }}; filter: {{ s.fx }}; transform: {{ s.sc }}; transition: opacity 160ms ease, filter 160ms ease, transform 160ms ease-out;">
+                <div style="max-width: 1920px; margin: 0 auto; padding: 0 24px;">
+                  <div data-solcard="1" style="background: #161815; border: 1px solid #1A1C19; position: relative; border-radius: 22px; padding: 48px; box-shadow: 0 30px 70px -50px rgba(0,0,0,.9); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(32px, 2.667vw, 51.2px); align-items: start;">
                     <div>
-                      <h3 style="margin: 0; max-width: 20ch; font-size: clamp(22px, 2.5vw, 30px); line-height: 1.1; font-weight: 600; letter-spacing: -0.036em;">{{ s.title }}</h3>
+                      <h3 style="margin: 0; max-width: 20ch; font-size: clamp(26.4px, 3vw, 36px); line-height: 1.1; font-weight: 600; letter-spacing: -0.036em;">{{ s.title }}</h3>
 
-                      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px;">
-                        <div style="display: flex; gap: 12px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17.5" cy="18" r="1.6"></circle></svg><div style="font-size: 15px; line-height: 1.45; color: #F4F6F3;">Envío gratuito <span style="color: #8B918A;">· en 2-4 días laborables</span></div></div>
-                        <div style="display: flex; gap: 12px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M4 9h10a6 6 0 0 1 0 12h-3"></path></svg><div style="font-size: 15px; line-height: 1.45; color: #F4F6F3;">Garantía de reembolso 30 días</div></div>
-                        <div style="display: flex; gap: 12px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><div style="font-size: 15px; line-height: 1.45; color: #F4F6F3;">Puntos adicionales: 25 € cada uno</div></div>
+                      <div style="margin-top: 28.8px; display: flex; flex-direction: column; gap: 16.8px;">
+                        <div style="display: flex; gap: 14.4px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1.2px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17.5" cy="18" r="1.6"></circle></svg><div style="font-size: 18px; line-height: 1.45; color: #F4F6F3;">Envío gratuito <span style="color: #8B918A;">· en 2-4 días laborables</span></div></div>
+                        <div style="display: flex; gap: 14.4px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1.2px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"></path><path d="M4 9h10a6 6 0 0 1 0 12h-3"></path></svg><div style="font-size: 18px; line-height: 1.45; color: #F4F6F3;">Garantía de reembolso 30 días</div></div>
+                        <div style="display: flex; gap: 14.4px; align-items: flex-start;"><svg style="flex: none; width: 20px; height: 20px; display: block; margin-top: 1.2px;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><div style="font-size: 18px; line-height: 1.45; color: #F4F6F3;">Puntos adicionales: 25 € cada uno</div></div>
                       </div>
 
-                      <div style="margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; opacity: .6; filter: grayscale(1);">
+                      <div style="margin-top: 26.4px; display: flex; flex-wrap: wrap; align-items: center; gap: 14.4px; opacity: .6; filter: grayscale(1);">
                         <img src="assets/pay-visa.png" alt="Visa" style="height: 10px; width: auto; display: block;">
                         <img src="assets/pay-mastercard.png" alt="Mastercard" style="height: 15px; width: auto; display: block;">
                         <img src="assets/pay-maestro.png" alt="Maestro" style="height: 15px; width: auto; display: block;">
@@ -498,24 +525,24 @@
                     <div style="display: flex; align-items: stretch;">
                       <div style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
                       <sc-if value="{{ s.esPro }}" hint-placeholder-val="{{ false }}">
-                        <div style="margin-bottom: 10px; display: flex;">
-                          <span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2px 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">Recomendado</span>
+                        <div style="margin-bottom: 12px; display: flex;">
+                          <span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">Recomendado</span>
                         </div>
                       </sc-if>
-                      <div style="flex: 1; min-width: 0; position: relative; display: flex; flex-direction: column; padding: 22px 20px 20px; border: 1.5px solid {{ s.borde }}; border-radius: 18px; background: linear-gradient(168deg, #06141A, #000000 62%); box-shadow: 0 20px 44px -34px {{ s.sombra }};">
-                        <div style="font-size: 38px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums;">99 €</div>
-                        <div style="margin-top: 8px; font-size: 13px; color: #9CA39A;">{{ s.sub }}</div>
+                      <div style="flex: 1; min-width: 0; position: relative; display: flex; flex-direction: column; padding: 26.4px 24px 24px; border: 1.5px solid {{ s.borde }}; border-radius: 18px; background: linear-gradient(168deg, #06141A, #000000 62%); box-shadow: 0 20px 44px -34px {{ s.sombra }};">
+                        <div style="font-size: 45.6px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums;">99 €</div>
+                        <div style="margin-top: 9.6px; font-size: 15.6px; color: #9CA39A;">{{ s.sub }}</div>
                         <sc-if value="{{ s.esPro }}" hint-placeholder-val="{{ false }}">
-                          <div style="margin-top: 16px; font-size: 13px; font-weight: 600; color: #B7BDB5;">Todo lo del HUB, más:</div>
+                          <div style="margin-top: 19.2px; font-size: 15.6px; font-weight: 600; color: #B7BDB5;">Todo lo del HUB, más:</div>
                         </sc-if>
-                        <ul style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+                        <ul style="list-style: none; margin: 14.4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9.6px;">
                           <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="5">
-                            <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.45; color: #F4F6F3;"><svg viewBox="0 0 24 24" fill="none" stroke="{{ s.tick }}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; width: 16px; height: 16px; display: block; margin-top: 3px;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>{{ it }}</span></li>
+                            <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 17.4px; line-height: 1.45; color: #F4F6F3;"><svg viewBox="0 0 24 24" fill="none" stroke="{{ s.tick }}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; width: 16px; height: 16px; display: block; margin-top: 3.6px;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>{{ it }}</span></li>
                           </sc-for>
                         </ul>
-                        <div style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #B7BDB5;">{{ s.cambios }}</div>
-                        <a href="{{ s.link }}" style="display: block; text-align: center; margin-top: 20px; font-size: 14px; font-weight: 600; color: #0B0C0A; background: {{ s.btnBg }}; border-radius: 10px; padding: 11px 18px; white-space: nowrap; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: {{ s.btnHover }}; transform: translateY(-1px);">{{ s.cta }}</a>
-                        <div style="margin-top: 10px; text-align: center; font-size: 12.5px; line-height: 1.45; color: #8B918A;">{{ s.nota }}</div>
+                        <div style="margin-top: 16.8px; font-size: 15.6px; line-height: 1.5; color: #B7BDB5;">{{ s.cambios }}</div>
+                        <a href="{{ s.link }}" style="display: block; text-align: center; margin-top: 24px; font-size: 16.8px; font-weight: 600; color: #0B0C0A; background: {{ s.btnBg }}; border-radius: 10px; padding: 13.2px 21.6px; white-space: nowrap; transition: background 160ms ease, transform 160ms ease;" style-hover="color: #0B0C0A; background: {{ s.btnHover }}; transform: translateY(-1px);">{{ s.cta }}</a>
+                        <div style="margin-top: 12px; text-align: center; font-size: 15px; line-height: 1.45; color: #8B918A;">{{ s.nota }}</div>
                       </div>
                       </div>
                     </div>
@@ -533,76 +560,75 @@
   </section>
 
   <!-- ============ CONTACTO ============ -->
-  <section id="contacto" style="scroll-margin-top: 72px;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 60px; align-items: start;">
+  <section id="contacto" style="scroll-margin-top: 86.4px; background: #FBFBFA; color: #0B0C0A;">
+    <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(60px, 5vw, 96px); align-items: center;">
       <div data-reveal="1">
-        <h2 style="margin: 20px 0 0; max-width: 20ch; font-size: clamp(30px, 4.2vw, 48px); line-height: 1.03; font-weight: 600; letter-spacing: -0.045em;">Cuéntanos cómo es tu negocio.</h2>
-        <p style="margin: 20px 0 0; max-width: 46ch; font-size: 16.5px; line-height: 1.6; color: #9CA39A;">Te decimos qué te encaja. Respondemos en el día.</p>
-        <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #161815; padding-top: 30px;">
+        <h2 style="margin: 0; max-width: 14ch; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; color: #0B0C0A; font-weight: 600; letter-spacing: -0.045em;">Cuéntanos cómo es tu negocio.</h2>
+        <div style="margin-top: 43.2px; display: flex; flex-direction: column; gap: clamp(22px, 1.8330000000000002vw, 35.2px); border-top: 1px solid #DADDD6; padding-top: 36px;">
           <div>
-            <div style="font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">Dónde estamos</div>
-            <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.028em;">Barcelona y alrededores</div>
+            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #5A605C;">Dónde estamos</div>
+            <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.028em;">Barcelona</div>
           </div>
           <div>
-            <div style="font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">¿Prefieres hablar directamente?</div>
-            <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="margin-top: 12px; display: inline-flex; align-items: center; gap: 10px; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #25D366; border: none; border-radius: 10px; padding: 14px 20px; text-decoration: none; transition: transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="transform: translateY(-2px);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#0B0C0A" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Escríbenos por WhatsApp</a>
+            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #5A605C;">¿Prefieres hablar directamente?</div>
+            <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="margin-top: 14.4px; display: inline-flex; align-items: center; gap: 12px; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #25D366; border: none; border-radius: 10px; padding: 16.8px 24px; text-decoration: none; transition: transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="transform: translateY(-2px);"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0B0C0A" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Escríbenos por WhatsApp</a>
           </div>
         </div>
       </div>
 
-      <form data-contact-form="1" data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #1A1C19; background: #000000; border-radius: 20px; padding: 34px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 70px -50px rgba(0,0,0,.9);">
-        <div style="font-size: 15px; font-weight: 600; letter-spacing: -0.024em; margin-bottom: 6px;">Formulario de consulta</div>
+      <form data-contact-form="1" data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #DADDD6; background: #F3F4F1; color: #0B0C0A; border-radius: 20px; padding: clamp(28px, 3vw, 56px); display: flex; flex-direction: column; gap: 16.8px;">
+        <div style="font-size: 18px; font-weight: 600; letter-spacing: -0.024em; margin-bottom: 7.2px;">Formulario de consulta</div>
         <input type="hidden" name="_subject" value="Nueva consulta desde la web de Ipso">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input name="negocio" required="required" placeholder="Nombre del negocio" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: transparent; border: 1px solid #262924; border-radius: 10px; padding: 14px 16px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <input name="tipo" placeholder="Tipo de negocio (bar, clínica, tienda…)" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: transparent; border: 1px solid #262924; border-radius: 10px; padding: 14px 16px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <input name="email" type="email" required="required" placeholder="Tu correo" style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: transparent; border: 1px solid #262924; border-radius: 10px; padding: 14px 16px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <textarea name="mensaje" rows="4" placeholder="¿Qué te interesa? El HUB, el Pro, o solo reseñas." style="width: 100%; font-size: 15.5px; color: #F4F6F3; background: transparent; border: 1px solid #262924; border-radius: 10px; padding: 14px 16px; outline: none; resize: vertical; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);"></textarea>
-        <button type="submit" style="margin-top: 8px; font-family: inherit; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border: none; border-radius: 10px; padding: 16px 20px; cursor: pointer; transition: background 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="background: #84F0FF; transform: translateY(-2px);">Enviar consulta</button>
-        <p style="margin: 8px 0 0; font-size: 12.5px; line-height: 1.6; color: #7A7F78;">Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.</p>
+        <input name="negocio" required="required" placeholder="Nombre del negocio" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <input name="tipo" placeholder="Tipo de negocio (bar, clínica, tienda…)" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <input name="email" type="email" required="required" placeholder="Tu correo" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <textarea name="mensaje" rows="4" placeholder="¿Qué te interesa? El HUB, el Pro, o solo reseñas." style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; resize: vertical; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);"></textarea>
+        <button type="submit" style="margin-top: 9.6px; font-family: inherit; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border: none; border-radius: 10px; padding: 19.2px 24px; cursor: pointer; transition: background 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="background: #84F0FF; transform: translateY(-2px);">Enviar consulta</button>
+        <p style="margin: 9.6px 0 0; font-size: 15px; line-height: 1.6; color: #5A605C;">Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.</p>
       </form>
     </div>
   </section>
 
   <!-- ============ DUDAS ============ -->
-  <section id="dudas" style="scroll-margin-top: 72px;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px;">
-      <div data-reveal="1" style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: baseline; justify-content: space-between;">
-        <h2 style="margin: 0; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
+  <section id="dudas" style="scroll-margin-top: 86.4px; background: #EEF0EC; color: #0B0C0A;">
+    <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px;">
+      <div data-reveal="1" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 1.6669999999999998vw, 32px) clamp(48px, 4vw, 76.8px); align-items: baseline; justify-content: center;">
+        <h2 style="margin: 0; text-align: center; color: #0B0C0A; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
       </div>
-      <div style="margin-top: 48px; max-width: 780px;">
+      <div style="margin: clamp(48px, 4.5vw, 80px) auto 0; max-width: 1100px;">
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Qué diferencia hay entre HUB y HUB Pro?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El HUB es el punto con WiFi, carta, reseñas y redes. El Pro añade asistente con IA, tarjeta de sellos, Comparte tu visita, panel en vivo e informe mensual.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Qué diferencia hay entre HUB y HUB Pro?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">El HUB es el punto con WiFi, carta, reseñas y redes. El Pro añade asistente con IA, tarjeta de sellos, Comparte tu visita, panel en vivo e informe mensual.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Hay permanencia? ¿Cómo cancelo?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">No. Cancelas desde tu panel en un clic; dejas de pagar el mes siguiente y el punto sigue siendo tuyo.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Hay permanencia? ¿Cómo cancelo?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">No. Cancelas desde tu panel en un clic; dejas de pagar el mes siguiente y el punto sigue siendo tuyo.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Necesito una app o configurar algo?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">No. Llega programado y listo para poner en el mostrador. Tus clientes solo acercan el móvil.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Necesito una app o configurar algo?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">No. Llega programado y listo para poner en el mostrador. Tus clientes solo acercan el móvil.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Funciona en cualquier móvil?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Sí, iPhone y Android, por NFC. Ya lo llevan encima.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Funciona en cualquier móvil?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">Sí, iPhone y Android, por NFC. Ya lo llevan encima.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Esto está permitido por Google?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Sí. El punto abre tu ficha oficial. No pedimos, no filtramos, no premiamos reseñas.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Esto está permitido por Google?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">Sí. El punto abre tu ficha oficial. No pedimos, no filtramos, no premiamos reseñas.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cómo funciona la fidelización?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Es tu tarjeta de sellos, sin cartón: el cliente deja su número una vez y cada visita cuenta. Al llegar al premio, un único WhatsApp.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Cómo funciona la fidelización?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">Es tu tarjeta de sellos, sin cartón: el cliente deja su número una vez y cada visita cuenta. Al llegar al premio, un único WhatsApp.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Qué sale en la estampa de Comparte tu visita?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">El nombre de tu local, la ciudad, el número de visita, la fecha y la hora. Nunca el teléfono ni ningún dato personal de tu cliente. Y solo se comparte si él quiere.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Qué sale en la estampa de Comparte tu visita?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">El nombre de tu local, la ciudad, el número de visita, la fecha y la hora. Nunca el teléfono ni ningún dato personal de tu cliente. Y solo se comparte si él quiere.</p>
         </details>
         <details style="border-bottom: none;">
-          <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Qué pasa con el teléfono de mis clientes?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">Solo sirve para contar visitas y avisar del premio. No se comparte y el cliente puede borrarlo cuando quiera.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #0A7C93;">¿Qué pasa con el teléfono de mis clientes?<span data-plus="1" style="color: #5A605C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 28.8px; font-size: 18.6px; line-height: 1.65; color: #4E534C; max-width: 62ch;">Solo sirve para contar visitas y avisar del premio. No se comparte y el cliente puede borrarlo cuando quiera.</p>
         </details>
       </div>
     </div>
@@ -610,28 +636,28 @@
 
   <!-- ============ FOOTER ============ -->
   <footer style="color: #9CA39A;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px 32px; padding-bottom: 40px;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
           <a href="/resenas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Reseñas Google</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
           <a href="#contacto" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/nosotros" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Nosotros</a>
           <a href="/legal#aviso-legal" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Aviso legal</a>
           <a href="/legal#privacidad" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Privacidad</a>
           <a href="/legal#cookies" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Cookies</a>
         </div>
       </div>
-      <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
+      <div style="margin-top: 33.6px; display: flex; flex-wrap: wrap; gap: 12px clamp(24px, 2vw, 38.4px); justify-content: space-between; font-size: 15px; color: #8B918A;">
         <span>© 2026 Ipso · Barcelona</span>
       </div>
     </div>
@@ -640,7 +666,7 @@
 
 </div>
 
-  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="36" height="36" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;fondo&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fondo&quot;,&quot;options&quot;:[&quot;&quot;,&quot;#FFFFFF&quot;,&quot;#F6F7F5&quot;,&quot;#0B0C0A&quot;]},&quot;fondoAvanzado&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fondo&quot;}}">
 const SOLUCIONES = [
@@ -794,7 +820,7 @@ const EN_PAIRS = [
   ['Pedir presupuesto', 'Request a quote'],
   ['Cuéntanos cómo es tu negocio.', 'Tell us about your business.'],
   ['Te decimos qué solución te encaja y qué ganarías con ella. Sin compromiso, aunque no compres nada.', 'We will tell you which solution fits you and what you would gain from it. No commitment, even if you buy nothing.'],
-  ['Dónde estamos', 'Where we are'], ['Barcelona y alrededores', 'Barcelona and surrounding area'],
+  ['Recomienda, marida, calcula y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.', 'It recommends, pairs, calculates and answers in 30 languages. It knows what only your team knows.'], ['Dónde estamos', 'Where we are'], ['Barcelona y alrededores', 'Barcelona and surrounding area'],
   ['Respuesta', 'Response time'], ['¿Prefieres hablar directamente?', 'Prefer to talk directly?'], ['Escríbenos por WhatsApp', 'Message us on WhatsApp'], ['Formulario de consulta', 'Enquiry form'], ['Enviar consulta', 'Send enquiry'],
   ['Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.', 'We only use your details to reply. No mailing lists, no automated emails.'],
   ['Lo que todos preguntan.', 'Frequently asked questions.'],
@@ -1005,7 +1031,7 @@ const CA_PAIRS = [
   ['Pedir presupuesto', 'Demanar pressupost'],
   ['Cuéntanos cómo es tu negocio.', 'Explica\u2019ns com és el teu negoci.'],
   ['Te decimos qué solución te encaja y qué ganarías con ella. Sin compromiso, aunque no compres nada.', 'Et diem quina solució t\u2019encaixa i què hi guanyaries. Sense compromís, encara que no compris res.'],
-  ['Dónde estamos', 'On som'], ['Barcelona y alrededores', 'Barcelona i rodalies'],
+  ['Recomienda, marida, calcula y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.', 'Recomana, marida, calcula i respon en 30 idiomes. Sap el que només el teu equip sap.'], ['Dónde estamos', 'On som'], ['Barcelona y alrededores', 'Barcelona i rodalies'],
   ['Respuesta', 'Resposta'], ['¿Prefieres hablar directamente?', 'Prefereixes parlar directament?'], ['Escríbenos por WhatsApp', 'Escriu-nos per WhatsApp'], ['Formulario de consulta', 'Formulari de consulta'], ['Enviar consulta', 'Enviar consulta'],
   ['Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.', 'Només fem servir les teves dades per respondre\u2019t. Sense llistes ni correus automàtics.'],
   ['Lo que todos preguntan.', 'El que tothom pregunta.'],
@@ -1162,7 +1188,7 @@ const FLAGS = { es: 'assets/flag-es.png', en: 'assets/flag-en.png', ca: 'assets/
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { sel: 0, lang: 'es', menu: false, theme: 'dark' };
+  state = { sel: 1, lang: 'es', menu: false, theme: 'dark' };
 
   // destino del formulario, sin texto legible en el código fuente
   destino() {
@@ -1298,7 +1324,7 @@ class Component extends DCLogic {
       const intro = document.getElementById('sol-intro');
       const needed = (rail ? rail.offsetHeight : 0) + (intro ? intro.offsetHeight : 0) + tallest + 24;
       const hdrH = (document.querySelector('header') || {}).offsetHeight || 62;
-      this._pinned = window.innerWidth >= 1000 && needed <= window.innerHeight - hdrH;
+      this._pinned = false && needed <= window.innerHeight - hdrH;
       this._apply();
     };
 
@@ -1382,6 +1408,7 @@ class Component extends DCLogic {
             if (Math.abs(rail.scrollLeft - want) > 2) rail.scrollLeft = want;
           }
         }
+        if (!this._pinned && window.innerWidth >= 900) return;
         if (k !== this.state.sel) this.setState({ sel: k });
       });
     };
@@ -1424,6 +1451,7 @@ class Component extends DCLogic {
 
   // clic en una pestaña: la página se desplaza al tramo correspondiente
   syncTo(k) {
+    if (!this._pinned && window.innerWidth >= 900) return;
     const sp = document.getElementById('sol-spacer');
     const track = document.getElementById('sol-track');
     if (!sp || !track) return;
@@ -1493,7 +1521,7 @@ class Component extends DCLogic {
         pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => this.applyLang(prev)); }
       })),
       sel: SOLUCIONES[i],
-      panels: SOLUCIONES.map((x) => Object.assign({}, x)),
+      panels: SOLUCIONES.map((x, k) => Object.assign({}, x, { op: k === i ? 1 : 0.4, fx: k === i ? 'none' : 'blur(1.5px) grayscale(.5)', sc: k === i ? 'none' : 'scale(.97)', pick: () => { if (this.state.sel !== k) this.setState({ sel: k }); } })),
       goAsi: (e) => { e.preventDefault(); const el = document.getElementById('asi-funciona'); if (!el) return; const hdr = (document.querySelector('header') || {}).offsetHeight || 64; const r = el.getBoundingClientRect(); const pinned = el.offsetHeight > window.innerHeight * 1.2; const top = r.top + window.scrollY - (pinned ? 0 : Math.max(hdr, (window.innerHeight - r.height) / 2)); window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }); },
       goPrecios: (e) => { e.preventDefault(); const el = document.getElementById('soluciones'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); },
       tabs: SOLUCIONES.map((s, k) => ({

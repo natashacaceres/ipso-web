@@ -44,7 +44,7 @@
   summary { list-style: none; }
   details[open] summary [data-plus] { transform: rotate(45deg); color: #2BE7FF; }
   @media (max-width: 1080px) {
-    [data-navrow] { flex-wrap: nowrap; gap: 14px; }
+    [data-navrow] { flex-wrap: nowrap; gap: 16.8px; }
     [data-navrow] > a:first-child { margin-right: auto; }
     [data-navlinks] { display: none !important; }
     [data-cta] { display: none !important; }
@@ -63,7 +63,7 @@
   html[data-theming] section, html[data-theming] [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
   @keyframes sectionIn { from { opacity: 0; transform: translateY(46px) scale(.99); } to { opacity: 1; transform: none; } }
   @supports (animation-timeline: view()) {
-    section { animation: sectionIn 1200ms cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
+    section[data-anim] { animation: sectionIn 1200ms cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
     section [data-reveal] { animation-range: entry 8% cover 34%; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -77,7 +77,6 @@
     [data-reveal] { grid-template-columns: 1fr !important; }
     [data-hero-photo] { min-height: 0 !important; flex: none !important; aspect-ratio: 4 / 3; }
     [data-oneline], [data-nowrap-desktop] { white-space: normal !important; }
-    h1 { overflow-wrap: anywhere; }
   }
   [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
@@ -86,99 +85,105 @@
   @keyframes ipsoWaPulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .45); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
   @media (prefers-reduced-motion: reduce) { [data-wa-fab]::after { animation: none; } }
 </style>
-<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4px; } [data-contact-form]{ padding-bottom: 72px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
-<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 40px 24px 96px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 22px 20px !important; padding-bottom: 26px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 10px !important; } footer > div > div:first-child a { padding: 4px 0; } footer > div > div:last-child { margin-top: 18px !important; } }</style>
+<style>@media (max-width: 640px){ [data-wa-fab]{ width: 52px !important; height: 52px !important; right: 14px !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; } form [type="submit"]{ margin-bottom: 4.8px; } [data-contact-form]{ padding-bottom: 86.4px !important; } } @media (prefers-reduced-motion: reduce){ [data-wa-fab], .ipso-wa-btn{ transition: none !important; } }</style>
+<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 48px 24px 115.2px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: clamp(22px, 1.8330000000000002vw, 35.2px) clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 31.2px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 12px !important; } footer > div > div:first-child a { padding: 4.8px 0; } footer > div > div:last-child { margin-top: 21.6px !important; } }</style>
 <style data-a11y="1">
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
 @media (max-width: 760px) {
-  [style*="font-size: 10.5px"] { font-size: 11px !important; }
-  [style*="font-size: 11px"], [style*="font-size: 11.5px"], [style*="font-size: 12px"], [style*="font-size: 12.5px"] { font-size: 13px !important; }
-  p[style*="font-size: 14px"], p[style*="font-size: 14.5px"], p[style*="font-size: 15px"], p[style*="font-size: 15.5px"] { font-size: 16px !important; }
-  [data-afstate] p { font-size: 13px !important; }
-  input, textarea, select { font-size: 16px !important; }
-  [data-navrow] { gap: 18px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -10px !important; }
-  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -10px !important; }
-  [data-burger] { width: 44px !important; height: 44px !important; margin: -4px -4px -4px 0 !important; }
+  [style*="font-size: 12.6px"] { font-size: 13.2px !important; }
+  [style*="font-size: 13.2px"], [style*="font-size: 13.8px"], [style*="font-size: 14.4px"], [style*="font-size: 15px"] { font-size: 15.6px !important; }
+  p[style*="font-size: 16.8px"], p[style*="font-size: 17.4px"], p[style*="font-size: 18px"], p[style*="font-size: 18.6px"] { font-size: 19.2px !important; }
+  [data-afstate] p { font-size: 15.6px !important; }
+  input, textarea, select { font-size: 19.2px !important; }
+  [data-navrow] { gap: 21.6px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
+  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -12px !important; }
+  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; }
+  [data-burger] { width: 44px !important; height: 44px !important; margin: -4.8px -4.8px -4.8px 0 !important; }
   [data-mobile] a { min-height: 44px; display: flex; align-items: center; }
   [data-mobile] > div { padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
   button:not([aria-label]), details summary { min-height: 44px; }
   label:has(input[type="checkbox"]) { min-height: 44px; }
   footer a { min-height: 44px; display: inline-flex; align-items: center; }
   footer > div > div:first-child > div { gap: 0 !important; }
-  footer > div { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
+  footer > div { padding-bottom: calc(115.2px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
   [data-cta-main] + a { min-height: 44px; display: inline-flex; align-items: center; }
 }
 </style>
 <style data-mobfix2="1">
 @media (max-width: 760px) {
   /* ritmo vertical */
-  section > div[style*="max-width: 1200px"][style*="padding: 80px 24px"], section > div[style*="max-width: 1200px"][style*="padding: 96px 24px"], section > div > div[style*="max-width: 1200px"][style*="padding: 96px 24px"] { padding-top: 32px !important; padding-bottom: 32px !important; }
-  div[style*="padding: 96px 24px 8px"] { padding-top: 32px !important; padding-bottom: 8px !important; }
-  #hub { padding-top: 8px !important; padding-bottom: 32px !important; }
+  section > div[style*="max-width: 1920px"][style*="padding: 96px 24px"], section > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"], section > div > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"] { padding-top: 38.4px !important; padding-bottom: 38.4px !important; }
+  div[style*="padding: 115.2px 24px 9.6px"] { padding-top: 38.4px !important; padding-bottom: 9.6px !important; }
+  #hub { padding-top: 9.6px !important; padding-bottom: 38.4px !important; }
   section[data-hero] [data-herotext] { padding-bottom: 24px !important; }
-  section[style*="padding: 88px 24px 0"], section[style*="padding: 80px 24px 0"], section[style*="padding: 72px 24px 0"] { padding-top: 64px !important; }
-  section[style*="padding: 56px 24px 0"] { padding-top: 40px !important; }
-  section[style*="padding: 80px 24px 96px"], section[style*="padding: 64px 24px 96px"] { padding-top: 56px !important; padding-bottom: 64px !important; }
-  main[style*="padding: 120px 24px 140px"] { padding-top: 80px !important; padding-bottom: 96px !important; }
-  section h2 + div[style*="margin-top: 48px"], section h2 + div[style*="margin-top: 36px"], section h2 + div[style*="margin-top: 40px"] { margin-top: 28px !important; }
-  #sol-intro { padding-top: 32px !important; }
+  section[style*="padding: 105.6px 24px 0"], section[style*="padding: 96px 24px 0"], section[style*="padding: 86.4px 24px 0"] { padding-top: 76.8px !important; }
+  section[style*="padding: 67.2px 24px 0"] { padding-top: 48px !important; }
+  section[style*="padding: 96px 24px 115.2px"], section[style*="padding: 76.8px 24px 115.2px"] { padding-top: 67.2px !important; padding-bottom: 76.8px !important; }
+  main[style*="padding: 144px 24px 168px"] { padding-top: 96px !important; padding-bottom: 115.2px !important; }
+  section h2 + div[style*="margin-top: 57.6px"], section h2 + div[style*="margin-top: 43.2px"], section h2 + div[style*="margin-top: 48px"] { margin-top: 33.6px !important; }
+  #sol-intro { padding-top: 38.4px !important; }
   /* footer: dos columnas alineadas */
-  footer > div { padding: 48px 24px calc(28px + env(safe-area-inset-bottom, 0px)) !important; }
-  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 20px !important; padding-bottom: 20px !important; }
-  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 20px; }
+  footer > div { padding: 57.6px 24px calc(33.6px + env(safe-area-inset-bottom, 0px)) !important; }
+  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 24px !important; }
+  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 24px; }
   footer > div > div:first-child > div:not(:first-child) { display: flex !important; flex-direction: column !important; gap: 0 !important; align-items: stretch !important; }
   footer > div > div:first-child > div:nth-child(2) { grid-column: 1; grid-row: 2; }
   footer > div > div:first-child > div:nth-child(3) { grid-column: 1; grid-row: 3; }
   footer > div > div:first-child > div:nth-child(4) { grid-column: 2; grid-row: 2 / span 2; }
   footer > div > div:first-child a { display: flex !important; align-items: center !important; min-height: 44px !important; padding: 0 !important; margin: 0 !important; line-height: 1.3 !important; }
-  footer > div > div:last-child { margin-top: 16px !important; padding-right: 76px; gap: 6px 16px !important; }
+  footer > div > div:last-child { margin-top: 19.2px !important; padding-right: 91.2px; gap: 7.2px 19.2px !important; }
   footer > div > div:last-child a { min-height: 44px; display: inline-flex; align-items: center; }
   /* WhatsApp: derecha, zona segura */
   [data-wa-fab] { right: 20px !important; bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important; left: auto !important; width: 54px !important; height: 54px !important; }
 }
 </style>
+<style data-wide="1">
+  [style*="max-width: 1920px"] { padding-left: max(24px, 5vw) !important; padding-right: max(24px, 5vw) !important; }
+  [style*="max-width: 1920px"] [style*="max-width: 1920px"] { padding-left: 0 !important; padding-right: 0 !important; }
+  h1, h2, h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  img { max-width: 100%; }
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
 
-  <header style="position: sticky; top: 0; z-index: 50; background: #000000; border-bottom: 1px solid #161815;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
+  <header style="position: sticky; top: 0; z-index: 50; background: #000000;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 14.4px 24px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
-      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
+      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(20px, 1.6669999999999998vw, 32px); min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 13.5px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
-          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 10px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
+          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 7.2px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 7.2px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 12px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 13.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 12px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 8px 12px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 13.5px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 9px 15px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
       <div data-langmenu="1" style="flex: none; position: relative;">
-        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; font-family: inherit; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
+        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 13.2px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
           <span>{{ langCode }}</span>
         </button>
-          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 6px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2px;">
+          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 9px; width: 100%; font-family: inherit; font-size: 13.5px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
+              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
                 <span>{{ l.name }}</span>
               </button>
             </sc-for>
           </div>
       </div>
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
@@ -186,50 +191,50 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div data-mobile="1" style="border-top: 1px solid #161815; background: #000000;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
-          <div style="padding: 14px 0 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Productos</div>
-          <div style="padding: 10px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">IPSO HUB</a>
-          <div style="padding: 12px 0 2px 14px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 13.5px; font-weight: 500; color: #C3C8BF; padding: 8px 0 12px 14px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15.5px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 15px 20px;">Contacto</a>
+        <div style="max-width: 1920px; margin: 0 auto; padding: 12px 24px 21.6px; display: flex; flex-direction: column;">
+          <div style="padding: 16.8px 0 7.2px; font-size: 13.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Productos</div>
+          <div style="padding: 12px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">IPSO HUB</a>
+          <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
+          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">Reseñas Google</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
         </div>
       </div>
     </sc-if>
   </header>
 
   <!-- ============ 1 · CABECERA ============ -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 0;">
-    <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px 48px; align-items: center;">
+  <section style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 0;">
+    <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(40px, 3.333vw, 64px) clamp(48px, 4vw, 76.8px); align-items: center;">
       <div>
-        <img src="assets/sol-menu.jpg" ref="{{ heroRef }}" data-herofoto="1" alt="Placa de menú NFC" style="width: 100%; max-width: 380px; height: auto; display: block; border-radius: 18px;">
+        <img src="assets/sol-menu.jpg" ref="{{ heroRef }}" data-herofoto="1" alt="Placa de menú NFC" style="width: 100%; max-width: 456px; height: auto; display: block; border-radius: 18px;">
         <sc-if value="{{ hayTipos }}" hint-placeholder-val="{{ false }}">
-          <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px;">
+          <div style="margin-top: 16.8px; display: flex; flex-wrap: wrap; gap: 12px;">
             <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="3">
               <button onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
             </sc-for>
           </div>
       </div>
       <div>
-        <h1 style="margin: 14px 0 0; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em;">Menú</h1>
-        <p style="margin: 14px 0 0; max-width: 30ch; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.15; font-weight: 600; letter-spacing: -0.036em; color: #E2E5DE;">Tu carta, desde la mesa. Cambias un precio y está cambiado.</p>
-        <div style="margin-top: 22px; display: flex; align-items: baseline; gap: 8px; font-variant-numeric: tabular-nums;">
-          <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</span>
-          <span style="font-size: 13px; color: #8B918A;">pago único, + IVA</span>
-          <span style="font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: #8B918A; border: 1px solid #262924; border-radius: 999px; padding: 4px 10px; white-space: nowrap;">Agotado por ahora</span>
+        <h1 style="margin: 16.8px 0 0; font-size: clamp(36px, 4.3vw, 55.2px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em;">Menú</h1>
+        <p style="margin: 16.8px 0 0; max-width: 30ch; font-size: clamp(22.8px, 2.6vw, 31.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.036em; color: #E2E5DE;">Tu carta, desde la mesa. Cambias un precio y está cambiado.</p>
+        <div style="margin-top: 26.4px; display: flex; align-items: baseline; gap: 9.6px; font-variant-numeric: tabular-nums;">
+          <span style="font-size: 48px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</span>
+          <span style="font-size: 15.6px; color: #8B918A;">pago único, + IVA</span>
+          <span style="font-size: 13.8px; font-weight: 600; letter-spacing: .04em; color: #8B918A; border: 1px solid #262924; border-radius: 999px; padding: 4.8px 12px; white-space: nowrap;">Agotado por ahora</span>
         </div>
-        <div style="margin-top: 12px; font-size: 13px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío gratuito en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía: si no te convence, te devolvemos el importe.</span></div>
-        <div style="margin-top: 8px; font-size: 13px; color: #8B918A;">Programación incluida.</div>
-        <div style="margin-top: 26px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <a href="/#contacto" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 15px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Avísame cuando vuelva</a>
-          <a href="/#contacto" style="display: inline-block; font-size: 15.5px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 15px 26px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Pedir presupuesto</a>
+        <div style="margin-top: 14.4px; font-size: 15.6px; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; color: #B7BDB5;"><span>Envío gratuito en España.</span> <span style="color: #FF8A3D;">30 días</span> <span>de garantía: si no te convence, te devolvemos el importe.</span></div>
+        <div style="margin-top: 9.6px; font-size: 15.6px; color: #8B918A;">Programación incluida.</div>
+        <div style="margin-top: 31.2px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <a href="/#contacto" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 18px 31.2px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Avísame cuando vuelva</a>
+          <a href="/#contacto" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 18px 31.2px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF; transform: translateY(-2px);">Pedir presupuesto</a>
         </div>
-        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: #9CA39A;">
+        <div style="margin-top: 19.2px; display: flex; flex-wrap: wrap; gap: 9.6px 21.6px; font-size: 15px; color: #9CA39A;">
           <span>Sin app</span><span style="color: #3A3E38;">·</span><span>Funciona en cualquier móvil</span><span style="color: #3A3E38;">·</span><span>iPhone y Android</span>
         </div>
-          <div style="margin-top: 24px; border-top: 1px solid #1A1C19; padding-top: 16px;">
-            <div style="font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">Paga tu pedido con tarjeta o móvil</div>
-            <div style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; opacity: .85;">
+          <div style="margin-top: 28.8px; border-top: 1px solid #1A1C19; padding-top: 19.2px;">
+            <div style="font-size: 13.8px; letter-spacing: .06em; text-transform: uppercase; color: #8B918A;">Paga tu pedido con tarjeta o móvil</div>
+            <div style="margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 19.2px; opacity: .85;">
               <img data-paymark="1" src="assets/pay-visa.png" alt="Visa" style="height: 16px; width: auto; display: block;">
               <img data-paymark="1" src="assets/pay-mastercard.png" alt="Mastercard" style="height: 24px; width: auto; display: block;">
               <img data-paymark="1" src="assets/pay-maestro.png" alt="Maestro" style="height: 24px; width: auto; display: block;">
@@ -243,16 +248,16 @@
   </section>
 
   <!-- ============ 2 · CÓMO FUNCIONA ============ -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
-    <div data-reveal="1" style="margin-top: 32px; position: relative; max-width: 760px; padding-left: 42px;">
+  <section style="max-width: 1920px; margin: 0 auto; padding: 96px 24px 0;">
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
+    <div data-reveal="1" style="margin-top: 38.4px; position: relative; max-width: 1100px; padding-left: 50.4px;">
       <div style="position: absolute; left: 11px; top: 6px; bottom: 6px; width: 1px; background: #1A1C19;"></div>
       <div style="{{ lineaStyle }}"></div>
       <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="3">
         <button onClick="{{ p.pick }}" style="{{ p.rowStyle }}">
           <span style="{{ p.dotStyle }}"></span>
-          <span style="display: block; font-size: 11.5px; font-weight: 600; color: {{ p.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">{{ p.n }}</span>
-          <span style="display: block; margin-top: 4px; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ p.fg }}; transition: color 200ms ease;">{{ p.t }}</span>
+          <span style="display: block; font-size: 13.8px; font-weight: 600; color: {{ p.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">{{ p.n }}</span>
+          <span style="display: block; margin-top: 4.8px; font-size: clamp(20.4px, 2.3vw, 25.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ p.fg }}; transition: color 200ms ease;">{{ p.t }}</span>
           <span style="{{ p.descStyle }}">{{ p.d }}</span>
         </button>
       </sc-for>
@@ -260,22 +265,22 @@
   </section>
 
   <!-- ============ 3 · QUÉ INCLUYE ============ -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Qué incluye</h2>
-    <div data-reveal="1" style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px 44px;">
+  <section style="max-width: 1920px; margin: 0 auto; padding: 96px 24px 0;">
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Qué incluye</h2>
+    <div data-reveal="1" style="margin-top: 28.8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 19.2px clamp(44px, 3.667vw, 70.4px);">
       <sc-for list="{{ incluye }}" as="i" hint-placeholder-count="5">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none; width: 18px; height: 18px; margin-top: 3px; display: block;"><path d="M4 12.5l5 5 11-11"/></svg>
-          <span style="font-size: 17px; line-height: 1.4; color: #E2E5DE;">{{ i }}</span>
+        <div style="display: flex; gap: 14.4px; align-items: flex-start;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none; width: 18px; height: 18px; margin-top: 3.6px; display: block;"><path d="M4 12.5l5 5 11-11"/></svg>
+          <span style="font-size: 20.4px; line-height: 1.4; color: #E2E5DE;">{{ i }}</span>
         </div>
       </sc-for>
     </div>
-    <div data-reveal="1" style="margin-top: 28px; max-width: 780px;">
+    <div data-reveal="1" style="margin-top: 33.6px; max-width: 936px;">
       <details style="border-bottom: none;">
-        <summary style="padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">Especificaciones<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-        <div style="margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; max-width: 62ch;">
+        <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">Especificaciones<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+        <div style="margin: 0 0 28.8px; display: flex; flex-direction: column; gap: 9.6px; max-width: 62ch;">
           <sc-for list="{{ specs }}" as="e" hint-placeholder-count="3">
-            <span style="font-size: 15.5px; line-height: 1.55; color: #9CA39A;">{{ e }}</span>
+            <span style="font-size: 18.6px; line-height: 1.55; color: #9CA39A;">{{ e }}</span>
           </sc-for>
         </div>
       </details>
@@ -283,41 +288,41 @@
   </section>
 
   <!-- ============ 7 · DUDAS ============ -->
-  <section style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
-    <div data-reveal="1" style="margin-top: 24px; max-width: 780px;">
+  <section style="max-width: 1920px; margin: 0 auto; padding: 86.4px 24px 0;">
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
+    <div data-reveal="1" style="margin-top: 28.8px; max-width: 936px;">
       <sc-for list="{{ faq }}" as="q" hint-placeholder-count="3">
         <details style="border-bottom: none;">
-          <summary style="padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 16.5px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">{{ q.q }}<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 19px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 22px; font-size: 15.5px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">{{ q.a }}</p>
+          <summary style="padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">{{ q.q }}<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 26.4px; font-size: 18.6px; line-height: 1.65; color: #9CA39A; max-width: 62ch;">{{ q.a }}</p>
         </details>
       </sc-for>
     </div>
   </section>
 
   <footer style="color: #9CA39A;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px 32px; padding-bottom: 40px;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
           <a href="/resenas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Reseñas Google</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
           <a href="/#contacto" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 13.5px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/nosotros" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Nosotros</a>
           <a href="/legal#aviso-legal" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Aviso legal</a>
           <a href="/legal#privacidad" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Privacidad</a>
           <a href="/legal#cookies" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Cookies</a>
         </div>
       </div>
-      <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 12.5px; color: #8B918A;">
+      <div style="margin-top: 33.6px; display: flex; flex-wrap: wrap; gap: 12px clamp(24px, 2vw, 38.4px); justify-content: space-between; font-size: 15px; color: #8B918A;">
         <span>© 2026 Ipso · Barcelona</span>
       </div>
     </div>
@@ -326,7 +331,7 @@
 </div>
 
 
-  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+  <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="36" height="36" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 const S = {
@@ -379,7 +384,7 @@ class Component extends DCLogic {
     const total = totalCon(n, S.precio);
     const desc = bruto > total;
     const tipoSel = S.tipos[this.state.tipo];
-    const btn = (activo) => 'font-family: inherit; min-width: 48px; text-align: center; cursor: pointer; border-radius: 12px; padding: 12px 14px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; background: ' + (activo ? '#2BE7FF' : 'transparent') + '; border: 1.5px solid ' + (activo ? '#2BE7FF' : '#262924') + '; color: ' + (activo ? '#0B0C0A' : '#F4F6F3') + '; transition: all 160ms ease;';
+    const btn = (activo) => 'font-family: inherit; min-width: 48px; text-align: center; cursor: pointer; border-radius: 12px; padding: 14.4px 16.8px; font-size: 19.2px; font-weight: 600; letter-spacing: -0.02em; background: ' + (activo ? '#2BE7FF' : 'transparent') + '; border: 1.5px solid ' + (activo ? '#2BE7FF' : '#262924') + '; color: ' + (activo ? '#0B0C0A' : '#F4F6F3') + '; transition: all 160ms ease;';
     const dim = this.state.theme === 'light' ? '#5A605C' : '#9CA39A';
     return {
       temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
@@ -421,9 +426,9 @@ class Component extends DCLogic {
         n: p.n, t: p.t, d: p.d,
         num: k <= this.state.paso ? '#2BE7FF' : '#5E635C',
         fg: k === this.state.paso ? '#F4F6F3' : '#8B918A',
-        rowStyle: 'position: relative; display: block; width: 100%; text-align: left; font-family: inherit; background: transparent; border: none; padding: 0 0 26px; cursor: pointer;',
+        rowStyle: 'position: relative; display: block; width: 100%; text-align: left; font-family: inherit; background: transparent; border: none; padding: 0 0 31.2px; cursor: pointer;',
         dotStyle: 'position: absolute; left: -37px; top: 3px; width: 11px; height: 11px; border-radius: 999px; background: ' + (k <= this.state.paso ? '#2BE7FF' : '#0B0C0A') + '; border: 1px solid ' + (k <= this.state.paso ? '#2BE7FF' : '#3A3E38') + '; box-shadow: 0 0 0 4px #000000; transition: background 240ms ease, border-color 240ms ease;',
-        descStyle: 'display: block; overflow: hidden; max-width: 46ch; font-size: 15px; line-height: 1.55; color: #B7BDB5; max-height: ' + (k === this.state.paso ? '120px' : '0px') + '; opacity: ' + (k === this.state.paso ? 1 : 0) + '; margin-top: ' + (k === this.state.paso ? '8px' : '0px') + '; transition: max-height 320ms cubic-bezier(.16,.84,.44,1), opacity 220ms ease, margin-top 320ms ease;',
+        descStyle: 'display: block; overflow: hidden; max-width: 46ch; font-size: 18px; line-height: 1.55; color: #B7BDB5; max-height: ' + (k === this.state.paso ? '120px' : '0px') + '; opacity: ' + (k === this.state.paso ? 1 : 0) + '; margin-top: ' + (k === this.state.paso ? '9.6px' : '0px') + '; transition: max-height 320ms cubic-bezier(.16,.84,.44,1), opacity 220ms ease, margin-top 320ms ease;',
         pick: () => this.setState({ paso: k })
       })),
       incluye: S.incluye,
@@ -433,7 +438,7 @@ class Component extends DCLogic {
       heroRef: (el) => { this._hero = el; },
       tipos: S.tipos.map((t, k) => ({
         label: t.label,
-        style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 10px 16px; font-size: 13.5px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',
+        style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 12px 19.2px; font-size: 16.2px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',
         pick: () => { if (this._hero) this._hero.src = t.img; this.setState({ tipo: k }); }
       })),
       agotado: !!this.state.tocado,

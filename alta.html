@@ -46,7 +46,7 @@
   [aria-invalid="true"] { border-color: #C62828 !important; }
   [aria-invalid="true"]:focus { box-shadow: 0 0 0 3px rgba(198,40,40,.15) !important; }
   select option { background: #FFFFFF; color: #1A1A1A; }
-  input[type="file"]::file-selector-button { font-family: inherit; font-size: 14px; font-weight: 500; color: #1A1A1A; background: #F4F4F4; border: 1px solid #D0D0D0; border-radius: 0; padding: 7px 12px; margin-right: 12px; cursor: pointer; }
+  input[type="file"]::file-selector-button { font-family: inherit; font-size: 16.8px; font-weight: 500; color: #1A1A1A; background: #F4F4F4; border: 1px solid #D0D0D0; border-radius: 0; padding: 8.4px 14.4px; margin-right: 12px; cursor: pointer; }
   input::placeholder, textarea::placeholder { color: #9A9A9A; }
   input:disabled { background: #F6F6F6 !important; color: #9A9A9A !important; }
   [data-alta-submit]:disabled { opacity: .65; cursor: progress !important; }
@@ -56,20 +56,20 @@
   [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
   @media (max-width: 1080px) {
-    [data-navrow] { flex-wrap: nowrap; gap: 14px; }
+    [data-navrow] { flex-wrap: nowrap; gap: 16.8px; }
     [data-navrow] > a:first-child { margin-right: auto; }
     [data-navlinks] { display: none !important; }
     [data-cta] { display: none !important; }
     [data-burger] { display: flex !important; }
   }
   @media (max-width: 900px) {
-    [data-alta-grid] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; margin-top: 28px !important; }
+    [data-alta-grid] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; margin-top: 33.6px !important; }
     [data-alta-index] { display: none !important; }
     [data-mprog] { display: block !important; }
     [data-alta-form] { max-width: none !important; }
-    main { padding-left: 16px !important; padding-right: 16px !important; padding-top: 36px !important; }
+    main { padding-left: 19.2px !important; padding-right: 19.2px !important; padding-top: 43.2px !important; }
     main h1 { white-space: normal !important; }
-    [data-card] { padding: 22px 18px !important; }
+    [data-card] { padding: 26.4px 21.6px !important; }
     [data-alta-submit] { width: 100% !important; }
   }
   @media (max-width: 480px) { [data-two] { grid-template-columns: minmax(0, 1fr) !important; } }
@@ -77,56 +77,62 @@
 <style data-a11y="1">
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
 @media (max-width: 760px) {
-  input, textarea, select { font-size: 16px !important; }
-  [data-navrow] { gap: 18px !important; padding-left: max(20px, env(safe-area-inset-left)) !important; padding-right: max(20px, env(safe-area-inset-right)) !important; }
-  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -10px !important; }
-  [data-burger] { width: 44px !important; height: 44px !important; margin: -4px -4px -4px 0 !important; }
+  input, textarea, select { font-size: 19.2px !important; }
+  [data-navrow] { gap: 21.6px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
+  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; }
+  [data-burger] { width: 44px !important; height: 44px !important; margin: -4.8px -4.8px -4.8px 0 !important; }
   [data-mobile] a { min-height: 44px; display: flex; align-items: center; }
-  footer > div { padding: 40px 20px calc(40px + env(safe-area-inset-bottom, 0px)) !important; }
-  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 20px !important; padding-bottom: 20px !important; }
-  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 20px; }
+  footer > div { padding: 48px 24px calc(48px + env(safe-area-inset-bottom, 0px)) !important; }
+  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 24px !important; }
+  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 24px; }
   footer > div > div:first-child > div:not(:first-child) { gap: 0 !important; }
   footer a { min-height: 44px; display: inline-flex; align-items: center; }
 }
+</style>
+<style data-wide="1">
+  [style*="max-width: 1920px"] { padding-left: max(24px, 5vw) !important; padding-right: max(24px, 5vw) !important; }
+  [style*="max-width: 1920px"] [style*="max-width: 1920px"] { padding-left: 0 !important; padding-right: 0 !important; }
+  h1, h2, h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  img { max-width: 100%; }
 </style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip; background: #FFFFFF;">
 
-  <header style="position: sticky; top: 0; z-index: 50; background: #FFFFFF; border-bottom: 1px solid #E6E6E6;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 28px;" data-navrow="1">
+  <header style="position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 14.4px 24px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
-      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; min-width: 0; flex-wrap: wrap;">
+      <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(20px, 1.6669999999999998vw, 32px); min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 14px; font-weight: 500; color: #4A4A4A; white-space: nowrap; padding: 6px 0; display: inline-flex; align-items: center; gap: 6px;" style-hover="color: #1A1A1A;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
-          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 10px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 10px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4px 12px;">
+          <a href="/hub" style="font-size: 16.8px; font-weight: 500; color: #4A4A4A; white-space: nowrap; padding: 7.2px 0; display: inline-flex; align-items: center; gap: 7.2px;" style-hover="color: #1A1A1A;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 12px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
-              <a href="/hub" style="font-size: 14px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 8px 12px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">IPSO HUB</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 14.4px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
+              <a href="/hub" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
-              <div style="padding: 4px 12px 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Piezas</div>
-              <a href="/resenas" style="font-size: 14px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 8px 12px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">Reseñas Google</a>
+              <div style="padding: 4.8px 14.4px 7.2px; font-size: 14.4px; font-weight: 600; color: #6B6B6B;">Piezas</div>
+              <a href="/resenas" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 6px;" style-hover="color: #1A1A1A; background: #F2F2F2;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 14px; font-weight: 500; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 8px; padding: 8px 14px; white-space: nowrap;" style-hover="color: #1A1A1A; background: #F4F4F4;">Contacto</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.8px; font-weight: 500; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 8px; padding: 9.6px 16.8px; white-space: nowrap;" style-hover="color: #1A1A1A; background: #F4F4F4;">Contacto</a>
       <div data-langmenu="1" style="flex: none; position: relative;">
-        <button type="button" onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; font-family: inherit; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: #1A1A1A; background: transparent; border: none; padding: 4px 0; cursor: pointer;">
+        <button type="button" onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 14.4px; font-weight: 600; letter-spacing: .04em; color: #1A1A1A; background: transparent; border: none; padding: 4.8px 0; cursor: pointer;">
           <span>{{ langCode }}</span>
         </button>
-        <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 6px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: flex; flex-direction: column; gap: 2px;">
+        <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 10px; padding: 7.2px; box-shadow: 0 12px 32px -12px rgba(0,0,0,.18); display: flex; flex-direction: column; gap: 2.4px;">
           <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-            <button type="button" onClick="{{ l.pick }}" style="display: flex; align-items: center; width: 100%; font-family: inherit; font-size: 14px; font-weight: {{ l.fw }}; text-align: left; color: #1A1A1A; background: {{ l.bg }}; border: none; border-radius: 6px; padding: 8px 10px; cursor: pointer;" style-hover="background: #F2F2F2;">
+            <button type="button" onClick="{{ l.pick }}" style="display: flex; align-items: center; width: 100%; font-family: inherit; font-size: 16.8px; font-weight: {{ l.fw }}; text-align: left; color: #1A1A1A; background: {{ l.bg }}; border: none; border-radius: 6px; padding: 9.6px 12px; cursor: pointer;" style-hover="background: #F2F2F2;">
               <span>{{ l.name }}</span>
             </button>
           </sc-for>
         </div>
       </div>
-      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 4.5px; width: 40px; height: 36px; padding: 0 9px; font-family: inherit; background: transparent; border: 1px solid #D0D0D0; border-radius: 8px; cursor: pointer;">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #D0D0D0; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: transform 200ms ease; transform: {{ burgerT1 }};"></span>
         <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
         <span style="display: block; height: 1.5px; background: #1A1A1A; border-radius: 2px; transition: transform 200ms ease; transform: {{ burgerT3 }};"></span>
@@ -134,19 +140,19 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div data-mobile="1" style="border-top: 1px solid #E6E6E6; background: #FFFFFF;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px 18px; display: flex; flex-direction: column;">
-          <div style="padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Productos</div>
-          <div style="padding: 10px 0 2px 14px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
-          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 500; color: #1A1A1A; padding: 8px 0 12px 14px; border-bottom: 1px solid #EEEEEE;">IPSO HUB</a>
-          <div style="padding: 12px 0 2px 14px; font-size: 12px; font-weight: 600; color: #6B6B6B;">Piezas</div>
-          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 500; color: #1A1A1A; padding: 8px 0 12px 14px; border-bottom: 1px solid #EEEEEE;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 16px; text-align: center; font-size: 15px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border-radius: 8px; padding: 14px 20px; justify-content: center;">Contacto</a>
+        <div style="max-width: 1920px; margin: 0 auto; padding: 12px 24px 21.6px; display: flex; flex-direction: column;">
+          <div style="padding: 16.8px 0 7.2px; font-size: 14.4px; font-weight: 600; color: #6B6B6B;">Productos</div>
+          <div style="padding: 12px 0 2.4px 16.8px; font-size: 14.4px; font-weight: 600; color: #6B6B6B;">Soluciones</div>
+          <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 18px; font-weight: 500; color: #1A1A1A; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #EEEEEE;">IPSO HUB</a>
+          <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 14.4px; font-weight: 600; color: #6B6B6B;">Piezas</div>
+          <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 18px; font-weight: 500; color: #1A1A1A; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #EEEEEE;">Reseñas Google</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border-radius: 8px; padding: 16.8px 24px; justify-content: center;">Contacto</a>
         </div>
       </div>
     </sc-if>
     <sc-if value="{{ showAlert }}" hint-placeholder-val="{{ false }}">
       <div role="alert" style="background: #FDECEC; border-top: 1px solid #F5C2C2;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #B3261E;">
+        <div style="max-width: 1920px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 12px; font-size: 16.8px; font-weight: 500; color: #B3261E;">
           <svg viewBox="0 0 24 24" aria-hidden="true" style="flex: none; width: 18px; height: 18px; display: block;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5"></path><path d="M12 16.5h.01"></path></svg>
           <span>Faltan campos por rellenar, marcados en rojo</span>
         </div>
@@ -154,68 +160,68 @@
     </sc-if>
   </header>
 
-  <main style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 96px;">
+  <main style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 115.2px;">
 
-    <div style="max-width: 640px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
-        <h1 style="margin: 0; font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; color: #1A1A1A;">Cuéntanos cómo es tu local.</h1>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; color: #6B6B6B;">
-          <span style="font-weight: 500; color: #1A1A1A; background: #F2F2F2; border-radius: 6px; padding: 4px 10px;">10 minutos</span>
+    <div style="max-width: 768px; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 14.4px;">
+        <h1 style="margin: 0; font-size: clamp(31.2px, 4.1vw, 40.8px); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; color: #1A1A1A;">Cuéntanos cómo es tu local.</h1>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 9.6px 16.8px; font-size: 16.8px; color: #6B6B6B;">
+          <span style="font-weight: 500; color: #1A1A1A; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">10 minutos</span>
           <span>Los campos con * son obligatorios.</span>
         </div>
       </div>
     </div>
 
-    <div style="max-width: 640px; margin: 36px auto 0;">
+    <div style="max-width: 768px; margin: 43.2px auto 0;">
 
 
-      <form data-alta-form="1" method="POST" action="https://go.ipsoglobal.com/alta" enctype="multipart/form-data" noValidate="{{ true }}" onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 20px;">
+      <form data-alta-form="1" method="POST" action="https://go.ipsoglobal.com/alta" enctype="multipart/form-data" noValidate="{{ true }}" onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
 
         <!-- 1 · El local -->
-        <section id="s-local" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">El local</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Datos básicos del negocio y cómo contactarte.</p>
-          <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="local_nombre" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <input id="local_nombre" name="local_nombre" type="text" autoComplete="organization" aria-invalid="{{ inv.local_nombre }}" value="{{ v.local_nombre }}" onChange="{{ on.local_nombre }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.local_nombre }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.local_nombre }}</div></sc-if>
+        <section id="s-local" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">El local</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Datos básicos del negocio y cómo contactarte.</p>
+          <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="local_nombre" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="local_nombre" name="local_nombre" type="text" autoComplete="organization" aria-invalid="{{ inv.local_nombre }}" value="{{ v.local_nombre }}" onChange="{{ on.local_nombre }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.local_nombre }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.local_nombre }}</div></sc-if>
             </div>
-            <div role="radiogroup" aria-labelledby="lbl_tipo" style="display: flex; flex-direction: column; gap: 8px;">
-              <span id="lbl_tipo" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Tipo<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
-              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
+            <div role="radiogroup" aria-labelledby="lbl_tipo" style="display: flex; flex-direction: column; gap: 9.6px;">
+              <span id="lbl_tipo" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Tipo<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
+              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.6px 19.2px;">
                 <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="4">
-                  <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                  <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #1A1A1A; cursor: pointer;">
                     <input type="radio" name="local_tipo" value="{{ t.value }}" checked="{{ t.on }}" onChange="{{ t.pick }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                     <span>{{ t.label }}</span>
                   </label>
                 </sc-for>
               </div>
-              <sc-if value="{{ err.local_tipo }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.local_tipo }}</div></sc-if>
+              <sc-if value="{{ err.local_tipo }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.local_tipo }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="tel" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">WhatsApp<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <div style="display: flex; gap: 8px;">
-                <select name="tel_prefijo" aria-label="Prefijo" value="{{ v.tel_prefijo }}" onChange="{{ on.tel_prefijo }}" style="flex: none; width: 118px; height: 44px; font-variant-numeric: tabular-nums; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="tel" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">WhatsApp<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <div style="display: flex; gap: 9.6px;">
+                <select name="tel_prefijo" aria-label="Prefijo" value="{{ v.tel_prefijo }}" onChange="{{ on.tel_prefijo }}" style="flex: none; width: 118px; height: 44px; font-variant-numeric: tabular-nums; font-size: 18px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                   <sc-for list="{{ prefijos }}" as="p" hint-placeholder-count="10"><option value="{{ p.v }}">{{ p.label }}</option></sc-for>
                 </select>
-                <input id="tel" name="tel" type="tel" autoComplete="tel-national" inputMode="tel" aria-invalid="{{ inv.tel }}" value="{{ v.tel }}" onChange="{{ on.tel }}" style="flex: 1; min-width: 0; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+                <input id="tel" name="tel" type="tel" autoComplete="tel-national" inputMode="tel" aria-invalid="{{ inv.tel }}" value="{{ v.tel }}" onChange="{{ on.tel }}" style="flex: 1; min-width: 0; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               </div>
-              <sc-if value="{{ err.tel }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.tel }}</div></sc-if>
+              <sc-if value="{{ err.tel }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.tel }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="email_pago" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Correo del pago<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <input id="email_pago" name="email_pago" type="email" autoComplete="email" aria-invalid="{{ inv.email_pago }}" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.email_pago }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="email_pago" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Correo del pago<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="email_pago" name="email_pago" type="email" autoComplete="email" aria-invalid="{{ inv.email_pago }}" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.email_pago }}</div></sc-if>
             </div>
-            <div role="radiogroup" aria-labelledby="lbl_web" style="display: flex; flex-direction: column; gap: 8px;">
-              <span id="lbl_web" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Tu local tiene web?</span>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px 24px;">
-                <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+            <div role="radiogroup" aria-labelledby="lbl_web" style="display: flex; flex-direction: column; gap: 9.6px;">
+              <span id="lbl_web" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">¿Tu local tiene web?</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 9.6px clamp(24px, 2vw, 38.4px);">
+                <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #1A1A1A; cursor: pointer;">
                   <input type="radio" checked="{{ tieneWeb }}" onChange="{{ setWebSi }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                   <span>Sí, tengo web</span>
                 </label>
-                <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #1A1A1A; cursor: pointer;">
                   <input type="radio" checked="{{ noWeb }}" onChange="{{ setWebNo }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                   <span>No tengo web</span>
                 </label>
@@ -223,109 +229,109 @@
               <input type="hidden" name="desde_web" value="{{ desdeWeb }}">
             </div>
             <sc-if value="{{ tieneWeb }}" hint-placeholder-val="{{ false }}">
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="web" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Web del local</label>
-                <input id="web" name="web" type="text" inputMode="url" autoComplete="url" placeholder="ejemplo.com" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                <label for="web" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Web del local</label>
+                <input id="web" name="web" type="text" inputMode="url" autoComplete="url" placeholder="ejemplo.com" value="{{ v.web }}" onChange="{{ on.web }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               </div>
             </sc-if>
           </div>
         </section>
 
         <sc-if value="{{ fromWeb }}" hint-placeholder-val="{{ false }}">
-        <section id="s-fromweb" style="background: #F6F6F6; border: 1px solid #E3E3E3; border-radius: 0; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; scroll-margin-top: 96px;">
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #1A1A1A;">Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.</p>
-          <button type="button" onClick="{{ fillMyself }}" style="font-family: inherit; cursor: pointer; background: none; border: none; padding: 0; font-size: 14px; font-weight: 500; color: #0A7C93; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #075E70;">Prefiero rellenarlo yo</button>
+        <section id="s-fromweb" style="background: #F6F6F6; border: 1px solid #E3E3E3; border-radius: 0; padding: 24px 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 9.6px 21.6px; scroll-margin-top: 115.2px;">
+          <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #1A1A1A;">Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.</p>
+          <button type="button" onClick="{{ fillMyself }}" style="font-family: inherit; cursor: pointer; background: none; border: none; padding: 0; font-size: 16.8px; font-weight: 500; color: #0A7C93; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #075E70;">Prefiero rellenarlo yo</button>
         </section>
         </sc-if>
 
         <!-- 2 · Horario -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-horario" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">Horario</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Los días y horas en que abres.</p>
-          <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 18px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="h_dia_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                  <select id="h_dia_de" name="h_dia_de" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_de }}" onChange="{{ on.h_dia_de }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+        <section id="s-horario" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A;">Horario</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Los días y horas en que abres.</p>
+          <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: 21.6px;">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <label for="h_dia_de" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_dia_de" name="h_dia_de" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_de }}" onChange="{{ on.h_dia_de }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                   </select>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="h_dia_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                  <select id="h_dia_a" name="h_dia_a" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_a }}" onChange="{{ on.h_dia_a }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <label for="h_dia_a" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_dia_a" name="h_dia_a" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_a }}" onChange="{{ on.h_dia_a }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                   </select>
                 </div>
               </div>
-              <sc-if value="{{ err.h_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h_dia }}</div></sc-if>
+              <sc-if value="{{ err.h_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.h_dia }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="h_hora_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                  <select id="h_hora_de" name="h_hora_de" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_de }}" onChange="{{ on.h_hora_de }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <label for="h_hora_de" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_hora_de" name="h_hora_de" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_de }}" onChange="{{ on.h_hora_de }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                   </select>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="h_hora_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                  <select id="h_hora_a" name="h_hora_a" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_a }}" onChange="{{ on.h_hora_a }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <label for="h_hora_a" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                  <select id="h_hora_a" name="h_hora_a" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_a }}" onChange="{{ on.h_hora_a }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                   </select>
                 </div>
               </div>
-              <sc-if value="{{ err.h_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h_hora }}</div></sc-if>
+              <sc-if value="{{ err.h_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.h_hora }}</div></sc-if>
             </div>
-            <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+            <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #1A1A1A; cursor: pointer;">
               <input type="checkbox" name="h_extendido" value="1" checked="{{ v.h_extendido }}" onChange="{{ on.h_extendido }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
               <span>Horario extendido</span>
             </label>
             <sc-if value="{{ v.h_extendido }}" hint-placeholder-val="{{ false }}">
-              <div style="display: flex; flex-direction: column; gap: 18px; border-top: 1px solid #EEEEEE; padding-top: 18px;">
-                <div style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Segundo tramo</div>
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                      <label for="h2_dia_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                      <select id="h2_dia_de" name="h2_dia_de" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_de }}" onChange="{{ on.h2_dia_de }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+              <div style="display: flex; flex-direction: column; gap: 21.6px; border-top: 1px solid #EEEEEE; padding-top: 21.6px;">
+                <div style="font-size: 16.8px; font-weight: 600; color: #1A1A1A;">Segundo tramo</div>
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
+                    <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                      <label for="h2_dia_de" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">De<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_dia_de" name="h2_dia_de" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_de }}" onChange="{{ on.h2_dia_de }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                       </select>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                      <label for="h2_dia_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                      <select id="h2_dia_a" name="h2_dia_a" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_a }}" onChange="{{ on.h2_dia_a }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                      <label for="h2_dia_a" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">a<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_dia_a" name="h2_dia_a" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_a }}" onChange="{{ on.h2_dia_a }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                       </select>
                     </div>
                   </div>
-                  <sc-if value="{{ err.h2_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h2_dia }}</div></sc-if>
+                  <sc-if value="{{ err.h2_dia }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.h2_dia }}</div></sc-if>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                      <label for="h2_hora_de" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                      <select id="h2_hora_de" name="h2_hora_de" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_de }}" onChange="{{ on.h2_hora_de }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
+                    <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                      <label for="h2_hora_de" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_hora_de" name="h2_hora_de" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_de }}" onChange="{{ on.h2_hora_de }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                       </select>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                      <label for="h2_hora_a" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                      <select id="h2_hora_a" name="h2_hora_a" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_a }}" onChange="{{ on.h2_hora_a }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 32px 0 12px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+                    <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                      <label for="h2_hora_a" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                      <select id="h2_hora_a" name="h2_hora_a" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_a }}" onChange="{{ on.h2_hora_a }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #1A1A1A; background-color: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                       </select>
                     </div>
                   </div>
-                  <sc-if value="{{ err.h2_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.h2_hora }}</div></sc-if>
+                  <sc-if value="{{ err.h2_hora }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.h2_hora }}</div></sc-if>
                 </div>
               </div>
             </sc-if>
@@ -335,51 +341,51 @@
 
         <!-- 3 · Carta -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-carta" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.carta }};">Carta</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Tu carta tal como la tienes ahora.</p>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+        <section id="s-carta" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.carta }};">Carta</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Tu carta tal como la tienes ahora.</p>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_carta" value="1" checked="{{ v.omit_carta }}" onChange="{{ on.omit_carta }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.carta }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="carta_files" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Sube la carta</label>
-              <input id="carta_files" name="carta_files" type="file" accept="application/pdf,image/*" multiple="{{ true }}" aria-invalid="{{ inv.carta }}" onChange="{{ onFiles }}" style="width: 100%; font-size: 14px; color: #4A4A4A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 8px 10px;">
-              <div style="font-size: 13px; color: #6B6B6B;">{{ filesNote }}</div>
-              <sc-if value="{{ err.carta_files }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.carta_files }}</div></sc-if>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="carta_files" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Sube la carta</label>
+              <input id="carta_files" name="carta_files" type="file" accept="application/pdf,image/*" multiple="{{ true }}" aria-invalid="{{ inv.carta }}" onChange="{{ onFiles }}" style="width: 100%; font-size: 16.8px; color: #4A4A4A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 9.6px 12px;">
+              <div style="font-size: 15.6px; color: #6B6B6B;">{{ filesNote }}</div>
+              <sc-if value="{{ err.carta_files }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.carta_files }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="carta_url" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">O pega el enlace donde está</label>
-              <input id="carta_url" name="carta_url" type="url" inputMode="url" aria-invalid="{{ inv.carta }}" value="{{ v.carta_url }}" onChange="{{ on.carta_url }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.carta }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.carta }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="carta_url" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">O pega el enlace donde está</label>
+              <input id="carta_url" name="carta_url" type="url" inputMode="url" aria-invalid="{{ inv.carta }}" value="{{ v.carta_url }}" onChange="{{ on.carta_url }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.carta }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.carta }}</div></sc-if>
             </div>
-            <div style="font-size: 13px; line-height: 1.5; color: #6B6B6B;">Vale la foto de la carta impresa. Nosotros la digitalizamos.</div>
+            <div style="font-size: 15.6px; line-height: 1.5; color: #6B6B6B;">Vale la foto de la carta impresa. Nosotros la digitalizamos.</div>
           </div>
           </sc-if>
         </section>
         </sc-if>
 
         <!-- 4 · WiFi -->
-        <section id="s-wifi" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.wifi }};">WiFi</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Para que los clientes se conecten sin preguntar.</p>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+        <section id="s-wifi" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.wifi }};">WiFi</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Para que los clientes se conecten sin preguntar.</p>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_wifi" value="1" checked="{{ v.omit_wifi }}" onChange="{{ on.omit_wifi }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.wifi }}" hint-placeholder-val="{{ true }}">
-          <div data-two="1" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="wifi_ssid" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Nombre de la red<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" aria-invalid="{{ inv.wifi_ssid }}" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.wifi_ssid }}</div></sc-if>
+          <div data-two="1" style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 1.6669999999999998vw, 32px) 14.4px;">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="wifi_ssid" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Nombre de la red<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" aria-invalid="{{ inv.wifi_ssid }}" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.wifi_ssid }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="wifi_pass" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Clave<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" aria-invalid="{{ inv.wifi_pass }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.wifi_pass }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="wifi_pass" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Clave<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" aria-invalid="{{ inv.wifi_pass }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.wifi_pass }}</div></sc-if>
             </div>
           </div>
           </sc-if>
@@ -387,33 +393,33 @@
 
         <!-- 5 · Google y redes -->
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
-        <section id="s-google" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.google }};">Google y redes</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Dónde te encuentran y te dejan reseñas.</p>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+        <section id="s-google" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.google }};">Google y redes</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Dónde te encuentran y te dejan reseñas.</p>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_google" value="1" checked="{{ v.omit_google }}" onChange="{{ on.omit_google }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.google }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="google_url" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Enlace de la ficha de Google</label>
-              <input id="google_url" name="google_url" type="url" inputMode="url" aria-invalid="{{ inv.google_url }}" value="{{ v.google_url }}" onChange="{{ on.google_url }}" disabled="{{ v.google_buscar }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; margin-top: 2px; font-size: 14px; color: #1A1A1A; cursor: pointer;">
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="google_url" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Enlace de la ficha de Google</label>
+              <input id="google_url" name="google_url" type="url" inputMode="url" aria-invalid="{{ inv.google_url }}" value="{{ v.google_url }}" onChange="{{ on.google_url }}" disabled="{{ v.google_buscar }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; margin-top: 2.4px; font-size: 16.8px; color: #1A1A1A; cursor: pointer;">
                 <input type="checkbox" name="google_buscar" value="1" checked="{{ v.google_buscar }}" onChange="{{ on.google_buscar }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                 <span>No lo sé, buscadla por mí</span>
               </label>
-              <sc-if value="{{ err.google_url }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.google_url }}</div></sc-if>
+              <sc-if value="{{ err.google_url }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.google_url }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="instagram" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Instagram</label>
-              <input id="instagram" name="instagram" type="text" autoComplete="off" aria-invalid="{{ inv.instagram }}" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.instagram }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="instagram" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Instagram</label>
+              <input id="instagram" name="instagram" type="text" autoComplete="off" aria-invalid="{{ inv.instagram }}" value="{{ v.instagram }}" onChange="{{ on.instagram }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <sc-if value="{{ err.instagram }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.instagram }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="otro_enlace" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Otro enlace</label>
-              <input id="otro_enlace" name="otro_enlace" type="url" inputMode="url" value="{{ v.otro_enlace }}" onChange="{{ on.otro_enlace }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: TikTok, Facebook, TripAdvisor</div>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="otro_enlace" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Otro enlace</label>
+              <input id="otro_enlace" name="otro_enlace" type="url" inputMode="url" value="{{ v.otro_enlace }}" onChange="{{ on.otro_enlace }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: TikTok, Facebook, TripAdvisor</div>
             </div>
           </div>
           </sc-if>
@@ -421,96 +427,96 @@
         </sc-if>
 
         <!-- 6 · Fidelización -->
-        <section id="s-fidelizacion" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.fidelizacion }};">Fidelización</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">La tarjeta de sellos para los clientes que repiten.</p>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+        <section id="s-fidelizacion" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.fidelizacion }};">Fidelización</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">La tarjeta de sellos para los clientes que repiten.</p>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_fidelizacion" value="1" checked="{{ v.omit_fidelizacion }}" onChange="{{ on.omit_fidelizacion }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.fidelizacion }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="fid_premio" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <input id="fid_premio" name="fid_premio" type="text" aria-invalid="{{ inv.fid_premio }}" value="{{ v.fid_premio }}" onChange="{{ on.fid_premio }}" style="width: 100%; height: 44px; font-size: 15px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: un café gratis</div>
-              <sc-if value="{{ err.fid_premio }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_premio }}</div></sc-if>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="fid_premio" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <input id="fid_premio" name="fid_premio" type="text" aria-invalid="{{ inv.fid_premio }}" value="{{ v.fid_premio }}" onChange="{{ on.fid_premio }}" style="width: 100%; height: 44px; font-size: 18px; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: un café gratis</div>
+              <sc-if value="{{ err.fid_premio }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_premio }}</div></sc-if>
             </div>
-            <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;">
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="fid_visitas" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Visitas para el premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" aria-invalid="{{ inv.fid_visitas }}" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-                <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_visitas }}</div></sc-if>
+            <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 1.6669999999999998vw, 32px) 14.4px;">
+              <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                <label for="fid_visitas" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Visitas para el premio<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" aria-invalid="{{ inv.fid_visitas }}" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+                <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_visitas }}</div></sc-if>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="fid_pin" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">PIN del equipo (4 cifras)<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-                <input id="fid_pin" name="fid_pin" type="text" inputMode="numeric" maxLength="4" pattern="[0-9]{4}" autoComplete="off" aria-invalid="{{ inv.fid_pin }}" value="{{ v.fid_pin }}" onChange="{{ on.fid_pin }}" style="width: 100%; height: 44px; font-size: 15px; font-variant-numeric: tabular-nums; letter-spacing: .12em; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 12px; transition: border-color 140ms ease, box-shadow 140ms ease;">
-                <div style="font-size: 13px; color: #6B6B6B;">Para canjear premios en el local</div>
-                <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.fid_pin }}</div></sc-if>
+              <div style="display: flex; flex-direction: column; gap: 7.2px;">
+                <label for="fid_pin" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">PIN del equipo (4 cifras)<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+                <input id="fid_pin" name="fid_pin" type="text" inputMode="numeric" maxLength="4" pattern="[0-9]{4}" autoComplete="off" aria-invalid="{{ inv.fid_pin }}" value="{{ v.fid_pin }}" onChange="{{ on.fid_pin }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; letter-spacing: .12em; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+                <div style="font-size: 15.6px; color: #6B6B6B;">Para canjear premios en el local</div>
+                <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_pin }}</div></sc-if>
               </div>
             </div>
-            <div style="font-size: 13px; line-height: 1.5; color: #6B6B6B;">Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.</div>
+            <div style="font-size: 15.6px; line-height: 1.5; color: #6B6B6B;">Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.</div>
           </div>
           </sc-if>
         </section>
 
         <!-- 7 · Lo que solo el equipo sabe -->
-        <section id="s-equipo" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 28px; scroll-margin-top: 96px;">
-          <h2 style="margin: 0; font-size: 19px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.equipo }};">Lo que solo el equipo sabe</h2>
-          <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #6B6B6B;">Lo que el asistente necesita saber para responder como vosotros.</p>
-          <label style="margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 14px; color: #4A4A4A; cursor: pointer;">
+        <section id="s-equipo" data-card="1" style="background: #FFFFFF; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; font-weight: 600; color: #1A1A1A; text-decoration: {{ deco.equipo }};">Lo que solo el equipo sabe</h2>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #6B6B6B;">Lo que el asistente necesita saber para responder como vosotros.</p>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_equipo" value="1" checked="{{ v.omit_equipo }}" onChange="{{ on.omit_equipo }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
           </label>
           <sc-if value="{{ show.equipo }}" hint-placeholder-val="{{ true }}">
-          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="q_estrella" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <textarea id="q_estrella" name="q_estrella" rows="2" aria-invalid="{{ inv.q_estrella }}" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: la parmigiana, y el vino de la casa con ella</div>
-              <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_estrella }}</div></sc-if>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="q_estrella" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_estrella" name="q_estrella" rows="2" aria-invalid="{{ inv.q_estrella }}" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: la parmigiana, y el vino de la casa con ella</div>
+              <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_estrella }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="q_preguntas" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Qué preguntan más los clientes?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <textarea id="q_preguntas" name="q_preguntas" rows="2" aria-invalid="{{ inv.q_preguntas }}" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: si hay opciones sin gluten, si hay terraza</div>
-              <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_preguntas }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="q_preguntas" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">¿Qué preguntan más los clientes?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_preguntas" name="q_preguntas" rows="2" aria-invalid="{{ inv.q_preguntas }}" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: si hay opciones sin gluten, si hay terraza</div>
+              <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_preguntas }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="q_no" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">¿Algo que el asistente no deba decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <textarea id="q_no" name="q_no" rows="2" aria-invalid="{{ inv.q_no }}" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: no reservamos por teléfono, no hay menú del día</div>
-              <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_no }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="q_no" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">¿Algo que el asistente no deba decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_no" name="q_no" rows="2" aria-invalid="{{ inv.q_no }}" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: no reservamos por teléfono, no hay menú del día</div>
+              <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_no }}</div></sc-if>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <label for="q_curiosidad" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
-              <textarea id="q_curiosidad" name="q_curiosidad" rows="2" aria-invalid="{{ inv.q_curiosidad }}" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; min-height: 72px; font-size: 15px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 10px 12px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 13px; color: #6B6B6B;">Ej.: la receta es de la abuela de Nápoles</div>
-              <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.q_curiosidad }}</div></sc-if>
+            <div style="display: flex; flex-direction: column; gap: 7.2px;">
+              <label for="q_curiosidad" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></label>
+              <textarea id="q_curiosidad" name="q_curiosidad" rows="2" aria-invalid="{{ inv.q_curiosidad }}" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
+              <div style="font-size: 15.6px; color: #6B6B6B;">Ej.: la receta es de la abuela de Nápoles</div>
+              <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_curiosidad }}</div></sc-if>
             </div>
-            <div role="radiogroup" aria-labelledby="lbl_tono" style="display: flex; flex-direction: column; gap: 8px;">
-              <span id="lbl_tono" style="font-size: 14px; font-weight: 500; color: #1A1A1A;">Tono del asistente<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
-              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
+            <div role="radiogroup" aria-labelledby="lbl_tono" style="display: flex; flex-direction: column; gap: 9.6px;">
+              <span id="lbl_tono" style="font-size: 16.8px; font-weight: 500; color: #1A1A1A;">Tono del asistente<span aria-hidden="true" style="margin-left: 3px; color: #6B6B6B;">*</span></span>
+              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.6px 19.2px;">
                 <sc-for list="{{ tonos }}" as="t" hint-placeholder-count="4">
-                  <label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 15px; color: #1A1A1A; cursor: pointer;">
+                  <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #1A1A1A; cursor: pointer;">
                     <input type="radio" name="tono" value="{{ t.value }}" checked="{{ t.on }}" onChange="{{ t.pick }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #1A1A1A; cursor: pointer;">
                     <span>{{ t.label }}</span>
                   </label>
                 </sc-for>
               </div>
-              <sc-if value="{{ err.tono }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 13px; color: #C62828;">{{ err.tono }}</div></sc-if>
+              <sc-if value="{{ err.tono }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.tono }}</div></sc-if>
             </div>
           </div>
           </sc-if>
         </section>
 
-        <div style="margin-top: 8px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px;">
-          <button data-alta-submit="1" type="submit" disabled="{{ submitting }}" style="min-width: 220px; height: 52px; font-family: inherit; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border: none; border-radius: 8px; padding: 0 28px; cursor: pointer; transition: background 140ms ease;" style-hover="background: #000000;">
+        <div style="margin-top: 9.6px; display: flex; flex-direction: column; align-items: flex-start; gap: 16.8px;">
+          <button data-alta-submit="1" type="submit" disabled="{{ submitting }}" style="min-width: 220px; height: 52px; font-family: inherit; font-size: 19.2px; font-weight: 600; color: #FFFFFF; background: #1A1A1A; border: none; border-radius: 8px; padding: 0 33.6px; cursor: pointer; transition: background 140ms ease;" style-hover="background: #000000;">
             <sc-if value="{{ submitting }}" hint-placeholder-val="{{ false }}"><span>Enviando…</span></sc-if>
             <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}"><span>Enviar</span></sc-if>
           </button>
-          <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="font-size: 14px; line-height: 1.5; color: #C62828;">{{ err.global }}</div></sc-if>
-          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B6B6B;">Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.</p>
+          <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="font-size: 16.8px; line-height: 1.5; color: #C62828;">{{ err.global }}</div></sc-if>
+          <p style="margin: 0; font-size: 16.8px; line-height: 1.55; color: #6B6B6B;">Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.</p>
         </div>
 
       </form>
@@ -518,28 +524,28 @@
   </main>
 
   <footer style="color: #6B6B6B; background: #FFFFFF;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 56px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding-bottom: 36px;">
+    <div style="max-width: 1920px; margin: 0 auto; padding: 57.6px 24px 67.2px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(32px, 2.667vw, 51.2px); padding-bottom: 43.2px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 10px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
-          <p style="margin: 14px 0 0; font-size: 14px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
+          <p style="margin: 16.8px 0 0; font-size: 16.8px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.8px;">
           <a href="/hub" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">IPSO HUB</a>
           <a href="/resenas" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Reseñas Google</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.8px;">
           <a href="/#dudas" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Dudas</a>
           <a href="/#contacto" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Contacto</a>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; font-size: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.8px;">
           <a href="/nosotros" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Nosotros</a>
           <a href="/legal#aviso-legal" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Aviso legal</a>
           <a href="/legal#privacidad" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Privacidad</a>
           <a href="/legal#cookies" style="color: #4A4A4A;" style-hover="color: #1A1A1A;">Cookies</a>
         </div>
       </div>
-      <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 13px; color: #6B6B6B;">
+      <div style="margin-top: 28.8px; display: flex; flex-wrap: wrap; gap: 12px clamp(24px, 2vw, 38.4px); justify-content: space-between; font-size: 15.6px; color: #6B6B6B;">
         <span>© 2026 Ipso · Barcelona</span>
       </div>
     </div>
