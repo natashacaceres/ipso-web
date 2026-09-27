@@ -320,6 +320,18 @@
   @media (max-width: 760px) { [data-rv="0"] { transform: translate3d(0, 22px, 0); filter: blur(4px); } }
   @media (prefers-reduced-motion: reduce) { [data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; } }
 </style>
+<style data-hero3="1">
+section[data-hero2] { min-height: min(100svh, 1100px); display: flex; align-items: center; }
+section[data-hero2] [data-reveal] > div { justify-content: flex-start !important; }
+@media (max-width: 760px) {
+  section[data-hero2] { min-height: 100svh; align-items: flex-start; }
+  section[data-hero2] [data-sec] { padding: 118px 24px 0 !important; }
+  section[data-hero2] > div:last-child { margin-top: 0 !important; }
+  section[data-hero2] [data-reveal] { max-width: 100% !important; }
+  [data-heroimg3] { object-position: 64% 50% !important; }
+  [data-herodim3] { background: linear-gradient(180deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 32%, rgba(0,0,0,.25) 58%, rgba(0,0,0,0) 72%, rgba(0,0,0,.35) 100%) !important; }
+}
+</style>
 <style data-mob5="1">
 @media (max-width: 760px) {
   section[data-hero2] h1 { font-size: clamp(50px, 15vw, 65px) !important; }
@@ -328,7 +340,7 @@
   section[data-hero2] [data-reveal] > div > a { font-size: 18px !important; padding: .95em .5em !important; }
   [data-heroimg2] { aspect-ratio: 15 / 14 !important; }
   section h2[data-ind] { font-size: 50px !important; }
-  [data-indrail] > a { width: 92% !important; }
+  [data-indrail] > a { width: 78% !important; }
   [data-indrail] > a > div:last-child > span:first-child { font-size: 30px !important; }
   [data-indrail] > a > div:last-child > span:last-child { font-size: 37px !important; }
 }
@@ -400,8 +412,12 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" data-hero2="1" style="position: relative; overflow: hidden; scroll-margin-top: 96px; background: #000000;">
-    <div data-sec="1" style="position: relative; max-width: 1920px; margin: 0 auto; padding: clamp(96px, 9vw, 168px) 24px 0; text-align: center;">
-      <div data-reveal="1" style="display: flex; flex-direction: column; align-items: center;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; margin: 0; padding: 0;">
+      <img src="assets/hero-askme-hd.png" alt="" data-heroimg3="1" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%;">
+      <div data-herodim3="1" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.72) 26%, rgba(0,0,0,.3) 44%, rgba(0,0,0,0) 58%), linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 80%, rgba(0,0,0,.6) 100%);"></div>
+    </div>
+    <div data-sec="1" style="position: relative; width: 100%; max-width: 1920px; margin: 0 auto; padding: clamp(120px, 10vw, 180px) 5% clamp(72px, 7vw, 120px); text-align: left;">
+      <div data-reveal="1" style="display: flex; flex-direction: column; align-items: flex-start; max-width: min(620px, 42vw);">
         <h1 style="margin: 0; font-size: clamp(3rem, 7vw, 7.5rem); line-height: 0.95; font-weight: 700; letter-spacing: -0.03em; color: #FFFFFF; text-wrap: balance;">El <span style="color: #2BE7FF;">ADN</span><br>de tu local</h1>
         <p style="margin: clamp(20px, 2vw, 36px) 0 0; max-width: 36ch; font-size: clamp(20px, 1.8vw, 30px); line-height: 1.4; color: #A7ADA5; text-wrap: balance;">Un punto en tu mostrador que hace de tu local una experiencia.</p>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: clamp(28px, 2.6vw, 48px);">
@@ -409,9 +425,6 @@
           <a href="#soluciones" onClick="{{ goPrecios }}" style="font-size: 19.2px; font-weight: 600; color: #F4F6F3; background: rgba(0,0,0,.4); border: 1px solid #3A3E38; border-radius: 10px; padding: 19.2px 31.2px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), border-color 170ms ease, box-shadow 170ms ease;" style-hover="color: #FFFFFF; border-color: #F4F6F3; transform: translateY(-2px);">Ver planes</a>
         </div>
       </div>
-    </div>
-    <div style="max-width: none; margin: clamp(56px, 5vw, 96px) 0 0; padding: 0;">
-      <img src="assets/hero-hub-v9.png" alt="" data-heroimg2="1" style="display: block; width: 100%; height: auto; aspect-ratio: 2414 / 1180; object-fit: cover; object-position: 60% 50%;">
     </div>
   </section>
 
