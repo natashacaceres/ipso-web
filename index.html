@@ -322,14 +322,16 @@
 </style>
 <style data-hero3="1">
 section[data-hero2] { min-height: min(100svh, 1100px); display: flex; align-items: center; }
-section[data-hero2] [data-reveal] > div { justify-content: flex-start !important; }
+section[data-hero2] [data-reveal] > div { justify-content: flex-start !important; flex-wrap: nowrap !important; }
+@media (min-width: 761px) and (max-width: 1100px) { section[data-hero2] [data-reveal] { max-width: max(42vw, 460px) !important; } }
 @media (max-width: 760px) {
-  section[data-hero2] { min-height: 100svh; align-items: flex-start; }
-  section[data-hero2] [data-sec] { padding: 118px 24px 0 !important; }
+  section[data-hero2] { min-height: 0; flex-direction: column; align-items: stretch; }
+  section[data-hero2] [data-sec] { order: 1; padding: 104px 24px 8px !important; }
   section[data-hero2] > div:last-child { margin-top: 0 !important; }
   section[data-hero2] [data-reveal] { max-width: 100% !important; }
-  [data-heroimg3] { object-position: 64% 50% !important; }
-  [data-herodim3] { background: linear-gradient(180deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 32%, rgba(0,0,0,.25) 58%, rgba(0,0,0,0) 72%, rgba(0,0,0,.35) 100%) !important; }
+  section[data-hero2] > div[aria-hidden] { order: 2; position: relative !important; inset: auto !important; width: 100%; aspect-ratio: 1 / 1; margin-top: 8px !important; }
+  [data-heroimg3] { object-position: 82% 55% !important; }
+  [data-herodim3] { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 12%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 82%, rgba(0,0,0,.7) 100%) !important; }
 }
 </style>
 <style data-mob5="1">
