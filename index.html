@@ -340,6 +340,38 @@ section[data-hero2] [data-reveal] > div { justify-content: flex-start !important
   [data-herodim3] { background: linear-gradient(180deg, #000 0%, rgba(0,0,0,.35) 6%, rgba(0,0,0,0) 12%, rgba(0,0,0,0) 86%, rgba(0,0,0,.6) 100%) !important; }
 }
 </style>
+<style data-sx3d="1">
+#asi-funciona[data-sx] { height: 540svh !important; padding: 0 !important; --pw: min(390px, calc(72svh / 1.772), 27vw); --ph: calc(var(--pw) * 1.772); }
+[data-sxt] { left: 5%; width: calc(50% + 7vw - var(--pw) * 0.56 - 5% - 40px); max-width: 640px; }
+[data-sxt][data-side="r"] { left: auto; right: 5%; }
+[data-sxdot][data-on] span { height: 24px !important; background: #F4F6F3 !important; }
+#sol-spacer { background: #FBFBFA !important; }
+#soluciones { color: #0B0C0A !important; }
+#contacto { background: #000000 !important; color: #F4F6F3 !important; }
+#contacto input::placeholder, #contacto textarea::placeholder { color: #7D837C; }
+@media (max-width: 1023px) {
+  #asi-funciona[data-sx] { --pw: clamp(150px, calc((100svh - 400px) / 1.772), min(56vw, 300px)); }
+  [data-sxpos], [data-sxhalo] { top: calc(88px + var(--ph) * 0.54) !important; }
+  [data-sxshadow], [data-sxfloor] { top: calc(88px + var(--ph) * 0.54) !important; }
+  [data-sxt], [data-sxt][data-side="r"] { left: 24px !important; right: 24px !important; width: auto !important; max-width: none !important; top: calc(88px + var(--ph) * 1.08 + 40px) !important; bottom: 12px !important; justify-content: flex-start !important; align-items: center !important; text-align: center; }
+  [data-sxt] h2 { font-size: clamp(28px, 7.4vw, 44px) !important; }
+  [data-sxt] h2 span[style*="border: 1px solid #E8B84B"] { font-size: 10px !important; padding: 2px 5px !important; margin-left: 6px !important; }
+  [data-sxt] p { font-size: 16px !important; line-height: 1.45 !important; max-width: 34ch !important; margin: 10px auto 0 !important; }
+  [data-sxlist] { flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 6px 14px !important; margin-top: 14px !important; }
+  [data-sxlist] > div { font-size: 14px !important; gap: 6px !important; line-height: 1.3 !important; }
+  [data-sxlist] > div > span[style*="border"] { font-size: 9px !important; padding: 1px 4px !important; }
+  [data-sxcta] { margin-top: 14px !important; padding: 11px 20px !important; font-size: 15px !important; }
+  [data-sxqr] { justify-content: center; margin-top: 12px !important; }
+  [data-sxqr] [data-qr] { width: 44px !important; height: 44px !important; }
+  [data-sxqr] p { font-size: 13.8px !important; text-align: left; }
+  [data-sxmascot] { left: auto !important; right: 6% !important; top: 92px !important; width: clamp(64px, 17vw, 110px) !important; }
+  [data-sxdots] { right: auto !important; left: 50% !important; top: calc(88px + var(--ph) * 1.08 + 8px) !important; transform: translateX(-50%) !important; flex-direction: row !important; }
+  [data-sxdot] { width: 26px !important; height: 22px !important; }
+  [data-sxdot][data-on] span { height: 6px !important; width: 22px !important; }
+}
+@media (max-width: 1023px) and (max-height: 760px) { [data-sxqr] { display: none !important; } }
+@media (max-width: 1023px) and (max-height: 640px) { #asi-funciona[data-sx] { --pw: clamp(96px, calc((100svh - 420px) / 1.772), min(56vw, 300px)); } [data-sxt] h2 { font-size: clamp(24px, 6vw, 34px) !important; } [data-sxt] p { font-size: 15px !important; margin-top: 6px !important; } [data-sxcta] { margin-top: 10px !important; padding: 9px 18px !important; } }
+</style>
 <style data-mob5="1">
 @media (max-width: 760px) {
   section[data-hero2] h1 { font-size: clamp(50px, 15vw, 65px) !important; }
@@ -470,102 +502,99 @@ section[data-hero2] [data-reveal] > div { justify-content: flex-start !important
 
   <!-- ============ SOLUCIONES (carrusel horizontal anclado) ============ -->
   <section style="scroll-margin-top: 86.4px;">
-    <div id="asi-funciona" style="position: relative; height: 490svh; scroll-margin-top: 108px;">
-      <div data-afsticky="1" style="position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden;">
-        <div data-afinner="1" style="position: relative; width: 100%; max-width: 1920px; margin: 0 auto; padding: 0 24px;">
-        <div data-afstate="1" style="display: grid; min-height: 0; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;">
-          <div>
-            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Un solo toque.</h2>
-            <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: 14.4px;">
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5a11 11 0 0 1 16 0"></path><path d="M7.5 13a6.5 6.5 0 0 1 9 0"></path><circle cx="12" cy="17" r="1"></circle></svg><span>WiFi sin contraseña</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span>Carta en 5 idiomas</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.8l-5.3 2.8 1.1-5.8L3.5 9.7l5.9-.8z"></path></svg><span>Reseñas de Google</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.5" cy="7.5" r=".8" fill="#2BE7FF"></circle></svg><span>Redes sociales</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#2BE7FF"></circle></svg><span>Te ayudo a elegir</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
-              <div style="display: flex; align-items: center; gap: 16px; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+    <div id="asi-funciona" data-sx="1" style="position: relative; height: 540svh; scroll-margin-top: 0; background: #000000; color: #F4F6F3;">
+      <div data-sxsticky="1" style="position: sticky; top: 0; height: 100svh; overflow: hidden;">
+        <div data-sxhalo="1" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: min(1100px, 92vw); height: min(1100px, 92vw); margin: calc(min(1100px, 92vw) / -2) 0 0 calc(min(1100px, 92vw) / -2); border-radius: 50%; background: radial-gradient(closest-side, rgba(43,231,255,.22), rgba(43,231,255,.06) 55%, rgba(43,231,255,0)); filter: blur(40px); will-change: transform; pointer-events: none;"></div>
+        <div data-sxstage="1" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; max-width: 1920px; margin: 0 auto; perspective: 1800px;">
+          <div data-sxt="0" data-side="l" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter;">
+            <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em; color: #F4F6F3;">Un solo toque.</h2>
+            <div data-sxlist="1" style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5a11 11 0 0 1 16 0"></path><path d="M7.5 13a6.5 6.5 0 0 1 9 0"></path><circle cx="12" cy="17" r="1"></circle></svg><span>WiFi sin contraseña</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span>Carta en 5 idiomas</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.8l-5.3 2.8 1.1-5.8L3.5 9.7l5.9-.8z"></path></svg><span>Reseñas de Google</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.5" cy="7.5" r=".8" fill="#2BE7FF"></circle></svg><span>Redes sociales</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#2BE7FF"></circle></svg><span>Te ayudo a elegir</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span><span style="display: inline-flex; align-items: center; flex: none; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 8.4px; font-size: 14.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></div>
             </div>
           </div>
-          <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
-              <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-panel-v7.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
-              </div>
-            </div>
+          <div data-sxt="1" data-side="r" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter; opacity: 0;">
+            <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em; color: #F4F6F3;">Que <span style="white-space: nowrap;">vuelvan.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 22px 0 0; max-width: 30ch; font-size: clamp(19px, 1.45vw, 26px); line-height: 1.5; color: #B7BDB5; text-wrap: pretty;">Tu tarjeta de sellos. Sin cartón, sin app, sin wallet.</p>
           </div>
-        </div>
-        <div data-afstate="2" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;" data-afmirror="1">
-          <div>
-            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Que <span style="white-space: nowrap;">vuelvan.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Tu tarjeta de sellos. Sin cartón, sin app, sin wallet.</p>
+          <div data-sxt="2" data-side="l" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter; opacity: 0;">
+            <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em; color: #F4F6F3;">Publicidad que no <span style="white-space: nowrap;">pagas.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 22px 0 0; max-width: 30ch; font-size: clamp(19px, 1.45vw, 26px); line-height: 1.5; color: #B7BDB5; text-wrap: pretty;">Tu cliente comparte su visita en sus redes. Su recuerdo, tu publicidad.</p>
           </div>
-          <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
-              <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-fidel-v2.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div data-afstate="3" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;">
-          <div>
-            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Publicidad que no <span style="white-space: nowrap;">pagas.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Tu cliente comparte su visita en sus redes. Su recuerdo, tu publicidad.</p>
-          </div>
-          <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
-              <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-estampa-v3.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div data-afstate="4" style="position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 3.333vw, 64px) clamp(64px, 5.332999999999999vw, 102.4px); align-items: center;" data-afmirror="1">
-          <img src="assets/asistente-flota.png" alt="" aria-hidden="true" data-mascot="1" style="position: absolute; z-index: 0; right: -1vw; top: 46%; width: clamp(150px, 17vw, 330px); height: auto; opacity: .5; image-rendering: auto; pointer-events: none;">
-          <div style="position: relative; z-index: 1;">
-            <h2 style="margin: 0; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;">Se lo sabe <span style="white-space: nowrap;">todo.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-            <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #B7BDB5;">Recomienda, marida, calcula y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.</p>
-            <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="display: inline-block; margin-top: 28.8px; font-size: 17.4px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 15.6px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
-            <div style="margin-top: 26.4px; display: flex; align-items: center; gap: 16.8px;">
+          <div data-sxt="3" data-side="r" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter; opacity: 0; align-items: flex-start;">
+            <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em; color: #F4F6F3;">Se lo sabe <span style="white-space: nowrap;">todo.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 22px 0 0; max-width: 30ch; font-size: clamp(19px, 1.45vw, 26px); line-height: 1.5; color: #B7BDB5; text-wrap: pretty;">Recomienda, marida, calcula y responde en 30 idiomas. Sabe lo que solo tu equipo sabe.</p>
+            <a data-sxcta="1" href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" style="display: inline-block; margin-top: 28.8px; font-size: 17.6px; font-weight: 600; color: #F4F6F3; border: 1px solid #2E3A38; border-radius: 999px; padding: 15.6px 24px; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;" style-hover="color: #0B0C0A; background: #C9B389; border-color: #C9B389;">Pruébalo en vivo</a>
+            <div data-sxqr="1" style="margin-top: 26.4px; display: flex; align-items: center; gap: 16.8px;">
               <a href="https://demo.ipsoglobal.com" target="_blank" rel="noopener" data-qr="1" style="flex: none; display: block; width: 58px; height: 58px; border-radius: 7px; overflow: hidden; background: #FFFFFF; padding: 2.4px;">
                 <img src="assets/qr-demo.png" alt="Código QR de la demo del IPSO HUB" style="display: block; width: 100%; height: 100%; object-fit: contain;">
               </a>
               <p style="margin: 0; max-width: 26ch; font-size: 16.2px; line-height: 1.45; color: #8B918A;">Escanéalo. Es la demo real.</p>
-            </div>
+              </div>
           </div>
-          <div data-afimgwrap="1" style="display: flex; justify-content: center;">
-            <div data-afphone="1" style="height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.98), 0 22px 44px -34px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);">
-              <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #EDE5DA;">
-                <img src="assets/asi-asistente-v4.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%;">
+          <div data-sxt="4" data-side="l" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter; opacity: 0;">
+            <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04; font-weight: 600; letter-spacing: -0.045em; color: #F4F6F3;">Todo a la <span style="white-space: nowrap;">vista.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
+            <p style="margin: 22px 0 0; max-width: 30ch; font-size: clamp(19px, 1.45vw, 26px); line-height: 1.5; color: #B7BDB5; text-wrap: pretty;">Cada mes, un WhatsApp con lo que pasó. Y qué pidieron que no tienes.</p>
+          </div>
+          <div data-sxmascot="1" aria-hidden="true" style="position: absolute; left: 6%; top: 14%; width: clamp(120px, 11vw, 230px); opacity: 0; visibility: hidden; pointer-events: none; will-change: transform, opacity; filter: drop-shadow(0 18px 40px rgba(43,231,255,.35));"><img src="assets/asistente-flota.png" alt="" data-mascot="1" style="display: block; width: 100%; height: auto;"></div>
+          <div data-sxfloor="1" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: calc(var(--pw) * 1.9); height: calc(var(--pw) * 0.34); margin-left: calc(var(--pw) * -0.95); margin-top: calc(var(--ph) / 2 - var(--pw) * 0.1); border-radius: 50%; background: radial-gradient(closest-side, rgba(170,236,255,.10), rgba(170,236,255,0)); pointer-events: none;"></div>
+          <div data-sxshadow="1" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: calc(var(--pw) * 0.96); height: calc(var(--pw) * 0.1); margin-left: calc(var(--pw) * -0.48); margin-top: calc(var(--ph) / 2 + var(--pw) * 0.02); border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.95), rgba(0,0,0,0)); filter: blur(8px); pointer-events: none;"></div>
+          <div data-sxpos="1" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: var(--pw); height: var(--ph); margin-left: calc(var(--pw) / -2); margin-top: calc(var(--ph) / -2); transform-style: preserve-3d; will-change: transform; transform: translate3d(7vw, 0, 0) rotateX(9deg) rotateY(-10deg);">
+            <div style="position: absolute; inset: 0; font-size: calc(var(--pw) / 100); transform-style: preserve-3d;">
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: #121316; transform: translateZ(-9em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-0.7em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-1.4em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-2.1em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-2.8em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-3.5em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-4.2em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-4.9em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-5.6em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-6.3em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-7.0em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-7.7em);"></div>
+              <div style="position: absolute; inset: 0; border-radius: 14em; background: linear-gradient(90deg, #1d1f22 0%, #a9aeb5 5%, #5b5f65 12%, #3b3e43 50%, #5b5f65 88%, #b4b9c0 95%, #1d1f22 100%); transform: translateZ(-8.4em);"></div>
+              <div style="position: absolute; left: -0.9em; top: 21em; width: 1.8em; height: 6.5em; border-radius: 1em; background: linear-gradient(90deg, #4a4e54, #b9bec5, #4a4e54); transform: translateZ(-4.2em);"></div>
+              <div style="position: absolute; left: -0.9em; top: 32em; width: 1.8em; height: 11em; border-radius: 1em; background: linear-gradient(90deg, #4a4e54, #b9bec5, #4a4e54); transform: translateZ(-4.2em);"></div>
+              <div style="position: absolute; left: -0.9em; top: 46em; width: 1.8em; height: 11em; border-radius: 1em; background: linear-gradient(90deg, #4a4e54, #b9bec5, #4a4e54); transform: translateZ(-4.2em);"></div>
+              <div style="position: absolute; right: -0.9em; top: 38em; width: 1.8em; height: 17em; border-radius: 1em; background: linear-gradient(90deg, #4a4e54, #b9bec5, #4a4e54); transform: translateZ(-4.2em);"></div>
+              <div style="position: absolute; inset: 0; box-sizing: border-box; padding: 0.9em; border-radius: 14em; background: linear-gradient(135deg, #e6e9ec 0%, #7a7f86 18%, #2d3034 46%, #3a3d42 60%, #8c9198 82%, #eef0f2 100%); box-shadow: inset 0 0 0 0.18em rgba(255,255,255,.35);">
+                <div style="width: 100%; height: 100%; box-sizing: border-box; padding: 2.6em; border-radius: 13.1em; background: #040405; box-shadow: inset 0 0 0 0.2em rgba(255,255,255,.06);">
+                  <div data-sxscreen="1" style="position: relative; width: 100%; height: 100%; border-radius: 10.6em; overflow: hidden; background: #F4F3F1; transform: translateZ(0);">
+                <div data-sxs="0" style="position: absolute; inset: 0; background: #F4F3F1; opacity: 1; will-change: transform, opacity;"><img src="assets/asi-panel-v7.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 0%;"></div>
+                <div data-sxs="1" style="position: absolute; inset: 0; background: #F4F3F1; opacity: 0; will-change: transform, opacity;"><img src="assets/asi-fidel-v2.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 0%;"></div>
+                <div data-sxs="2" style="position: absolute; inset: 0; background: #F5F4F0; opacity: 0; will-change: transform, opacity;"><img src="assets/asi-estampa-v3.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 0%;"></div>
+                <div data-sxs="3" style="position: absolute; inset: 0; background: #EDE5DA; opacity: 0; will-change: transform, opacity;"><img src="assets/asi-asistente-v4.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%;"></div>
+                <div data-sxs="4" style="position: absolute; inset: 0; overflow: hidden; background: #EFE9E1; opacity: 0; will-change: transform, opacity;"><img src="assets/wa-informe-v4.jpg" alt="Informe mensual por WhatsApp" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.075); transform-origin: 50% 50%;"></div>
+                    <div style="position: absolute; left: 50%; top: 2.4em; width: 27em; height: 7.8em; margin-left: -13.5em; border-radius: 4em; background: #000000;"></div>
+                    <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(158deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,0) 78%, rgba(255,255,255,.05) 100%);"></div>
+                    <div data-sxglare="1" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(112deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.30) 46%, rgba(255,255,255,.08) 52%, rgba(255,255,255,0) 60%); background-size: 340% 100%; background-position: 50% 0; mix-blend-mode: screen; opacity: .6;"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background: #EEF0EC;">
-    <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px;">
-      <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(44px, 3.667vw, 70.4px); align-items: center;">
-        <div>
-          <h2 style="margin: 0; max-width: 14ch; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; font-weight: 600; letter-spacing: -0.042em; color: #0B0C0A;">Todo a la <span style="white-space: nowrap;">vista.<span style="display: inline-flex; align-items: center; flex: none; margin-left: 10px; vertical-align: middle; border: 1px solid #E8B84B; border-radius: 4px; padding: 2.4px 7.2px; font-size: 13.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #E8B84B;">PRO</span></span></h2>
-          <p style="margin: 24px 0 0; max-width: 30ch; font-size: clamp(21px, 1.7vw, 28px); line-height: 1.5; color: #4E534C;">Cada mes, un WhatsApp con lo que pasó. Y qué pidieron que no tienes.</p>
-        </div>
-        <div data-waphone="1" style="justify-self: center; height: min(820px, 76vh); aspect-ratio: 9.9 / 19; width: auto; max-width: 100%; border-radius: 48px; padding: 10.8px; background: #14161A; box-shadow: 0 54px 90px -48px rgba(0,0,0,.5), 0 22px 44px -34px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.05);">
-          <div style="width: 100%; height: 100%; border-radius: 40px; overflow: hidden; background: #ECE5DD;">
-            <img src="assets/wa-informe-v4.jpg" alt="Informe mensual por WhatsApp" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scaleY(1.05); transform-origin: 50% 0%;">
+          <div data-sxdots="1" style="position: absolute; right: max(16px, 2.2vw); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 2px;">
+            <button data-sxdot="0" data-on="1" aria-label="1 / 5" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;"><span style="display: block; width: 6px; height: 6px; border-radius: 99px; background: rgba(244,246,243,.3); transition: width .45s cubic-bezier(.22,.61,.36,1), height .45s cubic-bezier(.22,.61,.36,1), background .45s ease;"></span></button>
+            <button data-sxdot="1" aria-label="2 / 5" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;"><span style="display: block; width: 6px; height: 6px; border-radius: 99px; background: rgba(244,246,243,.3); transition: width .45s cubic-bezier(.22,.61,.36,1), height .45s cubic-bezier(.22,.61,.36,1), background .45s ease;"></span></button>
+            <button data-sxdot="2" aria-label="3 / 5" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;"><span style="display: block; width: 6px; height: 6px; border-radius: 99px; background: rgba(244,246,243,.3); transition: width .45s cubic-bezier(.22,.61,.36,1), height .45s cubic-bezier(.22,.61,.36,1), background .45s ease;"></span></button>
+            <button data-sxdot="3" aria-label="4 / 5" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;"><span style="display: block; width: 6px; height: 6px; border-radius: 99px; background: rgba(244,246,243,.3); transition: width .45s cubic-bezier(.22,.61,.36,1), height .45s cubic-bezier(.22,.61,.36,1), background .45s ease;"></span></button>
+            <button data-sxdot="4" aria-label="5 / 5" style="display: flex; align-items: center; justify-content: center; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer;"><span style="display: block; width: 6px; height: 6px; border-radius: 99px; background: rgba(244,246,243,.3); transition: width .45s cubic-bezier(.22,.61,.36,1), height .45s cubic-bezier(.22,.61,.36,1), background .45s ease;"></span></button>
           </div>
         </div>
       </div>
     </div>
-    </div>
 
-    <div id="sol-spacer" style="position: relative; padding-top: 0; scroll-margin-top: 0;">
+    <div id="sol-spacer" style="position: relative; padding-top: 0; scroll-margin-top: 0; background: #FBFBFA;">
       <div id="sol-pin" style="display: flex; flex-direction: column; justify-content: flex-start;">
         <div id="sol-intro" style="max-width: 1920px; width: 100%; margin: 0 auto; padding: 96px 24px 0;">
-          <p id="soluciones" data-intro="1" style="margin: 0 auto; text-align: center; scroll-margin-top: 108px; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; font-weight: 600; letter-spacing: -0.042em; color: #F4F6F3; max-width: 34ch;">Planes</p>
+          <p id="soluciones" data-intro="1" style="margin: 0 auto; text-align: center; scroll-margin-top: 108px; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; font-weight: 600; letter-spacing: -0.042em; color: #0B0C0A; max-width: 34ch;">Planes</p>
         </div>
         <div id="sol-rail" data-rail="1" style="max-width: 1920px; width: 100%; margin: 0 auto; display: flex; gap: 12px; overflow-x: auto; padding: 43.2px 24px 19.2px; scroll-behavior: auto;">
             <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
@@ -635,33 +664,33 @@ section[data-hero2] [data-reveal] > div { justify-content: flex-start !important
   </section>
 
   <!-- ============ CONTACTO ============ -->
-  <section id="contacto" style="scroll-margin-top: 86.4px; background: #FBFBFA; color: #0B0C0A;">
+  <section id="contacto" style="scroll-margin-top: 86.4px; background: #000000; color: #F4F6F3;">
     <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 124.8px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(60px, 5vw, 96px); align-items: center;">
       <div data-reveal="1">
-        <h2 style="margin: 0; max-width: 14ch; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; color: #0B0C0A; font-weight: 600; letter-spacing: -0.045em;">Cuéntanos cómo es tu negocio.</h2>
+        <h2 style="margin: 0; max-width: 14ch; font-size: clamp(40px, 5vw, 88px); line-height: 1.02; color: #F4F6F3; font-weight: 600; letter-spacing: -0.045em;">Cuéntanos cómo es tu negocio.</h2>
         <div style="margin-top: 43.2px; display: flex; flex-direction: column; gap: clamp(22px, 1.8330000000000002vw, 35.2px); padding-top: 0;">
           <div>
-            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #5A605C;">Dónde estamos</div>
+            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #9CA39A;">Dónde estamos</div>
             <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.028em;">Barcelona</div>
           </div>
           <div>
-            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #5A605C;">¿Prefieres hablar directamente?</div>
+            <div style="font-size: 14.4px; letter-spacing: .06em; text-transform: uppercase; color: #9CA39A;">¿Prefieres hablar directamente?</div>
             <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="margin-top: 14.4px; display: inline-flex; align-items: center; gap: 12px; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #25D366; border: none; border-radius: 10px; padding: 16.8px 24px; text-decoration: none; transition: transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="transform: translateY(-2px);"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0B0C0A" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Escríbenos por WhatsApp</a>
           </div>
         </div>
       </div>
 
-      <form data-contact-form="1" data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #DADDD6; background: #F3F4F1; color: #0B0C0A; border-radius: 20px; padding: clamp(28px, 3vw, 56px); display: flex; flex-direction: column; gap: 16.8px;">
+      <form data-contact-form="1" data-reveal="1" method="POST" onSubmit="{{ enviar }}" style="border: 1px solid #262925; background: #121411; color: #F4F6F3; border-radius: 20px; padding: clamp(28px, 3vw, 56px); display: flex; flex-direction: column; gap: 16.8px;">
         <div style="font-size: 18px; font-weight: 600; letter-spacing: -0.024em; margin-bottom: 7.2px;">Formulario de consulta</div>
         <input type="hidden" name="_subject" value="Nueva consulta desde la web de Ipso">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input name="negocio" required="required" placeholder="Nombre del negocio" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <input name="tipo" placeholder="Tipo de negocio (bar, clínica, tienda…)" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <input name="email" type="email" required="required" placeholder="Tu correo" style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
-        <textarea name="mensaje" rows="4" placeholder="¿Qué te interesa? El HUB, el Pro, o solo reseñas." style="width: 100%; font-size: 18.6px; color: #0B0C0A; background: #FBFBFA; border: 1px solid #CFD2CC; border-radius: 10px; padding: 16.8px 19.2px; outline: none; resize: vertical; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);"></textarea>
+        <input name="negocio" required="required" placeholder="Nombre del negocio" style="width: 100%; font-size: 18.6px; color: #F4F6F3; background: #000000; border: 1px solid #30342F; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <input name="tipo" placeholder="Tipo de negocio (bar, clínica, tienda…)" style="width: 100%; font-size: 18.6px; color: #F4F6F3; background: #000000; border: 1px solid #30342F; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <input name="email" type="email" required="required" placeholder="Tu correo" style="width: 100%; font-size: 18.6px; color: #F4F6F3; background: #000000; border: 1px solid #30342F; border-radius: 10px; padding: 16.8px 19.2px; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);">
+        <textarea name="mensaje" rows="4" placeholder="¿Qué te interesa? El HUB, el Pro, o solo reseñas." style="width: 100%; font-size: 18.6px; color: #F4F6F3; background: #000000; border: 1px solid #30342F; border-radius: 10px; padding: 16.8px 19.2px; outline: none; resize: vertical; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="border-color: #2BE7FF; box-shadow: 0 0 0 3px rgba(43,231,255,.2);"></textarea>
         <button type="submit" style="margin-top: 9.6px; font-family: inherit; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border: none; border-radius: 10px; padding: 19.2px 24px; cursor: pointer; transition: background 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="background: #84F0FF; transform: translateY(-2px);">Enviar consulta</button>
-        <p style="margin: 9.6px 0 0; font-size: 15px; line-height: 1.6; color: #5A605C;">Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.</p>
+        <p style="margin: 9.6px 0 0; font-size: 15px; line-height: 1.6; color: #9CA39A;">Solo usamos tus datos para contestarte. Sin listas ni correos automáticos.</p>
       </form>
     </div>
   </section>
@@ -1314,6 +1343,106 @@ class Component extends DCLogic {
     document.body.style.background = 'transparent';
   }
 
+  _initSx() {
+    const wrap = document.getElementById('asi-funciona');
+    if (!wrap || !wrap.hasAttribute('data-sx') || wrap._sx) return;
+    wrap._sx = 1;
+    const q = (s) => Array.prototype.slice.call(wrap.querySelectorAll(s));
+    const one = (s) => wrap.querySelector(s);
+    const texts = q('[data-sxt]'), screens = q('[data-sxs]'), dots = q('[data-sxdot]');
+    const pos = one('[data-sxpos]'), stage = one('[data-sxstage]'), glare = one('[data-sxglare]'), halo = one('[data-sxhalo]'), shadow = one('[data-sxshadow]'), floor = one('[data-sxfloor]'), mascot = one('[data-sxmascot]');
+    const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mq = window.matchMedia('(max-width: 1023px)');
+    const D = [
+      { x: 7, rx: 9, ry: -10, s: 1, per: 1800, c: [43, 231, 255, .24], hx: 5, hy: -4 },
+      { x: -7, rx: 4, ry: 22, s: .98, per: 1600, c: [232, 184, 75, .18], hx: -9, hy: 3 },
+      { x: 7, rx: 5, ry: -22, s: .92, per: 1250, c: [201, 179, 137, .2], hx: 9, hy: 6 },
+      { x: -7, rx: 3, ry: 12, s: 1.02, per: 1700, c: [132, 240, 255, .22], hx: -6, hy: 0 },
+      { x: 7, rx: 0, ry: 0, s: 1.08, per: 1800, c: [43, 231, 255, .3], hx: 4, hy: -2 }
+    ];
+    const M = [
+      { x: 0, rx: 8, ry: -8, s: 1 }, { x: -2, rx: 4, ry: 14, s: .97 }, { x: 2, rx: 4, ry: -14, s: .95 }, { x: -1, rx: 3, ry: 8, s: 1 }, { x: 0, rx: 0, ry: 0, s: 1.06 }
+    ];
+    const N = 4.5, HOLD = .5, LAST = 4;
+    const cl = (v, a, b) => v < a ? a : v > b ? b : v;
+    const L = (a, b, f) => a + (b - a) * f;
+    const eio = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const pAt = (r) => { const i = Math.floor(r); if (i >= LAST) return LAST; const f = r - i; return i + (f < HOLD ? 0 : eio((f - HOLD) / (1 - HOLD))); };
+    let target = 0, cur = 0, raf = 0, lastOn = -1;
+    const measure = () => {
+      const r = wrap.getBoundingClientRect();
+      const span = Math.max(1, wrap.offsetHeight - window.innerHeight);
+      target = cl(-r.top / span, 0, 1) * N;
+    };
+    const paint = (r) => {
+      const still = rm.matches, mob = mq.matches;
+      const p = pAt(r);
+      const i0 = Math.min(LAST - 1, Math.floor(p)), f = p - i0;
+      const a = D[i0], b = D[i0 + 1];
+      const ma = mob ? M[i0] : a, mb = mob ? M[i0 + 1] : b;
+      let x = L(ma.x, mb.x, f), rx = L(ma.rx, mb.rx, f), ry = L(ma.ry, mb.ry, f), s = L(ma.s, mb.s, f);
+      let y = mob ? Math.max(0, -(r - 2.25) * 6) : -(r - 2.25) * 10;
+      if (still) { const onS = Math.round(p); x = mob ? 0 : (onS % 2 ? -7 : 7); rx = 0; ry = 0; s = 1; y = 0; }
+      stage.style.perspective = (still ? 1800 : L(a.per, b.per, f)) + 'px';
+      pos.style.transform = 'translate3d(' + x.toFixed(3) + 'vw,' + y.toFixed(2) + 'px,0) rotateX(' + rx.toFixed(3) + 'deg) rotateY(' + ry.toFixed(3) + 'deg) scale(' + s.toFixed(4) + ')';
+      const sh = 'translate3d(' + x.toFixed(3) + 'vw,' + (y * .3).toFixed(2) + 'px,0) scale(' + (s * (1 - Math.abs(ry) / 120)).toFixed(4) + ',' + s.toFixed(4) + ')';
+      shadow.style.transform = sh; floor.style.transform = sh;
+      const c = a.c.map((v, k) => L(v, b.c[k], f));
+      halo.style.background = 'radial-gradient(closest-side, rgba(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ',' + c[3].toFixed(3) + '), rgba(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ',' + (c[3] * .25).toFixed(3) + ') 55%, rgba(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ',0))';
+      halo.style.transform = still ? 'none' : 'translate3d(' + (L(a.hx, b.hx, f) + x * .5).toFixed(2) + 'vw,' + L(a.hy, b.hy, f).toFixed(2) + 'vh,0)';
+      glare.style.backgroundPosition = (50 + ry * 2.4).toFixed(2) + '% 0';
+      glare.style.opacity = (.45 + Math.abs(ry) / 36).toFixed(3);
+      texts.forEach((el, k) => {
+        const d = p - k;
+        let o, ty, bl = 0;
+        if (d >= 0) { o = 1 - d * 2; ty = -d * 70; } else { const e = -d; o = 1 - e * 1.6; ty = e * 80; bl = Math.min(12, e * 16); }
+        o = cl(o, 0, 1);
+        const par = -(r - k - .25) * 36;
+        if (still) { ty = 0; bl = 0; }
+        el.style.opacity = o.toFixed(3);
+        el.style.transform = 'translate3d(0,' + (still ? 0 : ty + par).toFixed(2) + 'px,0)';
+        el.style.filter = bl > .05 ? 'blur(' + bl.toFixed(2) + 'px)' : 'none';
+        el.style.visibility = o < .01 ? 'hidden' : 'visible';
+        el.style.pointerEvents = o > .5 ? 'auto' : 'none';
+      });
+      if (mascot) {
+        const d = p - 3, ad = Math.abs(d);
+        const o = cl(1 - ad * 1.8, 0, 1);
+        mascot.style.opacity = o.toFixed(3);
+        mascot.style.visibility = o < .01 ? 'hidden' : 'visible';
+        mascot.style.transform = still ? 'none' : 'translate3d(' + (-d * 60).toFixed(2) + 'px,' + (d * 90 - (r - 3.25) * 50).toFixed(2) + 'px,0) scale(' + (.9 + o * .1).toFixed(3) + ') rotate(' + (-d * 14).toFixed(2) + 'deg)';
+      }
+      screens.forEach((el, k) => {
+        const d = p - k, ad = Math.abs(d);
+        const o = cl(1 - ad * 1.25, 0, 1);
+        el.style.opacity = o.toFixed(3);
+        el.style.transform = still ? 'none' : 'translate3d(0,' + (-d * 16).toFixed(3) + '%,0) scale(' + (1 - Math.min(ad, 1) * .04).toFixed(4) + ')';
+        el.style.visibility = o < .01 ? 'hidden' : 'visible';
+      });
+      const on = Math.round(p);
+      if (on !== lastOn) { lastOn = on; dots.forEach((d, k) => { if (k === on) d.setAttribute('data-on', '1'); else d.removeAttribute('data-on'); }); }
+    };
+    const tick = () => {
+      cur += (target - cur) * .14;
+      if (Math.abs(target - cur) < .0008) cur = target;
+      paint(cur);
+      raf = cur !== target ? requestAnimationFrame(tick) : 0;
+    };
+    const onScroll = () => {
+      measure();
+      if (rm.matches) { cur = target; paint(cur); return; }
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    dots.forEach((d, k) => d.addEventListener('click', () => {
+      const span = Math.max(1, wrap.offsetHeight - window.innerHeight);
+      const top = wrap.getBoundingClientRect().top + window.scrollY + span * (k + .2) / N;
+      window.scrollTo({ top: top, behavior: rm.matches ? 'auto' : 'smooth' });
+    }));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    measure(); cur = target; paint(cur);
+  }
+
   componentDidMount() {
     try {
       const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1365,6 +1494,7 @@ class Component extends DCLogic {
         late.forEach((el) => el.setAttribute('data-in', '1'));
       }
     }, 60);
+    setTimeout(() => this._initSx(), 60);
     // "Así funciona": scrollytelling fijado, el scroll controla la mezcla en ambos sentidos
     setTimeout(() => {
       const wrap = document.getElementById('asi-funciona');
@@ -1449,11 +1579,11 @@ class Component extends DCLogic {
         if (rail) {
           rail.style.position = 'sticky';
           const hdr = document.querySelector('header');
-          rail.style.top = ((hdr ? hdr.offsetHeight : 64) - 1) + 'px';
+          rail.style.top = ((hdr ? hdr.offsetHeight : 64) + 12) + 'px';
           rail.style.zIndex = '40';
-          rail.style.background = this.state.theme === 'light' ? 'rgba(255,255,255,.92)' : '#000000';
+          rail.style.background = '#FBFBFA';
           rail.style.padding = '14px 24px';
-          rail.style.boxShadow = '0 12px 18px -18px rgba(0,0,0,1)';
+          rail.style.boxShadow = 'none';
         }
         sp.style.height = 'auto';
         pin.style.position = 'static';
@@ -1617,9 +1747,9 @@ class Component extends DCLogic {
       goPrecios: (e) => { e.preventDefault(); const el = document.getElementById('soluciones'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); },
       tabs: SOLUCIONES.map((s, k) => ({
         name: s.name,
-        fg: k === i ? '#0B0C0A' : P.dim,
+        fg: k === i ? '#0B0C0A' : '#4E534C',
         bg: k === i ? '#2BE7FF' : 'transparent',
-        bd: k === i ? '#2BE7FF' : P.line,
+        bd: k === i ? '#2BE7FF' : '#CFD2CC',
         pick: () => { this.setState({ sel: k }); this.syncTo(k); }
       }))
     };
