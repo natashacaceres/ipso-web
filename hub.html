@@ -39,7 +39,7 @@
   * { box-sizing: border-box; }
   a { color: #2BE7FF; text-decoration: none; }
   a:hover { color: #84F0FF; }
-  ::selection { background: #2BE7FF; color: #0B0C0A; }
+  ::selection { background: #2BE7FF; color: #000000; }
   [data-rail] { scrollbar-width: none; -ms-overflow-style: none; }
   [data-rail]::-webkit-scrollbar { display: none; }
   summary::-webkit-details-marker { display: none; }
@@ -150,7 +150,7 @@
 </style>
 <style data-buy="1">
   #precios > div > [data-reveal] { align-items: start !important; }
-  #precios > div > [data-reveal] > div:first-child { position: sticky; top: 92px; align-self: start; }
+  #precios > div > [data-reveal] > div:first-child { position: static; align-self: start; }
   @media (max-width: 760px) {
     #precios > div > [data-reveal] > div:first-child, [data-buycol] { position: static !important; }
     #precios [data-reveal] { animation: none !important; transform: none !important; filter: none !important; opacity: 1 !important; }
@@ -169,31 +169,32 @@
   @media (max-width: 760px) { [data-rv="0"] { transform: translate3d(0, 22px, 0); filter: blur(4px); } }
   @media (prefers-reduced-motion: reduce) { [data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; } }
 </style>
+<style data-tbl="1">@media (max-width: 760px) { table th { width: auto !important; padding-left: 6px !important; padding-right: 6px !important; font-size: 16px !important; } table th:first-child, table td:first-child { padding-left: 0 !important; } table td { padding-left: 6px !important; padding-right: 6px !important; font-size: 15px !important; } table td:not(:first-child) { width: 64px; } }</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
 
-  <header style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.08);">
+  <header style="position: relative; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.08);">
     <div style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(20px, 1.6669999999999998vw, 32px); min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #F4F6F3; white-space: nowrap; padding: 7.2px 0; border-bottom: 1px solid #2BE7FF; display: inline-flex; align-items: center; gap: 7.2px;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #F4F6F3; white-space: nowrap; padding: 7.2px 0; display: inline-flex; align-items: center; gap: 7.2px;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
           <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 12px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid #F4F6F3; border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: #F4F6F3;">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -203,13 +204,13 @@
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
+              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #2BE7FF;">
                 <span>{{ l.name }}</span>
               </button>
             </sc-for>
           </div>
       </div>
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #F4F6F3; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
@@ -223,7 +224,7 @@
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">IPSO HUB</a>
           <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
           <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
         </div>
       </div>
     </sc-if>
@@ -234,7 +235,7 @@
     <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 0;">
       <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(32px, 2.667vw, 51.2px); align-items: stretch;">
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div data-hero-photo="1" style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 3; width: 100%; max-width: 624px; background: #0E100D;">
+          <div data-hero-photo="1" style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 3; width: 100%; max-width: 624px; background: transparent;">
             <img data-hubfoto="1" src="assets/hub-disc.jpg" ref="{{ fotoRef }}" alt="IPSO HUB" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: {{ fotoFit }}; object-position: 50% 50%; display: block; background: {{ fotoBg }}; padding: {{ fotoPad }}; box-sizing: border-box;">
           </div>
           <div style="margin-top: 14.4px; display: flex; flex-wrap: wrap; gap: 12px;">
@@ -243,29 +244,29 @@
             </sc-for>
           </div>
         </div>
-        <div data-buycol="1" style="display: flex; flex-direction: column; gap: 22px; position: sticky; top: 92px; align-self: start;">
+        <div data-buycol="1" style="display: flex; flex-direction: column; gap: 22px; align-self: start;">
           <div>
-            <h1 style="margin: 0; font-size: 48px; line-height: 1.05; font-weight: 600; letter-spacing: -0.035em; color: #FFFFFF;">IPSO HUB</h1>
-            <p style="margin: 8px 0 0; font-size: 18px; line-height: 1.45; font-weight: 400; color: #9A9A9A; text-wrap: balance;">Todo tu local en un punto: WiFi, carta, reseñas, redes y horarios.</p>
+            <h1 style="margin: 0; font-size: 48px; line-height: 1.05;; color: #FFFFFF; font-weight: 700; letter-spacing: -0.045em;">IPSO HUB</h1>
+            <p style="margin: 8px 0 0; font-size: 18px; line-height: 1.45; font-weight: 400; color: #9A9A9A; text-wrap: balance;">El ADN de tu local.</p>
           </div>
           <div style="font-variant-numeric: tabular-nums;">
             <div style="font-size: 40px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: #FFFFFF;">99 €</div>
             <div style="margin-top: 8px; font-size: 15px; font-weight: 400; color: #9A9A9A;"><span>119,79 € incl. IVA</span><span> · </span><span>Pago único</span></div>
           </div>
           <div data-addpro="1" data-on="{{ proOn }}" style="width: 100%; background: #141414; border: 1px solid {{ proBorder }}; border-radius: 16px; padding: 18px 20px; transition: border-color 200ms ease;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #9A9A9A;">Añadir HUB Pro</div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #9A9A9A;">Añadir HUB Pro</div>
             <div style="margin-top: 10px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
               <div style="min-width: 0;">
-                <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #E8B84B;">HUB Pro</div>
+                <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #D8694C;">HUB Pro</div>
                 <div style="margin-top: 2px; font-size: 15px; font-weight: 400; color: #FFFFFF; font-variant-numeric: tabular-nums;">+ 19 €/mes · primer mes incluido</div>
               </div>
-              <button type="button" onClick="{{ togglePro }}" aria-pressed="{{ esPro }}" style="flex: none; font-family: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; color: {{ proBtnFg }}; background: {{ proBtnBg }}; border: 1.5px solid #E8B84B; border-radius: 999px; padding: .5em 1.15em; cursor: pointer; transition: background 200ms ease, color 200ms ease;">{{ proBtnLabel }}</button>
+              <button type="button" onClick="{{ togglePro }}" aria-pressed="{{ esPro }}" style="flex: none; font-family: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; color: {{ proBtnFg }}; background: {{ proBtnBg }}; border: 1.5px solid #D8694C; border-radius: 999px; padding: .5em 1.15em; cursor: pointer; transition: background 200ms ease, color 200ms ease;">{{ proBtnLabel }}</button>
             </div>
             <div data-prolist="1" style="margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; font-size: 14px; line-height: 1.35; font-weight: 400; color: #FFFFFF; opacity: {{ proListOp }}; filter: {{ proListFx }}; transition: opacity 200ms ease, filter 200ms ease;">
-              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span></div>
-              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span></div>
-              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span></div>
-              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15v-4M12 15V8M16 15v-6"></path></svg><span>Panel en tiempo real</span></div>
+              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span>Asistente con IA</span></div>
+              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span>Fidelización</span></div>
+              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span>Comparte tu visita</span></div>
+              <div style="display: flex; gap: 8px; align-items: center;"><svg style="flex: none; width: 1.15em; height: 1.15em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15v-4M12 15V8M16 15v-6"></path></svg><span>Panel en tiempo real</span></div>
             </div>
           </div>
           <div data-minis="1" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr) auto; gap: 14px;">
@@ -285,10 +286,10 @@
                 </div>
               </div>
               <sc-if value="{{ esBase }}" hint-placeholder-val="{{ true }}">
-                <a href="https://buy.stripe.com/00wdRb1MYaLib9Z92W8so04" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Contratar el HUB</a>
+                <a href="https://buy.stripe.com/00wdRb1MYaLib9Z92W8so04" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #000000; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Contratar el HUB</a>
               </sc-if>
               <sc-if value="{{ esPro }}" hint-placeholder-val="{{ false }}">
-                <a href="https://buy.stripe.com/fZu8wR4Za2eM0vl2Ey8so03" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #E8B84B; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #0B0C0A; background: #F2CC6E; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(232,184,75,.9);">Contratar el HUB Pro</a>
+                <a href="https://buy.stripe.com/fZu8wR4Za2eM0vl2Ey8so03" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #000000; background: #D8694C; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #000000; background: #E4836A; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(216,105,76,.9);">Contratar el HUB Pro</a>
               </sc-if>
             </div>
             <div style="margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; opacity: .85;">
@@ -307,81 +308,81 @@
 
   <!-- ============ 2 · QUÉ INCLUYE ============ -->
   <section style="max-width: 1920px; margin: 0 auto; padding: 105.6px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Qué incluye</h2>
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Qué incluye</h2>
     <div data-reveal="1" style="margin-top: 57.6px; max-width: 1032px;">
       <table style="width: 100%; border-collapse: collapse; font-size: 18px; line-height: 1.45; color: #F4F6F3;">
         <thead>
           <tr>
             <th style="text-align: left; padding: 0 14.4px 16.8px 0;"></th>
             <th style="width: 200px; white-space: nowrap; padding: 0 26.4px 16.8px; border-bottom: 2px solid #2BE7FF; font-size: 20.4px; font-weight: 700; letter-spacing: -0.02em; color: #2BE7FF; text-align: center;">HUB</th>
-            <th style="width: 200px; white-space: nowrap; padding: 0 26.4px 16.8px; border-bottom: 2px solid #E8B84B; font-size: 20.4px; font-weight: 700; letter-spacing: -0.02em; color: #E8B84B; text-align: center;">HUB Pro</th>
+            <th style="width: 200px; white-space: nowrap; padding: 0 26.4px 16.8px; border-bottom: 2px solid #D8694C; font-size: 20.4px; font-weight: 700; letter-spacing: -0.02em; color: #D8694C; text-align: center;">HUB Pro</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Punto NFC programado y envío gratuito</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">WiFi sin contraseña</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Carta con fotos y precios en 5 idiomas</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Ficha de Google y redes</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Horarios y datos del local</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Te ayudo a elegir</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Asistente con IA en 30 idiomas</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; color: #3A3E38;">–</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Tarjeta de sellos</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; color: #3A3E38;">–</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Comparte tu visita</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; color: #3A3E38;">–</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Mi local, tu panel en vivo</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; color: #3A3E38;">–</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Cambios de carta y ofertas</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; font-weight: 600; color: #2BE7FF;">1 al mes</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><span style="display: block; text-align: center; font-weight: 600; color: #E8B84B;">Ilimitados</span></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><span style="display: block; text-align: center; font-weight: 600; color: #D8694C;">Ilimitados</span></td>
           </tr>
           <tr>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; padding-left: 0; color: #B7BDB5;">Informe mensual por WhatsApp</td>
             <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(43,231,255,.05);"><span style="display: block; text-align: center; color: #3A3E38;">–</span></td>
-            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(232,184,75,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
+            <td style="padding: 13.2px 14.4px; vertical-align: middle; background: rgba(216,105,76,.06);"><svg viewBox="0 0 24 24" fill="none" stroke="#D8694C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; display: block; margin: 0 auto;"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></td>
           </tr>
           <tr>
             <td style="padding: 21.6px 14.4px 0 0;"></td>
             <td style="padding: 21.6px 14.4px 0; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; color: #2BE7FF;"><span style="display: block; white-space: nowrap; font-size: 19.8px;">99 €</span><span style="display: block; margin-top: 4.8px; font-size: 16.5px; font-weight: 500; color: #8B918A;">una vez</span></td>
-            <td style="padding: 21.6px 14.4px 0; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; color: #E8B84B;"><span style="display: block; white-space: nowrap; font-size: 19.8px;">99 € + 19 €/mes</span><span style="display: block; margin-top: 4.8px; font-size: 16.5px; font-weight: 500; color: #8B918A;">primer mes incluido</span></td>
+            <td style="padding: 21.6px 14.4px 0; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; color: #D8694C;"><span style="display: block; white-space: nowrap; font-size: 19.8px;">99 € + 19 €/mes</span><span style="display: block; margin-top: 4.8px; font-size: 16.5px; font-weight: 500; color: #8B918A;">primer mes incluido</span></td>
           </tr>
         </tbody>
       </table>
@@ -390,7 +391,7 @@
 
   <!-- ============ 4 · CÓMO FUNCIONA (línea de tiempo) ============ -->
   <section id="como-funciona" style="max-width: 1920px; margin: 0 auto; padding: 105.6px 24px 0; scroll-margin-top: 108px;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
     <div data-reveal="1" style="margin-top: 43.2px; position: relative; max-width: 1100px; padding-left: 50.4px;">
       <div style="position: absolute; left: 11px; top: 6px; bottom: 6px; width: 1px; background: #1A1C19;"></div>
       <div style="{{ lineaStyle }}"></div>
@@ -410,17 +411,17 @@
     <div data-reveal="1" style="margin-top: 33.6px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 19.2px;">
       <div style="border-top: 1px solid #1A1C19; padding: 26.4px 0 0;">
         <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="width: 26px; height: 26px; display: block;"><rect x="2.5" y="8" width="15" height="8" rx="2.5"/><path d="M20 11v2"/><path d="M6 4l12 16"/></svg>
-        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Sin batería, sin cables</h3>
+        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15;; font-weight: 600; letter-spacing: -0.03em;">Sin batería, sin cables</h3>
         <p style="margin: 12px 0 0; font-size: 18px; line-height: 1.6; color: #B7BDB5;">No se carga ni se apaga. Lo activa el móvil al acercarlo.</p>
       </div>
       <div style="border-top: 1px solid #1A1C19; padding: 26.4px 0 0;">
         <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="width: 26px; height: 26px; display: block;"><path d="M4 9.5a11 11 0 0116 0"/><path d="M7.5 13a6.5 6.5 0 019 0"/><circle cx="12" cy="17" r="1"/><path d="M4 4l16 16"/></svg>
-        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">No depende de tu red</h3>
+        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15;; font-weight: 600; letter-spacing: -0.04em;">No depende de tu red</h3>
         <p style="margin: 12px 0 0; font-size: 18px; line-height: 1.6; color: #B7BDB5;">Funciona aunque se caiga el WiFi del local.</p>
       </div>
       <div style="border-top: 1px solid #1A1C19; padding: 26.4px 0 0;">
         <svg viewBox="0 0 24 24" fill="none" stroke="#2BE7FF" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="width: 26px; height: 26px; display: block;"><path d="M4 19h16"/><rect x="7" y="9" width="10" height="7" rx="2.5"/><path d="M12 5.5v3"/></svg>
-        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em;">Donde quieras</h3>
+        <h3 style="margin: 16.8px 0 0; font-size: 24px; line-height: 1.15;; font-weight: 600; letter-spacing: -0.04em;">Donde quieras</h3>
         <p style="margin: 12px 0 0; font-size: 18px; line-height: 1.6; color: #B7BDB5;">Mostrador, mesas o entrada. Ocupa lo que un vaso.</p>
       </div>
     </div>
@@ -428,7 +429,7 @@
 
   <!-- ============ 7 · DUDAS ============ -->
   <section id="dudas" style="max-width: 1920px; margin: 0 auto; padding: 105.6px 24px 0; scroll-margin-top: 108px;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas sobre el HUB.</h2>
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(31.2px, 3.8vw, 45.6px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Preguntas sobre el HUB.</h2>
     <div data-reveal="1" style="margin-top: 57.6px; max-width: 936px;">
       <details style="border-bottom: none;">
         <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #2BE7FF;">¿Cuál es la diferencia entre HUB y HUB Pro?<span data-plus="1" style="color: #5E635C; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
@@ -457,8 +458,8 @@
     <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">El ADN de tu local.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
@@ -486,7 +487,7 @@
 
   <a data-wa-fab="1" href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 9000; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.22); transition: transform 160ms cubic-bezier(.16,.84,.44,1), box-shadow 160ms ease;" style-hover="transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28);"><svg width="36" height="36" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;fondo&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fondo&quot;,&quot;options&quot;:[&quot;&quot;,&quot;#FFFFFF&quot;,&quot;#F6F7F5&quot;,&quot;#0B0C0A&quot;]}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;fondo&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fondo&quot;,&quot;options&quot;:[&quot;&quot;,&quot;#FFFFFF&quot;,&quot;#F6F7F5&quot;,&quot;#000000&quot;]}}">
 const EN_PAIRS = [
   ['Añadir HUB Pro', 'Add HUB Pro'], ['Total: ', 'Total: '], ['119,79 € + 22,99 €/mes incl. IVA', '119.79 € + 22.99 €/month incl. VAT'], ['Pago único', 'One-off payment'], ['Añadir', 'Add'], ['Añadido ✓', 'Added ✓'], ['Comparte tu visita', 'Share your visit'], ['Panel en tiempo real', 'Real-time dashboard'], ['Asistente con IA', 'AI assistant'], ['Fidelización', 'Loyalty'], ['+ 19 €/mes · primer mes incluido', '+ 19 €/month · first month included'],
   ['El HUB', 'The HUB'],
@@ -510,7 +511,7 @@ const EN_PAIRS = [
   ['Punto adicional: 25 €, pago único. Para mesas, terraza o una segunda barra.', 'Extra point: 25 €, one-off payment. For tables, terrace or a second bar.'], ['Instalación en Barcelona. Envío gratuito al resto de España.', 'Installation in Barcelona. Free shipping to the rest of Spain.'], ['30 días', '30 days'], ['de garantía: si no te convence, te devolvemos la alta.', 'guarantee: if it does not convince you, we refund the setup fee.'],
   ['+ 19 € al mes', '+ 19 € a month'],
   ['Todo tu local en un punto, con asistente con IA, fidelización y panel en tiempo real.', 'Your whole venue in one point, with AI assistant, loyalty and real-time dashboard.'],
-  ['Todo tu local en un punto: WiFi, carta, reseñas, redes y horarios.', 'Your whole venue in one point: Wi-Fi, menu, reviews, social media and opening hours.'],
+  ['Todo tu local en un punto: WiFi, carta, reseñas, redes y horarios.', 'Your whole venue in one point: Wi-Fi, menu, reviews, social media and opening hours.'], ['El ADN de tu local.', 'The DNA of your venue.'],
   ['Pago único. Sin cuota.', 'One-off payment. No fee.'],
   ['Contratar el HUB Pro', 'Get the HUB Pro'],
   ['Punto NFC programado y envío gratuito', 'Programmed NFC point and free shipping'],
@@ -644,7 +645,7 @@ const EN_PAIRS = [
   ['¿En cualquier móvil?', 'On any phone?'],
   ['Sí, iPhone y Android. El cliente solo acerca el móvil.', 'Yes, iPhone and Android. The customer just taps their phone.'],
   ['¿Y si cambio de servicios más adelante?', 'What if I change services later on?'],
-  ['Soluciones NFC para comercios. Barcelona.', 'NFC solutions for local businesses. Barcelona.'],
+  ['El ADN de tu local.', 'The DNA of your venue.'],
   ['Nosotros', 'About us'], ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['Cookies', 'Cookies'],
   ['Volver a la home →', 'Back to home →']
 ];
@@ -671,7 +672,7 @@ const CA_PAIRS = [
   ['Punto adicional: 25 €, pago único. Para mesas, terraza o una segunda barra.', 'Punt addicional: 25 €, pagament únic. Per a taules, terrassa o una segona barra.'], ['Instalación en Barcelona. Envío gratuito al resto de España.', 'Instal·lació a Barcelona. Enviament gratuït a la resta d\u2019Espanya.'], ['30 días', '30 dies'], ['de garantía: si no te convence, te devolvemos la alta.', 'de garantia: si no et convenç, et retornem l\u2019alta.'],
   ['+ 19 € al mes', '+ 19 € al mes'],
   ['Todo tu local en un punto, con asistente con IA, fidelización y panel en tiempo real.', 'Tot el teu local en un punt, amb assistent amb IA, fidelització i tauler en temps real.'],
-  ['Todo tu local en un punto: WiFi, carta, reseñas, redes y horarios.', 'Tot el teu local en un punt: WiFi, carta, ressenyes, xarxes i horaris.'],
+  ['Todo tu local en un punto: WiFi, carta, reseñas, redes y horarios.', 'Tot el teu local en un punt: WiFi, carta, ressenyes, xarxes i horaris.'], ['El ADN de tu local.', 'L’ADN del teu local.'],
   ['Pago único. Sin cuota.', 'Pagament únic. Sense quota.'],
   ['Contratar el HUB Pro', 'Contractar el HUB Pro'],
   ['Punto NFC programado y envío gratuito', 'Punt NFC programat i enviament gratuït'],
@@ -805,7 +806,7 @@ const CA_PAIRS = [
   ['¿En cualquier móvil?', 'A qualsevol mòbil?'],
   ['Sí, iPhone y Android. El cliente solo acerca el móvil.', 'Sí, iPhone i Android. El client només acosta el mòbil.'],
   ['¿Y si cambio de servicios más adelante?', 'I si canvio de serveis més endavant?'],
-  ['Soluciones NFC para comercios. Barcelona.', 'Solucions NFC per a comerços. Barcelona.'],
+  ['El ADN de tu local.', 'L’ADN del teu local.'],
   ['Nosotros', 'Nosaltres'], ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['Cookies', 'Cookies'],
   ['Volver a la home →', 'Tornar a la home →']
 ];
@@ -817,29 +818,30 @@ CA_PAIRS.forEach(function (p) { DICTS.ca[p[0]] = p[1]; REV.ca[p[1]] = p[0]; });
 
 const PAL = {
   dark:  { fg: '#F4F6F3', dim: '#9CA39A', line: '#262924' },
-  light: { fg: '#0B0C0A', dim: '#5A605C', line: '#D2D5CF' }
+  light: { fg: '#000000', dim: '#5A605C', line: '#D2D5CF' }
 };
 
 const LIGHT_MAP = {
-  '122,127,120': '90,96,92',
-  '244,246,243': '11,12,10',
-  '0,0,0': '255,255,255',
+  '154,154,154': '74,74,74',
+  '122,127,120': '64,68,64',
+  '244,246,243': '0,0,0',
+  '0,0,0': '242,237,230',
   '255,255,255': '0,0,0',
-  '156,163,154': '90,96,92',
-  '139,145,138': '110,116,110',
-  '173,179,171': '90,96,92',
-  '183,189,181': '90,96,92',
+  '156,163,154': '64,68,64',
+  '139,145,138': '74,79,74',
+  '173,179,171': '64,68,64',
+  '183,189,181': '64,68,64',
   '210,214,207': '63,68,63',
   '226,229,222': '48,52,48',
-  '118,123,117': '110,116,110',
-  '167,173,165': '110,116,110',
-  '94,99,92': '138,144,138',
+  '118,123,117': '74,79,74',
+  '167,173,165': '74,79,74',
+  '94,99,92': '96,101,96',
   '195,199,192': '63,68,63',
   '195,200,191': '63,68,63',
   '22,24,21': '230,232,228',
   '26,28,25': '227,229,224',
   '38,41,36': '210,213,207',
-  '58,62,56': '183,187,180',
+  '58,62,56': '96,100,94',
   '74,79,71': '154,160,152',
   '6,20,26': '233,251,255'
 };
@@ -852,6 +854,7 @@ function toLight(prop, value) {
     let out = null;
     if ((prop === 'color' || prop === 'caret-color') && ACCENT_TEXT[key]) out = ACCENT_TEXT[key];
     else if (key === '255,255,255') { if (alpha === 1) out = LIGHT_MAP[key]; }
+    else if (key === '0,0,0' && !/^background|shadow/.test(prop)) out = null;
     else if (LIGHT_MAP[key]) out = LIGHT_MAP[key];
     if (!out) return m;
     return al === undefined ? 'rgb(' + out.split(',').join(', ') + ')' : 'rgba(' + out.split(',').join(', ') + ', ' + al + ')';
@@ -860,8 +863,8 @@ function toLight(prop, value) {
 
 const LIGHT_CSS = [
   'input::placeholder, textarea::placeholder { color: #5A605C !important; }',
-  'html { background: #FFFFFF; }',
-  'body { color: #0B0C0A !important; }',
+  'html { background: #F2EDE6; }',
+  'body { color: #000000 !important; }',
   'a:not([style]) { color: #0A7C93 !important; }',
   'a:not([style]):hover { color: #0E9CB8 !important; }',
   'details[open] summary [data-plus] { color: #0A7C93 !important; }',
@@ -869,14 +872,17 @@ const LIGHT_CSS = [
   '[data-paymark] { filter: invert(1); }',
   '[data-addpro] { background: #F2F2F2 !important; }',
   '[data-addpro]:not([data-on="1"]) { border-color: #DADADA !important; }',
-  '[data-buybar] { background: #FFFFFF; }'
+  '[data-buybar] { background: #F2EDE6; }',
+  'header [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }',
+  'table svg[stroke="#2BE7FF"] { stroke: #0A7C93; }',
+  'table thead th:nth-child(2) { border-bottom-color: #0A7C93 !important; }'
 ].join('\n');
 
 const FLAGS = { es: 'assets/flag-es.png', en: 'assets/flag-en.png', ca: 'assets/flag-cat.png' };
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { theme: 'dark', menu: false, lang: 'es', foto: 0, ben: 0, paso: 0, cantidad: 1, ruleta: false, version: 'base' };
+  state = { theme: 'light', menu: false, lang: 'es', foto: 0, ben: 0, paso: 0, cantidad: 1, ruleta: false, version: 'base' };
 
   eur(n) { return n.toLocaleString('es-ES', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }) + ' €'; }
 
@@ -930,7 +936,7 @@ class Component extends DCLogic {
 
   applyBg() {
     const light = this.state.theme === 'light';
-    document.documentElement.style.background = light ? (this.props.fondo || '#FFFFFF') : '#000000';
+    document.documentElement.style.background = light ? (this.props.fondo || '#F2EDE6') : '#000000';
     document.body.style.background = 'transparent';
   }
 
@@ -998,21 +1004,21 @@ class Component extends DCLogic {
         num: k <= paso ? '#2BE7FF' : '#7A7F78',
         fg: k === paso ? '#F4F6F3' : '#8B918A',
         rowStyle: 'position: relative; display: block; width: 100%; text-align: left; font-family: inherit; background: transparent; border: none; padding: 0 0 33.6px; cursor: pointer;',
-        dotStyle: 'position: absolute; left: -37px; top: 3px; width: 11px; height: 11px; border-radius: 999px; background: ' + (k <= paso ? '#2BE7FF' : '#0B0C0A') + '; border: 1px solid ' + (k <= paso ? '#2BE7FF' : '#3A3E38') + '; box-shadow: 0 0 0 4px #000000; transition: background 240ms ease, border-color 240ms ease;',
+        dotStyle: 'position: absolute; left: -37px; top: 3px; width: 11px; height: 11px; border-radius: 999px; background: ' + (k <= paso ? '#2BE7FF' : '#000000') + '; border: 1px solid ' + (k <= paso ? '#2BE7FF' : '#3A3E38') + '; box-shadow: 0 0 0 4px #000000; transition: background 240ms ease, border-color 240ms ease;',
         descStyle: 'display: block; overflow: hidden; max-width: 46ch; font-size: 18px; line-height: 1.55; color: #B7BDB5; max-height: ' + (k === paso ? '120px' : '0px') + '; opacity: ' + (k === paso ? 1 : 0) + '; margin-top: ' + (k === paso ? '9.6px' : '0px') + '; transition: max-height 320ms cubic-bezier(.16,.84,.44,1), opacity 220ms ease, margin-top 320ms ease;',
         pick: () => this.setState({ paso: k })
       })),
       esPro: this.state.version === 'pro',
       togglePro: () => this.setState((s) => ({ version: s.version === 'pro' ? 'base' : 'pro' })),
       proBtnLabel: this.state.version === 'pro' ? 'Añadido ✓' : 'Añadir',
-      proBtnFg: this.state.version === 'pro' ? '#E8B84B' : '#0B0C0A',
-      proBtnBg: this.state.version === 'pro' ? 'transparent' : '#E8B84B',
+      proBtnFg: this.state.version === 'pro' ? '#D8694C' : '#000000',
+      proBtnBg: this.state.version === 'pro' ? 'transparent' : '#D8694C',
       proOn: this.state.version === 'pro' ? '1' : '0',
-      proBorder: this.state.version === 'pro' ? '#E8B84B' : '#2A2A2A',
+      proBorder: this.state.version === 'pro' ? '#D8694C' : '#2A2A2A',
       proListOp: this.state.version === 'pro' ? 1 : 0.45,
       proListFx: this.state.version === 'pro' ? 'none' : 'blur(1.5px)',
       esBase: this.state.version === 'base',
-      versiones: [['base', 'HUB'], ['pro', 'HUB Pro']].map(([k, label]) => { const on = this.state.version === k; const ac = k === 'pro' ? '#E8B84B' : '#2BE7FF'; return { label, pick: () => this.setState({ version: k }), style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 12px 19.2px; font-size: 16.2px; font-weight: 600; background: ' + (on ? ac : 'transparent') + '; color: ' + (on ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (on ? ac : '#262924') + '; transition: all 160ms ease;' }; }),
+      versiones: [['base', 'HUB'], ['pro', 'HUB Pro']].map(([k, label]) => { const on = this.state.version === k; const ac = k === 'pro' ? '#D8694C' : '#2BE7FF'; return { label, pick: () => this.setState({ version: k }), style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 12px 19.2px; font-size: 16.2px; font-weight: 600; background: ' + (on ? ac : 'transparent') + '; color: ' + (on ? '#000000' : '#9CA39A') + '; border: 1px solid ' + (on ? ac : '#262924') + '; transition: all 160ms ease;' }; }),
       fotoFit: 'cover', fotoBg: 'transparent', fotoPad: '0',
       galeria: FOTOS.map((src, k) => ({ pick: () => show(k), style: 'width: 64px; height: 64px; padding: 0; cursor: pointer; border-radius: 10px; border: 1.5px solid ' + (k === i ? '#2BE7FF' : '#262924') + '; background-image: url(' + src + '); background-size: cover; background-position: 50% 50%; transition: border-color 160ms ease;' })),
       fotoRef: (el) => { this._img = el; },
@@ -1036,7 +1042,7 @@ class Component extends DCLogic {
         esEs: code === 'es',
         esEn: code === 'en',
         esCa: code === 'ca',
-        fg: this.state.lang === code ? '#0B0C0A' : '#F4F6F3',
+        fg: this.state.lang === code ? '#000000' : '#F4F6F3',
         bg: this.state.lang === code ? '#2BE7FF' : 'transparent',
         pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => this.applyLang(prev)); }
       })),
@@ -1053,20 +1059,20 @@ class Component extends DCLogic {
       toggleRuleta: () => this.setState((s) => ({ ruleta: !s.ruleta })),
       cantidades: Array.from({ length: 50 }, (_, i) => i + 1).map((n) => ({
         n: n,
-        fg: n === this.state.cantidad ? '#0B0C0A' : '#C3C8BF',
+        fg: n === this.state.cantidad ? '#000000' : '#C3C8BF',
         bg: n === this.state.cantidad ? '#2BE7FF' : 'transparent',
         pick: () => this.setState({ cantidad: n, ruleta: false, tocado: true })
       })),
       menuOpen: open,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
-      burgerFg: this.state.theme === 'light' ? '#0B0C0A' : '#F4F6F3',
+      burgerFg: '#F4F6F3',
       burgerT1: open ? 'translateY(6px) rotate(45deg)' : 'none',
       burgerO: open ? 0 : 1,
       burgerT3: open ? 'translateY(-6px) rotate(-45deg)' : 'none',
       temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
         label: t.label,
-        fg: this.state.theme === t.id ? '#0B0C0A' : PAL[this.state.theme].dim,
+        fg: this.state.theme === t.id ? '#000000' : PAL[this.state.theme].dim,
         bg: this.state.theme === t.id ? '#2BE7FF' : 'transparent',
         pick: () => { if (this.state.theme === t.id) return; this.setState({ theme: t.id }, () => this.applyTheme()); }
       }))

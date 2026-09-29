@@ -39,7 +39,7 @@
   * { box-sizing: border-box; }
   a { color: #2BE7FF; text-decoration: none; }
   a:hover { color: #84F0FF; }
-  ::selection { background: #2BE7FF; color: #0B0C0A; }
+  ::selection { background: #2BE7FF; color: #000000; }
   [data-langmenu]:hover [data-langpanel], [data-langmenu]:focus-within [data-langpanel] { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
   [data-langmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
   [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
@@ -130,11 +130,11 @@
           <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 12px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">Reseñas Google</a>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
+              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #2BE7FF;">
                 <span>{{ l.name }}</span>
               </button>
             </sc-for>
@@ -169,7 +169,7 @@
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">IPSO HUB</a>
           <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
           <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
         </div>
       </div>
     </sc-if>
@@ -178,9 +178,9 @@
   <main style="min-height: calc(100svh - 63px); display: flex; align-items: center; justify-content: center; max-width: 1920px; margin: 0 auto; padding: 144px 24px 168px;">
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 672px;">
       <div style="font-size: 14.4px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #767B75;">Error 404</div>
-      <h1 style="margin: 26.4px 0 0; font-size: clamp(40.8px, 6vw, 67.2px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em; text-wrap: pretty;">Esta página no existe</h1>
+      <h1 style="margin: 26.4px 0 0; font-size: clamp(40.8px, 6vw, 67.2px); line-height: 1.04;; text-wrap: pretty; font-weight: 600; letter-spacing: -0.04em;">Esta página no existe</h1>
       <p style="margin: 21.6px 0 0; font-size: 20.4px; line-height: 1.6; color: #B7BDB5; text-wrap: pretty;">Puede que el enlace esté mal escrito o que la hayamos movido.</p>
-      <a data-cta-main="1" href="/" style="display: inline-block; margin-top: 48px; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 19.2px 33.6px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Ir al inicio</a>
+      <a data-cta-main="1" href="/" style="display: inline-block; margin-top: 48px; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 19.2px 33.6px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), box-shadow 170ms ease, background 170ms ease;" style-hover="color: #000000; background: #84F0FF; transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(43,231,255,.95);">Ir al inicio</a>
       <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="margin-top: 26.4px; font-size: 16.2px; font-weight: 500; color: #8B918A; border-bottom: 1px solid #2E3A38; padding-bottom: 1.2px; transition: color 160ms ease, border-color 160ms ease;" style-hover="color: #F4F6F3; border-color: #2BE7FF;">Escríbenos por WhatsApp</a>
     </div>
   </main>
@@ -190,7 +190,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
           <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">El ADN de tu local.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
@@ -222,7 +222,7 @@ const EN_PAIRS = [
   ['Punto de reseñas', 'Reviews point'],
   ['Productos', 'Products'],
   ['Soluciones', 'Solutions'], ['Contacto', 'Contact'], ['Planes', 'Plans'], ['Dudas', 'FAQ'], ['Nosotros', 'About us'], ['Nosotros →', 'About us →'],
-  ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['Cookies', 'Cookies'], ['Soluciones NFC para comercios. Barcelona.', 'NFC solutions for local businesses. Barcelona.'],
+  ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['Cookies', 'Cookies'], ['El ADN de tu local.', 'The DNA of your venue.'],
   ['Reseñas Google', 'Google Reviews'], ['Menú', 'Menu'], ['Reservas', 'Bookings'],
   ['Pedido', 'Order'], ['Pago', 'Payment'], ['Confirmado', 'Confirmed'], ['Factura', 'Invoice'], ['En tu correo en unos minutos', 'In your inbox in a few minutes'],
   ['Ya es tuyo. Ahora lo preparamos.', 'It is yours. Now we get it ready.'],
@@ -241,7 +241,7 @@ const CA_PAIRS = [
   ['Punto de reseñas', 'Punt de ressenyes'],
   ['Productos', 'Productes'],
   ['Soluciones', 'Solucions'], ['Contacto', 'Contacte'], ['Planes', 'Plans'], ['Dudas', 'Dubtes'], ['Nosotros', 'Nosaltres'], ['Nosotros →', 'Nosaltres →'],
-  ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['Cookies', 'Cookies'], ['Soluciones NFC para comercios. Barcelona.', 'Solucions NFC per a comerços. Barcelona.'],
+  ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['Cookies', 'Cookies'], ['El ADN de tu local.', 'L’ADN del teu local.'],
   ['Reseñas Google', 'Ressenyes Google'], ['Menú', 'Menú'], ['Reservas', 'Reserves'],
   ['Pedido', 'Comanda'], ['Pago', 'Pagament'], ['Confirmado', 'Confirmat'], ['Factura', 'Factura'], ['En tu correo en unos minutos', 'Al teu correu en uns minuts'],
   ['Ya es tuyo. Ahora lo preparamos.', 'Ja és teu. Ara el preparem.'],
@@ -291,12 +291,12 @@ class Component extends DCLogic {
     const light = this.state.theme === 'light';
     const dim = light ? '#5A605C' : '#9CA39A';
     return {
-      iconFg: light ? '#0B0C0A' : '#F4F6F3',
+      iconFg: light ? '#000000' : '#F4F6F3',
       toggleTheme: () => { const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
       menuOpen: this.state.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
-      burgerFg: light ? '#0B0C0A' : '#F4F6F3',
+      burgerFg: light ? '#000000' : '#F4F6F3',
       burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
       burgerO: this.state.menu ? 0 : 1,
       burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
@@ -304,7 +304,7 @@ class Component extends DCLogic {
       langCode: this.state.lang === 'ca' ? 'CAT' : this.state.lang.toUpperCase(),
       langs: ['es', 'en', 'ca'].map((code) => ({
         name: LANGNAMES[code],
-        fg: this.state.lang === code ? '#0B0C0A' : dim,
+        fg: this.state.lang === code ? '#000000' : dim,
         pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => this.applyLang(prev)); }
       }))
     };

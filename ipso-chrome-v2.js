@@ -6,17 +6,17 @@ export const PAL = {
 
 const LIGHT_MAP = {
   '244,246,243': '0,0,0',
-  '0,0,0': '242,237,230',
+  '0,0,0': '246,242,234',
   '255,255,255': '0,0,0',
-  '156,163,154': '64,68,64',
-  '139,145,138': '74,79,74',
-  '173,179,171': '64,68,64',
-  '183,189,181': '64,68,64',
+  '156,163,154': '90,96,92',
+  '139,145,138': '110,116,110',
+  '173,179,171': '90,96,92',
+  '183,189,181': '90,96,92',
   '210,214,207': '63,68,63',
   '226,229,222': '48,52,48',
-  '118,123,117': '74,79,74',
-  '167,173,165': '74,79,74',
-  '94,99,92': '96,101,96',
+  '118,123,117': '110,116,110',
+  '167,173,165': '110,116,110',
+  '94,99,92': '138,144,138',
   '195,199,192': '63,68,63',
   '195,200,191': '63,68,63',
   '22,24,21': '230,232,228',
@@ -24,9 +24,11 @@ const LIGHT_MAP = {
   '38,41,36': '210,213,207',
   '58,62,56': '183,187,180',
   '74,79,71': '154,160,152',
-  '6,20,26': '233,251,255'
+  '6,20,26': '233,251,255',
+  '216,105,76': '181,72,43',
+  '228,130,106': '150,58,34'
 };
-const ACCENT_TEXT = { '43,231,255': '10,124,147', '132,240,255': '14,156,184' };
+const ACCENT_TEXT = { '43,231,255': '11,122,135', '132,240,255': '8,95,105' };
 
 function toLight(prop, value) {
   return value.replace(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g, function (m, r, g, bl, al) {
@@ -45,10 +47,15 @@ function toLight(prop, value) {
 const LIGHT_CSS = [
   'html { background: #F2EDE6; }',
   'body { color: #000000 !important; }',
-  'a:not([style]) { color: #0A7C93 !important; }',
-  'a:not([style]):hover { color: #0E9CB8 !important; }',
-  'details[open] summary [data-plus] { color: #0A7C93 !important; }',
-  '[data-word] { filter: invert(1); }', 'header:not([data-hdrlight]) [data-word] { filter: none; }', 'header[data-hdrlight] [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }', 'header[data-hdrlight] nav a:hover, header[data-hdrlight] [data-navrow] > div a:hover { color: #000000 !important; }',
+  'a:not([style]) { color: #0B7A87 !important; }',
+  'a:not([style]):hover { color: #085F69 !important; }',
+  'details[open] summary [data-plus] { color: #0B7A87 !important; }',
+  '[data-word] { filter: invert(1); }',
+  '[data-onpro] { color: #FFFFFF !important; }',
+  '[stroke="#B5482B"] { stroke: #B5482B; }',
+  '[fill="#B5482B"] { fill: #B5482B; }',
+  '[data-markdark] { display: none !important; }',
+  '[data-marklight] { display: block !important; }',
   '[data-paymark] { filter: invert(1); }'
 ].join('\n');
 
@@ -62,7 +69,7 @@ export function applyTheme(theme) {
     if (now !== el.__ours) el.__base = now;
     const base = el.__base === undefined ? now : el.__base;
     let v = base;
-    if (light && (!el.closest('header') || el.closest('header[data-hdrlight]'))) {
+    if (light) {
       v = base.split(';').map(function (decl) {
         const k = decl.indexOf(':');
         if (k < 0) return decl;
@@ -78,7 +85,7 @@ export function applyTheme(theme) {
     if (v !== now) el.setAttribute('style', v);
     el.__ours = v;
   });
-  document.documentElement.style.background = light ? '#F2EDE6' : '#000000';
+  document.documentElement.style.background = light ? '#F6F2EA' : '#000000';
   document.body.style.background = 'transparent';
 }
 

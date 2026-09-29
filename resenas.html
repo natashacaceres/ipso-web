@@ -39,7 +39,7 @@
   * { box-sizing: border-box; }
   a { color: #2BE7FF; text-decoration: none; }
   a:hover { color: #84F0FF; }
-  ::selection { background: #2BE7FF; color: #0B0C0A; }
+  ::selection { background: #2BE7FF; color: #000000; }
   summary::-webkit-details-marker { display: none; }
   summary { list-style: none; }
   details[open] summary [data-plus] { transform: rotate(45deg); color: #2BE7FF; }
@@ -147,27 +147,27 @@
 
 <div style="width: 100%; overflow-x: clip;">
 
-  <header style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.08);">
+  <header data-hdrlight="1" style="position: relative; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.08);">
     <div style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: clamp(20px, 1.6669999999999998vw, 32px); min-width: 0; flex-wrap: wrap;">
         <div data-prodmenu="1" style="position: relative; display: flex; align-items: center;">
-          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #9CA39A; white-space: nowrap; padding: 7.2px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 7.2px;" style-hover="color: #FFFFFF; border-bottom-color: #2BE7FF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <a href="/hub" style="font-size: 16.2px; font-weight: 500; color: #F4F6F3; white-space: nowrap; padding: 7.2px 0; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; display: inline-flex; align-items: center; gap: 7.2px;" style-hover="color: #FFFFFF;">Productos<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 12px; height: 12px; display: block;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
           <div data-prodpanel="1" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 12px; z-index: 60; opacity: 0; visibility: hidden; transition: opacity 160ms ease, transform 160ms ease, visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 14px; padding: 12px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: grid; grid-template-columns: repeat(2, minmax(150px, auto)); gap: 4.8px 14.4px;">
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Soluciones</div>
-              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">IPSO HUB</a>
+              <a href="/hub" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">IPSO HUB</a>
             </div>
             <div style="display: flex; flex-direction: column;">
               <div style="padding: 4.8px 14.4px 7.2px; font-size: 16.2px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
-              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #0B0C0A; background: #2BE7FF;">Reseñas Google</a>
+              <a href="/resenas" style="font-size: 14.4px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 9.6px 14.4px; border-radius: 8px;" style-hover="color: #000000; background: #2BE7FF;">Reseñas Google</a>
             </div>
           </div>
         </div>
       </nav>
-      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
+      <a href="/#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid #F4F6F3; border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: #F4F6F3;">Contacto</a>
       <button onClick="{{ toggleTheme }}" aria-label="Tema" style="flex: none; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; font-family: inherit; background: transparent; border: none; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
         <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; display: block;"><circle cx="12" cy="12" r="9" fill="none" stroke="{{ iconFg }}" stroke-width="1.6"></circle><path d="M12 3a9 9 0 0 0 0 18Z" fill="{{ iconFg }}"></path></svg>
       </button>
@@ -177,13 +177,13 @@
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #0B0C0A; background: #2BE7FF;">
+              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #2BE7FF;">
                 <span>{{ l.name }}</span>
               </button>
             </sc-for>
           </div>
       </div>
-      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #262924; border-radius: 8px; cursor: pointer;">
+      <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #F4F6F3; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: opacity 140ms ease; opacity: {{ burgerO }};"></span>
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1); transform: {{ burgerT3 }};"></span>
@@ -197,7 +197,7 @@
           <a href="/hub" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">IPSO HUB</a>
           <div style="padding: 14.4px 0 2.4px 16.8px; font-size: 16.8px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8B918A;">Piezas</div>
           <a href="/resenas" onClick="{{ closeMenu }}" style="font-size: 16.2px; font-weight: 500; color: #C3C8BF; padding: 9.6px 0 14.4px 16.8px; border-bottom: 1px solid #161815;">Reseñas Google</a>
-          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
+          <a href="/#contacto" onClick="{{ closeMenu }}" style="margin-top: 19.2px; text-align: center; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 18px 24px;">Contacto</a>
         </div>
       </div>
     </sc-if>
@@ -215,7 +215,7 @@
         </div>
       </div>
       <div>
-        <h1 style="margin: 16.8px 0 0; font-size: clamp(36px, 4.3vw, 55.2px); line-height: 1.04; font-weight: 700; letter-spacing: -0.045em;">Reseñas Google</h1>
+        <h1 style="margin: 16.8px 0 0; font-size: clamp(36px, 4.3vw, 55.2px); line-height: 1.04;; font-weight: 700; letter-spacing: -0.045em;">Reseñas Google</h1>
         <div style="margin-top: 38.4px; font-variant-numeric: tabular-nums;">
           <div style="font-size: 48px; font-weight: 700; letter-spacing: -0.05em; line-height: 1;">{{ precioLabel }}</div>
           <div style="margin-top: 9.6px; font-size: 15px; color: #8B918A;">{{ precioIva }}</div>
@@ -237,7 +237,7 @@
           </sc-for>
         </div>
         <div style="margin-top: 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <a href="{{ compraLink }}" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #0B0C0A; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #0B0C0A; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
+          <a href="{{ compraLink }}" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #000000; background: #84F0FF; transform: translateY(-2px);">Comprar</a>
         </div>
           <div style="margin-top: 21.6px;">
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16.8px; opacity: .85;">
@@ -255,7 +255,7 @@
 
   <!-- ============ 2 · CÓMO FUNCIONA ============ -->
   <section style="max-width: 1920px; margin: 0 auto; padding: 96px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Cómo funciona</h2>
     <div data-reveal="1" style="margin-top: 38.4px; position: relative; max-width: 1100px; padding-left: 50.4px;">
       <div style="position: absolute; left: 11px; top: 6px; bottom: 6px; width: 1px; background: #1A1C19;"></div>
       <div style="{{ lineaStyle }}"></div>
@@ -274,7 +274,7 @@
 
   <!-- ============ 7 · DUDAS ============ -->
   <section style="max-width: 1920px; margin: 0 auto; padding: 86.4px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
+    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40.8px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
     <div data-reveal="1" style="margin-top: 28.8px; max-width: 936px;">
       <sc-for list="{{ faq }}" as="q" hint-placeholder-count="3">
         <details style="border-bottom: none;">
@@ -289,8 +289,8 @@
     <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-a.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
-          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">Soluciones NFC para comercios. Barcelona.</p>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">El ADN de tu local.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/hub" style="color: #9CA39A;" style-hover="color: #FFFFFF;">IPSO HUB</a>
@@ -354,7 +354,7 @@ const FLAGS = { es: 'assets/flag-es.png', en: 'assets/flag-en.png', ca: 'assets/
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, theme: 'dark', lang: 'es', menu: false };
+  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, theme: 'light', lang: 'es', menu: false };
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
@@ -374,20 +374,20 @@ class Component extends DCLogic {
     const total = totalCon(n, S.precio);
     const desc = bruto > total;
     const tipoSel = S.tipos[this.state.tipo];
-    const btn = (activo) => 'font-family: inherit; min-width: 48px; text-align: center; cursor: pointer; border-radius: 12px; padding: 14.4px 16.8px; font-size: 19.2px; font-weight: 600; letter-spacing: -0.02em; background: ' + (activo ? '#2BE7FF' : 'transparent') + '; border: 1.5px solid ' + (activo ? '#2BE7FF' : '#262924') + '; color: ' + (activo ? '#0B0C0A' : '#F4F6F3') + '; transition: all 160ms ease;';
+    const btn = (activo) => 'font-family: inherit; min-width: 48px; text-align: center; cursor: pointer; border-radius: 12px; padding: 14.4px 16.8px; font-size: 19.2px; font-weight: 600; letter-spacing: -0.02em; background: ' + (activo ? '#2BE7FF' : 'transparent') + '; border: 1.5px solid ' + (activo ? '#2BE7FF' : '#262924') + '; color: ' + (activo ? '#000000' : '#F4F6F3') + '; transition: all 160ms ease;';
     const dim = this.state.theme === 'light' ? '#5A605C' : '#9CA39A';
     return {
       temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
         label: t.label,
-        fg: this.state.theme === t.id ? '#0B0C0A' : dim,
+        fg: this.state.theme === t.id ? '#000000' : dim,
         bg: this.state.theme === t.id ? '#2BE7FF' : 'transparent',
         pick: () => { if (this.state.theme === t.id) return; this.setState({ theme: t.id }); }
       })),
-      iconFg: this.state.theme === 'light' ? '#0B0C0A' : '#F4F6F3',
+      iconFg: this.state.theme === 'light' ? '#000000' : '#F4F6F3',
       menuOpen: !!this.state.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
-      burgerFg: this.state.theme === 'light' ? '#0B0C0A' : '#F4F6F3',
+      burgerFg: '#F4F6F3',
       burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
       burgerO: this.state.menu ? 0 : 1,
       burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
@@ -404,7 +404,7 @@ class Component extends DCLogic {
         esEs: code === 'es',
         esEn: code === 'en',
         esCa: code === 'ca',
-        fg: this.state.lang === code ? '#0B0C0A' : dim,
+        fg: this.state.lang === code ? '#000000' : dim,
         bg: this.state.lang === code ? '#2BE7FF' : 'transparent',
         pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => { if (this._chrome) this._chrome.applyLang(prev, code); }); }
       })),
@@ -417,7 +417,7 @@ class Component extends DCLogic {
         num: k <= this.state.paso ? '#2BE7FF' : '#5E635C',
         fg: k === this.state.paso ? '#F4F6F3' : '#8B918A',
         rowStyle: 'position: relative; display: block; width: 100%; text-align: left; font-family: inherit; background: transparent; border: none; padding: 0 0 31.2px; cursor: pointer;',
-        dotStyle: 'position: absolute; left: -37px; top: 3px; width: 11px; height: 11px; border-radius: 999px; background: ' + (k <= this.state.paso ? '#2BE7FF' : '#0B0C0A') + '; border: 1px solid ' + (k <= this.state.paso ? '#2BE7FF' : '#3A3E38') + '; box-shadow: 0 0 0 4px #000000; transition: background 240ms ease, border-color 240ms ease;',
+        dotStyle: 'position: absolute; left: -37px; top: 3px; width: 11px; height: 11px; border-radius: 999px; background: ' + (k <= this.state.paso ? '#2BE7FF' : '#000000') + '; border: 1px solid ' + (k <= this.state.paso ? '#2BE7FF' : '#3A3E38') + '; box-shadow: 0 0 0 4px #000000; transition: background 240ms ease, border-color 240ms ease;',
         descStyle: 'display: block; overflow: hidden; max-width: 46ch; font-size: 18px; line-height: 1.55; color: #B7BDB5; max-height: ' + (k === this.state.paso ? '120px' : '0px') + '; opacity: ' + (k === this.state.paso ? 1 : 0) + '; margin-top: ' + (k === this.state.paso ? '9.6px' : '0px') + '; transition: max-height 320ms cubic-bezier(.16,.84,.44,1), opacity 220ms ease, margin-top 320ms ease;',
         pick: () => this.setState({ paso: k })
       })),
@@ -433,7 +433,7 @@ class Component extends DCLogic {
       compraLink: this.state.tipo === 1 ? 'https://buy.stripe.com/cNi00l2R2bPm0vl7YS8so02' : 'https://buy.stripe.com/eVqfZj9fqaLiguj3IC8so01',
       tipos: S.tipos.map((t, k) => ({
         label: t.label,
-        style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 12px 19.2px; font-size: 16.2px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#0B0C0A' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',
+        style: 'font-family: inherit; cursor: pointer; border-radius: 999px; padding: 12px 19.2px; font-size: 16.2px; font-weight: 600; background: ' + (k === this.state.tipo ? '#2BE7FF' : 'transparent') + '; color: ' + (k === this.state.tipo ? '#000000' : '#9CA39A') + '; border: 1px solid ' + (k === this.state.tipo ? '#2BE7FF' : '#262924') + '; transition: all 160ms ease;',
         pick: () => { if (this._hero) this._hero.src = t.img; this.setState({ tipo: k, vista: 0 }); }
       })),
       lineas: S.tipos.map((t, k) => ({
@@ -452,7 +452,7 @@ class Component extends DCLogic {
         },
         opciones: Array.from({ length: MAX + 1 }, (_, i) => i).map((q) => ({
           n: q,
-          fg: q === ((this.state.cants || [])[k] || 0) ? '#0B0C0A' : '#C3C8BF',
+          fg: q === ((this.state.cants || [])[k] || 0) ? '#000000' : '#C3C8BF',
           bg: q === ((this.state.cants || [])[k] || 0) ? '#2BE7FF' : 'transparent',
           pick: () => this.setState((s) => { const c = (s.cants || []).slice(); c[k] = q; return { cants: c, abierto: -1 }; })
         }))
@@ -468,7 +468,7 @@ class Component extends DCLogic {
       },
       cantidades: Array.from({ length: MAX }, (_, i) => i + 1).map((k) => ({
         n: k,
-        fg: k === n ? '#0B0C0A' : '#C3C8BF',
+        fg: k === n ? '#000000' : '#C3C8BF',
         bg: k === n ? '#2BE7FF' : 'transparent',
         pick: () => this.setState({ cant: k, ruleta: false })
       })),
