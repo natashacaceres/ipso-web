@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}, {"@type": "ProfessionalService", "@id": "https://ipsoglobal.com/#local", "name": "Ipso — Puntos NFC para comercios", "url": "https://ipsoglobal.com/", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "priceRange": "€", "image": "https://ipsoglobal.com/og-image.png?v=2", "parentOrganization": {"@id": "https://ipsoglobal.com/#org"}, "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": ["Barcelona", "Área metropolitana de Barcelona", "Cataluña", "España"], "serviceType": ["Punto NFC para restaurantes y bares", "Carta digital NFC", "Stand de reseñas de Google", "WiFi NFC para clientes", "Fidelización de clientes sin app", "Asistente con IA para hostelería"]}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202609302021"></script>
+<script src="./support.js?v=202609302037"></script>
 </head>
 <body>
 <x-dc>
@@ -214,7 +214,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <h2 style="margin: 0; font-size: clamp(24px, 2.9vw, 33.6px);; font-weight: 600; letter-spacing: -0.038em;">{{ ctaTitle }}</h2>
         <p style="margin: 14.4px 0 0; max-width: 50ch; font-size: 19.2px; line-height: 1.6; color: #9CA39A;">{{ ctaText }}</p>
       </div>
-      <a href="/#contacto" style="font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; transition: background 170ms ease, transform 170ms ease;" style-hover="color: #000000; background: #84F0FF; transform: translateY(-2px);">{{ ctaBtn }}</a>
+      <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="font-size: 18.6px; font-weight: 600; color: #000000; background: #2BE7FF; border-radius: 10px; padding: 19.2px 31.2px; white-space: nowrap; transition: background 170ms ease, transform 170ms ease;" style-hover="color: #000000; background: #84F0FF; transform: translateY(-2px);">{{ ctaBtn }}</a>
     </div>
 
   </main>
@@ -232,7 +232,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/#dudas" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Dudas</a>
-          <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Contacto</a>
+          <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="color: #9CA39A;" style-hover="color: #FFFFFF;">{{ nCon }}</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
           <a href="/nosotros" style="color: #9CA39A;" style-hover="color: #FFFFFF;">Nosotros</a>
@@ -258,13 +258,13 @@ const ES = {
   lead: "Ipso nació en 2026 en Barcelona con una idea simple: todo lo que un cliente necesita de un local debería abrirse con un toque del móvil. Sin apps, sin carteles, sin explicar la contraseña del WiFi cien veces al día.",
   blocks: [
     { h: "Qué hacemos", p: [
-      "Instalamos un punto NFC en la barra o el mostrador. El cliente lo toca y se abre el WiFi, la carta, la ficha de Google, la tarjeta de sellos y un asistente que responde en su idioma. El dueño recibe cada mes un informe de lo que pasó en su local."
+      "Te enviamos un punto NFC para la barra o el mostrador. El cliente lo toca y se abre el WiFi, la carta, la ficha de Google, la tarjeta de sellos y un asistente que responde en su idioma. El dueño recibe cada mes un informe de lo que pasó en su local."
     ]},
     { h: "Quién está detrás", p: [
       "Natasha Cáceres, doctora en economía, especializada en mercados financieros digitales: cómo la regulación más innovadora y la tecnología cambian la forma de pagar y de hacer negocio. Ipso nace para llevar esa innovación al comercio de barrio, que es donde más falta hace."
     ]},
     { h: "Cómo trabajamos", p: [
-      "Vamos al local, lo instalamos y lo explicamos en el mostrador. Y si estás fuera de Barcelona, te lo enviamos programado y listo para poner. Sin permanencia: el día que no lo quieras, lo dejas."
+      "Te lo enviamos programado y listo para poner en 2-4 días laborables. Lo dejas en la barra y funciona. Sin permanencia: el día que no lo quieras, lo dejas."
     ]}
   ],
   facts: [
@@ -287,13 +287,13 @@ const EN = {
   lead: "Ipso was founded in 2026 in Barcelona with a simple idea: everything a customer needs from a venue should open with one tap of their phone. No apps, no signs, no spelling out the Wi-Fi password a hundred times a day.",
   blocks: [
     { h: "What we do", p: [
-      "We install an NFC point on the bar or the counter. The customer taps it and the Wi-Fi, the menu, the Google listing, the stamp card and an assistant that answers in their language all open. The owner receives a monthly report of what happened in their venue."
+      "We send you an NFC point for your bar or counter. The customer taps it and the Wi-Fi, the menu, the Google listing, the stamp card and an assistant that answers in their language all open. The owner receives a monthly report of what happened in their venue."
     ]},
     { h: "Who is behind it", p: [
       "Natasha Cáceres, PhD in economics, specialised in digital financial markets: how the most innovative regulation and technology change the way we pay and do business. Ipso was born to bring that innovation to the local shop, where it is needed most."
     ]},
     { h: "How we work", p: [
-      "We come to your venue, install it and explain it at the counter. And if you are outside Barcelona, we ship it programmed and ready to place. No lock-in: the day you no longer want it, you leave."
+      "We ship it programmed and ready to place within 2-4 working days. Put it on the bar and it works. No lock-in: the day you no longer want it, you stop."
     ]}
   ],
   facts: [
@@ -316,13 +316,13 @@ const CA = {
   lead: "Ipso va néixer el 2026 a Barcelona amb una idea simple: tot el que un client necessita d’un local s’hauria d’obrir amb un toc del mòbil. Sense apps, sense cartells, sense explicar la contrasenya del WiFi cent vegades al dia.",
   blocks: [
     { h: "Què fem", p: [
-      "Instal·lem un punt NFC a la barra o al taulell. El client el toca i s’obre el WiFi, la carta, la fitxa de Google, la targeta de segells i un assistent que respon en el seu idioma. El propietari rep cada mes un informe del que ha passat al seu local."
+      "T’enviem un punt NFC per a la barra o el taulell. El client el toca i s’obre el WiFi, la carta, la fitxa de Google, la targeta de segells i un assistent que respon en el seu idioma. El propietari rep cada mes un informe del que ha passat al seu local."
     ]},
     { h: "Qui hi ha al darrere", p: [
       "Natasha Cáceres, doctora en economia, especialitzada en mercats financers digitals: com la regulació més innovadora i la tecnologia canvien la manera de pagar i de fer negoci. Ipso neix per portar aquesta innovació al comerç de barri, que és on més falta fa."
     ]},
     { h: "Com treballem", p: [
-      "Anem al local, l’instal·lem i l’expliquem al taulell. I si ets fora de Barcelona, te l’enviem programat i a punt per posar. Sense permanència: el dia que no el vulguis, el deixes."
+      "T’ho enviem programat i a punt per posar en 2-4 dies laborables. El deixes a la barra i funciona. Sense permanència: el dia que no el vulguis, el deixes."
     ]}
   ],
   facts: [
@@ -352,7 +352,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202609302021').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202609302037').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
