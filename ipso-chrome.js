@@ -155,7 +155,16 @@ const EN_PAIRS = [
   ['Placa o stand, pago único.', 'Plate or stand, one-off payment.'],
   ['Preguntas frecuentes', 'FAQ'],
   ['Contacto', 'Contact'],
-  ['Reseñas Google', 'Google Reviews']
+  ['Reseñas Google', 'Google Reviews'],
+  ['Tocan y opinan cuando quieren', 'They tap and review when they want'],
+  ['Se abre tu ficha oficial de Google.', 'Your official Google listing opens.'],
+  ['22,99 € incl. IVA', '22.99 € incl. VAT'],
+  ['El ADN de tu local.', 'The DNA of your venue.'],
+  ['Nosotros', 'About us'],
+  ['Aviso legal', 'Legal notice'],
+  ['Privacidad', 'Privacy'],
+  ['Cookies', 'Cookies'],
+  ['Dudas', 'FAQ']
 ];
 
 const CA_PAIRS = [
@@ -225,7 +234,16 @@ const CA_PAIRS = [
   ['Placa o stand, pago único.', 'Placa o estand, pagament únic.'],
   ['Preguntas frecuentes', 'Preguntes freqüents'],
   ['Contacto', 'Contacte'],
-  ['Reseñas Google', 'Ressenyes Google']
+  ['Reseñas Google', 'Ressenyes Google'],
+  ['Tocan y opinan cuando quieren', 'Toquen i opinen quan volen'],
+  ['Se abre tu ficha oficial de Google.', 'S\'obre la teva fitxa oficial de Google.'],
+  ['22,99 € incl. IVA', '22,99 € IVA incl.'],
+  ['El ADN de tu local.', 'L’ADN del teu local.'],
+  ['Nosotros', 'Nosaltres'],
+  ['Aviso legal', 'Avís legal'],
+  ['Privacidad', 'Privacitat'],
+  ['Cookies', 'Cookies'],
+  ['Dudas', 'Dubtes']
 ];
 
 export const DICTS = { es: null, en: {}, ca: {} };

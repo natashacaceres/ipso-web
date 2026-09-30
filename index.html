@@ -429,6 +429,10 @@ html body header [data-navlinks] { gap: 28px !important; }
   html body [data-wa-fab][data-wahero="1"] { opacity: 0 !important; pointer-events: none !important; }
 }
 </style>
+<style data-hero-fix="1">
+html body section[data-hero2] [data-reveal], html body section[data-hero2] [data-rv], html body section[data-hero2] [data-reveal] > * { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+@media (max-width: 767px) { html body [data-heroimg3] { object-position: 86% 60% !important; } }
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -445,7 +449,6 @@ html body header [data-navlinks] { gap: 28px !important; }
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 28px; min-width: 0;">
         <a href="/hub" data-navlink="1" style="font-size: 15px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 6px 0 4px; border-bottom: 1px solid transparent; transition: color 160ms ease;" style-hover="color: #FFFFFF;">IPSO HUB</a>
-        <a href="/resenas" data-navlink="1" style="font-size: 15px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 6px 0 4px; border-bottom: 1px solid transparent; transition: color 160ms ease;" style-hover="color: #FFFFFF;">Reseñas</a>
       </nav>
       <a href="#contacto" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <div data-langmenu="1" style="flex: none; position: relative;">
@@ -469,7 +472,6 @@ html body header [data-navlinks] { gap: 28px !important; }
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div data-mnav="1" style="position: fixed; inset: 0; z-index: -1; background: #000000; padding: 92px 24px calc(24px + env(safe-area-inset-bottom, 0px)); overflow-y: auto; display: flex; flex-direction: column;">
         <a href="/hub" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 14px; background: #151714; border-radius: 16px; padding: 16px; text-decoration: none;"><img src="assets/hub-disc.jpg" alt="" style="flex: none; width: 56px; height: 56px; border-radius: 10px; object-fit: cover; display: block;"><span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;"><span style="font-size: 18px; font-weight: 600; line-height: 1.25; color: #FFFFFF;">IPSO HUB</span><span style="font-size: 14px; line-height: 1.35; color: #9CA39A;">Tu local entero en un punto.</span></span></a>
-        <a href="/resenas" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 14px; margin-top: 12px; background: #151714; border-radius: 16px; padding: 16px; text-decoration: none;"><img src="assets/sol-resenas.jpg" alt="" style="flex: none; width: 56px; height: 56px; border-radius: 10px; object-fit: cover; display: block;"><span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;"><span style="font-size: 18px; font-weight: 600; line-height: 1.25; color: #FFFFFF;">Reseñas Google</span><span style="font-size: 14px; line-height: 1.35; color: #9CA39A;">Placa o stand, pago único.</span></span></a>
         <div style="margin-top: 24px; display: flex; flex-direction: column;">
           <a href="#dudas" onClick="{{ closeMenu }}" style="display: flex; align-items: center; height: 52px; font-size: 18px; font-weight: 500; color: #F2EDE6; text-decoration: none;">Preguntas frecuentes</a>
           <a href="#contacto" onClick="{{ closeMenu }}" style="display: flex; align-items: center; height: 52px; font-size: 18px; font-weight: 500; color: #F2EDE6; text-decoration: none;">Contacto</a>
@@ -519,14 +521,11 @@ html body header [data-navlinks] { gap: 28px !important; }
           <div data-sxt="0" data-side="l" style="position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; will-change: transform, opacity, filter;">
             <h2 style="margin: 0; font-size: clamp(36px, 3.5vw, 68px); line-height: 1.04;; color: #F4F6F3; font-weight: 600; letter-spacing: -0.045em;">Un solo toque.</h2>
             <div data-sxlist="1" style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px;">
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5a11 11 0 0 1 16 0"></path><path d="M7.5 13a6.5 6.5 0 0 1 9 0"></path><circle cx="12" cy="17" r="1"></circle></svg><span>WiFi sin contraseña</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span>Carta en 5 idiomas</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.8l-5.3 2.8 1.1-5.8L3.5 9.7l5.9-.8z"></path></svg><span>Reseñas de Google</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.5" cy="7.5" r=".8" fill="#C3C8BF"></circle></svg><span>Redes sociales</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#C3C8BF"></circle></svg><span>Te ayudo a elegir</span></div>
-              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span style="white-space: nowrap;">Fidelización</span><span data-pro="1" style="display: inline-flex; align-items: center; flex: none; background: transparent; border: 1.5px solid #D8694C; border-radius: 4px; padding: 3px 7px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #D8694C;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg><span style="white-space: nowrap;">Tarjeta de sellos</span><span data-pro="1" style="display: inline-flex; align-items: center; flex: none; background: transparent; border: 1.5px solid #D8694C; border-radius: 4px; padding: 3px 7px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #D8694C;">PRO</span></div>
               <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5"></path><path d="m8.5 8 3.5-3.5L15.5 8"></path><path d="M5.5 13v5.5h13V13"></path></svg><span style="white-space: nowrap;">Comparte tu visita</span><span data-pro="1" style="display: inline-flex; align-items: center; flex: none; background: transparent; border: 1.5px solid #D8694C; border-radius: 4px; padding: 3px 7px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #D8694C;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.6 1.3c0 1.7-2.2 2-2.2 3.4"></path><circle cx="12" cy="16.8" r=".8" fill="#C3C8BF"></circle></svg><span>Te ayudo a elegir</span></div>
               <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><span style="white-space: nowrap;">Asistente con IA</span><span data-pro="1" style="display: inline-flex; align-items: center; flex: none; background: transparent; border: 1.5px solid #D8694C; border-radius: 4px; padding: 3px 7px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; color: #D8694C;">PRO</span></div>
+              <div style="display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.4; color: #F4F6F3;"><svg style="flex: none; width: 1.1em; height: 1.1em; display: block;" viewBox="0 0 24 24" fill="none" stroke="#C3C8BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span>Y lo básico: WiFi, carta, reseñas y redes</span></div>
             </div>
             <div data-sxmob="1" aria-hidden="true" style="width: 70vw; height: calc(70vw * 1.772); font-size: 0.7vw; margin: 24px auto 0; box-sizing: border-box; padding: 0.9em; border-radius: 14em; background: linear-gradient(135deg, #e6e9ec 0%, #7a7f86 18%, #2d3034 46%, #3a3d42 60%, #8c9198 82%, #eef0f2 100%);"><div style="width: 100%; height: 100%; box-sizing: border-box; padding: 2.6em; border-radius: 13.1em; background: #040405;"><div style="position: relative; width: 100%; height: 100%; border-radius: 10.6em; overflow: hidden; background: #F4F3F1;"><img src="assets/asi-panel-v7.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 0%;"><div style="position: absolute; left: 50%; top: 2.4em; width: 27em; height: 7.8em; margin-left: -13.5em; border-radius: 4em; background: #000000;"></div></div></div></div>
           </div>
@@ -608,13 +607,14 @@ html body header [data-navlinks] { gap: 28px !important; }
 
     <div data-indsec="1" style="background: #010101; color: #F5F6F3;">
     <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 96px 24px;">
-      <h2 data-ind="1" style="margin: 0 auto; max-width: 34ch; text-align: center; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; color: #F5F6F3; font-weight: 600; letter-spacing: -0.042em;">Adaptado a tu local</h2>
+      <h2 data-ind="1" style="margin: 0 auto; max-width: 34ch; text-align: center; font-size: clamp(40px, 5vw, 88px); line-height: 1.04; color: #F5F6F3; font-weight: 600; letter-spacing: -0.042em;">Pensado para locales como el tuyo</h2>
       <div data-indrail="1" style="margin-top: clamp(48px, 4.5vw, 80px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 21.6px;">
         <div data-ind="1" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D;">
           <img src="assets/ind-hosteleria.jpg" alt="" data-indimg="1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.92), rgba(6,7,6,.55) 30%, rgba(6,7,6,0) 62%);"></div>
           <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 6px;">
             <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Hostelería</span>
+            <span data-indline="1" style="font-size: 15px; line-height: 1.4; color: #F2EDE6; text-wrap: pretty;">WiFi, carta y reseñas sin que el camarero pare.</span>
           </div>
         </div>
         <div data-ind="1" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D;">
@@ -622,6 +622,7 @@ html body header [data-navlinks] { gap: 28px !important; }
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.92), rgba(6,7,6,.55) 30%, rgba(6,7,6,0) 62%);"></div>
           <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 6px;">
             <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Belleza y bienestar</span>
+            <span data-indline="1" style="font-size: 15px; line-height: 1.4; color: #F2EDE6; text-wrap: pretty;">Tarjeta de sellos para que vuelvan cada mes.</span>
           </div>
         </div>
         <div data-ind="1" style="position: relative; display: block; flex: 0 0 auto; scroll-snap-align: start; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; background: #0E100D;">
@@ -629,6 +630,7 @@ html body header [data-navlinks] { gap: 28px !important; }
           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,7,6,.92), rgba(6,7,6,.55) 30%, rgba(6,7,6,0) 62%);"></div>
           <div style="position: absolute; left: 20px; right: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 6px;">
             <span style="font-size: 26.4px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF;">Comercio de barrio</span>
+            <span data-indline="1" style="font-size: 15px; line-height: 1.4; color: #F2EDE6; text-wrap: pretty;">Tus reseñas y redes, desde el mostrador.</span>
           </div>
         </div>
       </div>
@@ -1083,7 +1085,23 @@ const EN_PAIRS = [
   ['Placa o stand, pago único.', 'Plate or stand, one-off payment.'],
   ['Preguntas frecuentes', 'FAQ'],
   ['Contacto', 'Contact'],
-  ['Reseñas Google', 'Google Reviews']
+  ['Reseñas Google', 'Google Reviews'],
+  ['Pensado para locales como el tuyo', 'Made for places like yours'],
+  ['WiFi, carta y reseñas sin que el camarero pare.', 'Wi-Fi, menu and reviews without stopping your staff.'],
+  ['Tarjeta de sellos para que vuelvan cada mes.', 'A stamp card so they come back every month.'],
+  ['Tus reseñas y redes, desde el mostrador.', 'Your reviews and socials, right from the counter.'],
+  ['Tarjeta de sellos', 'Stamp card'],
+  ['Comparte tu visita', 'Share your visit'],
+  ['Te ayudo a elegir', 'I help you choose'],
+  ['Asistente con IA', 'AI assistant'],
+  ['Y lo básico: WiFi, carta, reseñas y redes', 'Plus the basics: Wi-Fi, menu, reviews and socials'],
+  ['Panel en vivo', 'Live dashboard'],
+  ['Punto NFC y envío gratis', 'NFC point and free shipping'],
+  ['Asistente con IA, 30 idiomas', 'AI assistant, 30 languages'],
+  ['Mi local, panel en vivo', 'Mi local, live dashboard'],
+  ['Informe mensual por WhatsApp', 'Monthly report on WhatsApp'],
+  ['Cambios de carta y precios', 'Menu and price changes'],
+  ['WiFi, carta, reseñas, redes y horarios', 'Wi-Fi, menu, reviews, socials and hours']
 ];
 
 const CA_PAIRS = [
@@ -1340,7 +1358,23 @@ const CA_PAIRS = [
   ['Placa o stand, pago único.', 'Placa o estand, pagament únic.'],
   ['Preguntas frecuentes', 'Preguntes freqüents'],
   ['Contacto', 'Contacte'],
-  ['Reseñas Google', 'Ressenyes Google']
+  ['Reseñas Google', 'Ressenyes Google'],
+  ['Pensado para locales como el tuyo', 'Pensat per a locals com el teu'],
+  ['WiFi, carta y reseñas sin que el camarero pare.', 'WiFi, carta i ressenyes sense que el cambrer pari.'],
+  ['Tarjeta de sellos para que vuelvan cada mes.', 'Targeta de segells perquè tornin cada mes.'],
+  ['Tus reseñas y redes, desde el mostrador.', 'Les teves ressenyes i xarxes, des del taulell.'],
+  ['Tarjeta de sellos', 'Targeta de segells'],
+  ['Comparte tu visita', 'Comparteix la visita'],
+  ['Te ayudo a elegir', 'T\'ajudo a triar'],
+  ['Asistente con IA', 'Assistent amb IA'],
+  ['Y lo básico: WiFi, carta, reseñas y redes', 'I el bàsic: WiFi, carta, ressenyes i xarxes'],
+  ['Panel en vivo', 'Tauler en directe'],
+  ['Punto NFC y envío gratis', 'Punt NFC i enviament gratuït'],
+  ['Asistente con IA, 30 idiomas', 'Assistent amb IA, 30 idiomes'],
+  ['Mi local, panel en vivo', 'Mi local, tauler en directe'],
+  ['Informe mensual por WhatsApp', 'Informe mensual per WhatsApp'],
+  ['Cambios de carta y precios', 'Canvis de carta i preus'],
+  ['WiFi, carta, reseñas, redes y horarios', 'WiFi, carta, ressenyes, xarxes i horaris']
 ];
 
 const DICTS = { es: null, en: {}, ca: {} };
@@ -1573,6 +1607,14 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    try {
+      const h = decodeURIComponent((window.location.hash || '').slice(1));
+      if (h && h !== 'top') {
+        const go = () => { const el = document.getElementById(h); if (!el) return; const hdr = document.querySelector('header'); const off = (hdr ? hdr.getBoundingClientRect().bottom : 80) + 16; window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - off), behavior: 'instant' }); };
+        [120, 500, 1200].forEach((t) => setTimeout(go, t));
+        window.addEventListener('load', () => setTimeout(go, 60), { once: true });
+      }
+    } catch (e) {}
     try {
       const hero = document.getElementById('top');
       if (hero && 'IntersectionObserver' in window) {
