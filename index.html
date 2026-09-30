@@ -433,6 +433,15 @@ html body header [data-navlinks] { gap: 28px !important; }
 html body section[data-hero2] [data-reveal], html body section[data-hero2] [data-rv], html body section[data-hero2] [data-reveal] > * { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
 @media (max-width: 767px) { html body [data-heroimg3] { object-position: 86% 60% !important; } }
 </style>
+<style data-sec-visible="1">
+html body #contacto [data-rv], html body #contacto [data-reveal], html body #dudas [data-rv], html body #dudas [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; transition: none !important; }
+@media (max-width: 767px) {
+  html body section[data-hero2] { display: flex !important; flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; min-height: 100svh !important; }
+  html body section[data-hero2] > [data-sec] { order: 1; flex: none; }
+  html body section[data-hero2] > div[aria-hidden] { order: 2; position: relative !important; inset: auto !important; height: auto !important; flex: 1 1 auto; min-height: 280px; margin-top: 24px !important; }
+  html body section[data-hero2] > div[aria-hidden] [data-heroimg3] { position: absolute; inset: 0; }
+}
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -1607,11 +1616,13 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    const showVisible = () => { try { const vh = window.innerHeight; document.querySelectorAll('[data-rv="0"], [data-reveal]:not([data-shown]), [data-ind]:not([data-in])').forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) { if (el.getAttribute('data-rv') === '0') el.setAttribute('data-rv', 'in'); if (el.hasAttribute('data-reveal')) el.setAttribute('data-shown', '1'); if (el.hasAttribute('data-ind')) el.setAttribute('data-in', '1'); } }); } catch (e) {} };
+    [200, 700, 1400].forEach((t) => setTimeout(showVisible, t));
     try {
       const h = decodeURIComponent((window.location.hash || '').slice(1));
       if (h && h !== 'top') {
         const go = () => { const el = document.getElementById(h); if (!el) return; const hdr = document.querySelector('header'); const off = (hdr ? hdr.getBoundingClientRect().bottom : 80) + 16; window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - off), behavior: 'instant' }); };
-        [120, 500, 1200].forEach((t) => setTimeout(go, t));
+        [120, 500, 1200].forEach((t) => setTimeout(() => { go(); showVisible(); }, t));
         window.addEventListener('load', () => setTimeout(go, 60), { once: true });
       }
     } catch (e) {}
