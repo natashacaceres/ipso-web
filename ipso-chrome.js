@@ -19,6 +19,7 @@ const LIGHT_MAP = {
   '94,99,92': '96,101,96',
   '195,199,192': '63,68,63',
   '195,200,191': '63,68,63',
+  '195,200,190': '78,83,76',
   '22,24,21': '230,232,228',
   '26,28,25': '227,229,224',
   '38,41,36': '210,213,207',
@@ -45,11 +46,14 @@ function toLight(prop, value) {
 const LIGHT_CSS = [
   'html { background: #F2EDE6; }',
   'body { color: #000000 !important; }',
-  'a:not([style]) { color: #0A7C93 !important; }',
-  'a:not([style]):hover { color: #0E9CB8 !important; }',
-  'details[open] summary [data-plus] { color: #0A7C93 !important; }',
+  'a:not([style]) { color: #B5482B !important; }',
+  'a:not([style]):hover { color: #C55A3F !important; }',
+  'details[open] summary [data-plus] { color: #B5482B !important; }',
+  '[data-ico] { stroke: #4E534C; }',
   '[data-word] { filter: invert(1); }', 'header:not([data-hdrlight]) [data-word] { filter: none; }', 'header[data-hdrlight] [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }', 'header[data-hdrlight] nav a:hover, header[data-hdrlight] [data-navrow] > div a:hover { color: #000000 !important; }',
-  '[data-paymark] { filter: invert(1); }'
+  '[data-paymark] { filter: invert(1); }',
+  'html body footer:not([data-nolight]), html body footer:not([data-nolight]) p, html body footer:not([data-nolight]) span, html body footer:not([data-nolight]) a[href] { color: #4E534C !important; }', 'footer [data-word] { filter: none !important; }',
+  'html body footer:not([data-nolight]) a[href]:hover { color: #000000 !important; }'
 ].join('\n');
 
 export function applyTheme(theme) {
@@ -58,6 +62,7 @@ export function applyTheme(theme) {
   if (!tag) { tag = document.createElement('style'); tag.id = 'ipso-theme'; document.head.appendChild(tag); }
   tag.textContent = light ? LIGHT_CSS : '';
   document.querySelectorAll('[style]').forEach(function (el) {
+    if (el.closest('[data-nolight]')) return;
     const now = el.getAttribute('style') || '';
     if (now !== el.__ours) el.__base = now;
     const base = el.__base === undefined ? now : el.__base;
@@ -142,7 +147,15 @@ const EN_PAIRS = [
   ['¿Funciona con el local cerrado?', 'Does it work when the venue is closed?'], ['Sí. Está por fuera, así que pueden reservar a cualquier hora.', 'Yes. It is outside, so they can book at any time.'],
   ['¿Con qué agenda funciona?', 'Which calendar does it work with?'], ['Lo conectamos con el calendario que ya usas y con tus horarios reales.', 'We connect it to the calendar you already use and your real opening hours.'],
   ['¿Puedo cambiar la carta?', 'Can I change the menu?'], ['Sí. El primer año los cambios están incluidos; luego, con IPSO+ los haces tú.', 'Yes. Changes are included in the first year; after that, with IPSO+ you make them yourself.'],
-  ['¿Cuántas placas incluye?', 'How many plates are included?'], ['Cuatro placas de mesa. Si tienes más mesas, añade un pack.', 'Four table plates. If you have more tables, add a pack.']
+  ['¿Cuántas placas incluye?', 'How many plates are included?'], ['Cuatro placas de mesa. Si tienes más mesas, añade un pack.', 'Four table plates. If you have more tables, add a pack.'],
+  ['Reseñas Google', 'Google Reviews'],
+  ['Tu ficha de Google, a un toque. Sin pedirlas.', 'Your Google profile, one tap away. No need to ask.'],
+  ['Reseñas', 'Reviews'],
+  ['Tu local entero en un punto.', 'Your whole venue in one place.'],
+  ['Placa o stand, pago único.', 'Plate or stand, one-off payment.'],
+  ['Preguntas frecuentes', 'FAQ'],
+  ['Contacto', 'Contact'],
+  ['Reseñas Google', 'Google Reviews']
 ];
 
 const CA_PAIRS = [
@@ -204,7 +217,15 @@ const CA_PAIRS = [
   ['¿Funciona con el local cerrado?', 'Funciona amb el local tancat?'], ['Sí. Está por fuera, así que pueden reservar a cualquier hora.', 'Sí. És a fora, així que poden reservar a qualsevol hora.'],
   ['¿Con qué agenda funciona?', 'Amb quina agenda funciona?'], ['Lo conectamos con el calendario que ya usas y con tus horarios reales.', 'El connectem amb el calendari que ja fas servir i amb els teus horaris reals.'],
   ['¿Puedo cambiar la carta?', 'Puc canviar la carta?'], ['Sí. El primer año los cambios están incluidos; luego, con IPSO+ los haces tú.', 'Sí. El primer any els canvis estan inclosos; després, amb IPSO+ els fas tu.'],
-  ['¿Cuántas placas incluye?', 'Quantes plaques inclou?'], ['Cuatro placas de mesa. Si tienes más mesas, añade un pack.', 'Quatre plaques de taula. Si tens més taules, afegeix un pack.']
+  ['¿Cuántas placas incluye?', 'Quantes plaques inclou?'], ['Cuatro placas de mesa. Si tienes más mesas, añade un pack.', 'Quatre plaques de taula. Si tens més taules, afegeix un pack.'],
+  ['Reseñas Google', 'Ressenyes Google'],
+  ['Tu ficha de Google, a un toque. Sin pedirlas.', 'La teva fitxa de Google, a un toc. Sense demanar-les.'],
+  ['Reseñas', 'Ressenyes'],
+  ['Tu local entero en un punto.', 'Tot el teu local en un punt.'],
+  ['Placa o stand, pago único.', 'Placa o estand, pagament únic.'],
+  ['Preguntas frecuentes', 'Preguntes freqüents'],
+  ['Contacto', 'Contacte'],
+  ['Reseñas Google', 'Ressenyes Google']
 ];
 
 export const DICTS = { es: null, en: {}, ca: {} };
