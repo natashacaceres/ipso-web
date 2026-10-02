@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}, {"@type": "ProfessionalService", "@id": "https://ipsoglobal.com/#local", "name": "Ipso — Puntos NFC para comercios", "url": "https://ipsoglobal.com/", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "priceRange": "€", "image": "https://ipsoglobal.com/og-image.png?v=2", "parentOrganization": {"@id": "https://ipsoglobal.com/#org"}, "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": ["Barcelona", "Área metropolitana de Barcelona", "Cataluña", "España"], "serviceType": ["Punto NFC para restaurantes y bares", "Carta digital NFC", "Stand de reseñas de Google", "WiFi NFC para clientes", "Fidelización de clientes sin app", "Asistente con IA para hostelería"]}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610012133"></script>
+<script src="./support.js?v=202610021731"></script>
 </head>
 <body>
 <x-dc>
@@ -140,6 +140,7 @@ html body header [data-navlinks] { gap: 28px !important; }
 [data-mlangbar] button[data-code="EN"] { order: 3; }
 [data-mlangbar] button[data-on="1"] { color: #F2EDE6; } [data-mlangbar] button[data-on="1"]::after { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
 @media (max-width: 767px) { html body header [data-mlangbar] { display: flex !important; } html body header [data-mlangbar] ~ [data-burger] { margin-left: 4px !important; } }
+@media (max-width: 767px) { html body header [data-mlangbar] { display: none !important; } html body header [data-langmenu] { display: block !important; margin-left: auto; } html body header [data-langmenu] > button { min-height: 40px; padding: 0 8px !important; } html body header [data-langmenu] ~ [data-burger] { margin-left: 4px !important; } html body header [data-langmenu]:hover [data-langpanel], html body header [data-langmenu]:focus-within [data-langpanel] { opacity: 0 !important; visibility: hidden !important; transform: translateY(6px) !important; } html body header [data-langmenu][data-open="1"] [data-langpanel] { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; } }
 </style>
 </helmet>
 
@@ -148,13 +149,13 @@ html body header [data-navlinks] { gap: 28px !important; }
   <header style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22);">
     <div style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 28px; min-width: 0;">
         <a href="/hub" data-navlink="1" style="font-size: 15px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 6px 0 4px; border-bottom: 1px solid transparent; transition: color 160ms ease;" style-hover="color: #FFFFFF;">IPSO HUB</a>
       </nav>
       <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
-      <div data-langmenu="1" style="flex: none; position: relative;">
+      <div data-langmenu="1" data-open="{{ langMenuAttr }}" style="flex: none; position: relative;">
         <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 13.2px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
           <span>{{ langCode }}</span>
         </button>
@@ -231,7 +232,7 @@ html body header [data-navlinks] { gap: 28px !important; }
     <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
           <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">El ADN de tu local.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
@@ -352,7 +353,7 @@ EN.nav = ['Solutions', 'Prices', 'FAQ', 'Contact', 'How it works'];
 
 const LANGS = { es: ES, en: EN, ca: CA };
 
-const FLAGS = { es: 'assets/flag-es.png', en: 'assets/flag-en.jpg', ca: 'assets/flag-cat.png' };
+const FLAGS = { es: 'assets/flag-es.png?v=9ce80ef5', en: 'assets/flag-en.jpg?v=ea141dfe', ca: 'assets/flag-cat.png?v=ac2809e5' };
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
@@ -360,7 +361,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610012133').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610021731').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
@@ -393,7 +394,7 @@ class Component extends DCLogic {
       iconFg: '#F4F6F3',
       toggleTheme: () => { return; const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
       langMenuOpen: !!this.state.langMenu,
-      toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })),
+      toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })), langMenuAttr: this.state.langMenu ? '1' : '0',
       langEs: this.state.lang === 'es',
       langEn: this.state.lang === 'en',
       langCa: this.state.lang === 'ca',
