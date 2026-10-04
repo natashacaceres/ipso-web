@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610021731"></script>
+<script src="./support.js?v=202610042224"></script>
 </head>
 <body>
 <x-dc>
@@ -34,80 +34,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  html { scroll-behavior: smooth; background: #000000; }
-  body { margin: 0; background: #000000; color: #F4F6F3; font-family: Inter, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; }
+  html { background: #F2EDE6; }
+  body { margin: 0; background: #F2EDE6; color: #000000; font-family: Inter, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; }
   * { box-sizing: border-box; }
-  a { color: #B5482B; text-decoration: none; }
-  a:hover { color: #C55A3F; }
+  a { color: #000000; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #000000; }
   ::selection { background: #E9E2D8; color: #000000; }
   [data-langmenu]:hover [data-langpanel], [data-langmenu]:focus-within [data-langpanel] { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
   [data-langmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
-  [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
-  [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
-  @media (max-width: 1080px) {
-    [data-navrow] { flex-wrap: nowrap; gap: 16.8px; }
-    [data-navrow] > a:first-child { margin-right: auto; }
-    [data-navlinks] { display: none !important; }
-    [data-cta] { display: none !important; }
-    [data-burger] { display: flex !important; }
+  @media (max-width: 760px) { button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; } }
+  @media (max-width: 767px) {
+    html body [data-col] > main { padding-left: 4px !important; padding-right: 4px !important; }
+    [data-h1] { white-space: normal !important; text-wrap: balance; }
+    [data-ok] { width: 56px !important; height: 56px !important; }
+    [data-stitle] { font-size: 15px !important; }
+    [data-stext] { font-size: 13.2px !important; }
+    [data-cta-main] { display: flex !important; width: 100%; }
   }
-  @media (max-width: 640px) {
-    [data-cta-main] { display: block !important; width: 100%; text-align: center; }
-    main { padding-left: 24px !important; padding-right: 24px !important; }
-  }
-  [data-prodmenu]:hover [data-prodpanel], [data-prodmenu]:focus-within [data-prodpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
-  [data-prodmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
-</style>
-<style data-footfix="1">@media (max-width: 760px){ footer > div { padding: 48px 24px 115.2px !important; } footer > div > div:first-child { grid-template-columns: 1fr 1fr !important; gap: clamp(22px, 1.8330000000000002vw, 35.2px) clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 31.2px !important; } footer > div > div:first-child > div:first-child { grid-column: 1 / -1; } footer > div > div:first-child > div:first-child p { margin-top: 12px !important; } footer > div > div:first-child a { padding: 4.8px 0; } footer > div > div:last-child { margin-top: 21.6px !important; } }</style>
-<style data-a11y="1">
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
-@media (max-width: 760px) {
-  [style*="font-size: 12.6px"] { font-size: 13.2px !important; }
-  [style*="font-size: 13.2px"], [style*="font-size: 13.8px"], [style*="font-size: 14.4px"], [style*="font-size: 15px"] { font-size: 15.6px !important; }
-  p[style*="font-size: 16.8px"], p[style*="font-size: 17.4px"], p[style*="font-size: 18px"], p[style*="font-size: 18.6px"] { font-size: 19.2px !important; }
-  [data-afstate] p { font-size: 15.6px !important; }
-  input, textarea, select { font-size: 19.2px !important; }
-  [data-navrow] { gap: 21.6px !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button[aria-label="Tema"] { width: 44px !important; height: 44px !important; margin: -12px !important; }
-  button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; }
-  [data-burger] { width: 44px !important; height: 44px !important; margin: -4.8px -4.8px -4.8px 0 !important; }
-  [data-mobile] a { min-height: 44px; display: flex; align-items: center; }
-  [data-mobile] > div { padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  button:not([aria-label]), details summary { min-height: 44px; }
-  label:has(input[type="checkbox"]) { min-height: 44px; }
-  footer a { min-height: 44px; display: inline-flex; align-items: center; }
-  footer > div > div:first-child > div { gap: 0 !important; }
-  footer > div { padding-bottom: calc(115.2px + env(safe-area-inset-bottom, 0px)) !important; padding-left: max(24px, env(safe-area-inset-left)) !important; padding-right: max(24px, env(safe-area-inset-right)) !important; }
-  [data-cta-main] + a { min-height: 44px; display: inline-flex; align-items: center; }
-}
-</style>
-<style data-mobfix2="1">
-@media (max-width: 760px) {
-  /* ritmo vertical */
-  section > div[style*="max-width: 1920px"][style*="padding: 96px 24px"], section > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"], section > div > div[style*="max-width: 1920px"][style*="padding: 115.2px 24px"] { padding-top: 38.4px !important; padding-bottom: 38.4px !important; }
-  div[style*="padding: 115.2px 24px 9.6px"] { padding-top: 38.4px !important; padding-bottom: 9.6px !important; }
-  #hub { padding-top: 9.6px !important; padding-bottom: 38.4px !important; }
-  section[data-hero] [data-herotext] { padding-bottom: 24px !important; }
-  section[style*="padding: 105.6px 24px 0"], section[style*="padding: 96px 24px 0"], section[style*="padding: 86.4px 24px 0"] { padding-top: 76.8px !important; }
-  section[style*="padding: 67.2px 24px 0"] { padding-top: 48px !important; }
-  section[style*="padding: 96px 24px 115.2px"], section[style*="padding: 76.8px 24px 115.2px"] { padding-top: 67.2px !important; padding-bottom: 76.8px !important; }
-  main[style*="padding: 144px 24px 168px"] { padding-top: 96px !important; padding-bottom: 115.2px !important; }
-  section h2 + div[style*="margin-top: 57.6px"], section h2 + div[style*="margin-top: 43.2px"], section h2 + div[style*="margin-top: 48px"] { margin-top: 33.6px !important; }
-  #sol-intro { padding-top: 38.4px !important; }
-  /* footer: dos columnas alineadas */
-  footer > div { padding: 57.6px 24px calc(33.6px + env(safe-area-inset-bottom, 0px)) !important; }
-  footer > div > div:first-child { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0 clamp(20px, 1.6669999999999998vw, 32px) !important; padding-bottom: 24px !important; }
-  footer > div > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 24px; }
-  footer > div > div:first-child > div:not(:first-child) { display: flex !important; flex-direction: column !important; gap: 0 !important; align-items: stretch !important; }
-  footer > div > div:first-child > div:nth-child(2) { grid-column: 1; grid-row: 2; }
-  footer > div > div:first-child > div:nth-child(3) { grid-column: 1; grid-row: 3; }
-  footer > div > div:first-child > div:nth-child(4) { grid-column: 2; grid-row: 2 / span 2; }
-  footer > div > div:first-child a { display: flex !important; align-items: center !important; min-height: 44px !important; padding: 0 !important; margin: 0 !important; line-height: 1.3 !important; }
-  footer > div > div:last-child { margin-top: 19.2px !important; padding-right: 91.2px; gap: 7.2px 19.2px !important; }
-  footer > div > div:last-child a { min-height: 44px; display: inline-flex; align-items: center; }
-  /* WhatsApp: derecha, zona segura */
-  [data-wa-fab] { right: 20px !important; bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important; left: auto !important; width: 54px !important; height: 54px !important; }
-}
 </style>
 <style data-wide="1">
   [style*="max-width: 1920px"] { padding-left: max(24px, 5vw) !important; padding-right: max(24px, 5vw) !important; }
@@ -115,31 +58,14 @@
   h1, h2, h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
   img { max-width: 100%; }
 </style>
-<style data-foot4="1">
-html body footer > div > div:first-child { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; column-gap: clamp(32px, 2.667vw, 51.2px) !important; row-gap: 32px !important; align-items: start !important; }
-html body footer > div > div:first-child > div { grid-column: auto !important; grid-row: auto !important; margin-bottom: 0 !important; align-self: start !important; }
-@media (max-width: 767px) { html body footer > div > div:first-child { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } html body footer > div > div:first-child > div:first-child { grid-column: 1 / -1 !important; } }
-html body footer, html body footer p, html body footer span, html body footer a[href] { color: #C3C8BF !important; }
-html body footer a[href]:hover { color: #FFFFFF !important; }
-</style>
-<style data-nav2="1">
-html body header [data-navlinks] { gap: 28px !important; }
-@media (min-width: 768px) { html body header [data-navlinks] { display: flex !important; } html body header [data-cta] { display: inline-block !important; } html body header [data-langmenu] { display: block !important; } html body header [data-burger] { display: none !important; } html body [data-mnav] { display: none !important; } }
-@media (max-width: 767px) { html body header [data-navlinks], html body header [data-cta], html body header [data-langmenu] { display: none !important; } html body header [data-burger] { display: flex !important; margin-left: auto !important; } html:has([data-mnav]), html:has([data-mnav]) body { overflow: hidden !important; } }
-[data-mlangs] button { background: transparent; border: 1.5px solid #3A3D38; color: #C3C8BF; font-size: 0; order: 1; }
-[data-mlangs] button::after { content: attr(data-code); font-size: 15px; font-weight: 600; letter-spacing: .04em; }
-[data-mlangs] button[data-code="CAT"] { order: 2; } [data-mlangs] button[data-code="CAT"]::after { content: "CA"; }
-[data-mlangs] button[data-code="EN"] { order: 3; }
-[data-mlangs] button[data-on="1"] { background: #F2EDE6; border-color: #F2EDE6; color: #000000; }
-</style>
 <style data-flow="1">html { background: #F2EDE6 !important; } body { background: #F2EDE6 !important; color: #000000; } html body header[data-simple] [data-langmenu] { display: block !important; } header [data-word], footer [data-word] { filter: none !important; }</style>
 </helmet>
 
-<div style="width: 100%; overflow-x: clip;">
+<div style="min-height: 100vh; display: flex; flex-direction: column; background: #F2EDE6;">
 
   <header data-simple="1" data-nolight="1" style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22);">
     <div data-navrow="1" style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
-      <a href="/" style="flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></a>
+      <a href="/" style="flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></a>
       <div data-langmenu="1" style="flex: none; position: relative;">
         <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 13.2px; font-weight: 600; letter-spacing: .06em; color: #F4F6F3; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
           <span>{{ langCode }}</span>
@@ -155,64 +81,44 @@ html body header [data-navlinks] { gap: 28px !important; }
     </div>
   </header>
 
-  <main style="max-width: 1920px; margin: 0 auto; padding: 86.4px clamp(24px, 4vw, 24px) 144px clamp(24px, 9vw, 158.4px);">
-    <div style="max-width: 744px;">
+  <div data-col="1" style="width: min(calc(100% - 24px), 1440px); margin: 0 auto; flex: 1;">
+    <main style="max-width: 1920px; margin: 0 auto; padding: clamp(20px, 6vh, 80px) 20px clamp(24px, 6vh, 80px); display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div data-ok="1" style="width: 72px; height: 72px; border-radius: 999px; background: #2E9E5B; display: flex; align-items: center; justify-content: center; flex: none;"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 50%; height: 50%; display: block;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+      <h1 data-h1="1" style="margin: clamp(16px, 3vh, 28px) 0 0; font-size: clamp(28px, 4.2vw, 60px); line-height: 1.08; font-weight: 600; letter-spacing: -0.04em; color: #000000; white-space: nowrap;">{{ t.title }}</h1>
+      <p style="margin: 10px 0 0; font-size: clamp(16.8px, 1.5vw, 21.6px); line-height: 1.5; color: #4E534C;">{{ t.lead }}</p>
 
-      <div style="display: flex; flex-direction: column; gap: 10.8px; font-size: 15.6px; color: #4E534C; font-variant-numeric: tabular-nums;">
-        <div style="display: flex; gap: 16.8px; align-items: baseline;"><span style="width: 9em; flex: none; font-size: 13.2px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #4E534C;">Pedido</span><span>IPSO HUB</span></div>
-        <div style="display: flex; gap: 16.8px; align-items: baseline;"><span style="width: 9em; flex: none; font-size: 13.2px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #4E534C;">Pago</span><span>Confirmado</span></div>
-        <div style="display: flex; gap: 16.8px; align-items: baseline;"><span style="width: 9em; flex: none; font-size: 13.2px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #4E534C;">Factura</span><span>En tu correo en unos minutos</span></div>
+      <div data-steps="1" style="position: relative; margin-top: clamp(24px, 6vh, 64px); width: 100%; max-width: 820px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(8px, 2vw, 32px);">
+        <span aria-hidden="true" style="position: absolute; top: 16px; left: 16.67%; right: 16.67%; height: 1px; background: #CFC6B9;"></span>
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0;">
+            <sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #000000; color: #FFFFFF; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
+            <sc-if value="{{ s.now }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #D8694C; color: #FFFFFF; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; box-shadow: 0 0 0 5px rgba(216,105,76,.2);">{{ s.n }}</span></sc-if>
+            <sc-if value="{{ s.todo }}" hint-placeholder-val="{{ true }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #F2EDE6; border: 1.5px solid #9CA39A; color: #4E534C; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
+            <div data-stitle="1" style="margin-top: 4px; font-size: 17.4px; line-height: 1.25; font-weight: 600; color: {{ s.fg }}; text-wrap: balance;">{{ s.title }}</div>
+            <div data-stext="1" style="font-size: 15.6px; line-height: 1.4; color: {{ s.fg2 }}; text-wrap: balance;">{{ s.text }}</div>
+          </div>
+        </sc-for>
       </div>
 
-      <h1 style="margin: 43.2px 0 0; font-size: clamp(38.4px, 5.5vw, 60px); line-height: 1.04;; text-wrap: pretty; font-weight: 600; letter-spacing: -0.04em;">Ya es tuyo. Ahora lo preparamos.</h1>
-
-      <div style="margin-top: 76.8px; display: grid; grid-template-columns: 14px 1fr; column-gap: clamp(22px, 1.8330000000000002vw, 35.2px);">
-
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <span style="flex: none; width: 12px; height: 12px; border-radius: 999px; background: #000000; margin-top: 6px;"></span>
-          <span style="flex: 1; width: 1px; background: #D9D1C5; margin: 7.2px 0;"></span>
+      <sc-if value="{{ t.hasCta }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: clamp(24px, 5vh, 48px); display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+          <a data-cta-main="1" href="https://go.ipsoglobal.com/alta" style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; font-size: 17.4px; font-weight: 600; color: #000000; background: #D8694C; border-radius: 10px; text-decoration: none; transition: background 170ms ease, transform 170ms cubic-bezier(.16,.84,.44,1);" style-hover="color: #000000; background: #C55A3F; transform: translateY(-2px);">{{ t.cta }}</a>
+          <p style="margin: 0; font-size: 14.4px; line-height: 1.45; color: #4E534C;">{{ t.ctaNote }}</p>
         </div>
-        <div style="padding-bottom: 48px;">
-          <div style="font-size: 19.2px; font-weight: 500; color: #4E534C; text-decoration: line-through; text-decoration-color: #4E534C;">Pago recibido.</div>
-          <div style="margin-top: 4.8px; font-size: 18px; line-height: 1.55; color: #4E534C;">Hecho.</div>
-        </div>
+      </sc-if>
 
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <span style="flex: none; width: 14px; height: 14px; border-radius: 999px; background: #B5482B; box-shadow: 0 0 0 4px rgba(181,72,43,.18); margin-top: 7.2px;"></span>
-          <span style="flex: 1; width: 1px; background: #D9D1C5; margin: 9.6px 0 7.2px;"></span>
-        </div>
-        <div style="padding-bottom: 52.8px;">
-          <div style="font-size: clamp(24px, 2.6vw, 28.8px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: #000000;">Los datos de tu local.</div>
-          <p style="margin: 14.4px 0 0; font-size: 19.2px; line-height: 1.6; color: #4E534C; text-wrap: pretty;">Carta, WiFi, horarios, redes, ficha de Google y tu premio de fidelización. Sin esto no podemos programar ni enviar tu punto. Son unos diez minutos y puedes guardar y seguir más tarde.</p>
-          <a data-cta-main="1" href="https://go.ipsoglobal.com/alta" style="display: inline-block; margin-top: 26.4px; font-size: 18.6px; font-weight: 600; color: #000000; background: #D8694C; border: none; border-radius: 10px; padding: 19.2px 31.2px; transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #000000; background: #C55A3F; transform: translateY(-2px);">Rellenar los datos de mi local</a>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <span style="flex: none; width: 12px; height: 12px; border-radius: 999px; background: transparent; border: 1.5px solid #9CA39A; margin-top: 6px;"></span>
-        </div>
-        <div>
-          <div style="font-size: 19.2px; font-weight: 500; color: #4E534C;">Envío.</div>
-          <div style="margin-top: 4.8px; font-size: 18px; line-height: 1.55; color: #4E534C; text-wrap: pretty;">En cuanto recibimos tus datos, programamos tu punto y te lo enviamos. Lo tienes en 2-4 días laborables.</div>
-        </div>
-
-      </div>
-
-      <div style="margin-top: 86.4px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16.8px; font-size: 16.2px; line-height: 1.6; color: #4E534C;">
-        <span>Si tienes alguna duda, escríbenos por</span>
-        <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9.6px; font-size: 16.2px; font-weight: 600; color: #000000; background: #25D366; border-radius: 8px; padding: 10.8px 16.8px; transition: transform 160ms cubic-bezier(.16,.84,.44,1);" style-hover="color: #000000; transform: translateY(-2px);"><svg width="19.2" height="19.2" viewBox="0 0 24 24" fill="#000000" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg><span>WhatsApp</span></a>
-      </div>
-
-    </div>
-  </main>
+      <p style="margin: clamp(16px, 4vh, 40px) 0 0; font-size: 15px; line-height: 1.6; color: #4E534C;">{{ t.help }} <a href="https://wa.me/34603924226?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20informaci%C3%B3n%20del%20HUB" target="_blank" rel="noopener" style="color: #000000; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #000000;">WhatsApp</a></p>
+    </main>
+  </div>
 
   <footer data-simple="1" data-nolight="1" style="background: #000000; color: #C3C8BF;">
     <section style="max-width: 1920px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 24px;">
       <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
         <nav style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 16.2px;">
-          <a href="/legal#aviso-legal" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">Aviso legal</a>
-          <a href="/legal#privacidad" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">Privacidad</a>
-          <a href="/legal#cookies" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">Cookies</a>
+          <a href="/legal#aviso-legal" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.legal }}</a>
+          <a href="/legal#privacidad" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.priv }}</a>
+          <a href="/legal#cookies" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.cookies }}</a>
         </nav>
       </div>
       <div style="font-size: 15px; color: #C3C8BF;">© 2026 Ipso · Barcelona · <!--email_off--><a href="mailto:contacto@ipsoglobal.com" style="color: #C3C8BF; text-decoration: none;">contacto@ipsoglobal.com</a><!--/email_off--></div>
@@ -222,110 +128,56 @@ html body header [data-navlinks] { gap: 28px !important; }
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-const EN_PAIRS = [
-  ['El HUB', 'The HUB'],
-  ['Piezas', 'Pieces'],
-  ['Punto de reseñas', 'Reviews point'],
-  ['Productos', 'Products'],
-  ['Soluciones', 'Solutions'], ['Contacto', 'Contact'], ['Planes', 'Plans'], ['Dudas', 'FAQ'], ['Nosotros', 'About us'], ['Nosotros →', 'About us →'],
-  ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['Cookies', 'Cookies'], ['El ADN de tu local.', 'The DNA of your venue.'],
-  ['Reseñas Google', 'Google Reviews'], ['Menú', 'Menu'], ['Reservas', 'Bookings'],
-  ['Pedido', 'Order'], ['Pago', 'Payment'], ['Confirmado', 'Confirmed'], ['Factura', 'Invoice'], ['En tu correo en unos minutos', 'In your inbox in a few minutes'],
-  ['Ya es tuyo. Ahora lo preparamos.', 'It is yours. Now we get it ready.'],
-  ['Pago recibido.', 'Payment received.'], ['Hecho.', 'Done.'],
-  ['Los datos de tu local.', 'Your venue details.'],
-  ['Carta, WiFi, horarios, redes, ficha de Google y tu premio de fidelización. Sin esto no podemos programar ni enviar tu punto. Son unos diez minutos y puedes guardar y seguir más tarde.', 'Menu, Wi-Fi, opening hours, social media, Google listing and your loyalty reward. Without this we cannot programme or ship your point. It takes about ten minutes and you can save and continue later.'],
-  ['Rellenar los datos de mi local', 'Fill in my venue details'],
-  ['Envío.', 'Shipping.'],
-  ['En cuanto recibimos tus datos, programamos tu punto y te lo enviamos. Lo tienes en 2-4 días laborables.', 'As soon as we receive your details, we programme your point and ship it to you. You have it in 2-4 working days.'],
-  ['Si tienes alguna duda, escríbenos por', 'If you have any questions, message us on'],
-  ['Reseñas', 'Reviews'],
-  ['Tu local entero en un punto.', 'Your whole venue in one place.'],
-  ['Placa o stand, pago único.', 'Plate or stand, one-off payment.'],
-  ['Preguntas frecuentes', 'FAQ'],
-  ['Contacto', 'Contact'],
-  ['Reseñas Google', 'Google Reviews']
-];
+const T = {
+  es: { A: { title: 'Pago recibido. ¡Gracias!', lead: 'Te enviamos la factura a tu correo.', texts: ['Hecho', '10 minutos', '2-4 días laborables'] }, B: { title: '¡Gracias por formar parte de Ipso!', lead: 'Ya tenemos todo lo que necesitamos.', texts: ['Hecho', 'Hecho', 'Lo estamos preparando · 2-4 días laborables'] },
+    steps: ['Pago recibido', 'Datos de tu local', 'Envío'], cta: 'Rellenar los datos de mi local', ctaNote: 'Sin tus datos no podemos preparar tu punto.', help: '¿Dudas? Escríbenos por', legal: 'Aviso legal', priv: 'Privacidad', cookies: 'Cookies' },
+  en: { A: { title: 'Payment received. Thank you!', lead: "We'll email you the invoice.", texts: ['Done', '10 minutes', '2-4 working days'] }, B: { title: 'Thanks for joining Ipso!', lead: 'We have everything we need.', texts: ['Done', 'Done', "We're getting it ready · 2-4 working days"] },
+    steps: ['Payment received', "Your venue's details", 'Shipping'], cta: "Fill in my venue's details", ctaNote: "Without your details we can't set up your point.", help: 'Questions? Message us on', legal: 'Legal notice', priv: 'Privacy', cookies: 'Cookies' },
+  ca: { A: { title: 'Pagament rebut. Gràcies!', lead: "T'enviem la factura al teu correu.", texts: ['Fet', '10 minuts', '2-4 dies laborables'] }, B: { title: "Gràcies per formar part d'Ipso!", lead: 'Ja tenim tot el que necessitem.', texts: ['Fet', 'Fet', 'Ho estem preparant · 2-4 dies laborables'] },
+    steps: ['Pagament rebut', 'Dades del teu local', 'Enviament'], cta: 'Omplir les dades del meu local', ctaNote: 'Sense les teves dades no podem preparar el teu punt.', help: 'Dubtes? Escriu-nos per', legal: 'Avís legal', priv: 'Privacitat', cookies: 'Cookies' }
+};
 
-const CA_PAIRS = [
-  ['El HUB', 'El HUB'],
-  ['Piezas', 'Peces'],
-  ['Punto de reseñas', 'Punt de ressenyes'],
-  ['Productos', 'Productes'],
-  ['Soluciones', 'Solucions'], ['Contacto', 'Contacte'], ['Planes', 'Plans'], ['Dudas', 'Dubtes'], ['Nosotros', 'Nosaltres'], ['Nosotros →', 'Nosaltres →'],
-  ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['Cookies', 'Cookies'], ['El ADN de tu local.', 'L’ADN del teu local.'],
-  ['Reseñas Google', 'Ressenyes Google'], ['Menú', 'Menú'], ['Reservas', 'Reserves'],
-  ['Pedido', 'Comanda'], ['Pago', 'Pagament'], ['Confirmado', 'Confirmat'], ['Factura', 'Factura'], ['En tu correo en unos minutos', 'Al teu correu en uns minuts'],
-  ['Ya es tuyo. Ahora lo preparamos.', 'Ja és teu. Ara el preparem.'],
-  ['Pago recibido.', 'Pagament rebut.'], ['Hecho.', 'Fet.'],
-  ['Los datos de tu local.', 'Les dades del teu local.'],
-  ['Carta, WiFi, horarios, redes, ficha de Google y tu premio de fidelización. Sin esto no podemos programar ni enviar tu punto. Son unos diez minutos y puedes guardar y seguir más tarde.', 'Carta, WiFi, horaris, xarxes, fitxa de Google i el teu premi de fidelització. Sense això no podem programar ni enviar el teu punt. Són uns deu minuts i pots desar i continuar més tard.'],
-  ['Rellenar los datos de mi local', 'Omplir les dades del meu local'],
-  ['Envío.', 'Enviament.'],
-  ['En cuanto recibimos tus datos, programamos tu punto y te lo enviamos. Lo tienes en 2-4 días laborables.', 'Tan bon punt rebem les teves dades, programem el teu punt i te l\u2019enviem. El tens en 2-4 dies laborables.'],
-  ['Si tienes alguna duda, escríbenos por', 'Si tens cap dubte, escriu-nos per'],
-  ['Reseñas', 'Ressenyes'],
-  ['Tu local entero en un punto.', 'Tot el teu local en un punt.'],
-  ['Placa o stand, pago único.', 'Placa o estand, pagament únic.'],
-  ['Preguntas frecuentes', 'Preguntes freqüents'],
-  ['Contacto', 'Contacte'],
-  ['Reseñas Google', 'Ressenyes Google']
-];
-
-const DICTS = { es: null, en: {}, ca: {} };
-const REV = { es: null, en: {}, ca: {} };
-EN_PAIRS.forEach((p) => { DICTS.en[p[0]] = p[1]; REV.en[p[1]] = p[0]; });
-CA_PAIRS.forEach((p) => { DICTS.ca[p[0]] = p[1]; REV.ca[p[1]] = p[0]; });
+function buildSteps(d, moment) {
+  const st = moment === 'A' ? ['done', 'now', 'todo'] : ['done', 'done', 'now'];
+  return d.steps.map((title, i) => ({
+    n: i + 1, title, text: d[moment].texts[i],
+    done: st[i] === 'done', now: st[i] === 'now', todo: st[i] === 'todo',
+    fg: st[i] === 'now' ? '#000000' : '#4E534C', fg2: st[i] === 'now' ? '#000000' : '#4E534C'
+  }));
+}
+function pageVals(lang, moment) {
+  const d = T[lang];
+  return { t: { title: d[moment].title, lead: d[moment].lead, hasCta: moment === 'A', cta: d.cta, ctaNote: d.ctaNote, help: d.help, legal: d.legal, priv: d.priv, cookies: d.cookies }, steps: buildSteps(d, moment) };
+}
+function initialLang() {
+  let q = null, saved = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  try { saved = localStorage.getItem('ipso-lang'); } catch (e) {}
+  return T[q] ? q : (T[saved] ? saved : 'es');
+}
+const MOMENT = 'A';
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { lang: 'es', menu: false, theme: 'dark', langMenu: false };
-
-  swap(map) {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach((n) => { const raw = n.nodeValue, key = raw.trim(); if (key && map[key]) n.nodeValue = raw.replace(key, map[key]); });
-  }
-
-  applyLang(from) {
-    const lang = this.state.lang;
-    if (REV[from]) this.swap(REV[from]);
-    if (DICTS[lang]) this.swap(DICTS[lang]);
-    document.documentElement.lang = lang;
-  }
-
+  state = { lang: 'es', theme: 'dark', langMenu: false };
   componentDidMount() {
-    try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610021731').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    const lang = initialLang();
+    if (lang !== this.state.lang) this.setState({ lang });
+    document.documentElement.lang = lang;
+    import('./ipso-chrome.js?v=202610042224').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
   }
-
-  componentDidUpdate() {
-    if (this._chrome) this._chrome.applyTheme(this.state.theme);
-    if (this.state.lang !== 'es') this.applyLang('es');
-  }
-
+  componentDidUpdate() { if (this._chrome) this._chrome.applyTheme(this.state.theme); }
   renderVals() {
-    const light = this.state.theme === 'light';
-    const dim = light ? '#5A605C' : '#9CA39A';
-    return {
-      iconFg: light ? '#000000' : '#F4F6F3',
-      toggleTheme: () => { return; const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
-      menuOpen: this.state.menu,
-      toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
-      closeMenu: () => this.setState({ menu: false }),
-      burgerFg: light ? '#000000' : '#F4F6F3',
-      burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
-      burgerO: this.state.menu ? 0 : 1,
-      burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
+    const lang = this.state.lang;
+    return Object.assign(pageVals(lang, MOMENT), {
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })),
-      langCode: this.state.lang === 'ca' ? 'CAT' : this.state.lang.toUpperCase(),
+      langCode: lang === 'ca' ? 'CAT' : lang.toUpperCase(),
       langs: ['es', 'en', 'ca'].map((code) => ({
-        name: LANGNAMES[code], code: code === 'ca' ? 'CAT' : code.toUpperCase(), mon: this.state.lang === code ? '1' : '0',
-        fg: this.state.lang === code ? '#000000' : '#F4F6F3', bg: this.state.lang === code ? '#D8694C' : 'transparent',
-        pick: () => { const prev = this.state.lang; try { localStorage.setItem('ipso-lang', code); } catch (e) {} if (prev === code) { this.setState({ langMenu: false }); return; } this.setState({ lang: code, langMenu: false }, () => this.applyLang(prev)); }
+        name: LANGNAMES[code],
+        fg: lang === code ? '#000000' : '#F4F6F3', bg: lang === code ? '#D8694C' : 'transparent',
+        pick: () => { try { localStorage.setItem('ipso-lang', code); } catch (e) {} document.documentElement.lang = code; this.setState({ lang: code, langMenu: false }); }
       }))
-    };
+    });
   }
 }
 </script>

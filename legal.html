@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610021731"></script>
+<script src="./support.js?v=202610042224"></script>
 </head>
 <body>
 <x-dc>
@@ -149,7 +149,7 @@ html body header [data-navlinks] { gap: 28px !important; }
   <header style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22);">
     <div style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; gap: clamp(28px, 2.333vw, 44.8px);" data-navrow="1">
       <a href="/" style="flex: none; display: block;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
+        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></span>
       </a>
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 28px; min-width: 0;">
         <a href="/hub" data-navlink="1" style="font-size: 15px; font-weight: 500; color: #C3C8BF; white-space: nowrap; padding: 6px 0 4px; border-bottom: 1px solid transparent; transition: color 160ms ease;" style-hover="color: #FFFFFF;">IPSO HUB</a>
@@ -239,7 +239,7 @@ html body header [data-navlinks] { gap: 28px !important; }
     <div style="max-width: 1920px; margin: 0 auto; padding: 67.2px 24px 105.6px;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(36px, 3vw, 57.6px) clamp(32px, 2.667vw, 51.2px); padding-bottom: 48px;">
         <div>
-          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=c5445c58" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
+          <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 42px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 19px; width: auto; display: block;"></span>
           <p style="margin: 19.2px 0 0; font-size: 16.2px; line-height: 1.6; max-width: 32ch;">El ADN de tu local.</p>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14.4px; align-items: flex-start; font-size: 16.2px;">
@@ -766,7 +766,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610021731').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610042224').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
