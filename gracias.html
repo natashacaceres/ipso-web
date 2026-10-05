@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610051549"></script>
+<script src="./support.js?v=202610051602"></script>
 </head>
 <body>
 <x-dc>
@@ -45,9 +45,10 @@
   @media (max-width: 760px) { button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; } }
   @media (max-width: 767px) {
     html body [data-col] > main { padding-left: 4px !important; padding-right: 4px !important; }
-    [data-h1] { white-space: normal !important; text-wrap: balance; }
+    [data-h1] { white-space: nowrap !important; font-size: 23px !important; }
     [data-ok] { width: 56px !important; height: 56px !important; }
-    [data-stitle] { font-size: 15px !important; }
+    [data-stitle] { font-size: 14px !important; }
+    [data-steps] { column-gap: 4px !important; }
     [data-stext] { font-size: 13.2px !important; }
     [data-cta-main] { display: flex !important; width: 100%; }
   }
@@ -129,12 +130,12 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const T = {
-  es: { A: { title: 'Pago recibido. ¡Gracias!', lead: 'Te enviamos la factura a tu correo.', texts: ['Hecho', '10 minutos', '2\u20114\u00A0días laborables'] }, B: { title: '¡Gracias por formar parte de Ipso!', lead: 'Ya tenemos todo lo que necesitamos.', texts: ['Hecho', 'Hecho', 'Lo estamos preparando · 2\u20114\u00A0días laborables'] },
-    steps: ['Pago recibido', 'Datos de tu local', 'Envío'], cta: 'Rellenar los datos de mi local', ctaNote: 'Sin tus datos no podemos preparar tu punto.', help: '¿Dudas? Escríbenos por', legal: 'Aviso legal', priv: 'Privacidad', cookies: 'Cookies' },
-  en: { A: { title: 'Payment received. Thank you!', lead: "We'll email you the invoice.", texts: ['Done', '10 minutes', '2\u20114\u00A0working days'] }, B: { title: 'Thanks for joining Ipso!', lead: 'We have everything we need.', texts: ['Done', 'Done', "We're getting it ready · 2\u20114\u00A0working days"] },
-    steps: ['Payment received', "Your venue's details", 'Shipping'], cta: "Fill in my venue's details", ctaNote: "Without your details we can't set up your point.", help: 'Questions? Message us on', legal: 'Legal notice', priv: 'Privacy', cookies: 'Cookies' },
-  ca: { A: { title: 'Pagament rebut. Gràcies!', lead: "T'enviem la factura al teu correu.", texts: ['Fet', '10 minuts', '2\u20114\u00A0dies laborables'] }, B: { title: "Gràcies per formar part d'Ipso!", lead: 'Ja tenim tot el que necessitem.', texts: ['Fet', 'Fet', 'Ho estem preparant · 2\u20114\u00A0dies laborables'] },
-    steps: ['Pagament rebut', 'Dades del teu local', 'Enviament'], cta: 'Omplir les dades del meu local', ctaNote: 'Sense les teves dades no podem preparar el teu punt.', help: 'Dubtes? Escriu-nos per', legal: 'Avís legal', priv: 'Privacitat', cookies: 'Cookies' }
+  es: { A: { title: 'Pago recibido. ¡Gracias!', lead: 'Te enviamos la factura a tu correo.', texts: ['Hecho', '10 minutos', '2\u20114\u00A0días'] }, B: { title: '¡Ya formas parte de Ipso!', lead: 'Ya tenemos todo lo que necesitamos.', texts: ['Hecho', 'Hecho', 'En 2\u20114\u00A0días'] },
+    steps: ['Pago recibido', 'Tus datos', 'Envío'], cta: 'Rellenar los datos de mi local', ctaNote: 'Sin tus datos no podemos preparar tu punto.', help: '¿Dudas? Escríbenos por', legal: 'Aviso legal', priv: 'Privacidad', cookies: 'Cookies' },
+  en: { A: { title: 'Payment received. Thank you!', lead: "We'll email you the invoice.", texts: ['Done', '10 minutes', '2\u20114\u00A0days'] }, B: { title: 'Welcome to Ipso!', lead: 'We have everything we need.', texts: ['Done', 'Done', 'In 2\u20114\u00A0days'] },
+    steps: ['Paid', 'Your details', 'Shipping'], cta: "Fill in my venue's details", ctaNote: "Without your details we can't set up your point.", help: 'Questions? Message us on', legal: 'Legal notice', priv: 'Privacy', cookies: 'Cookies' },
+  ca: { A: { title: 'Pagament rebut. Gràcies!', lead: "T'enviem la factura al teu correu.", texts: ['Fet', '10 minuts', '2\u20114\u00A0dies'] }, B: { title: "Ja formes part d'Ipso!", lead: 'Ja tenim tot el que necessitem.', texts: ['Fet', 'Fet', 'En 2\u20114\u00A0dies'] },
+    steps: ['Pagat', 'Les teves dades', 'Enviament'], cta: 'Omplir les dades', ctaNote: 'Sense les teves dades no el podem preparar.', help: 'Dubtes? Escriu-nos per', legal: 'Avís legal', priv: 'Privacitat', cookies: 'Cookies' }
 };
 
 function buildSteps(d, moment) {
@@ -164,7 +165,7 @@ class Component extends DCLogic {
     const lang = initialLang();
     if (lang !== this.state.lang) this.setState({ lang });
     document.documentElement.lang = lang;
-    import('./ipso-chrome.js?v=202610051549').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
+    import('./ipso-chrome.js?v=202610051602').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
   }
   componentDidUpdate() { if (this._chrome) this._chrome.applyTheme(this.state.theme); }
   renderVals() {

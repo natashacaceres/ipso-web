@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610051549"></script>
+<script src="./support.js?v=202610051602"></script>
 </head>
 <body>
 <x-dc>
@@ -70,6 +70,8 @@
     main { padding-left: 19.2px !important; padding-right: 19.2px !important; padding-top: 43.2px !important; }
     main h1 { white-space: normal !important; }
     [data-card] { padding: 26.4px 21.6px !important; }
+    [data-note] { font-size: 14.4px !important; }
+    main h1[data-alta-h1] { font-size: 23px !important; white-space: nowrap !important; }
     [data-alta-submit] { width: 100% !important; }
   }
   @media (max-width: 480px) { [data-two] { grid-template-columns: minmax(0, 1fr) !important; } }
@@ -140,10 +142,10 @@ html body header [data-navlinks] { gap: 28px !important; }
 
     <div style="max-width: 768px; margin: 0 auto;">
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 14.4px;">
-        <h1 style="margin: 0; font-size: clamp(31.2px, 4.1vw, 40.8px); line-height: 1.15;; color: #000000; font-weight: 600; letter-spacing: -0.04em;">Cuéntanos cómo es tu local.</h1>
+        <h1 data-alta-h1="1" style="margin: 0; font-size: clamp(31.2px, 4.1vw, 40.8px); line-height: 1.15;; color: #000000; font-weight: 600; letter-spacing: -0.04em;">Cuéntanos cómo es tu local.</h1>
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 9.6px 16.8px; font-size: 16.8px; color: #4E534C;">
           <sc-if value="{{ isPro }}" hint-placeholder-val="{{ true }}"><span style="font-weight: 500; color: #000000; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">10 minutos</span></sc-if><sc-if value="{{ isHub }}" hint-placeholder-val="{{ false }}"><span style="font-weight: 500; color: #000000; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">7 minutos</span></sc-if>
-          <span>Los campos con * son obligatorios.</span>
+          <span>* obligatorio</span>
         </div>
       </div>
     </div>
@@ -156,7 +158,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <!-- 1 · El local -->
         <section id="s-local" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; font-weight: 600; letter-spacing: -0.04em;">El local</h2>
-          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Datos básicos del negocio y cómo contactarte.</p>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Datos del negocio y contacto.</p>
           <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <label for="local_nombre" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
@@ -341,7 +343,7 @@ html body header [data-navlinks] { gap: 28px !important; }
               <input id="carta_url" name="carta_url" type="url" inputMode="url" aria-invalid="{{ inv.carta }}" value="{{ v.carta_url }}" onChange="{{ on.carta_url }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.carta }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.carta }}</div></sc-if>
             </div>
-            <div style="font-size: 15.6px; line-height: 1.5; color: #4E534C;">Vale la foto de la carta impresa. Nosotros la digitalizamos.</div>
+            <div data-note="1" style="font-size: 15.6px; line-height: 1.5; color: #4E534C;">Vale una foto de la carta impresa.</div>
           </div>
           </sc-if>
         </section>
@@ -350,7 +352,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <!-- 4 · WiFi -->
         <section id="s-wifi" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.wifi }}; font-weight: 700; letter-spacing: -0.045em;">WiFi</h2>
-          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Para que los clientes se conecten sin preguntar.</p>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Para conectarse sin preguntar.</p>
           <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_wifi" value="1" checked="{{ v.omit_wifi }}" onChange="{{ on.omit_wifi }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
@@ -375,7 +377,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <sc-if value="{{ showSec }}" hint-placeholder-val="{{ true }}">
         <section id="s-google" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.google }}; font-weight: 600; letter-spacing: -0.04em;">Google y redes</h2>
-          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Dónde te encuentran y te dejan reseñas.</p>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Dónde te encuentran y opinan.</p>
           <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_google" value="1" checked="{{ v.omit_google }}" onChange="{{ on.omit_google }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
@@ -410,7 +412,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <!-- 6 · Fidelización -->
         <section id="s-fidelizacion" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.fidelizacion }}; font-weight: 600; letter-spacing: -0.04em;">Fidelización</h2>
-          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">La tarjeta de sellos para los clientes que repiten.</p>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Para los clientes que repiten.</p>
           <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_fidelizacion" value="1" checked="{{ v.omit_fidelizacion }}" onChange="{{ on.omit_fidelizacion }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
@@ -436,7 +438,7 @@ html body header [data-navlinks] { gap: 28px !important; }
                 <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_pin }}</div></sc-if>
               </div>
             </div>
-            <div style="font-size: 15.6px; line-height: 1.5; color: #4E534C;">Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.</div>
+            <div data-note="1" style="font-size: 15.6px; line-height: 1.5; color: #4E534C;">La pausas o la cambias desde tu panel.</div>
           </div>
           </sc-if>
         </section>
@@ -444,7 +446,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         <!-- 7 · Lo que solo el equipo sabe -->
         <section id="s-equipo" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.equipo }}; font-weight: 600; letter-spacing: -0.04em;">Lo que solo el equipo sabe</h2>
-          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Lo que el asistente necesita saber para responder como vosotros.</p>
+          <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Para que responda como vosotros.</p>
           <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
             <input type="checkbox" name="omit_equipo" value="1" checked="{{ v.omit_equipo }}" onChange="{{ on.omit_equipo }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
             <span>Eliminar esta sección del HUB</span>
@@ -454,25 +456,25 @@ html body header [data-navlinks] { gap: 28px !important; }
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <label for="q_estrella" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
               <textarea id="q_estrella" name="q_estrella" rows="2" aria-invalid="{{ inv.q_estrella }}" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 15.6px; color: #4E534C;">Ej.: la parmigiana, y el vino de la casa con ella</div>
+              <div style="font-size: 15.6px; color: #4E534C;">Ej.: la parmigiana y el vino de la casa</div>
               <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_estrella }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_preguntas" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué preguntan más los clientes?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_preguntas" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué te preguntan más?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
               <textarea id="q_preguntas" name="q_preguntas" rows="2" aria-invalid="{{ inv.q_preguntas }}" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 15.6px; color: #4E534C;">Ej.: si hay opciones sin gluten, si hay terraza</div>
+              <div style="font-size: 15.6px; color: #4E534C;">Ej.: sin gluten, si hay terraza</div>
               <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_preguntas }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_no" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Algo que el asistente no deba decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_no" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué no debe decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
               <textarea id="q_no" name="q_no" rows="2" aria-invalid="{{ inv.q_no }}" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 15.6px; color: #4E534C;">Ej.: no reservamos por teléfono, no hay menú del día</div>
+              <div style="font-size: 15.6px; color: #4E534C;">Ej.: no reservamos por teléfono</div>
               <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_no }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <label for="q_curiosidad" style="font-size: 16.8px; font-weight: 500; color: #000000;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
               <textarea id="q_curiosidad" name="q_curiosidad" rows="2" aria-invalid="{{ inv.q_curiosidad }}" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
-              <div style="font-size: 15.6px; color: #4E534C;">Ej.: la receta es de la abuela de Nápoles</div>
+              <div style="font-size: 15.6px; color: #4E534C;">Ej.: receta de la abuela de Nápoles</div>
               <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_curiosidad }}</div></sc-if>
             </div>
             <div role="radiogroup" aria-labelledby="lbl_tono" style="display: flex; flex-direction: column; gap: 9.6px;">
@@ -498,7 +500,7 @@ html body header [data-navlinks] { gap: 28px !important; }
             <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}"><span>Enviar</span></sc-if>
           </button>
           <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="font-size: 16.8px; line-height: 1.5; color: #C62828;">{{ err.global }}</div></sc-if>
-          <p style="margin: 0; font-size: 16.8px; line-height: 1.55; color: #4E534C;">Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.</p>
+          <p style="margin: 0; font-size: 16.8px; line-height: 1.55; color: #4E534C;">Enviamos el HUB en 2-4 días laborables.</p>
         </div>
 
       </form>
@@ -548,9 +550,9 @@ const SECCIONES = IS_HUB ? SECCIONES_ALL.filter((s) => PRO_ONLY.indexOf(s.id) < 
 const INV_FIELDS = ['local_nombre','local_tipo','tel','email_pago','h_dia','h_hora','h2_dia','h2_hora','carta','wifi_ssid','wifi_pass','google_url','instagram','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad'];
 
 const MSG = {
-  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados', prog: (n, k) => n + ' de ' + k + ' secciones listas' },
-  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected', prog: (n, k) => n + ' of ' + k + ' sections ready' },
-  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats', prog: (n, k) => n + ' de ' + k + ' seccions llestes' }
+  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos · máx. 8 MB cada uno', files1: 'archivo seleccionado', filesN: 'archivos seleccionados', prog: (n, k) => n + ' de ' + k + ' secciones listas' },
+  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos · max. 8 MB each', files1: 'file selected', filesN: 'files selected', prog: (n, k) => n + ' of ' + k + ' sections ready' },
+  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos · màx. 8 MB cadascun', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats', prog: (n, k) => n + ' de ' + k + ' seccions llestes' }
 };
 
 const EN_PAIRS = [
@@ -567,37 +569,37 @@ const EN_PAIRS = [
   ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'We take opening hours, menu, Instagram and Google listing from your website. You review it before sending.'], ['Prefiero rellenarlo yo', 'I prefer to fill it in myself'],
   ['Horario', 'Opening hours'], ['Horario extendido', 'Extended hours'], ['Segundo tramo', 'Second period'], ['De', 'From'], ['a', 'to'], ['Abre', 'Opens'], ['cierra', 'closes'],
   ['Lunes', 'Monday'], ['Martes', 'Tuesday'], ['Miércoles', 'Wednesday'], ['Jueves', 'Thursday'], ['Viernes', 'Friday'], ['Sábado', 'Saturday'], ['Domingo', 'Sunday'],
-  ['Carta', 'Menu'], ['Eliminar esta sección del HUB', 'Remove this section from the HUB'], ['Sube la carta', 'Upload the menu'], ['O pega el enlace donde está', 'Or paste the link where it is'],
-  ['Vale la foto de la carta impresa. Nosotros la digitalizamos.', 'A photo of the printed menu is fine. We digitise it.'],
+  ['Carta', 'Menu'], ['Eliminar esta sección del HUB', 'Remove from the HUB'], ['Sube la carta', 'Upload the menu'], ['O pega el enlace donde está', 'Or paste the link where it is'],
+  ['Vale una foto de la carta impresa.', 'A photo of the printed menu is fine.'],
   ['WiFi', 'Wi-Fi'], ['Nombre de la red', 'Network name'], ['Clave', 'Password'],
   ['Google y redes', 'Google and social media'], ['Otro enlace', 'Another link'], ['Ej.: TikTok, Facebook, TripAdvisor', 'E.g.: TikTok, Facebook, TripAdvisor'], ['Enlace de la ficha de Google', 'Link to the Google listing'], ['No lo sé, buscadla por mí', 'I do not know it, find it for me'],
   ['Fidelización', 'Loyalty'], ['Premio', 'Reward'], ['Ej.: un café gratis', 'E.g.: a free coffee'],
   ['Visitas para el premio', 'Visits for the reward'], ['PIN del equipo (4 cifras)', 'Team PIN (4 digits)'], ['Para canjear premios en el local', 'To redeem rewards at the venue'],
-  ['Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.', 'From the dashboard you can pause the card or change the reward whenever you want.'],
+  ['La pausas o la cambias desde tu panel.', 'Pause or change it from your panel.'],
   ['Lo que solo el equipo sabe', 'What only the team knows'],
-  ['¿Qué recomiendas siempre?', 'What do you always recommend?'], ['Ej.: la parmigiana, y el vino de la casa con ella', 'E.g.: the parmigiana, with the house wine'],
-  ['¿Qué preguntan más los clientes?', 'What do customers ask most?'], ['Ej.: si hay opciones sin gluten, si hay terraza', 'E.g.: whether there are gluten-free options, whether there is a terrace'],
-  ['¿Algo que el asistente no deba decir ni prometer?', 'Anything the assistant should not say or promise?'], ['Ej.: no reservamos por teléfono, no hay menú del día', 'E.g.: we do not take phone bookings, there is no set lunch menu'],
-  ['Una curiosidad de la casa', 'A house curiosity'], ['Ej.: la receta es de la abuela de Nápoles', 'E.g.: the recipe is from grandma in Naples'],
+  ['¿Qué recomiendas siempre?', 'What do you always recommend?'], ['Ej.: la parmigiana y el vino de la casa', 'E.g.: the parmigiana and house wine'],
+  ['¿Qué te preguntan más?', 'What do customers ask most?'], ['Ej.: sin gluten, si hay terraza', 'E.g.: gluten-free, a terrace'],
+  ['¿Qué no debe decir ni prometer?', 'What must it not say or promise?'], ['Ej.: no reservamos por teléfono', 'E.g.: no phone bookings'],
+  ['Una curiosidad de la casa', 'A house curiosity'], ['Ej.: receta de la abuela de Nápoles', 'E.g.: grandma\u2019s recipe from Naples'],
   ['Tono del asistente', 'Assistant tone'], ['Cercano y familiar', 'Warm and familiar'], ['Profesional y claro', 'Professional and clear'], ['Elegante y discreto', 'Elegant and discreet'], ['Divertido y desenfadado', 'Fun and casual'],
   ['Enviar', 'Send'], ['Enviando…', 'Sending…'],
-  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Once we receive the form, we ship the HUB within 2-4 working days.'],
-  ['Los campos con * son obligatorios.', 'Fields marked * are required.'],
+  ['Enviamos el HUB en 2-4 días laborables.', 'We ship the HUB in 2-4 working days.'],
+  ['* obligatorio', '* required'],
   ['Faltan campos por rellenar, marcados en rojo', 'Some fields are missing, marked in red'],
-  ['Datos básicos del negocio y cómo contactarte.', 'Basic details of the business and how to reach you.'],
+  ['Datos del negocio y contacto.', 'Business details and contact.'],
   ['Los días y horas en que abres.', 'The days and hours you are open.'],
   ['Tu carta tal como la tienes ahora.', 'Your menu as it is now.'],
-  ['Para que los clientes se conecten sin preguntar.', 'So customers can connect without asking.'],
-  ['Dónde te encuentran y te dejan reseñas.', 'Where people find you and leave reviews.'],
-  ['La tarjeta de sellos para los clientes que repiten.', 'The stamp card for returning customers.'],
-  ['Lo que el asistente necesita saber para responder como vosotros.', 'What the assistant needs to know to answer like you do.'],
+  ['Para conectarse sin preguntar.', 'Connect without asking.'],
+  ['Dónde te encuentran y opinan.', 'Where people find and review you.'],
+  ['Para los clientes que repiten.', 'For returning customers.'],
+  ['Para que responda como vosotros.', 'So it answers like you.'],
   ['Reseñas', 'Reviews'],
   ['Tu local entero en un punto.', 'Your whole venue in one place.'],
   ['Placa o stand, pago único.', 'Plate or stand, one-off payment.'],
   ['Preguntas frecuentes', 'FAQ'],
   ['Contacto', 'Contact'],
   ['Reseñas Google', 'Google Reviews'],
-  ['¿Con qué cobras hoy?', 'What do you use to take payments?']
+  ['¿Con qué cobras hoy?', 'How do you take payments?']
 ];
 
 const CA_PAIRS = [
@@ -608,36 +610,36 @@ const CA_PAIRS = [
   ['Soluciones', 'Solucions'], ['Contacto', 'Contacte'], ['Planes', 'Plans'], ['Dudas', 'Dubtes'], ['Nosotros', 'Nosaltres'], ['Nosotros →', 'Nosaltres →'],
   ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['El ADN de tu local.', 'L’ADN del teu local.'],
   ['Reseñas Google', 'Ressenyes Google'], ['Reservas', 'Reserves'],
-  ['Cuéntanos cómo es tu local.', 'Explica\u2019ns com és el teu local.'], ['10 minutos', '10 minuts'], ['7 minutos', '7 minuts'],
+  ['Cuéntanos cómo es tu local.', 'Explica\u2019ns el teu local.'], ['10 minutos', '10 minuts'], ['7 minutos', '7 minuts'],
   ['El local', 'El local'], ['Nombre del local', 'Nom del local'], ['Tipo', 'Tipus'], ['Hostelería', 'Hostaleria'], ['Belleza y bienestar', 'Bellesa i benestar'], ['Comercio', 'Comerç'], ['Otro', 'Altre'],
   ['Correo del pago', 'Correu del pagament'], ['¿Tu local tiene web?', 'El teu local té web?'], ['Sí, tengo web', 'Sí, tinc web'], ['No tengo web', 'No tinc web'], ['Web del local', 'Web del local'],
   ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'Horari, carta, Instagram i fitxa de Google els traiem de la teva web. Ho revises abans d\u2019enviar-ho.'], ['Prefiero rellenarlo yo', 'Prefereixo omplir-ho jo'],
   ['Horario', 'Horari'], ['Horario extendido', 'Horari estès'], ['Segundo tramo', 'Segon tram'], ['Abre', 'Obre'], ['cierra', 'tanca'],
   ['Lunes', 'Dilluns'], ['Martes', 'Dimarts'], ['Miércoles', 'Dimecres'], ['Jueves', 'Dijous'], ['Viernes', 'Divendres'], ['Sábado', 'Dissabte'], ['Domingo', 'Diumenge'],
-  ['Eliminar esta sección del HUB', 'Eliminar aquesta secció del HUB'], ['Sube la carta', 'Puja la carta'], ['O pega el enlace donde está', 'O enganxa l\u2019enllaç on és'],
-  ['Vale la foto de la carta impresa. Nosotros la digitalizamos.', 'Val la foto de la carta impresa. Nosaltres la digitalitzem.'],
+  ['Eliminar esta sección del HUB', 'Treure del HUB'], ['Sube la carta', 'Puja la carta'], ['O pega el enlace donde está', 'O enganxa l\u2019enllaç on és'],
+  ['Vale una foto de la carta impresa.', 'Val una foto de la carta impresa.'],
   ['Nombre de la red', 'Nom de la xarxa'], ['Clave', 'Clau'],
   ['Google y redes', 'Google i xarxes'], ['Otro enlace', 'Un altre enllaç'], ['Ej.: TikTok, Facebook, TripAdvisor', 'Ex.: TikTok, Facebook, TripAdvisor'], ['Enlace de la ficha de Google', 'Enllaç de la fitxa de Google'], ['No lo sé, buscadla por mí', 'No ho sé, busqueu-la per mi'],
   ['Fidelización', 'Fidelització'], ['Premio', 'Premi'], ['Ej.: un café gratis', 'Ex.: un cafè gratis'],
   ['Visitas para el premio', 'Visites per al premi'], ['PIN del equipo (4 cifras)', 'PIN de l\u2019equip (4 xifres)'], ['Para canjear premios en el local', 'Per bescanviar premis al local'],
-  ['Desde el panel puedes pausar la tarjeta o cambiar el premio cuando quieras.', 'Des del tauler pots pausar la targeta o canviar el premi quan vulguis.'],
+  ['La pausas o la cambias desde tu panel.', 'La pots pausar o canviar des del tauler.'],
   ['Lo que solo el equipo sabe', 'El que només l\u2019equip sap'],
-  ['¿Qué recomiendas siempre?', 'Què recomanes sempre?'], ['Ej.: la parmigiana, y el vino de la casa con ella', 'Ex.: la parmigiana, i el vi de la casa amb ella'],
-  ['¿Qué preguntan más los clientes?', 'Què pregunten més els clients?'], ['Ej.: si hay opciones sin gluten, si hay terraza', 'Ex.: si hi ha opcions sense gluten, si hi ha terrassa'],
-  ['¿Algo que el asistente no deba decir ni prometer?', 'Alguna cosa que l\u2019assistent no hagi de dir ni prometre?'], ['Ej.: no reservamos por teléfono, no hay menú del día', 'Ex.: no reservem per telèfon, no hi ha menú del dia'],
-  ['Una curiosidad de la casa', 'Una curiositat de la casa'], ['Ej.: la receta es de la abuela de Nápoles', 'Ex.: la recepta és de l\u2019àvia de Nàpols'],
+  ['¿Qué recomiendas siempre?', 'Què recomanes sempre?'], ['Ej.: la parmigiana y el vino de la casa', 'Ex.: la parmigiana i el vi de la casa'],
+  ['¿Qué te preguntan más?', 'Què et pregunten més?'], ['Ej.: sin gluten, si hay terraza', 'Ex.: sense gluten, si hi ha terrassa'],
+  ['¿Qué no debe decir ni prometer?', 'Què no ha de dir ni prometre?'], ['Ej.: no reservamos por teléfono', 'Ex.: no reservem per telèfon'],
+  ['Una curiosidad de la casa', 'Una curiositat de la casa'], ['Ej.: receta de la abuela de Nápoles', 'Ex.: recepta de l\u2019àvia de Nàpols'],
   ['Tono del asistente', 'To de l\u2019assistent'], ['Cercano y familiar', 'Proper i familiar'], ['Profesional y claro', 'Professional i clar'], ['Elegante y discreto', 'Elegant i discret'], ['Divertido y desenfadado', 'Divertit i desimbolt'],
   ['Enviar', 'Envia'], ['Enviando…', 'Enviant…'],
-  ['Una vez recibido el formulario, enviamos el HUB en 2-4 días laborables.', 'Un cop rebut el formulari, enviem el HUB en 2-4 dies laborables.'],
-  ['Los campos con * son obligatorios.', 'Els camps amb * són obligatoris.'],
+  ['Enviamos el HUB en 2-4 días laborables.', 'Enviem el HUB en 2-4 dies laborables.'],
+  ['* obligatorio', '* obligatori'],
   ['Faltan campos por rellenar, marcados en rojo', 'Falten camps per omplir, marcats en vermell'],
-  ['Datos básicos del negocio y cómo contactarte.', 'Dades bàsiques del negoci i com contactar-te.'],
+  ['Datos del negocio y contacto.', 'Dades del negoci i contacte.'],
   ['Los días y horas en que abres.', 'Els dies i les hores en què obres.'],
   ['Tu carta tal como la tienes ahora.', 'La teva carta tal com la tens ara.'],
-  ['Para que los clientes se conecten sin preguntar.', 'Perquè els clients es connectin sense preguntar.'],
-  ['Dónde te encuentran y te dejan reseñas.', 'On et troben i et deixen ressenyes.'],
-  ['La tarjeta de sellos para los clientes que repiten.', 'La targeta de segells per als clients que repeteixen.'],
-  ['Lo que el asistente necesita saber para responder como vosotros.', 'El que l\u2019assistent necessita saber per respondre com vosaltres.'],
+  ['Para conectarse sin preguntar.', 'Per connectar-se sense preguntar.'],
+  ['Dónde te encuentran y opinan.', 'On et troben i opinen.'],
+  ['Para los clientes que repiten.', 'Per als clients que repeteixen.'],
+  ['Para que responda como vosotros.', 'Perquè respongui com vosaltres.'],
   ['Reseñas', 'Ressenyes'],
   ['Tu local entero en un punto.', 'Tot el teu local en un punt.'],
   ['Placa o stand, pago único.', 'Placa o estand, pagament únic.'],
