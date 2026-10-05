@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610050010"></script>
+<script src="./support.js?v=202610051549"></script>
 </head>
 <body>
 <x-dc>
@@ -142,7 +142,7 @@ html body header [data-navlinks] { gap: 28px !important; }
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 14.4px;">
         <h1 style="margin: 0; font-size: clamp(31.2px, 4.1vw, 40.8px); line-height: 1.15;; color: #000000; font-weight: 600; letter-spacing: -0.04em;">Cuéntanos cómo es tu local.</h1>
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 9.6px 16.8px; font-size: 16.8px; color: #4E534C;">
-          <span style="font-weight: 500; color: #000000; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">10 minutos</span>
+          <sc-if value="{{ isPro }}" hint-placeholder-val="{{ true }}"><span style="font-weight: 500; color: #000000; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">10 minutos</span></sc-if><sc-if value="{{ isHub }}" hint-placeholder-val="{{ false }}"><span style="font-weight: 500; color: #000000; background: #F2F2F2; border-radius: 6px; padding: 4.8px 12px;">7 minutos</span></sc-if>
           <span>Los campos con * son obligatorios.</span>
         </div>
       </div>
@@ -406,6 +406,7 @@ html body header [data-navlinks] { gap: 28px !important; }
         </section>
         </sc-if>
 
+        <sc-if value="{{ isPro }}" hint-placeholder-val="{{ true }}">
         <!-- 6 · Fidelización -->
         <section id="s-fidelizacion" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
           <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.fidelizacion }}; font-weight: 600; letter-spacing: -0.04em;">Fidelización</h2>
@@ -489,6 +490,7 @@ html body header [data-navlinks] { gap: 28px !important; }
           </div>
           </sc-if>
         </section>
+        </sc-if>
 
         <div style="margin-top: 9.6px; display: flex; flex-direction: column; align-items: flex-start; gap: 16.8px;">
           <button data-alta-submit="1" type="submit" disabled="{{ submitting }}" style="min-width: 220px; height: 52px; font-family: inherit; font-size: 19.2px; font-weight: 600; color: #000000; background: #D8694C; border: none; border-radius: 8px; padding: 0 33.6px; cursor: pointer; transition: background 140ms ease;" style-hover="background: #C55A3F;">
@@ -530,7 +532,10 @@ const DIAS = [['lunes','Lunes'],['martes','Martes'],['miercoles','Miércoles'],[
 const HORAS = []; for (let h = 0; h < 24; h++) { for (const m of ['00','30']) HORAS.push(String(h).padStart(2, '0') + ':' + m); }
 const TIPOS = ['Hostelería','Belleza y bienestar','Comercio','Otro'];
 const TONOS = ['Cercano y familiar','Profesional y claro','Elegante y discreto','Divertido y desenfadado'];
-const SECCIONES = [
+const PLAN = (() => { try { return (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase(); } catch (e) { return ''; } })();
+const IS_HUB = PLAN === 'hub';
+const PRO_ONLY = ['s-fidelizacion', 's-equipo'];
+const SECCIONES_ALL = [
   { id: 's-local', label: 'El local', keys: ['local_nombre','local_tipo','tel','email_pago'] },
   { id: 's-horario', label: 'Horario', keys: ['h_dia','h_hora','h2_dia','h2_hora'], web: true },
   { id: 's-carta', label: 'Carta', keys: ['carta_files','carta'], omit: 'omit_carta', web: true },
@@ -539,12 +544,13 @@ const SECCIONES = [
   { id: 's-fidelizacion', label: 'Fidelización', keys: ['fid_premio','fid_visitas','fid_pin'], omit: 'omit_fidelizacion' },
   { id: 's-equipo', label: 'Lo que solo el equipo sabe', keys: ['q_estrella','q_preguntas','q_no','q_curiosidad','tono'], omit: 'omit_equipo' }
 ];
+const SECCIONES = IS_HUB ? SECCIONES_ALL.filter((s) => PRO_ONLY.indexOf(s.id) < 0) : SECCIONES_ALL;
 const INV_FIELDS = ['local_nombre','local_tipo','tel','email_pago','h_dia','h_hora','h2_dia','h2_hora','carta','wifi_ssid','wifi_pass','google_url','instagram','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad'];
 
 const MSG = {
-  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados', prog: (n) => n + ' de 7 secciones listas' },
-  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected', prog: (n) => n + ' of 7 sections ready' },
-  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats', prog: (n) => n + ' de 7 seccions llestes' }
+  es: { req: 'Este campo es obligatorio.', tipo: 'Elige un tipo de local.', tono: 'Elige un tono.', email: 'Revisa el correo.', dia: 'Indica los días que abres.', hora: 'Indica la hora de apertura y de cierre.', carta: 'Sube la carta o pega el enlace.', google: 'Pega el enlace o marca la casilla.', pin: 'Cuatro cifras.', size: 'Cada archivo debe pesar menos de 8 MB.', global: 'No se puede enviar todavía. Faltan campos por rellenar, marcados en rojo. Si no quieres una sección, márcala como eliminada.', files0: 'PDF o fotos. Varios archivos, máx. 8 MB cada uno.', files1: 'archivo seleccionado', filesN: 'archivos seleccionados', prog: (n, k) => n + ' de ' + k + ' secciones listas' },
+  en: { req: 'This field is required.', tipo: 'Choose a venue type.', tono: 'Choose a tone.', email: 'Check the email address.', dia: 'Tell us the days you open.', hora: 'Tell us your opening and closing time.', carta: 'Upload the menu or paste the link.', google: 'Paste the link or tick the box.', pin: 'Four digits.', size: 'Each file must be under 8 MB.', global: 'It cannot be sent yet. Some fields are missing, marked in red. If you do not want a section, mark it as removed.', files0: 'PDF or photos. Several files, max. 8 MB each.', files1: 'file selected', filesN: 'files selected', prog: (n, k) => n + ' of ' + k + ' sections ready' },
+  ca: { req: 'Aquest camp és obligatori.', tipo: 'Tria un tipus de local.', tono: 'Tria un to.', email: 'Revisa el correu.', dia: 'Indica els dies que obres.', hora: 'Indica l\u2019hora d\u2019obertura i de tancament.', carta: 'Puja la carta o enganxa l\u2019enllaç.', google: 'Enganxa l\u2019enllaç o marca la casella.', pin: 'Quatre xifres.', size: 'Cada arxiu ha de pesar menys de 8 MB.', global: 'Encara no es pot enviar. Falten camps per omplir, marcats en vermell. Si no vols una secció, marca-la com a eliminada.', files0: 'PDF o fotos. Diversos arxius, màx. 8 MB cadascun.', files1: 'arxiu seleccionat', filesN: 'arxius seleccionats', prog: (n, k) => n + ' de ' + k + ' seccions llestes' }
 };
 
 const EN_PAIRS = [
@@ -555,7 +561,7 @@ const EN_PAIRS = [
   ['Soluciones', 'Solutions'], ['Contacto', 'Contact'], ['Planes', 'Plans'], ['Dudas', 'FAQ'], ['Nosotros', 'About us'], ['Nosotros →', 'About us →'],
   ['Aviso legal', 'Legal notice'], ['Privacidad', 'Privacy'], ['El ADN de tu local.', 'The DNA of your venue.'],
   ['Reseñas Google', 'Google Reviews'], ['Menú', 'Menu'], ['Reservas', 'Bookings'],
-  ['Cuéntanos cómo es tu local.', 'Tell us about your venue.'], ['10 minutos', '10 minutes'],
+  ['Cuéntanos cómo es tu local.', 'Tell us about your venue.'], ['10 minutos', '10 minutes'], ['7 minutos', '7 minutes'],
   ['El local', 'The venue'], ['Nombre del local', 'Venue name'], ['Tipo', 'Type'], ['Hostelería', 'Hospitality'], ['Belleza y bienestar', 'Beauty and wellness'], ['Comercio', 'Retail'], ['Otro', 'Other'],
   ['Correo del pago', 'Payment email'], ['¿Tu local tiene web?', 'Does your venue have a website?'], ['Sí, tengo web', 'Yes, I have a website'], ['No tengo web', 'No website'], ['Web del local', 'Venue website'],
   ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'We take opening hours, menu, Instagram and Google listing from your website. You review it before sending.'], ['Prefiero rellenarlo yo', 'I prefer to fill it in myself'],
@@ -602,7 +608,7 @@ const CA_PAIRS = [
   ['Soluciones', 'Solucions'], ['Contacto', 'Contacte'], ['Planes', 'Plans'], ['Dudas', 'Dubtes'], ['Nosotros', 'Nosaltres'], ['Nosotros →', 'Nosaltres →'],
   ['Aviso legal', 'Avís legal'], ['Privacidad', 'Privacitat'], ['El ADN de tu local.', 'L’ADN del teu local.'],
   ['Reseñas Google', 'Ressenyes Google'], ['Reservas', 'Reserves'],
-  ['Cuéntanos cómo es tu local.', 'Explica\u2019ns com és el teu local.'], ['10 minutos', '10 minuts'],
+  ['Cuéntanos cómo es tu local.', 'Explica\u2019ns com és el teu local.'], ['10 minutos', '10 minuts'], ['7 minutos', '7 minuts'],
   ['El local', 'El local'], ['Nombre del local', 'Nom del local'], ['Tipo', 'Tipus'], ['Hostelería', 'Hostaleria'], ['Belleza y bienestar', 'Bellesa i benestar'], ['Comercio', 'Comerç'], ['Otro', 'Altre'],
   ['Correo del pago', 'Correu del pagament'], ['¿Tu local tiene web?', 'El teu local té web?'], ['Sí, tengo web', 'Sí, tinc web'], ['No tengo web', 'No tinc web'], ['Web del local', 'Web del local'],
   ['Horario, carta, Instagram y ficha de Google los sacamos de tu web. Lo revisas antes de enviarlo.', 'Horari, carta, Instagram i fitxa de Google els traiem de la teva web. Ho revises abans d\u2019enviar-ho.'], ['Prefiero rellenarlo yo', 'Prefereixo omplir-ho jo'],
@@ -745,12 +751,12 @@ class Component extends DCLogic {
       if (!st.files && !has('carta_url')) e.carta = M.carta;
     }
     if (!v.omit_wifi) { req('wifi_ssid'); req('wifi_pass'); }
-    if (!v.omit_fidelizacion) {
+    if (!IS_HUB && !v.omit_fidelizacion) {
       req('fid_premio');
       if (!has('fid_visitas') || !(parseInt(v.fid_visitas, 10) >= 2)) e.fid_visitas = M.req;
       if (!/^\d{4}$/.test(v.fid_pin || '')) e.fid_pin = M.pin;
     }
-    if (!v.omit_equipo) { req('q_estrella'); req('q_preguntas'); req('q_no'); req('q_curiosidad'); if (!v.tono) e.tono = M.tono; }
+    if (!IS_HUB && !v.omit_equipo) { req('q_estrella'); req('q_preguntas'); req('q_no'); req('q_curiosidad'); if (!v.tono) e.tono = M.tono; }
     if (Object.keys(e).length) e.global = M.global;
     return e;
   }
@@ -784,6 +790,7 @@ class Component extends DCLogic {
     ['carta', 'wifi', 'google', 'fidelizacion', 'equipo'].forEach((k) => { deco[k] = v['omit_' + k] ? 'line-through' : 'none'; });
     const hasErr = Object.keys(shown).length > 0;
     return {
+      isPro: !IS_HUB, isHub: IS_HUB,
       tpvPh: ({ es: 'TPV o datáfono, y tu banco (opcional)', ca: 'TPV o datàfon, i el teu banc (opcional)', en: 'POS or card terminal, and your bank (optional)' })[this.state.lang] || 'TPV o datáfono, y tu banco (opcional)',
       v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo }),
       tieneWeb, noWeb, fromWeb, showSec: !fromWeb, desdeWeb: tieneWeb ? '1' : '0',
@@ -816,7 +823,7 @@ class Component extends DCLogic {
           bar: cur ? (x === 'err' ? '#C62828' : '#000000') : 'transparent'
         };
       }),
-      progText: M.prog(ready), progShort: ready + '/7', progPct: Math.round(ready / 7 * 100) + '%',
+      progText: M.prog(ready, SECCIONES.length), progShort: ready + '/' + SECCIONES.length, progPct: Math.round(ready / SECCIONES.length * 100) + '%',
       activeLabel: activeSec.label,
       showAlert: st.submitted && hasErr,
       submitting: st.submitting, idle: !st.submitting,
