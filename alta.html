@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610051602"></script>
+<script src="./support.js?v=202610051803"></script>
 </head>
 <body>
 <x-dc>
@@ -161,12 +161,12 @@ html body header [data-navlinks] { gap: 28px !important; }
           <p style="margin: 7.2px 0 0; font-size: 16.8px; line-height: 1.5; color: #4E534C;">Datos del negocio y contacto.</p>
           <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="local_nombre" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="local_nombre" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre del local<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <input id="local_nombre" name="local_nombre" type="text" autoComplete="organization" aria-invalid="{{ inv.local_nombre }}" value="{{ v.local_nombre }}" onChange="{{ on.local_nombre }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.local_nombre }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.local_nombre }}</div></sc-if>
             </div>
             <div role="radiogroup" aria-labelledby="lbl_tipo" style="display: flex; flex-direction: column; gap: 9.6px;">
-              <span id="lbl_tipo" style="font-size: 16.8px; font-weight: 500; color: #000000;">Tipo<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></span>
+              <span id="lbl_tipo" style="font-size: 16.8px; font-weight: 500; color: #000000;">Tipo<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></span>
               <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.6px 19.2px;">
                 <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="4">
                   <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #000000; cursor: pointer;">
@@ -178,7 +178,7 @@ html body header [data-navlinks] { gap: 28px !important; }
               <sc-if value="{{ err.local_tipo }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.local_tipo }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="tel" style="font-size: 16.8px; font-weight: 500; color: #000000;">WhatsApp<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="tel" style="font-size: 16.8px; font-weight: 500; color: #000000;">WhatsApp<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <div style="display: flex; gap: 9.6px;">
                 <select name="tel_prefijo" aria-label="Prefijo" value="{{ v.tel_prefijo }}" onChange="{{ on.tel_prefijo }}" style="flex: none; width: 118px; height: 44px; font-variant-numeric: tabular-nums; font-size: 18px; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                   <sc-for list="{{ prefijos }}" as="p" hint-placeholder-count="10"><option value="{{ p.v }}">{{ p.label }}</option></sc-for>
@@ -188,7 +188,7 @@ html body header [data-navlinks] { gap: 28px !important; }
               <sc-if value="{{ err.tel }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.tel }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="email_pago" style="font-size: 16.8px; font-weight: 500; color: #000000;">Correo del pago<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="email_pago" style="font-size: 16.8px; font-weight: 500; color: #000000;">Correo del pago<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <input id="email_pago" name="email_pago" type="email" autoComplete="email" aria-invalid="{{ inv.email_pago }}" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.email_pago }}</div></sc-if>
             </div>
@@ -235,14 +235,14 @@ html body header [data-navlinks] { gap: 28px !important; }
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                  <label for="h_dia_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">De<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                  <label for="h_dia_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">De<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                   <select id="h_dia_de" name="h_dia_de" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_de }}" onChange="{{ on.h_dia_de }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                   </select>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                  <label for="h_dia_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">a<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                  <label for="h_dia_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">a<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                   <select id="h_dia_a" name="h_dia_a" aria-invalid="{{ inv.h_dia }}" value="{{ v.h_dia_a }}" onChange="{{ on.h_dia_a }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
@@ -254,14 +254,14 @@ html body header [data-navlinks] { gap: 28px !important; }
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                  <label for="h_hora_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                  <label for="h_hora_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                   <select id="h_hora_de" name="h_hora_de" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_de }}" onChange="{{ on.h_hora_de }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                   </select>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                  <label for="h_hora_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                  <label for="h_hora_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                   <select id="h_hora_a" name="h_hora_a" aria-invalid="{{ inv.h_hora }}" value="{{ v.h_hora_a }}" onChange="{{ on.h_hora_a }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                     <option value=""></option>
                     <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
@@ -280,14 +280,14 @@ html body header [data-navlinks] { gap: 28px !important; }
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
                     <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                      <label for="h2_dia_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">De<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                      <label for="h2_dia_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">De<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                       <select id="h2_dia_de" name="h2_dia_de" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_de }}" onChange="{{ on.h2_dia_de }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
                       </select>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                      <label for="h2_dia_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">a<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                      <label for="h2_dia_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">a<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                       <select id="h2_dia_a" name="h2_dia_a" aria-invalid="{{ inv.h2_dia }}" value="{{ v.h2_dia_a }}" onChange="{{ on.h2_dia_a }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ dias }}" as="d" hint-placeholder-count="7"><option value="{{ d.v }}">{{ d.label }}</option></sc-for>
@@ -299,14 +299,14 @@ html body header [data-navlinks] { gap: 28px !important; }
                 <div style="display: flex; flex-direction: column; gap: 7.2px;">
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14.4px;">
                     <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                      <label for="h2_hora_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                      <label for="h2_hora_de" style="font-size: 16.8px; font-weight: 500; color: #000000;">Abre<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                       <select id="h2_hora_de" name="h2_hora_de" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_de }}" onChange="{{ on.h2_hora_de }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
                       </select>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                      <label for="h2_hora_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                      <label for="h2_hora_a" style="font-size: 16.8px; font-weight: 500; color: #000000;">cierra<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                       <select id="h2_hora_a" name="h2_hora_a" aria-invalid="{{ inv.h2_hora }}" value="{{ v.h2_hora_a }}" onChange="{{ on.h2_hora_a }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #000000; background-color: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 38.4px 0 14.4px; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B6B6B%22 stroke-width=%222.5%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
                         <option value=""></option>
                         <sc-for list="{{ horas }}" as="h" hint-placeholder-count="10"><option value="{{ h }}">{{ h }}</option></sc-for>
@@ -360,12 +360,12 @@ html body header [data-navlinks] { gap: 28px !important; }
           <sc-if value="{{ show.wifi }}" hint-placeholder-val="{{ true }}">
           <div data-two="1" style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 1.6669999999999998vw, 32px) 14.4px;">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="wifi_ssid" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre de la red<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="wifi_ssid" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre de la red<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <input id="wifi_ssid" name="wifi_ssid" type="text" autoComplete="off" aria-invalid="{{ inv.wifi_ssid }}" value="{{ v.wifi_ssid }}" onChange="{{ on.wifi_ssid }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.wifi_ssid }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.wifi_ssid }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="wifi_pass" style="font-size: 16.8px; font-weight: 500; color: #000000;">Clave<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="wifi_pass" style="font-size: 16.8px; font-weight: 500; color: #000000;">Clave<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <input id="wifi_pass" name="wifi_pass" type="text" autoComplete="off" spellCheck="{{ false }}" aria-invalid="{{ inv.wifi_pass }}" value="{{ v.wifi_pass }}" onChange="{{ on.wifi_pass }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.wifi_pass }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.wifi_pass }}</div></sc-if>
             </div>
@@ -420,19 +420,19 @@ html body header [data-navlinks] { gap: 28px !important; }
           <sc-if value="{{ show.fidelizacion }}" hint-placeholder-val="{{ true }}">
           <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="fid_premio" style="font-size: 16.8px; font-weight: 500; color: #000000;">Premio<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="fid_premio" style="font-size: 16.8px; font-weight: 500; color: #000000;">Premio<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <input id="fid_premio" name="fid_premio" type="text" aria-invalid="{{ inv.fid_premio }}" value="{{ v.fid_premio }}" onChange="{{ on.fid_premio }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <div style="font-size: 15.6px; color: #4E534C;">Ej.: un café gratis</div>
               <sc-if value="{{ err.fid_premio }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_premio }}</div></sc-if>
             </div>
             <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 1.6669999999999998vw, 32px) 14.4px;">
               <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                <label for="fid_visitas" style="font-size: 16.8px; font-weight: 500; color: #000000;">Visitas para el premio<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                <label for="fid_visitas" style="font-size: 16.8px; font-weight: 500; color: #000000;">Visitas para el premio<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                 <input id="fid_visitas" name="fid_visitas" type="number" min="2" max="20" inputMode="numeric" aria-invalid="{{ inv.fid_visitas }}" value="{{ v.fid_visitas }}" onChange="{{ on.fid_visitas }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
                 <sc-if value="{{ err.fid_visitas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_visitas }}</div></sc-if>
               </div>
               <div style="display: flex; flex-direction: column; gap: 7.2px;">
-                <label for="fid_pin" style="font-size: 16.8px; font-weight: 500; color: #000000;">PIN del equipo (4 cifras)<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+                <label for="fid_pin" style="font-size: 16.8px; font-weight: 500; color: #000000;">PIN del equipo (4 cifras)<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
                 <input id="fid_pin" name="fid_pin" type="text" inputMode="numeric" maxLength="4" pattern="[0-9]{4}" autoComplete="off" aria-invalid="{{ inv.fid_pin }}" value="{{ v.fid_pin }}" onChange="{{ on.fid_pin }}" style="width: 100%; height: 44px; font-size: 18px; font-variant-numeric: tabular-nums; letter-spacing: .12em; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
                 <div style="font-size: 15.6px; color: #4E534C;">Para canjear premios en el local</div>
                 <sc-if value="{{ err.fid_pin }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.fid_pin }}</div></sc-if>
@@ -454,31 +454,31 @@ html body header [data-navlinks] { gap: 28px !important; }
           <sc-if value="{{ show.equipo }}" hint-placeholder-val="{{ true }}">
           <div style="margin-top: 24px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_estrella" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_estrella" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué recomiendas siempre?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <textarea id="q_estrella" name="q_estrella" rows="2" aria-invalid="{{ inv.q_estrella }}" value="{{ v.q_estrella }}" onChange="{{ on.q_estrella }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
               <div style="font-size: 15.6px; color: #4E534C;">Ej.: la parmigiana y el vino de la casa</div>
               <sc-if value="{{ err.q_estrella }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_estrella }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_preguntas" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué te preguntan más?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_preguntas" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué te preguntan más?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <textarea id="q_preguntas" name="q_preguntas" rows="2" aria-invalid="{{ inv.q_preguntas }}" value="{{ v.q_preguntas }}" onChange="{{ on.q_preguntas }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
               <div style="font-size: 15.6px; color: #4E534C;">Ej.: sin gluten, si hay terraza</div>
               <sc-if value="{{ err.q_preguntas }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_preguntas }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_no" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué no debe decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_no" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Qué no debe decir ni prometer?<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <textarea id="q_no" name="q_no" rows="2" aria-invalid="{{ inv.q_no }}" value="{{ v.q_no }}" onChange="{{ on.q_no }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
               <div style="font-size: 15.6px; color: #4E534C;">Ej.: no reservamos por teléfono</div>
               <sc-if value="{{ err.q_no }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_no }}</div></sc-if>
             </div>
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
-              <label for="q_curiosidad" style="font-size: 16.8px; font-weight: 500; color: #000000;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></label>
+              <label for="q_curiosidad" style="font-size: 16.8px; font-weight: 500; color: #000000;">Una curiosidad de la casa<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></label>
               <textarea id="q_curiosidad" name="q_curiosidad" rows="2" aria-invalid="{{ inv.q_curiosidad }}" value="{{ v.q_curiosidad }}" onChange="{{ on.q_curiosidad }}" style="width: 100%; min-height: 72px; font-size: 18px; line-height: 1.5; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 12px 14.4px; resize: vertical; transition: border-color 140ms ease, box-shadow 140ms ease;"></textarea>
               <div style="font-size: 15.6px; color: #4E534C;">Ej.: receta de la abuela de Nápoles</div>
               <sc-if value="{{ err.q_curiosidad }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.q_curiosidad }}</div></sc-if>
             </div>
             <div role="radiogroup" aria-labelledby="lbl_tono" style="display: flex; flex-direction: column; gap: 9.6px;">
-              <span id="lbl_tono" style="font-size: 16.8px; font-weight: 500; color: #000000;">Tono del asistente<span aria-hidden="true" style="margin-left: 3px; color: #4E534C;">*</span></span>
+              <span id="lbl_tono" style="font-size: 16.8px; font-weight: 500; color: #000000;">Tono del asistente<span aria-hidden="true" style="margin-left: 3px; color: #4E534C; white-space: nowrap;">&#8288;*</span></span>
               <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.6px 19.2px;">
                 <sc-for list="{{ tonos }}" as="t" hint-placeholder-count="4">
                   <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #000000; cursor: pointer;">
@@ -500,7 +500,7 @@ html body header [data-navlinks] { gap: 28px !important; }
             <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}"><span>Enviar</span></sc-if>
           </button>
           <sc-if value="{{ err.global }}" hint-placeholder-val="{{ false }}"><div style="font-size: 16.8px; line-height: 1.5; color: #C62828;">{{ err.global }}</div></sc-if>
-          <p style="margin: 0; font-size: 16.8px; line-height: 1.55; color: #4E534C;">Enviamos el HUB en 2-4 días laborables.</p>
+          <p style="margin: 0; font-size: 16.8px; line-height: 1.55; color: #4E534C;">Envío en 2-4 días laborables.</p>
         </div>
 
       </form>
@@ -577,13 +577,13 @@ const EN_PAIRS = [
   ['Visitas para el premio', 'Visits for the reward'], ['PIN del equipo (4 cifras)', 'Team PIN (4 digits)'], ['Para canjear premios en el local', 'To redeem rewards at the venue'],
   ['La pausas o la cambias desde tu panel.', 'Pause or change it from your panel.'],
   ['Lo que solo el equipo sabe', 'What only the team knows'],
-  ['¿Qué recomiendas siempre?', 'What do you always recommend?'], ['Ej.: la parmigiana y el vino de la casa', 'E.g.: the parmigiana and house wine'],
+  ['¿Qué recomiendas siempre?', 'What do you recommend?'], ['Ej.: la parmigiana y el vino de la casa', 'E.g.: the parmigiana and house wine'],
   ['¿Qué te preguntan más?', 'What do customers ask most?'], ['Ej.: sin gluten, si hay terraza', 'E.g.: gluten-free, a terrace'],
   ['¿Qué no debe decir ni prometer?', 'What must it not say or promise?'], ['Ej.: no reservamos por teléfono', 'E.g.: no phone bookings'],
   ['Una curiosidad de la casa', 'A house curiosity'], ['Ej.: receta de la abuela de Nápoles', 'E.g.: grandma\u2019s recipe from Naples'],
   ['Tono del asistente', 'Assistant tone'], ['Cercano y familiar', 'Warm and familiar'], ['Profesional y claro', 'Professional and clear'], ['Elegante y discreto', 'Elegant and discreet'], ['Divertido y desenfadado', 'Fun and casual'],
   ['Enviar', 'Send'], ['Enviando…', 'Sending…'],
-  ['Enviamos el HUB en 2-4 días laborables.', 'We ship the HUB in 2-4 working days.'],
+  ['Envío en 2-4 días laborables.', 'We ship the HUB in 2-4 working days.'],
   ['* obligatorio', '* required'],
   ['Faltan campos por rellenar, marcados en rojo', 'Some fields are missing, marked in red'],
   ['Datos del negocio y contacto.', 'Business details and contact.'],
@@ -630,7 +630,7 @@ const CA_PAIRS = [
   ['Una curiosidad de la casa', 'Una curiositat de la casa'], ['Ej.: receta de la abuela de Nápoles', 'Ex.: recepta de l\u2019àvia de Nàpols'],
   ['Tono del asistente', 'To de l\u2019assistent'], ['Cercano y familiar', 'Proper i familiar'], ['Profesional y claro', 'Professional i clar'], ['Elegante y discreto', 'Elegant i discret'], ['Divertido y desenfadado', 'Divertit i desimbolt'],
   ['Enviar', 'Envia'], ['Enviando…', 'Enviant…'],
-  ['Enviamos el HUB en 2-4 días laborables.', 'Enviem el HUB en 2-4 dies laborables.'],
+  ['Envío en 2-4 días laborables.', 'Enviem el HUB en 2-4 dies laborables.'],
   ['* obligatorio', '* obligatori'],
   ['Faltan campos por rellenar, marcados en rojo', 'Falten camps per omplir, marcats en vermell'],
   ['Datos del negocio y contacto.', 'Dades del negoci i contacte.'],
