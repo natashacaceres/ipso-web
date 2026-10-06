@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610051803"></script>
+<script src="./support.js?v=202610062025"></script>
 </head>
 <body>
 <x-dc>
@@ -192,10 +192,12 @@ html body header [data-navlinks] { gap: 28px !important; }
               <input id="email_pago" name="email_pago" type="email" autoComplete="email" aria-invalid="{{ inv.email_pago }}" value="{{ v.email_pago }}" onChange="{{ on.email_pago }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
               <sc-if value="{{ err.email_pago }}" hint-placeholder-val="{{ false }}"><div data-err="1" style="font-size: 15.6px; color: #C62828;">{{ err.email_pago }}</div></sc-if>
             </div>
+            <sc-if value="{{ showTpv }}" hint-placeholder-val="{{ true }}">
             <div style="display: flex; flex-direction: column; gap: 7.2px;">
               <label for="tpv" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Con qué cobras hoy?</label>
               <input id="tpv" name="tpv" type="text" placeholder="{{ tpvPh }}" value="{{ v.tpv }}" onChange="{{ on.tpv }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
             </div>
+            </sc-if>
             <div role="radiogroup" aria-labelledby="lbl_web" style="display: flex; flex-direction: column; gap: 9.6px;">
               <span id="lbl_web" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Tu local tiene web?</span>
               <div style="display: flex; flex-wrap: wrap; gap: 9.6px clamp(24px, 2vw, 38.4px);">
@@ -494,6 +496,96 @@ html body header [data-navlinks] { gap: 28px !important; }
         </section>
         </sc-if>
 
+        <sc-if value="{{ cobros }}" hint-placeholder-val="{{ false }}">
+        <section id="s-cobros" data-card="1" style="background: #F2EDE6; border: 1px solid #E3E3E3; border-radius: 0; padding: 33.6px; scroll-margin-top: 115.2px;">
+          <h2 style="margin: 0; font-size: 22.8px; line-height: 1.25; color: #000000; text-decoration: {{ deco.cobros }}; font-weight: 600; letter-spacing: -0.04em;">Pagos</h2>
+          <label style="margin-top: 16.8px; display: flex; align-items: center; gap: 12px; min-height: 32px; font-size: 16.8px; color: #4A4A4A; cursor: pointer;">
+            <input type="checkbox" name="omit_cobros" value="1" checked="{{ v.omit_cobros }}" onChange="{{ on.omit_cobros }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
+            <span>Eliminar esta sección del HUB</span>
+          </label>
+          <sc-if value="{{ show.cobros }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top: 26.4px; display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+            <div role="radiogroup" aria-labelledby="lbl_cobro_tipo" style="display: flex; flex-direction: column; gap: 9.6px;">
+              <span id="lbl_cobro_tipo" style="font-size: 16.8px; font-weight: 500; color: #000000;">¿Cómo facturas?</span>
+              <div data-two="1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.6px 19.2px;">
+                <sc-for list="{{ cobroTipos }}" as="t" hint-placeholder-count="2">
+                  <label style="display: flex; align-items: center; gap: 12px; min-height: 36px; font-size: 18px; color: #000000; cursor: pointer;">
+                    <input type="radio" name="cobro_tipo" value="{{ t.value }}" checked="{{ t.on }}" onChange="{{ t.pick }}" style="flex: none; width: 18px; height: 18px; margin: 0; accent-color: #000000; cursor: pointer;">
+                    <span>{{ t.label }}</span>
+                  </label>
+                </sc-for>
+              </div>
+            </div>
+            <sc-if value="{{ esSociedad }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: clamp(20px, 1.6669999999999998vw, 32px);">
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_razon" style="font-size: 16.8px; font-weight: 500; color: #000000;">Razón social</label>
+                <input id="cobro_razon" name="cobro_razon" type="text" autoComplete="organization" value="{{ v.cobro_razon }}" onChange="{{ on.cobro_razon }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_cif" style="font-size: 16.8px; font-weight: 500; color: #000000;">CIF</label>
+                <input id="cobro_cif" name="cobro_cif" type="text" autoComplete="off" spellCheck="{{ false }}" value="{{ v.cobro_cif }}" onChange="{{ on.cobro_cif }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_fcalle" style="font-size: 16.8px; font-weight: 500; color: #000000;">Dirección fiscal</label>
+                <input id="cobro_fcalle" name="cobro_fcalle" type="text" autoComplete="off" value="{{ v.cobro_fcalle }}" onChange="{{ on.cobro_fcalle }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14.4px;">
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_fcp" style="font-size: 16.8px; font-weight: 500; color: #000000;">Código postal</label>
+                <input id="cobro_fcp" name="cobro_fcp" type="text" inputMode="numeric" autoComplete="off" value="{{ v.cobro_fcp }}" onChange="{{ on.cobro_fcp }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_fciudad" style="font-size: 16.8px; font-weight: 500; color: #000000;">Ciudad</label>
+                <input id="cobro_fciudad" name="cobro_fciudad" type="text" autoComplete="off" value="{{ v.cobro_fciudad }}" onChange="{{ on.cobro_fciudad }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+            </div>
+            </div>
+            </sc-if>
+            <div style="display: flex; flex-direction: column; gap: 9.6px;">
+              <sc-if value="{{ esSociedad }}" hint-placeholder-val="{{ false }}"><span style="font-size: 15.6px; font-weight: 600; color: #4E534C;">Del administrador</span></sc-if>
+              <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14.4px;">
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_nombre" style="font-size: 16.8px; font-weight: 500; color: #000000;">Nombre</label>
+                <input id="cobro_nombre" name="cobro_nombre" type="text" autoComplete="given-name" value="{{ v.cobro_nombre }}" onChange="{{ on.cobro_nombre }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_apellidos" style="font-size: 16.8px; font-weight: 500; color: #000000;">Apellidos</label>
+                <input id="cobro_apellidos" name="cobro_apellidos" type="text" autoComplete="family-name" value="{{ v.cobro_apellidos }}" onChange="{{ on.cobro_apellidos }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+            </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_dni" style="font-size: 16.8px; font-weight: 500; color: #000000;">DNI o NIE</label>
+                <input id="cobro_dni" name="cobro_dni" type="text" autoComplete="off" spellCheck="{{ false }}" value="{{ v.cobro_dni }}" onChange="{{ on.cobro_dni }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+            <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+              <label for="cobro_nac" style="font-size: 16.8px; font-weight: 500; color: #000000;">Fecha de nacimiento</label>
+              <input id="cobro_nac" name="cobro_nac" type="date" min="1900-01-01" max="{{ hoy }}" autoComplete="bday" value="{{ v.cobro_nac }}" onChange="{{ on.cobro_nac }}" style="display: block; width: 100%; min-width: 0; height: 44px; font-family: inherit; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; text-align: left; -webkit-appearance: none; appearance: none; transition: border-color 140ms ease, box-shadow 140ms ease;">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_calle" style="font-size: 16.8px; font-weight: 500; color: #000000;">Dirección de tu casa</label>
+                <input id="cobro_calle" name="cobro_calle" type="text" autoComplete="street-address" value="{{ v.cobro_calle }}" onChange="{{ on.cobro_calle }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14.4px;">
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_cp" style="font-size: 16.8px; font-weight: 500; color: #000000;">Código postal</label>
+                <input id="cobro_cp" name="cobro_cp" type="text" inputMode="numeric" autoComplete="postal-code" value="{{ v.cobro_cp }}" onChange="{{ on.cobro_cp }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_ciudad" style="font-size: 16.8px; font-weight: 500; color: #000000;">Ciudad</label>
+                <input id="cobro_ciudad" name="cobro_ciudad" type="text" autoComplete="address-level2" value="{{ v.cobro_ciudad }}" onChange="{{ on.cobro_ciudad }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7.2px; min-width: 0;">
+                <label for="cobro_iban" style="font-size: 16.8px; font-weight: 500; color: #000000;">IBAN donde recibes los pagos</label>
+                <input id="cobro_iban" name="cobro_iban" type="text" autoComplete="off" spellCheck="{{ false }}" value="{{ v.cobro_iban }}" onChange="{{ on.cobro_iban }}" style="width: 100%; height: 44px; font-size: 18px; color: #000000; background: #FFFFFF; border: 1px solid #D9D1C5; border-radius: 0; padding: 0 14.4px; transition: border-color 140ms ease, box-shadow 140ms ease;">
+              </div>
+          </div>
+          </sc-if>
+        </section>
+        </sc-if>
+
         <div style="margin-top: 9.6px; display: flex; flex-direction: column; align-items: flex-start; gap: 16.8px;">
           <button data-alta-submit="1" type="submit" disabled="{{ submitting }}" style="min-width: 220px; height: 52px; font-family: inherit; font-size: 19.2px; font-weight: 600; color: #000000; background: #D8694C; border: none; border-radius: 8px; padding: 0 33.6px; cursor: pointer; transition: background 140ms ease;" style-hover="background: #C55A3F;">
             <sc-if value="{{ submitting }}" hint-placeholder-val="{{ false }}"><span>Enviando…</span></sc-if>
@@ -525,8 +617,8 @@ html body header [data-navlinks] { gap: 28px !important; }
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const KEY = 'ipso-alta-v1';
-const TEXT_FIELDS = ['tiene_web','local_nombre','local_tipo','tel_prefijo','tel','h2_dia_de','h2_dia_a','h2_hora_de','h2_hora_a','email_pago','tpv','h_dia_de','h_dia_a','h_hora_de','h_hora_a','carta_url','wifi_ssid','wifi_pass','google_url','instagram','web','otro_enlace','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad','tono'];
-const BOOL_FIELDS = ['manual_web','google_buscar','h_extendido','omit_carta','omit_wifi','omit_google','omit_fidelizacion','omit_equipo'];
+const TEXT_FIELDS = ['tiene_web','local_nombre','local_tipo','tel_prefijo','tel','h2_dia_de','h2_dia_a','h2_hora_de','h2_hora_a','email_pago','tpv','h_dia_de','h_dia_a','h_hora_de','h_hora_a','carta_url','wifi_ssid','wifi_pass','google_url','instagram','web','otro_enlace','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad','tono','cobro_tipo','cobro_razon','cobro_cif','cobro_fcalle','cobro_fcp','cobro_fciudad','cobro_nombre','cobro_apellidos','cobro_dni','cobro_nac','cobro_calle','cobro_cp','cobro_ciudad','cobro_iban'];
+const BOOL_FIELDS = ['manual_web','google_buscar','h_extendido','omit_carta','omit_wifi','omit_google','omit_fidelizacion','omit_equipo','omit_cobros'];
 const DEFAULTS = { fid_visitas: '5', tel_prefijo: '+34' };
 const PREFIJOS = [['+34','ES'],['+351','PT'],['+33','FR'],['+39','IT'],['+49','DE'],['+44','GB'],['+353','IE'],['+31','NL'],['+32','BE'],['+41','CH'],['+43','AT'],['+45','DK'],['+46','SE'],['+47','NO'],['+358','FI'],['+48','PL'],['+420','CZ'],['+36','HU'],['+40','RO'],['+30','GR'],['+90','TR'],['+376','AD'],['+212','MA'],['+213','DZ'],['+1','US/CA'],['+52','MX'],['+54','AR'],['+55','BR'],['+56','CL'],['+57','CO'],['+51','PE'],['+58','VE'],['+593','EC'],['+591','BO'],['+595','PY'],['+598','UY'],['+506','CR'],['+507','PA'],['+502','GT'],['+503','SV'],['+504','HN'],['+505','NI'],['+53','CU'],['+1809','DO'],['+61','AU'],['+64','NZ'],['+81','JP'],['+82','KR'],['+86','CN'],['+91','IN'],['+971','AE'],['+972','IL'],['+27','ZA']];
 
@@ -546,7 +638,10 @@ const SECCIONES_ALL = [
   { id: 's-fidelizacion', label: 'Fidelización', keys: ['fid_premio','fid_visitas','fid_pin'], omit: 'omit_fidelizacion' },
   { id: 's-equipo', label: 'Lo que solo el equipo sabe', keys: ['q_estrella','q_preguntas','q_no','q_curiosidad','tono'], omit: 'omit_equipo' }
 ];
-const SECCIONES = IS_HUB ? SECCIONES_ALL.filter((s) => PRO_ONLY.indexOf(s.id) < 0) : SECCIONES_ALL;
+const COBROS = !IS_HUB && (() => { try { return new URLSearchParams(window.location.search).get('cobros') === '1'; } catch (e) { return false; } })();
+const COBRO_FIELDS = ['cobro_tipo','cobro_razon','cobro_cif','cobro_fcalle','cobro_fcp','cobro_fciudad','cobro_nombre','cobro_apellidos','cobro_dni','cobro_nac','cobro_calle','cobro_cp','cobro_ciudad','cobro_iban'];
+const COBRO_TIPOS = [['autonomo', 'Autónomo'], ['sociedad', 'Sociedad (SL)']];
+const SECCIONES = (IS_HUB ? SECCIONES_ALL.filter((s) => PRO_ONLY.indexOf(s.id) < 0) : SECCIONES_ALL).concat(COBROS ? [{ id: 's-cobros', label: 'Pagos', keys: [], omit: 'omit_cobros' }] : []);
 const INV_FIELDS = ['local_nombre','local_tipo','tel','email_pago','h_dia','h_hora','h2_dia','h2_hora','carta','wifi_ssid','wifi_pass','google_url','instagram','fid_premio','fid_visitas','fid_pin','q_estrella','q_preguntas','q_no','q_curiosidad'];
 
 const MSG = {
@@ -599,7 +694,8 @@ const EN_PAIRS = [
   ['Preguntas frecuentes', 'FAQ'],
   ['Contacto', 'Contact'],
   ['Reseñas Google', 'Google Reviews'],
-  ['¿Con qué cobras hoy?', 'How do you take payments?']
+  ['¿Con qué cobras hoy?', 'How do you take payments?'],
+  ['Pagos', 'Payments'], ['¿Cómo facturas?', 'How do you invoice?'], ['Autónomo', 'Self-employed'], ['Sociedad (SL)', 'Company (SL)'], ['Razón social', 'Company name'], ['Dirección fiscal', 'Registered address'], ['Código postal', 'Postcode'], ['Ciudad', 'City'], ['Del administrador', 'Company director'], ['Nombre', 'First name'], ['Apellidos', 'Last name'], ['DNI o NIE', 'DNI or NIE'], ['Fecha de nacimiento', 'Date of birth'], ['Dirección de tu casa', 'Home address'], ['IBAN donde recibes los pagos', 'IBAN for your payouts']
 ];
 
 const CA_PAIRS = [
@@ -646,7 +742,8 @@ const CA_PAIRS = [
   ['Preguntas frecuentes', 'Preguntes freqüents'],
   ['Contacto', 'Contacte'],
   ['Reseñas Google', 'Ressenyes Google'],
-  ['¿Con qué cobras hoy?', 'Amb què cobres avui?']
+  ['¿Con qué cobras hoy?', 'Amb què cobres avui?'],
+  ['Pagos', 'Pagaments'], ['¿Cómo facturas?', 'Com factures?'], ['Autónomo', 'Autònom'], ['Sociedad (SL)', 'Societat (SL)'], ['Razón social', 'Raó social'], ['Dirección fiscal', 'Adreça fiscal'], ['Código postal', 'Codi postal'], ['Ciudad', 'Ciutat'], ['Del administrador', 'De l\u2019administrador'], ['Nombre', 'Nom'], ['Apellidos', 'Cognoms'], ['DNI o NIE', 'DNI o NIE'], ['Fecha de nacimiento', 'Data de naixement'], ['Dirección de tu casa', 'Adreça de casa teva'], ['IBAN donde recibes los pagos', 'IBAN on reps els pagaments']
 ];
 
 const DICTS = { es: null, en: {}, ca: {} };
@@ -779,6 +876,7 @@ class Component extends DCLogic {
       if (st.submitted && s.keys.some((k) => shown[k])) return 'err';
       if (s.web && fromWeb) return 'done';
       if (s.keys.some((k) => live[k])) return 'empty';
+      if (s.id === 's-cobros') return COBRO_FIELDS.some((k) => has(k)) ? 'done' : 'empty';
       if (s.id === 's-google') return (v.google_buscar || has('google_url') || has('instagram') || has('otro_enlace')) ? 'done' : 'empty';
       return 'done';
     };
@@ -789,15 +887,18 @@ class Component extends DCLogic {
     INV_FIELDS.forEach((k) => { inv[k] = shown[k] ? 'true' : 'false'; });
     if (shown.carta_files) inv.carta = 'true';
     const deco = {};
-    ['carta', 'wifi', 'google', 'fidelizacion', 'equipo'].forEach((k) => { deco[k] = v['omit_' + k] ? 'line-through' : 'none'; });
+    ['carta', 'wifi', 'google', 'fidelizacion', 'equipo', 'cobros'].forEach((k) => { deco[k] = v['omit_' + k] ? 'line-through' : 'none'; });
     const hasErr = Object.keys(shown).length > 0;
     return {
       isPro: !IS_HUB, isHub: IS_HUB,
+      cobros: COBROS, showTpv: !COBROS, esSociedad: v.cobro_tipo === 'sociedad',
+      cobroTipos: COBRO_TIPOS.map((c) => ({ label: c[1], value: c[0], on: v.cobro_tipo === c[0], pick: () => this.set('cobro_tipo', c[0]) })),
+      hoy: new Date().toISOString().slice(0, 10),
       tpvPh: ({ es: 'TPV o datáfono, y tu banco (opcional)', ca: 'TPV o datàfon, i el teu banc (opcional)', en: 'POS or card terminal, and your bank (optional)' })[this.state.lang] || 'TPV o datáfono, y tu banco (opcional)',
-      v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo }),
+      v: Object.assign({}, v, { google_buscar: !!v.google_buscar, h_extendido: !!v.h_extendido, omit_carta: !!v.omit_carta, omit_wifi: !!v.omit_wifi, omit_google: !!v.omit_google, omit_fidelizacion: !!v.omit_fidelizacion, omit_equipo: !!v.omit_equipo, omit_cobros: !!v.omit_cobros }),
       tieneWeb, noWeb, fromWeb, showSec: !fromWeb, desdeWeb: tieneWeb ? '1' : '0',
       setWebSi: () => { this.set('manual_web', false); this.set('tiene_web', 'si'); }, setWebNo: () => { this.set('manual_web', false); this.set('tiene_web', 'no'); }, fillMyself: () => this.set('manual_web', true),
-      show: { carta: !v.omit_carta, wifi: !v.omit_wifi, google: !v.omit_google, fidelizacion: !v.omit_fidelizacion, equipo: !v.omit_equipo },
+      show: { carta: !v.omit_carta, wifi: !v.omit_wifi, google: !v.omit_google, fidelizacion: !v.omit_fidelizacion, equipo: !v.omit_equipo, cobros: !v.omit_cobros },
       deco,
       prefijos: PREFIJOS.map((p) => ({ v: p[0], label: p[0] + ' ' + p[1] })),
       on, err: shown, inv,
