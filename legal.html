@@ -3,7 +3,7 @@
 <head>
   <!-- ipso-seo --><title>Aviso legal, privacidad y cookies · Ipso</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Informacion legal de Ipso: aviso legal, politica de privacidad y politica de cookies.">
+  <meta name="description" content="Información legal de Ipso. Aviso legal, política de privacidad y política de cookies.">
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://ipsoglobal.com/legal">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -11,21 +11,23 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Ipso">
   <meta property="og:url" content="https://ipsoglobal.com/legal">
-  <meta property="og:title" content="Informacion legal · Ipso">
+  <meta property="og:title" content="Información legal · Ipso">
   <meta property="og:description" content="Aviso legal, privacidad y cookies de Ipso.">
   <meta property="og:image" content="https://ipsoglobal.com/og-image.png?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Informacion legal · Ipso">
+  <meta property="og:image:alt" content="Información legal · Ipso">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Informacion legal · Ipso">
+  <meta name="twitter:title" content="Información legal · Ipso">
   <meta name="twitter:description" content="Aviso legal, privacidad y cookies de Ipso.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png?v=2" type="image/png">
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
-  <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio: un punto NFC en el mostrador (IPSO HUB) que abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
+  <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
+  
+  
 <meta charset="utf-8">
-<script src="./support.js?v=202610141534"></script>
+<script src="./support.js?v=202610152328"></script>
 </head>
 <body>
 <x-dc>
@@ -766,7 +768,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610141534').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610152328').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
