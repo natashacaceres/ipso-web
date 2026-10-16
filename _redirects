@@ -5,3 +5,7 @@
 /menu.html /hub 301
 /reservas /hub 301
 /reservas.html /hub 301
+
+# Página de privacidad antigua (16 oct 2026): la privacidad está ahora en /legal
+/privacidad /legal 301
+/privacidad.html /legal 301
