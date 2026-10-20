@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610201804"></script>
+<script src="./support.js?v=202610201823"></script>
 </head>
 <body>
 <x-dc>
@@ -184,6 +184,11 @@ html body section [style*="max-width: 1100px"], html body section [style*="max-w
 html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], html body p[style*="max-width: 74ch"], html body p[style*="max-width: 50ch"], html body div[style*="max-width: 62ch"] { max-width: 640px !important; }
 @media (min-width: 761px) { html body table { width: 100% !important; table-layout: fixed; } html body table th:nth-child(2), html body table th:nth-child(3) { width: 22% !important; } }
 </style>
+<style data-faq-css="1">
+@media (min-width: 768px) { html body #dudas > [data-sec][data-sec] { box-sizing: border-box; min-height: 720px; display: flex; flex-direction: column; justify-content: center; padding-top: 40px !important; padding-bottom: 40px !important; } }
+@media (max-width: 767px) { html body #dudas > [data-sec][data-sec] { box-sizing: border-box; min-height: 760px; display: flex; flex-direction: column; justify-content: center; } }
+</style>
+<style data-faqlist-css="1">html body #dudas [data-faqlist][data-faqlist] { width: 100% !important; max-width: 1100px !important; }</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -308,30 +313,25 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
   <!-- ============ 3 · QUÉ INCLUYE ============ -->
 
   <!-- ============ 7 · DUDAS ============ -->
-  <section style="max-width: 1920px; margin: 0 auto; padding: 86.4px 24px 0;">
-    <h2 data-reveal="1" style="margin: 0; font-size: clamp(28.8px, 3.4vw, 40px); line-height: 1.06;; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2>
-    <div data-reveal="1" style="margin-top: 32px; max-width: 936px;">
-      <details style="border-bottom: none;">
-          <summary style="padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Esto está permitido por Google?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">Sí. El punto abre tu ficha oficial de Google, la misma que enviarías por WhatsApp. No pedimos, no filtramos, no premiamos reseñas: Google lo prohíbe y nosotros tampoco lo hacemos.</p>
+  <section id="dudas" style="scroll-margin-top: 86.4px; background: #F2EDE6; color: #000000;"> <div data-sec="1" style="max-width: 1920px; margin: 0 auto; padding: 128px 24px;"> <div data-reveal="1" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 1.6669999999999998vw, 32px) clamp(48px, 4vw, 76.8px); align-items: baseline; justify-content: center;"> <h2 style="margin: 0; text-align: center; color: #000000; font-size: clamp(40px, 5vw, 88px); line-height: 1.04;; font-weight: 600; letter-spacing: -0.04em;">Preguntas frecuentes</h2> </div> <div data-faqlist="1" style="margin: clamp(48px, 4.5vw, 80px) auto 0; max-width: 1100px; width: 100%; align-self: center;"> <details style="border-bottom: none;">
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Esto está permitido por Google?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 32px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">Sí. El punto abre tu ficha oficial de Google, la misma que enviarías por WhatsApp. No pedimos, no filtramos, no premiamos reseñas: Google lo prohíbe y nosotros tampoco lo hacemos.</p>
         </details>
       
         <details style="border-bottom: none;">
-          <summary style="padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Necesito una app?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">No. Ni tú ni tus clientes. Acercan el móvil y se abre tu ficha.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Necesito una app?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 32px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">No. Ni tú ni tus clientes. Acercan el móvil y se abre tu ficha.</p>
         </details>
       
         <details style="border-bottom: none;">
-          <summary style="padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Hay cuota mensual?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">No, pago único. La pieza llega programada y es tuya.</p>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Hay cuota mensual?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 32px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">No, pago único. La pieza llega programada y es tuya.</p>
         </details>
       
         <details style="border-bottom: none;">
-          <summary style="padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Puedo cambiar la programación más adelante?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
-          <p style="margin: 0 0 24px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.</p>
-        </details>
-    </div>
-  </section>
+          <summary style="padding: 26.4px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 2vw, 38.4px); cursor: pointer; font-size: 19.8px; font-weight: 600; letter-spacing: -0.024em; transition: color 160ms ease;" style-hover="color: #B9533A;">¿Puedo cambiar la programación más adelante?<span data-plus="1" style="color: #6E6A64; font-weight: 400; font-size: 22.8px; transition: transform 220ms cubic-bezier(.16,.84,.44,1), color 160ms ease;">+</span></summary>
+          <p style="margin: 0 0 32px; font-size: 18.6px; line-height: 1.65; color: #6E6A64; max-width: 62ch;">La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.</p>
+        </details> </div> </div> </section>
 
   <footer data-nolight="1" style="color: #8A847C; background: #000000;">
     <div style="max-width: 1920px; margin: 0 auto; padding: 64px 24px 104px;">
@@ -406,7 +406,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610201804').then((m) => { this._chrome = m; m.applyTheme(this.state.theme === 'light' ? 'light-baked' : this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610201823').then((m) => { this._chrome = m; m.applyTheme(this.state.theme === 'light' ? 'light-baked' : this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
