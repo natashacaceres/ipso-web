@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610201823"></script>
+<script src="./support.js?v=202610201838"></script>
 </head>
 <body>
 <x-dc>
@@ -153,6 +153,10 @@ html body section [style*="max-width: 1100px"], html body section [style*="max-w
 html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], html body p[style*="max-width: 74ch"], html body p[style*="max-width: 50ch"], html body div[style*="max-width: 62ch"] { max-width: 640px !important; }
 @media (min-width: 761px) { html body table { width: 100% !important; table-layout: fixed; } html body table th:nth-child(2), html body table th:nth-child(3) { width: 22% !important; } }
 </style>
+<style data-legal-css="1">
+html body main[data-legal][data-legal] { max-width: 808px !important; padding-left: 24px !important; padding-right: 24px !important; }
+@media (max-width: 767px) { html body main[data-legal] p[data-legalp][data-legalp] { font-size: 16px !important; } html body main[data-legal] [data-legalnav] > a[href] { font-size: 14px !important; padding: 10px 12px !important; } }
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -200,16 +204,16 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
     </sc-if>
   </header>
 
-  <main style="max-width: 1200px; margin: 0 auto; padding: 76.8px 24px 115.2px;">
+  <main data-legal="1" style="max-width: 808px; margin: 0 auto; padding: 76.8px 24px 115.2px; box-sizing: border-box;">
 
-    <h1 style="margin: 0; font-size: clamp(36px, 6vw, 57.6px); line-height: 1.05;; font-weight: 700; letter-spacing: -0.045em;" ref="{{ h1Ref }}">Información legal</h1>
-    <p style="margin: 24px 0 0; max-width: 62ch; font-size: 18.6px; line-height: 1.65; color: #8A847C;">{{ intro }}</p>
+    <h1 style="margin: 0; text-align: center; font-size: clamp(36px, 6vw, 57.6px); line-height: 1.05;; font-weight: 700; letter-spacing: -0.045em;" ref="{{ h1Ref }}">Información legal</h1>
+    <p style="margin: 24px auto 0; max-width: 62ch; text-align: center; font-size: 18.6px; line-height: 1.65; color: #8A847C;">{{ intro }}</p>
 
-    <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px;">
-      <a href="#aviso-legal" style="font-size: 16.2px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 19.2px;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav1 }}</a>
-      <a href="#privacidad" style="font-size: 16.2px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 19.2px;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav2 }}</a>
-      <a href="#cookies" style="font-size: 16.2px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 19.2px;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav3 }}</a>
-      <a href="#contratacion" style="font-size: 16.2px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 19.2px;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav4 }}</a>
+    <div data-legalnav="1" style="margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <a href="#aviso-legal" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav1 }}</a>
+      <a href="#privacidad" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav2 }}</a>
+      <a href="#cookies" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav3 }}</a>
+      <a href="#contratacion" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav4 }}</a>
     </div>
 
     <sc-if value="{{ hasPend }}" hint-placeholder-val="{{ false }}">
@@ -224,17 +228,17 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
     </sc-if>
 
     <sc-for list="{{ docs }}" as="d" hint-placeholder-count="3">
-      <section id="{{ d.id }}" style="margin-top: 88px; scroll-margin-top: 96px;">
-        <div style="border-top: 1px solid #1A1A1A; padding-top: 32px;">
-          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; font-weight: 600; letter-spacing: -0.04em;">{{ d.title }}</h2>
-          <div style="margin-top: 8px; font-size: 16px; color: #8A847C;">{{ d.updated }}</div>
+      <section id="{{ d.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
+        <div>
+          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;">{{ d.title }}</h2>
+          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;">{{ d.updated }}</div>
           <div style="margin-top: 32px; display: flex; flex-direction: column; gap: clamp(30px, 2.5vw, 48px);">
             <sc-for list="{{ d.clauses }}" as="c" hint-placeholder-count="6">
               <div>
                 <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;">{{ c.h }}</h3>
                 <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
                   <sc-for list="{{ c.p }}" as="t" hint-placeholder-count="2">
-                    <p style="margin: 0; max-width: 74ch; font-size: 18.6px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;">{{ t }}</p>
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;">{{ t }}</p>
                   </sc-for>
                 </div>
               </div>
@@ -352,11 +356,11 @@ const ES = {
           'Comunicación a terceros: el número no se comparte con otros locales ni se usa para descuentos cruzados. Para enviar el mensaje de premio se utiliza WhatsApp (Meta Platforms Ireland Ltd.), que trata el número según sus propias condiciones.',
           'Derechos: el cliente puede pedir en cualquier momento el borrado de su número escribiendo a ' + MAIL + ' o al propio local, sin perder ningún derecho ya obtenido. El resto de derechos se ejercen según la cláusula correspondiente de esta política.',
           'El número se guarda cifrado y el cliente puede borrarlo él mismo desde la opción \u201cBorrar mis datos\u201d del propio punto.',
-          'Comparte tu visita: en los locales con HUB Pro, al tocar el punto el sistema registra el toque (fecha, hora, tipo de dispositivo y ciudad aproximada; sin IP ni teléfono) y deja en el navegador del cliente un pase firmado de un solo uso que caduca a las 3 horas. Con él, el cliente puede generar, si quiere, una imagen con el nombre del local, la ciudad, su número de visita, la fecha y la hora. Si añade una foto, se procesa en su propio móvil y nunca se envía ni se guarda en los servidores de Ipso. Solo se registra que pulsó compartir, no a dónde ni qué publicó. No se trata ningún dato personal.'
+          'Comparte tu visita: en todos los locales con IPSO HUB, al tocar el punto el sistema registra el toque (fecha, hora, tipo de dispositivo y ciudad aproximada; sin IP ni teléfono) y deja en el navegador del cliente un pase firmado de un solo uso que caduca a las 3 horas. Con él, el cliente puede generar, si quiere, una imagen con el nombre del local, la ciudad, su número de visita, la fecha y la hora. Si añade una foto, se procesa en su propio móvil y nunca se envía ni se guarda en los servidores de Ipso. Solo se registra que pulsó compartir, no a dónde ni qué publicó. No se trata ningún dato personal.'
         ]},
         { h: '3 ter. Asistente con inteligencia artificial', p: [
           'El IPSO HUB incluye un asistente conversacional basado en inteligencia artificial, identificado como tal en pantalla.',
-          'Responde con la carta y la información que facilita cada local, mediante un modelo de lenguaje de Google (Gemini) que puede tratar la consulta fuera del Espacio Económico Europeo bajo las garantías del apartado 6.',
+          'Responde con la carta y la información que facilita cada local, mediante un modelo de lenguaje de Anthropic (Claude) que puede tratar la consulta fuera del Espacio Económico Europeo con las garantías adecuadas del apartado 6.',
           'Al asistente no se le envían el número de teléfono ni los datos de fidelización del cliente; las conversaciones se usan solo para responder y no para publicidad ni perfilado.'
         ]},
         { h: '4. Plazos de conservación', p: [
@@ -364,7 +368,7 @@ const ES = {
           'Los datos estadísticos de navegación se conservan de forma agregada durante un máximo de veintiséis meses.'
         ]},
         { h: '5. Destinatarios y encargados del tratamiento', p: [
-          'No se ceden datos a terceros salvo obligación legal. Para prestar el servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento con contrato conforme al artículo 28 del RGPD: Cloudflare, Inc. (alojamiento del sitio y analítica agregada), FormSubmit (tramitación técnica del envío del formulario al correo de Ipso) y Google Ireland Ltd. (modelo de lenguaje del asistente).',
+          'No se ceden datos a terceros salvo obligación legal. Para prestar el servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento con contrato conforme al artículo 28 del RGPD: Cloudflare, Inc. (alojamiento del sitio y analítica agregada), FormSubmit (tramitación técnica del envío del formulario al correo de Ipso) y Anthropic (modelo de lenguaje del asistente).',
           'Si en el futuro se incorporase una herramienta de analítica con cookies, se informará en esta política y se solicitará el consentimiento previo del usuario.',
           'Para el envío del único mensaje de premio de los programas de fidelización interviene WhatsApp (Meta Platforms Ireland Ltd.), como proveedor del canal de mensajería.'
         ]},
@@ -393,7 +397,7 @@ const ES = {
           'Cookies técnicas y de seguridad, exentas de consentimiento: son necesarias para servir el sitio, equilibrar la carga y proteger frente a tráfico malicioso. Las gestiona el proveedor de alojamiento (Cloudflare) y su duración va desde la sesión hasta un máximo de treinta minutos de inactividad.',
           'Analítica agregada sin cookies: la infraestructura del sitio genera estadísticas de visitas sin instalar cookies ni identificar a personas concretas.',
           'Este sitio no instala cookies de analítica, publicidad ni perfilado. Al no existir cookies sujetas a consentimiento, no se muestra aviso de cookies. Si en algún momento se incorporasen, se solicitaría el consentimiento previo mediante un aviso con opciones de aceptar, rechazar y configurar.',
-          'En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente y, en Comparte tu visita, un pase de un solo uso que caduca a las 3 horas. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento. El hub guarda además en el almacenamiento local del navegador el idioma elegido, las últimas preguntas al asistente y el contador de sellos, sin enviarlos a ningún servidor.'
+          'En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente y, en Comparte tu visita, un pase de un solo uso que caduca a las 3 horas, y una marca anónima al azar que dura 30 días y sirve solo para limitar las preguntas al asistente a 50 al día por móvil. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento. El hub guarda además en el almacenamiento local del navegador el idioma elegido, las últimas preguntas al asistente y el contador de sellos, sin enviarlos a ningún servidor.'
         ]},
         { h: '3. Consentimiento', p: [
           'Con la configuración actual del sitio solo se utilizan cookies técnicas y de seguridad, exentas del deber de consentimiento previo conforme al artículo 22.2 de la LSSI-CE, por lo que no se muestra ningún aviso de cookies.',
@@ -416,6 +420,7 @@ const ES = {
         { h: "Qué contratas", p: [
           "El HUB se contrata en dos versiones: HUB (99 € + IVA, pago único, sin cuota) y HUB Pro (99 € + IVA de alta y 19 € + IVA al mes, primer mes incluido).",
           "Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y el envío gratuito a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta.",
+          "Pedir y pagar con tu TPV (opcional, solo HUB Pro): 9 € + IVA al mes por local. Se activa cuando la conexión con tu TPV funciona y se cobra con la cuota del HUB Pro, en la misma factura. Sin permanencia. IPSO no se queda nada de tus cobros.",
           "La placa y el stand de reseñas de Google se contratan con un pago único, sin cuota, e incluyen la pieza programada con tus datos y el envío. Tienen la misma garantía de 30 días de reembolso.",
           "El hub y la carta se muestran en 5 idiomas (español, catalán, inglés, francés y alemán); el asistente con IA responde en 30."
         ]},
@@ -512,11 +517,11 @@ const EN = {
           'Disclosure to third parties: the number is not shared with other venues or used for cross-venue discounts. The reward message is sent via WhatsApp (Meta Platforms Ireland Ltd.), which processes the number under its own terms.',
           'Rights: the customer may at any time request deletion of their number by writing to ' + MAIL + ' or to the venue itself, without losing any reward already earned. Other rights are exercised as set out in the relevant clause of this policy.',
           'The number is stored encrypted and the customer can delete it themselves using the \u201cDelete my data\u201d option on the point.',
-          'Share your visit: at venues with HUB Pro, when the point is tapped the system records the tap (date, time, device type and approximate city; no IP or phone number) and leaves a signed single-use pass in the customer\u2019s browser that expires after 3 hours. With it, the customer can, if they wish, generate an image with the venue name, the city, their visit number, the date and the time. If they add a photo, it is processed on their own phone and is never sent to or stored on Ipso\u2019s servers. Only the fact that they pressed share is recorded, not where or what they posted. No personal data is processed.'
+          'Share your visit: at all venues with IPSO HUB, when the point is tapped the system records the tap (date, time, device type and approximate city; no IP or phone number) and leaves a signed single-use pass in the customer\u2019s browser that expires after 3 hours. With it, the customer can, if they wish, generate an image with the venue name, the city, their visit number, the date and the time. If they add a photo, it is processed on their own phone and is never sent to or stored on Ipso\u2019s servers. Only the fact that they pressed share is recorded, not where or what they posted. No personal data is processed.'
         ]},
         { h: '3 ter. Artificial-intelligence assistant', p: [
           'The IPSO HUB includes a conversational assistant based on artificial intelligence, identified as such on screen.',
-          'It answers using the menu and information provided by each venue, through a Google language model (Gemini) that may process the query outside the European Economic Area under the safeguards in section 6.',
+          'It answers using the menu and information provided by each venue, through an Anthropic language model (Claude) that may process the query outside the European Economic Area with the appropriate safeguards in section 6.',
           'The customer\u2019s phone number and loyalty data are not sent to the assistant; conversations are used only to answer and not for advertising or profiling.'
         ]},
         { h: '4. Retention periods', p: [
@@ -524,7 +529,7 @@ const EN = {
           'Aggregated browsing statistics are kept for a maximum of twenty-six months.'
         ]},
         { h: '5. Recipients and processors', p: [
-          'Data is not disclosed to third parties except where legally required. The following providers act as processors under article 28 GDPR: Cloudflare, Inc. (website hosting and aggregated analytics), FormSubmit (technical delivery of form submissions to Ipso\u2019s inbox) and Google Ireland Ltd. (language model for the assistant).',
+          'Data is not disclosed to third parties except where legally required. The following providers act as processors under article 28 GDPR: Cloudflare, Inc. (website hosting and aggregated analytics), FormSubmit (technical delivery of form submissions to Ipso\u2019s inbox) and Anthropic (language model for the assistant).',
           'Should a cookie-based analytics tool be added in the future, this policy will be updated and prior user consent will be requested.',
           'The single reward message of the loyalty programmes is sent through WhatsApp (Meta Platforms Ireland Ltd.), as messaging channel provider.'
         ]},
@@ -553,7 +558,7 @@ const EN = {
           'Technical and security cookies, exempt from consent: necessary to serve the site, balance load and protect against malicious traffic. They are managed by the hosting provider (Cloudflare) and last from the session up to thirty minutes of inactivity.',
           'Cookieless aggregated analytics: the site infrastructure produces visit statistics without installing cookies or identifying individuals.',
           'This website installs no analytics, advertising or profiling cookies. As there are no cookies subject to consent, no cookie banner is displayed. Should any be added, prior consent would be requested through a notice offering accept, reject and configure options.',
-          'IPSO HUB points (go.ipsoglobal.com) use technical cookies only: the chosen language, recognising the customer on the stamp card and verifying that they have physically tapped the point and, in Share your visit, a single-use pass that expires after 3 hours. They are necessary for the service the customer requests, are not used for advertising or analytics and therefore require no consent notice. The hub also stores in the browser\u2019s local storage the chosen language, the latest questions to the assistant and the stamp counter, without sending them to any server.'
+          'IPSO HUB points (go.ipsoglobal.com) use technical cookies only: the chosen language, recognising the customer on the stamp card and verifying that they have physically tapped the point and, in Share your visit, a single-use pass that expires after 3 hours, and a random anonymous marker that lasts 30 days and is used only to limit questions to the assistant to 50 a day per phone. They are necessary for the service the customer requests, are not used for advertising or analytics and therefore require no consent notice. The hub also stores in the browser\u2019s local storage the chosen language, the latest questions to the assistant and the stamp counter, without sending them to any server.'
         ]},
         { h: '3. Consent', p: [
           'Under the current configuration the website only uses technical and security cookies, which are exempt from the prior consent requirement under article 22.2 LSSI-CE, so no cookie banner is displayed.',
@@ -576,6 +581,7 @@ const EN = {
         { h: "What you are purchasing", p: [
           "The HUB is available in two versions: HUB (99 € + VAT, one-off payment, no fee) and HUB Pro (99 € + VAT setup and 19 € + VAT per month, first month included).",
           "A one-off setup fee (99 € + VAT) that includes one NFC point, its configuration with the details you provide, and free shipping anywhere in Spain. Additional points at 25 € + VAT each. A monthly fee of 19 € + VAT per venue, charged automatically every month to the same card.",
+          "Order and pay with your POS (optional, HUB Pro only): 9 € + VAT per month per venue. It is activated once the connection with your POS works and is charged with the HUB Pro fee, on the same invoice. No minimum term. IPSO keeps nothing from your payments.",
           "The Google reviews plaque and stand are purchased with a one-off payment, no monthly fee, and include the piece programmed with your details and shipping. They carry the same 30-day money-back guarantee.",
           "The hub and the menu are shown in 5 languages (Spanish, Catalan, English, French and German); the AI assistant replies in 30."
         ]},
@@ -673,11 +679,11 @@ const CA = {
           'Comunicació a tercers: el número no es comparteix amb altres locals ni es fa servir per a descomptes creuats. Per enviar el missatge de premi s\u2019utilitza WhatsApp (Meta Platforms Ireland Ltd.), que tracta el número segons les seves pròpies condicions.',
           'Drets: el client pot demanar en qualsevol moment l\u2019esborrat del seu número escrivint a ' + MAIL + ' o al mateix local, sense perdre cap dret ja obtingut. La resta de drets s\u2019exerceixen segons la clàusula corresponent d\u2019aquesta política.',
           'El número es guarda xifrat i el client pot esborrar-lo ell mateix des de l\u2019opció \u201cEsborrar les meves dades\u201d del mateix punt.',
-          'Comparteix la teva visita: als locals amb HUB Pro, en tocar el punt el sistema registra el toc (data, hora, tipus de dispositiu i ciutat aproximada; sense IP ni telèfon) i deixa al navegador del client una passada signada d\u2019un sol ús que caduca al cap de 3 hores. Amb ella, el client pot generar, si vol, una imatge amb el nom del local, la ciutat, el seu número de visita, la data i l\u2019hora. Si hi afegeix una foto, es processa al seu propi mòbil i mai no s\u2019envia ni es desa als servidors d\u2019Ipso. Només es registra que va prémer compartir, no on ni què va publicar. No es tracta cap dada personal.'
+          'Comparteix la teva visita: a tots els locals amb IPSO HUB, en tocar el punt el sistema registra el toc (data, hora, tipus de dispositiu i ciutat aproximada; sense IP ni telèfon) i deixa al navegador del client una passada signada d\u2019un sol ús que caduca al cap de 3 hores. Amb ella, el client pot generar, si vol, una imatge amb el nom del local, la ciutat, el seu número de visita, la data i l\u2019hora. Si hi afegeix una foto, es processa al seu propi mòbil i mai no s\u2019envia ni es desa als servidors d\u2019Ipso. Només es registra que va prémer compartir, no on ni què va publicar. No es tracta cap dada personal.'
         ]},
         { h: '3 ter. Assistent amb intel·ligència artificial', p: [
           'L\u2019IPSO HUB inclou un assistent conversacional basat en intel·ligència artificial, identificat com a tal en pantalla.',
-          'Respon amb la carta i la informació que facilita cada local, mitjançant un model de llenguatge de Google (Gemini) que pot tractar la consulta fora de l\u2019Espai Econòmic Europeu sota les garanties de l\u2019apartat 6.',
+          'Respon amb la carta i la informació que facilita cada local, mitjançant un model de llenguatge d\u2019Anthropic (Claude) que pot tractar la consulta fora de l\u2019Espai Econòmic Europeu amb les garanties adequades de l\u2019apartat 6.',
           'A l\u2019assistent no se li envien el número de telèfon ni les dades de fidelització del client; les converses es fan servir només per respondre i no per a publicitat ni perfilat.'
         ]},
         { h: '4. Terminis de conservació', p: [
@@ -685,7 +691,7 @@ const CA = {
           'Les dades estadístiques de navegació es conserven de manera agregada durant un màxim de vint-i-sis mesos.'
         ]},
         { h: '5. Destinataris i encarregats del tractament', p: [
-          'No se cedeixen dades a tercers excepte per obligació legal. Per prestar el servei intervenen els proveïdors següents, que actuen com a encarregats del tractament amb contracte conforme a l\u2019article 28 del RGPD: Cloudflare, Inc. (allotjament del lloc i analítica agregada), FormSubmit (tramitació tècnica de l\u2019enviament del formulari al correu d\u2019Ipso) i Google Ireland Ltd. (model de llenguatge de l\u2019assistent).',
+          'No se cedeixen dades a tercers excepte per obligació legal. Per prestar el servei intervenen els proveïdors següents, que actuen com a encarregats del tractament amb contracte conforme a l\u2019article 28 del RGPD: Cloudflare, Inc. (allotjament del lloc i analítica agregada), FormSubmit (tramitació tècnica de l\u2019enviament del formulari al correu d\u2019Ipso) i Anthropic (model de llenguatge de l\u2019assistent).',
           'Si en el futur s\u2019incorporés una eina d\u2019analítica amb cookies, s\u2019informaria en aquesta política i se sol·licitaria el consentiment previ de l\u2019usuari.',
           'Per a l\u2019enviament de l\u2019únic missatge de premi dels programes de fidelització intervé WhatsApp (Meta Platforms Ireland Ltd.), com a proveïdor del canal de missatgeria.'
         ]},
@@ -714,7 +720,7 @@ const CA = {
           'Cookies tècniques i de seguretat, exemptes de consentiment: són necessàries per servir el lloc, equilibrar la càrrega i protegir davant trànsit maliciós. Les gestiona el proveïdor d\u2019allotjament (Cloudflare) i la seva durada va des de la sessió fins a un màxim de trenta minuts d\u2019inactivitat.',
           'Analítica agregada sense cookies: la infraestructura del lloc genera estadístiques de visites sense instal·lar cookies ni identificar persones concretes.',
           'Aquest lloc no instal·la cookies d\u2019analítica, publicitat ni perfilat. En no existir cookies subjectes a consentiment, no es mostra cap avís de cookies. Si en algun moment s\u2019incorporessin, se sol·licitaria el consentiment previ mitjançant un avís amb opcions d\u2019acceptar, rebutjar i configurar.',
-          'Als punts IPSO HUB (go.ipsoglobal.com) només es fan servir cookies tècniques: l\u2019idioma triat, el reconeixement del client a la targeta de segells i la comprovació que ha tocat el punt físicament i, a Comparteix la teva visita, una passada d\u2019un sol ús que caduca al cap de 3 hores. Són necessàries per al servei que el mateix client sol·licita, no es fan servir per a publicitat ni analítica i per això no requereixen avís de consentiment. El hub desa a més a l\u2019emmagatzematge local del navegador l\u2019idioma triat, les últimes preguntes a l\u2019assistent i el comptador de segells, sense enviar-los a cap servidor.'
+          'Als punts IPSO HUB (go.ipsoglobal.com) només es fan servir cookies tècniques: l\u2019idioma triat, el reconeixement del client a la targeta de segells i la comprovació que ha tocat el punt físicament i, a Comparteix la teva visita, una passada d\u2019un sol ús que caduca al cap de 3 hores, i una marca anònima a l\u2019atzar que dura 30 dies i serveix només per limitar les preguntes a l\u2019assistent a 50 al dia per mòbil. Són necessàries per al servei que el mateix client sol·licita, no es fan servir per a publicitat ni analítica i per això no requereixen avís de consentiment. El hub desa a més a l\u2019emmagatzematge local del navegador l\u2019idioma triat, les últimes preguntes a l\u2019assistent i el comptador de segells, sense enviar-los a cap servidor.'
         ]},
         { h: '3. Consentiment', p: [
           'Amb la configuració actual del lloc només s\u2019utilitzen cookies tècniques i de seguretat, exemptes del deure de consentiment previ d\u2019acord amb l\u2019article 22.2 de la LSSI-CE, per la qual cosa no es mostra cap avís de cookies.',
@@ -737,6 +743,7 @@ const CA = {
         { h: "Què contractes", p: [
           "El HUB es contracta en dues versions: HUB (99 € + IVA, pagament únic, sense quota) i HUB Pro (99 € + IVA d’alta i 19 € + IVA al mes, primer mes inclòs).",
           "Una alta única (99 € + IVA) que inclou un punt NFC, la seva configuració amb les dades que ens facilitis i l’enviament gratuït a qualsevol punt d’Espanya. Punts addicionals a 25 € + IVA cadascun. Una quota de 19 € + IVA al mes per local, que es cobra de manera automàtica cada mes a la mateixa targeta.",
+          "Demanar i pagar amb el teu TPV (opcional, només HUB Pro): 9 € + IVA al mes per local. S’activa quan la connexió amb el teu TPV funciona i es cobra amb la quota del HUB Pro, a la mateixa factura. Sense permanència. IPSO no es queda res dels teus cobraments.",
           "La placa i l’estand de ressenyes de Google es contracten amb un pagament únic, sense quota, i inclouen la peça programada amb les teves dades i l’enviament. Tenen la mateixa garantia de 30 dies de devolució.",
           "El hub i la carta es mostren en 5 idiomes (espanyol, català, anglès, francès i alemany); l’assistent amb IA respon en 30."
         ]},
@@ -777,7 +784,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610201823').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610201838').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
   }
 
   componentDidUpdate() {
