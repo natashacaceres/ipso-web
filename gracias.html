@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": "IPSO", "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610152357"></script>
+<script src="./support.js?v=202610201804"></script>
 </head>
 <body>
 <x-dc>
@@ -39,7 +39,7 @@
   * { box-sizing: border-box; }
   a { color: #000000; text-decoration: underline; text-underline-offset: 3px; }
   a:hover { color: #000000; }
-  ::selection { background: #E9E2D8; color: #000000; }
+  ::selection { background: #E8E0D5; color: #000000; }
   [data-langmenu]:hover [data-langpanel], [data-langmenu]:focus-within [data-langpanel] { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
   [data-langmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
   @media (max-width: 760px) { button[aria-label="Idioma"] { min-width: 44px !important; min-height: 44px !important; justify-content: center !important; margin: 0 -12px !important; } }
@@ -47,9 +47,9 @@
     html body [data-col] > main { padding-left: 4px !important; padding-right: 4px !important; }
     [data-h1] { white-space: nowrap !important; font-size: 23px !important; }
     [data-ok] { width: 56px !important; height: 56px !important; }
-    [data-stitle] { font-size: 14px !important; }
+    [data-stitle] { font-size: 16px !important; }
     [data-steps] { column-gap: 4px !important; }
-    [data-stext] { font-size: 13.2px !important; }
+    [data-stext] { font-size: 16px !important; }
     [data-cta-main] { display: flex !important; width: 100%; }
   }
 </style>
@@ -60,18 +60,29 @@
   img { max-width: 100%; }
 </style>
 <style data-flow="1">html { background: #F2EDE6 !important; } body { background: #F2EDE6 !important; color: #000000; } html body header[data-simple] [data-langmenu] { display: block !important; } header [data-word], footer [data-word] { filter: none !important; }</style>
+<style data-lane="1">
+/* carril común: 1200px de contenido, margen lateral clamp(24px,5vw,72px); secciones con el mismo relleno arriba y abajo */
+:root { --lane: clamp(24px, 5vw, 72px); --sec: clamp(40px, 4vw, 56px); }
+html body [style*="max-width: 1920px"]:not(header *):not(#asi-funciona *):not(#sol-track *):not(#sol-track):not([data-col] > main), html body main[style*="max-width: 1200px"] { max-width: calc(1200px + 2 * var(--lane)) !important; margin-left: auto !important; margin-right: auto !important; padding-left: var(--lane) !important; padding-right: var(--lane) !important; box-sizing: border-box; }
+html body section[style*="max-width: 1920px"][style]:not(#asi-funciona *), html body section > div[style*="max-width: 1920px"][style]:not([style*="padding: 0 24px"]):not(#asi-funciona *):not(#sol-track *):not([data-band] *):not(section[data-hero2] *):not(#top *) { padding-top: var(--sec) !important; padding-bottom: var(--sec) !important; }
+html body header[style*="sticky"] { width: min(calc(100% - 2 * var(--lane) + 2 * clamp(12px, 1.5vw, 20px)), calc(1200px + 2 * clamp(12px, 1.5vw, 20px))) !important; }
+html body header > div[data-navrow] { max-width: none !important; padding-left: clamp(12px, 1.5vw, 20px) !important; padding-right: clamp(12px, 1.5vw, 20px) !important; }
+html body section [style*="max-width: 1100px"], html body section [style*="max-width: 1032px"], html body section [style*="max-width: 936px"] { max-width: none !important; }
+html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], html body p[style*="max-width: 74ch"], html body p[style*="max-width: 50ch"], html body div[style*="max-width: 62ch"] { max-width: 640px !important; }
+@media (min-width: 761px) { html body table { width: 100% !important; table-layout: fixed; } html body table th:nth-child(2), html body table th:nth-child(3) { width: 22% !important; } }
+</style>
 </helmet>
 
 <div style="min-height: 100vh; display: flex; flex-direction: column; background: #F2EDE6;">
 
   <header data-simple="1" data-nolight="1" style="position: sticky; z-index: 50; background: #000000; top: 12px; width: min(calc(100% - 24px), 1440px); margin: 12px auto 0; border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.22);">
     <div data-navrow="1" style="max-width: 1920px; margin: 0 auto; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
-      <a href="/" style="flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></a>
+      <a href="/" style="flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="Ipso" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></a>
       <div data-langmenu="1" style="flex: none; position: relative;">
-        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 13.2px; font-weight: 600; letter-spacing: .06em; color: #F4F6F3; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
+        <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: .06em; color: #F2EDE6; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
           <span>{{ langCode }}</span>
         </button>
-          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #262924; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
+          <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #1A1A1A; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
             <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
               <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
                 <span>{{ l.name }}</span>
@@ -85,44 +96,44 @@
   <div data-col="1" style="width: min(calc(100% - 24px), 1440px); margin: 0 auto; flex: 1;">
     <main style="max-width: 1920px; margin: 0 auto; padding: clamp(20px, 6vh, 80px) 20px clamp(24px, 6vh, 80px); display: flex; flex-direction: column; align-items: center; text-align: center;">
       <div data-ok="1" style="width: 72px; height: 72px; border-radius: 999px; background: #2E9E5B; display: flex; align-items: center; justify-content: center; flex: none;"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 50%; height: 50%; display: block;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
-      <h1 data-h1="1" style="margin: clamp(16px, 3vh, 28px) 0 0; font-size: clamp(28px, 4.2vw, 60px); line-height: 1.08; font-weight: 600; letter-spacing: -0.04em; color: #000000; white-space: nowrap;">{{ t.title }}</h1>
-      <p style="margin: 10px 0 0; font-size: clamp(16.8px, 1.5vw, 21.6px); line-height: 1.5; color: #4E534C;">{{ t.lead }}</p>
+      <h1 data-h1="1" style="margin: clamp(16px, 3vh, 28px) 0 0; font-size: clamp(28px, 4.2vw, 60px); line-height: 1.08; font-weight: 600; letter-spacing: -0.04em; color: #000000; white-space: nowrap;" ref="{{ titleRef }}">Pago recibido. ¡Gracias!</h1>
+      <p style="margin: 8px 0 0; font-size: clamp(16.8px, 1.5vw, 21.6px); line-height: 1.5; color: #6E6A64;">{{ t.lead }}</p>
 
       <div data-steps="1" style="position: relative; margin-top: clamp(24px, 6vh, 64px); width: 100%; max-width: 820px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(8px, 2vw, 32px);">
-        <span aria-hidden="true" style="position: absolute; top: 16px; left: 16.67%; right: 16.67%; height: 1px; background: #CFC6B9;"></span>
+        <span aria-hidden="true" style="position: absolute; top: 16px; left: 16.67%; right: 16.67%; height: 1px; background: #BDB6AD;"></span>
         <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
           <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0;">
-            <sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #000000; color: #FFFFFF; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
-            <sc-if value="{{ s.now }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #D8694C; color: #FFFFFF; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; box-shadow: 0 0 0 5px rgba(216,105,76,.2);">{{ s.n }}</span></sc-if>
-            <sc-if value="{{ s.todo }}" hint-placeholder-val="{{ true }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #F2EDE6; border: 1.5px solid #9CA39A; color: #4E534C; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
+            <sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #000000; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
+            <sc-if value="{{ s.now }}" hint-placeholder-val="{{ false }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #D8694C; color: #FFFFFF; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; box-shadow: 0 0 0 5px rgba(216,105,76,.2);">{{ s.n }}</span></sc-if>
+            <sc-if value="{{ s.todo }}" hint-placeholder-val="{{ true }}"><span style="width: 32px; height: 32px; border-radius: 999px; background: #F2EDE6; border: 1.5px solid #BDB6AD; color: #6E6A64; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">{{ s.n }}</span></sc-if>
             <div data-stitle="1" style="margin-top: 4px; font-size: 17.4px; line-height: 1.25; font-weight: 600; color: {{ s.fg }}; text-wrap: balance;">{{ s.title }}</div>
-            <div data-stext="1" style="font-size: 15.6px; line-height: 1.4; color: {{ s.fg2 }}; text-wrap: balance;">{{ s.text }}</div>
+            <div data-stext="1" style="font-size: 16px; line-height: 1.4; color: {{ s.fg2 }}; text-wrap: balance;">{{ s.text }}</div>
           </div>
         </sc-for>
       </div>
 
       <sc-if value="{{ t.hasCta }}" hint-placeholder-val="{{ false }}">
-        <div style="margin-top: clamp(24px, 5vh, 48px); display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
-          <a data-cta-main="1" href="https://go.ipsoglobal.com/alta" ref="{{ altaRef }}" style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; font-size: 17.4px; font-weight: 600; color: #000000; background: #D8694C; border-radius: 10px; text-decoration: none; transition: background 170ms ease, transform 170ms cubic-bezier(.16,.84,.44,1);" style-hover="color: #000000; background: #C55A3F; transform: translateY(-2px);">{{ t.cta }}</a>
-          <p style="margin: 0; font-size: 14.4px; line-height: 1.45; color: #4E534C;">{{ t.ctaNote }}</p>
+        <div style="margin-top: clamp(24px, 5vh, 48px); display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+          <a data-cta-main="1" href="https://go.ipsoglobal.com/alta" ref="{{ altaRef }}" style="display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; font-size: 17.4px; font-weight: 600; color: #FFFFFF; background: #B9533A; border-radius: 10px; text-decoration: none; transition: background 170ms ease, transform 170ms cubic-bezier(.16,.84,.44,1);" style-hover="color: #FFFFFF; background: #D8694C; transform: translateY(-2px);">{{ t.cta }}</a>
+          <p style="margin: 0; font-size: 16px; line-height: 1.45; color: #6E6A64;">{{ t.ctaNote }}</p>
         </div>
       </sc-if>
 
-      <p style="margin: clamp(16px, 4vh, 40px) 0 0; font-size: 15px; line-height: 1.6; color: #4E534C;">{{ t.help }} <a href="https://wa.me/34603924226" target="_blank" rel="noopener" style="color: #000000; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #000000;">WhatsApp</a></p>
+      <p style="margin: clamp(16px, 4vh, 40px) 0 0; font-size: 16px; line-height: 1.6; color: #6E6A64;">{{ t.help }} <a href="https://wa.me/34603924226" target="_blank" rel="noopener" style="color: #000000; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #000000;">WhatsApp</a></p>
     </main>
   </div>
 
-  <footer data-simple="1" data-nolight="1" style="background: #000000; color: #C3C8BF;">
-    <section style="max-width: 1920px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 24px;">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;">
-        <span style="display: flex; align-items: center; gap: 12px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
-        <nav style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 16.2px;">
-          <a href="/legal#aviso-legal" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.legal }}</a>
-          <a href="/legal#privacidad" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.priv }}</a>
-          <a href="/legal#cookies" style="color: #C3C8BF; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.cookies }}</a>
+  <footer data-simple="1" data-nolight="1" style="background: #000000; color: #BDB6AD;">
+    <section style="max-width: 1920px; margin: 0 auto; padding: 48px 24px 48px; display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 32px;">
+        <span style="display: flex; align-items: center; gap: 16px;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="Ipso" style="height: 36px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 16px; width: auto; display: block;"></span>
+        <nav style="display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 16.2px;">
+          <a href="/legal#aviso-legal" style="color: #BDB6AD; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.legal }}</a>
+          <a href="/legal#privacidad" style="color: #BDB6AD; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.priv }}</a>
+          <a href="/legal#cookies" style="color: #BDB6AD; text-decoration: none;" style-hover="color: #FFFFFF;">{{ t.cookies }}</a>
         </nav>
       </div>
-      <div style="font-size: 15px; color: #C3C8BF;">© 2026 Ipso · Barcelona · <!--email_off--><a href="mailto:contacto@ipsoglobal.com" style="color: #C3C8BF; text-decoration: none;">contacto@ipsoglobal.com</a><!--/email_off--></div>
+      <div style="font-size: 16px; color: #BDB6AD;">© 2026 Ipso · Barcelona · <!--email_off--><a href="mailto:contacto@ipsoglobal.com" style="color: #BDB6AD; text-decoration: none;">contacto@ipsoglobal.com</a><!--/email_off--></div>
     </section>
   </footer>
 
@@ -143,7 +154,7 @@ function buildSteps(d, moment) {
   return d.steps.map((title, i) => ({
     n: i + 1, title, text: d[moment].texts[i],
     done: st[i] === 'done', now: st[i] === 'now', todo: st[i] === 'todo',
-    fg: st[i] === 'now' ? '#000000' : '#4E534C', fg2: st[i] === 'now' ? '#000000' : '#4E534C'
+    fg: st[i] === 'now' ? '#000000' : '#6E6A64', fg2: st[i] === 'now' ? '#000000' : '#6E6A64'
   }));
 }
 function pageVals(lang, moment) {
@@ -165,21 +176,22 @@ class Component extends DCLogic {
     const lang = initialLang();
     if (lang !== this.state.lang) this.setState({ lang });
     document.documentElement.lang = lang;
-    import('./ipso-chrome.js?v=202610152357').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
+    import('./ipso-chrome.js?v=202610201804').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
   }
   componentDidUpdate() { if (this._chrome) this._chrome.applyTheme(this.state.theme); }
   renderVals() {
     const lang = this.state.lang;
     let plan = '';
     try { plan = (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase(); } catch (e) {}
-    return Object.assign(pageVals(lang, MOMENT), {
+    const PV = pageVals(lang, MOMENT);
+    return Object.assign(PV, { titleRef: ((v) => (el) => { if (el && el.textContent !== v) el.textContent = v; })(PV.t.title),
       altaHref: (plan === 'hub' || plan === 'pro') ? 'https://go.ipsoglobal.com/alta?plan=' + plan : 'https://go.ipsoglobal.com/alta',
       altaRef: ((u) => (el) => { if (el) el.setAttribute('href', u); })((plan === 'hub' || plan === 'pro') ? 'https://go.ipsoglobal.com/alta?plan=' + plan : 'https://go.ipsoglobal.com/alta'),
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })),
       langCode: lang === 'ca' ? 'CAT' : lang.toUpperCase(),
       langs: ['es', 'en', 'ca'].map((code) => ({
         name: LANGNAMES[code],
-        fg: lang === code ? '#000000' : '#F4F6F3', bg: lang === code ? '#D8694C' : 'transparent',
+        fg: lang === code ? '#000000' : '#F2EDE6', bg: lang === code ? '#D8694C' : 'transparent',
         pick: () => { try { localStorage.setItem('ipso-lang', code); } catch (e) {} document.documentElement.lang = code; this.setState({ lang: code, langMenu: false }); }
       }))
     });

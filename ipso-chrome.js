@@ -1,7 +1,7 @@
 /* Cabecera común de IPSO: tema claro/oscuro e idiomas (ES/EN/CAT). */
 export const PAL = {
-  dark:  { fg: '#F4F6F3', dim: '#9CA39A', line: '#262924' },
-  light: { fg: '#000000', dim: '#5A605C', line: '#D2D5CF' }
+  dark:  { fg: '#F2EDE6', dim: '#8A847C', line: '#1A1A1A' },
+  light: { fg: '#000000', dim: '#6E6A64', line: '#BDB6AD' }
 };
 
 const LIGHT_MAP = {
@@ -46,18 +46,19 @@ function toLight(prop, value) {
 const LIGHT_CSS = [
   'html { background: #F2EDE6; }',
   'body { color: #000000 !important; }',
-  'a:not([style]) { color: #B5482B !important; }',
-  'a:not([style]):hover { color: #C55A3F !important; }',
-  'details[open] summary [data-plus] { color: #B5482B !important; }',
-  '[data-ico] { stroke: #4E534C; }',
+  'a:not([style]) { color: #B9533A !important; }',
+  'a:not([style]):hover { color: #B9533A !important; }',
+  'details[open] summary [data-plus] { color: #B9533A !important; }',
+  '[data-ico] { stroke: #6E6A64; }',
   '[data-word] { filter: invert(1); }', 'header:not([data-hdrlight]) [data-word] { filter: none; }', 'header[data-hdrlight] [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }', 'header[data-hdrlight] nav a:hover, header[data-hdrlight] [data-navrow] > div a:hover { color: #000000 !important; }',
   '[data-paymark] { filter: invert(1); }',
-  'html body footer:not([data-nolight]), html body footer:not([data-nolight]) p, html body footer:not([data-nolight]) span, html body footer:not([data-nolight]) a[href] { color: #4E534C !important; }', 'footer [data-word] { filter: none !important; }',
+  'html body footer:not([data-nolight]), html body footer:not([data-nolight]) p, html body footer:not([data-nolight]) span, html body footer:not([data-nolight]) a[href] { color: #6E6A64 !important; }', 'footer [data-word] { filter: none !important; }',
   'html body footer:not([data-nolight]) a[href]:hover { color: #000000 !important; }'
 ].join('\n');
 
 export function applyTheme(theme) {
-  const light = theme === 'light';
+  const light = theme === 'light' || theme === 'light-baked';
+  const remap = theme === 'light';
   let tag = document.getElementById('ipso-theme');
   if (!tag) { tag = document.createElement('style'); tag.id = 'ipso-theme'; document.head.appendChild(tag); }
   tag.textContent = light ? LIGHT_CSS : '';
@@ -67,7 +68,7 @@ export function applyTheme(theme) {
     if (now !== el.__ours) el.__base = now;
     const base = el.__base === undefined ? now : el.__base;
     let v = base;
-    if (light && (!el.closest('header') || el.closest('header[data-hdrlight]'))) {
+    if (remap && (!el.closest('header') || el.closest('header[data-hdrlight]'))) {
       v = base.split(';').map(function (decl) {
         const k = decl.indexOf(':');
         if (k < 0) return decl;
@@ -91,7 +92,7 @@ export function applyTheme(theme) {
 const EN_PAIRS = [
   ['Comprar', 'Buy'], ['Agotado por ahora', 'Sold out for now'], ['Avísame cuando vuelva', 'Let me know when it is back'], ['Placa', 'Plate'], ['Pedir presupuesto', 'Request a quote'], ['Envío gratuito en España.', 'Free shipping in Spain.'], ['de garantía: si no te convence, te devolvemos el importe.', 'guarantee: if it does not convince you, we refund the amount.'],
   ['Pieza programada con tus datos', 'Piece programmed with your details'], ['Envío gratuito', 'Free shipping'], ['30 días de garantía de reembolso', '30-day money-back guarantee'],
-  ['¿Puedo cambiar la programación más adelante?', 'Can I change the programming later?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'The piece arrives programmed with your details. If you later want to change it, we reprogram it for 15 €. If you want unlimited changes, an assistant and a monthly report, that is the IPSO HUB.'],
+  ['¿Puedo cambiar la programación más adelante?', 'Can I change the programming later?'], ['La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'The piece arrives programmed with your details. If you want unlimited changes, an assistant and a monthly report, that is the IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Each piece is one plate. Order as many as tables you want to cover.'],
   ['Soluciones', 'Solutions'], ['Cómo funciona', 'How it works'], ['Precios', 'Prices'], ['Contacto', 'Contact'], ['Punto de reseñas', 'Reviews point'], ['Dudas', 'FAQ'],
   ['Oscuro', 'Dark'], ['Claro', 'Light'], 
@@ -170,7 +171,7 @@ const EN_PAIRS = [
 const CA_PAIRS = [
   ['Comprar', 'Comprar'], ['Agotado por ahora', 'Exhaurit per ara'], ['Avísame cuando vuelva', 'Avisa\u2019m quan torni'], ['Placa', 'Placa'], ['Pedir presupuesto', 'Demanar pressupost'], ['Envío gratuito en España.', 'Enviament gratuït a Espanya.'], ['de garantía: si no te convence, te devolvemos el importe.', 'de garantia: si no et convenç, et retornem l\u2019import.'],
   ['Pieza programada con tus datos', 'Peça programada amb les teves dades'], ['Envío gratuito', 'Enviament gratuït'], ['30 días de garantía de reembolso', '30 dies de garantia de devolució'],
-  ['¿Puedo cambiar la programación más adelante?', 'Puc canviar la programació més endavant?'], ['La pieza llega programada con tus datos. Si más adelante quieres cambiarla, la reprogramamos por 15 €. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'La peça arriba programada amb les teves dades. Si més endavant vols canviar-la, la reprogramem per 15 €. Si vols canvis il·limitats, assistent i informe mensual, això és l\u2019IPSO HUB.'],
+  ['¿Puedo cambiar la programación más adelante?', 'Puc canviar la programació més endavant?'], ['La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'La peça arriba programada amb les teves dades. Si vols canvis il·limitats, assistent i informe mensual, això és l\u2019IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Cada peça és una placa. Demana\u2019n tantes com taules vulguis cobrir.'],
   ['Soluciones', 'Solucions'], ['Cómo funciona', 'Com funciona'], ['Precios', 'Preus'], ['Contacto', 'Contacte'], ['Piezas', 'Peces'], ['No, pago único. La pieza llega programada y es tuya.', 'No, pagament únic. La peça arriba programada i és teva.'], ['Pago único. Programación incluida.', 'Pagament únic. Programació inclosa.'], ['en 2-4 días laborables', 'en 2-4 dies laborables'], ['Garantía de reembolso 30 días', 'Garantia de devolució 30 dies'], ['incl. IVA', 'IVA incl.'], ['Punto de reseñas', 'Punt de ressenyes'], ['Dudas', 'Dubtes'],
   ['Oscuro', 'Fosc'], ['Claro', 'Clar'], 
