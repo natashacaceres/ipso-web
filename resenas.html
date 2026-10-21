@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": ["IPSO", "IPSO Barcelona", "IPSO HUB", "ipsoglobal"], "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610211842"></script>
+<script src="./support.js?v=202610212356"></script>
 </head>
 <body>
 <x-dc>
@@ -49,7 +49,6 @@
     [data-navlinks] { display: none !important; }
     [data-cta] { display: none !important; }
     [data-burger] { display: flex !important; }
-    [data-themepills] { display: none !important; }
   }
   [data-solmenu]:hover [data-solpanel], [data-solmenu]:focus-within [data-solpanel] { opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; }
   [data-solmenu]::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 14px; }
@@ -60,7 +59,6 @@
   @supports (animation-timeline: view()) {
     [data-reveal] { animation-timeline: view(); animation-range: entry 4% cover 26%; }
   }
-  html[data-theming] section, html[data-theming] [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
   @keyframes sectionIn { from { opacity: 0; transform: translateY(46px) scale(.99); } to { opacity: 1; transform: none; } }
   @supports (animation-timeline: view()) {
     section[data-anim] { animation: sectionIn 1200ms cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
@@ -188,7 +186,21 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
 @media (min-width: 768px) { html body #dudas > [data-sec][data-sec] { box-sizing: border-box; min-height: 720px; display: flex; flex-direction: column; justify-content: center; padding-top: 40px !important; padding-bottom: 40px !important; } }
 @media (max-width: 767px) { html body #dudas > [data-sec][data-sec] { box-sizing: border-box; min-height: 760px; display: flex; flex-direction: column; justify-content: center; } }
 </style>
-<style data-faqlist-css="1">html body #dudas [data-faqlist][data-faqlist] { width: 100% !important; max-width: 1100px !important; }</style>
+<style data-faqlist-css="1">html body #dudas [data-faqlist][data-faqlist] { width: 100% !important; max-width: 1100px !important; }html { background: #F2EDE6; }
+body { color: #000000 !important; }
+a:not([style]) { color: #B9533A !important; }
+a:not([style]):hover { color: #B9533A !important; }
+details[open] summary [data-plus] { color: #B9533A !important; }
+[data-ico] { stroke: #6E6A64; }
+[data-word] { filter: invert(1); }
+header:not([data-hdrlight]) [data-word] { filter: none; }
+header[data-hdrlight] [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }
+header[data-hdrlight] nav a:hover, header[data-hdrlight] [data-navrow] > div a:hover { color: #000000 !important; }
+[data-paymark] { filter: invert(1); }
+html body footer:not([data-nolight]), html body footer:not([data-nolight]) p, html body footer:not([data-nolight]) span, html body footer:not([data-nolight]) a[href] { color: #6E6A64 !important; }
+footer [data-word] { filter: none !important; }
+html body footer:not([data-nolight]) a[href]:hover { color: #000000 !important; }
+</style>
 </helmet>
 
 <div style="width: 100%; overflow-x: clip;">
@@ -205,20 +217,28 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
       <a href="https://wa.me/34603924226" target="_blank" rel="noopener" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">Contacto</a>
       <div data-langmenu="1" data-open="{{ langMenuAttr }}" style="flex: none; position: relative;">
         <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: .06em; color: #F2EDE6; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
-          <span>{{ langCode }}</span>
+          <span ref="{{ langCodeRef }}">ES</span>
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #1A1A1A; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
-            <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
-                <span>{{ l.name }}</span>
+                          <button onClick="{{ langs.0.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.0.fg }}; background: {{ langs.0.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>Español</span>
               </button>
-            </sc-for>
+            
+              <button onClick="{{ langs.1.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.1.fg }}; background: {{ langs.1.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>English</span>
+              </button>
+            
+              <button onClick="{{ langs.2.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.2.fg }}; background: {{ langs.2.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>Català</span>
+              </button>
           </div>
       </div>
       <div data-mlangbar="1" style="display: none; align-items: center; margin-left: auto;">
-        <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-          <button type="button" onClick="{{ l.pick }}" data-code="{{ l.code }}" data-on="{{ l.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
-        </sc-for>
+                  <button type="button" onClick="{{ langs.0.pick }}" data-code="{{ langs.0.code }}" data-on="{{ langs.0.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
+        
+          <button type="button" onClick="{{ langs.1.pick }}" data-code="{{ langs.1.code }}" data-on="{{ langs.1.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
+        
+          <button type="button" onClick="{{ langs.2.pick }}" data-code="{{ langs.2.code }}" data-on="{{ langs.2.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
       </div>
       <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #1A1A1A; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
@@ -270,9 +290,9 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
           </div>
         </div>
         <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px;">
-          <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="2">
-            <button data-nolight="1" data-tipo="1" data-on="{{ t.on }}" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
-          </sc-for>
+                      <button data-nolight="1" data-tipo="1" data-on="{{ tipos.0.on }}" onClick="{{ tipos.0.pick }}" style="{{ tipos.0.style }}">Stand blanco</button>
+          
+            <button data-nolight="1" data-tipo="1" data-on="{{ tipos.1.on }}" onClick="{{ tipos.1.pick }}" style="{{ tipos.1.style }}">Placa</button>
         </div>
         <div style="margin-top: 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
           <a href="https://buy.stripe.com/eVqfZj9fqaLiguj3IC8so01" ref="{{ compraRef }}" target="_blank" rel="noopener" style="display: inline-block; font-size: 18.6px; font-weight: 600; color: #FFFFFF; background: #B9533A; border-radius: 10px; padding: 19.2px 31.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.3); transition: transform 170ms cubic-bezier(.16,.84,.44,1), background 170ms ease;" style-hover="color: #FFFFFF; background: #D8694C; transform: translateY(-2px);">Comprar</a>
@@ -297,15 +317,29 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
     <div data-reveal="1" style="margin-top: 32px; position: relative; max-width: 1100px; padding-left: 48px;">
       
       <div style="{{ lineaStyle }}"></div>
-      <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="3">
-        <button onClick="{{ p.pick }}" style="{{ p.rowStyle }}">
-          <span style="{{ p.lineStyle }}"></span>
-          <span style="{{ p.dotStyle }}"></span>
-          <span style="display: block; font-size: 16px; font-weight: 600; color: {{ p.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">{{ p.n }}</span>
-          <span style="display: block; margin-top: 4.8px; font-size: clamp(20.4px, 2.3vw, 25.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ p.fg }}; transition: color 200ms ease;">{{ p.t }}</span>
-          <span style="{{ p.descStyle }}">{{ p.d }}</span>
+              <button onClick="{{ pasos.0.pick }}" style="{{ pasos.0.rowStyle }}">
+          <span style="{{ pasos.0.lineStyle }}"></span>
+          <span style="{{ pasos.0.dotStyle }}"></span>
+          <span style="display: block; font-size: 16px; font-weight: 600; color: {{ pasos.0.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">01</span>
+          <span style="display: block; margin-top: 4.8px; font-size: clamp(20.4px, 2.3vw, 25.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ pasos.0.fg }}; transition: color 200ms ease;">Lo conectamos a tu ficha</span>
+          <span style="{{ pasos.0.descStyle }}">Llega programado con tu negocio. Tú no configuras nada.</span>
         </button>
-      </sc-for>
+      
+        <button onClick="{{ pasos.1.pick }}" style="{{ pasos.1.rowStyle }}">
+          <span style="{{ pasos.1.lineStyle }}"></span>
+          <span style="{{ pasos.1.dotStyle }}"></span>
+          <span style="display: block; font-size: 16px; font-weight: 600; color: {{ pasos.1.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">02</span>
+          <span style="display: block; margin-top: 4.8px; font-size: clamp(20.4px, 2.3vw, 25.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ pasos.1.fg }}; transition: color 200ms ease;">Lo pones donde se paga</span>
+          <span style="{{ pasos.1.descStyle }}">Mostrador, barra o recepción. Ocupa lo que un vaso.</span>
+        </button>
+      
+        <button onClick="{{ pasos.2.pick }}" style="{{ pasos.2.rowStyle }}">
+          <span style="{{ pasos.2.lineStyle }}"></span>
+          <span style="{{ pasos.2.dotStyle }}"></span>
+          <span style="display: block; font-size: 16px; font-weight: 600; color: {{ pasos.2.num }}; font-variant-numeric: tabular-nums; letter-spacing: .08em; transition: color 200ms ease;">03</span>
+          <span style="display: block; margin-top: 4.8px; font-size: clamp(20.4px, 2.3vw, 25.2px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: {{ pasos.2.fg }}; transition: color 200ms ease;">Tocan y opinan cuando quieren</span>
+          <span style="{{ pasos.2.descStyle }}">Se abre tu ficha oficial de Google.</span>
+        </button>
     </div>
   </section>
 
@@ -401,20 +435,21 @@ const FLAGS = { es: 'assets/flag-es.png?v=9ce80ef5', en: 'assets/flag-en.jpg?v=e
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, theme: 'light', lang: 'es', menu: false };
+  state = { cants: [1], abierto: -1, paso: 0, tipo: 0, cant: 1, vista: 0, lang: 'es', menu: false };
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610211842').then((m) => { this._chrome = m; m.applyTheme(this.state.theme === 'light' ? 'light-baked' : this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610212356').then((m) => { this._chrome = m; this.forceUpdate(); });
   }
 
   componentDidUpdate() {
     if (!this._chrome) return;
-    this._chrome.applyTheme(this.state.theme === 'light' ? 'light-baked' : this.state.theme);
     if (this.state.lang !== 'es') this._chrome.applyLang('es', this.state.lang);
   }
 
-  renderVals() {
+  renderVals() { const v = this._rv(); v.langCodeRef = (el) => { if (el && el.textContent !== v.langCode) el.textContent = v.langCode; }; return v; }
+
+  _rv() {
     const cants = this.state.cants || [];
     const n = S.tipos.reduce((a, _, k) => a + (cants[k] || 0), 0);
     const bruto = S.precio * n;
@@ -422,15 +457,9 @@ class Component extends DCLogic {
     const desc = bruto > total;
     const tipoSel = S.tipos[this.state.tipo];
     const btn = (activo) => 'font-family: inherit; min-width: 48px; text-align: center; cursor: pointer; border-radius: 12px; padding: 14.4px 16.8px; font-size: 19.2px; font-weight: 600; letter-spacing: -0.02em; background: ' + (activo ? '#D8694C' : 'transparent') + '; border: 1.5px solid ' + (activo ? '#D8694C' : '#1A1A1A') + '; color: ' + (activo ? '#000000' : '#F2EDE6') + '; transition: all 160ms ease;';
-    const dim = this.state.theme === 'light' ? '#6E6A64' : '#8A847C';
+    const dim = '#6E6A64';
     return {
-      temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
-        label: t.label,
-        fg: this.state.theme === t.id ? '#000000' : dim,
-        bg: this.state.theme === t.id ? '#D8694C' : 'transparent',
-        pick: () => { if (this.state.theme === t.id) return; this.setState({ theme: t.id }); }
-      })),
-      iconFg: this.state.theme === 'light' ? '#000000' : '#F2EDE6',
+      iconFg: '#000000',
       menuOpen: !!this.state.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
@@ -438,7 +467,6 @@ class Component extends DCLogic {
       burgerT1: this.state.menu ? 'translateY(6px) rotate(45deg)' : 'none',
       burgerO: this.state.menu ? 0 : 1,
       burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
-      toggleTheme: () => { return; const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
       langMenuOpen: !!this.state.langMenu,
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })), langMenuAttr: this.state.langMenu ? '1' : '0',
       langEs: this.state.lang === 'es',

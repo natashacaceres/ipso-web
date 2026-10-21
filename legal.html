@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": ["IPSO", "IPSO Barcelona", "IPSO HUB", "ipsoglobal"], "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610211842"></script>
+<script src="./support.js?v=202610212356"></script>
 </head>
 <body>
 <x-dc>
@@ -169,23 +169,31 @@ html body main[data-legal][data-legal] { max-width: 808px !important; padding-le
       <nav data-navlinks="1" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 28px; min-width: 0;">
         <a href="/hub" data-navlink="1" style="font-size: 16px; font-weight: 500; color: #BDB6AD; white-space: nowrap; padding: 6px 0 4px; border-bottom: 1px solid transparent; transition: color 160ms ease;" style-hover="color: #FFFFFF;">IPSO HUB</a>
       </nav>
-      <a href="https://wa.me/34603924226" target="_blank" rel="noopener" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);">{{ nCon }}</a>
+      <a href="https://wa.me/34603924226" target="_blank" rel="noopener" data-cta="1" style="flex: none; font-size: 16.2px; font-weight: 600; color: #FFFFFF; background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 10.8px 18px; white-space: nowrap; transition: background 160ms ease, border-color 160ms ease;" style-hover="color: #FFFFFF; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4);" data-i18n="nCon">Contacto</a>
       <div data-langmenu="1" data-open="{{ langMenuAttr }}" style="flex: none; position: relative;">
         <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: .06em; color: {{ iconFg }}; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
-          <span>{{ langCode }}</span>
+          <span ref="{{ langCodeRef }}">ES</span>
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #1A1A1A; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
-            <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
-                <span>{{ l.name }}</span>
+                          <button onClick="{{ langs.0.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.0.fg }}; background: {{ langs.0.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span data-i18n="langs.0.name">Español</span>
               </button>
-            </sc-for>
+            
+              <button onClick="{{ langs.1.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.1.fg }}; background: {{ langs.1.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span data-i18n="langs.1.name">English</span>
+              </button>
+            
+              <button onClick="{{ langs.2.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.2.fg }}; background: {{ langs.2.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span data-i18n="langs.2.name">Català</span>
+              </button>
           </div>
       </div>
       <div data-mlangbar="1" style="display: none; align-items: center; margin-left: auto;">
-        <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-          <button type="button" onClick="{{ l.pick }}" data-code="{{ l.code }}" data-on="{{ l.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
-        </sc-for>
+                  <button type="button" onClick="{{ langs.0.pick }}" data-code="{{ langs.0.code }}" data-on="{{ langs.0.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
+        
+          <button type="button" onClick="{{ langs.1.pick }}" data-code="{{ langs.1.code }}" data-on="{{ langs.1.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
+        
+          <button type="button" onClick="{{ langs.2.pick }}" data-code="{{ langs.2.code }}" data-on="{{ langs.2.mon }}" style="min-width: 40px; height: 40px; padding: 0 4px; font-family: inherit; background: transparent; border: none; cursor: pointer;"></button>
       </div>
       <button onClick="{{ toggleMenu }}" aria-label="Menú" data-burger="1" style="flex: none; display: none; flex-direction: column; justify-content: center; gap: 5.4px; width: 40px; height: 36px; padding: 0 10.8px; font-family: inherit; background: transparent; border: 1px solid #1A1A1A; border-radius: 8px; cursor: pointer;">
         <span style="display: block; height: 1.5px; background: {{ burgerFg }}; border-radius: 2px; transition: transform 200ms cubic-bezier(.16,.84,.44,1), opacity 160ms ease; transform: {{ burgerT1 }};"></span>
@@ -207,46 +215,344 @@ html body main[data-legal][data-legal] { max-width: 808px !important; padding-le
   <main data-legal="1" style="max-width: 808px; margin: 0 auto; padding: 76.8px 24px 115.2px; box-sizing: border-box;">
 
     <h1 style="margin: 0; text-align: center; font-size: clamp(36px, 6vw, 57.6px); line-height: 1.05;; font-weight: 700; letter-spacing: -0.045em;" ref="{{ h1Ref }}">Información legal</h1>
-    <p style="margin: 24px auto 0; max-width: 62ch; text-align: center; font-size: 18.6px; line-height: 1.65; color: #8A847C;">{{ intro }}</p>
+    <p style="margin: 24px auto 0; max-width: 62ch; text-align: center; font-size: 18.6px; line-height: 1.65; color: #8A847C;" data-i18n="intro">Aviso legal, política de privacidad y política de cookies de Ipso. Documentos redactados conforme al RGPD (UE) 2016/679, la LOPDGDD 3/2018 y la LSSI-CE 34/2002.</p>
 
     <div data-legalnav="1" style="margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
-      <a href="#aviso-legal" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav1 }}</a>
-      <a href="#privacidad" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav2 }}</a>
-      <a href="#cookies" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav3 }}</a>
-      <a href="#contratacion" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;">{{ nav4 }}</a>
+      <a href="#aviso-legal" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;" data-i18n="nav1">Aviso legal</a>
+      <a href="#privacidad" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;" data-i18n="nav2">Política de privacidad</a>
+      <a href="#cookies" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;" data-i18n="nav3">Política de cookies</a>
+      <a href="#contratacion" style="font-size: 16px; font-weight: 600; color: #F2EDE6; border: 1px solid #1A1A1A; border-radius: 999px; padding: 12px 12px; white-space: nowrap;" style-hover="color: #FFFFFF; border-color: #D8694C;" data-i18n="nav4">Condiciones de contratación</a>
     </div>
-
-    <sc-if value="{{ hasPend }}" hint-placeholder-val="{{ false }}">
-    <div style="margin-top: 32px; border: 1px solid #6E6A64; background: #1A1A1A; border-radius: 14px; padding: 24px 24px;">
-      <div style="font-size: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #D8694C;">{{ pendTitle }}</div>
-      <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 17.4px; line-height: 1.55; color: #BDB6AD;">
-        <sc-for list="{{ pendientes }}" as="p" hint-placeholder-count="3">
-          <span>{{ p }}</span>
-        </sc-for>
-      </div>
-    </div>
-    </sc-if>
-
-    <sc-for list="{{ docs }}" as="d" hint-placeholder-count="3">
-      <section id="{{ d.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
+          <section id="{{ docs.0.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
         <div>
-          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;">{{ d.title }}</h2>
-          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;">{{ d.updated }}</div>
+          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;" data-i18n="docs.0.title">Aviso legal</h2>
+          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;" data-i18n="docs.0.updated">Última actualización: septiembre de 2026</div>
           <div style="margin-top: 32px; display: flex; flex-direction: column; gap: clamp(30px, 2.5vw, 48px);">
-            <sc-for list="{{ d.clauses }}" as="c" hint-placeholder-count="6">
-              <div>
-                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;">{{ c.h }}</h3>
+                          <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.0.h">1. Titular del sitio web</h3>
                 <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
-                  <sc-for list="{{ c.p }}" as="t" hint-placeholder-count="2">
-                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;">{{ t }}</p>
-                  </sc-for>
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.0.p.0">En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de que este sitio web es titularidad de Natasha Cáceres Gómez, que opera bajo la marca comercial Ipso · NIF 61759305G, con domicilio a efectos de notificaciones en Gran Via de les Corts Catalanes 734, 08013 Barcelona (España) y correo electrónico de contacto contacto@ipsoglobal.com.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.0.p.1">Ipso es la marca comercial bajo la que se presta la actividad de instalación y configuración de soluciones de tecnología de contacto para negocios.</p>
                 </div>
               </div>
-            </sc-for>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.1.h">2. Objeto</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.1.p.0">El presente aviso legal regula el acceso, la navegación y el uso de este sitio web. La navegación atribuye la condición de usuario e implica la aceptación plena de estas condiciones en la versión publicada en cada momento.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.1.p.1">El sitio web tiene finalidad informativa y comercial: describe los servicios ofrecidos y permite solicitar información mediante un formulario de contacto. La contratación y el pago en línea se rigen por las Condiciones de contratación publicadas en esta misma página.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.2.h">3. Condiciones de uso</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.2.p.0">El usuario se compromete a utilizar el sitio de forma diligente y conforme a la ley, absteniéndose de introducir contenidos ilícitos, dañar los sistemas o intentar acceder a áreas restringidas.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.2.p.1">La información facilitada a través del formulario debe ser veraz y actualizada. El usuario responde de la exactitud de los datos que comunica.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.3.h">4. Propiedad intelectual e industrial</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.3.p.0">Los textos, el diseño, la estructura de navegación, el código, los logotipos y el resto de elementos de este sitio son titularidad de Ipso o se utilizan con autorización de sus legítimos propietarios, y están protegidos por la normativa de propiedad intelectual e industrial.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.3.p.1">Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa y por escrito. Las marcas de terceros que puedan mencionarse pertenecen a sus respectivos titulares.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.4.h">5. Ausencia de vinculación con terceros</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.4.p.0">Ipso no está afiliada, patrocinada ni respaldada por Google LLC ni por ninguna otra plataforma que pueda mencionarse con fines meramente descriptivos. Los servicios de Ipso consisten en configurar puntos de contacto que abren enlaces oficiales de dichas plataformas, respetando en todo momento sus políticas.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.4.p.1">El punto abre la ficha oficial de Google del local: Ipso no solicita, filtra, condiciona, retiene ni premia opiniones de clientes finales. Cualquier valoración se publica directamente por el usuario en la plataforma correspondiente.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.5.h">6. Enlaces</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.5.p.0">Este sitio puede incluir enlaces a páginas de terceros. Ipso no controla sus contenidos ni asume responsabilidad por ellos. La inclusión de un enlace no implica relación, recomendación ni supervisión.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.6.h">7. Exclusión de responsabilidad</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.6.p.0">Ipso adopta medidas razonables para que la información publicada sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni la disponibilidad ininterrumpida del sitio.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.6.p.1">Ipso no responderá de los daños derivados del uso indebido del sitio, de fallos de la conexión del usuario ni de la presencia de virus o programas maliciosos ajenos a su control.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.0.clauses.7.h">8. Legislación aplicable y jurisdicción</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.0.clauses.7.p.0">Estas condiciones se rigen por la legislación española. Para la resolución de cualquier controversia serán competentes los juzgados y tribunales de Barcelona, salvo que la normativa de consumo aplicable disponga otro fuero.</p>
+                </div>
+              </div>
           </div>
         </div>
       </section>
-    </sc-for>
+    
+      <section id="{{ docs.1.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
+        <div>
+          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;" data-i18n="docs.1.title">Política de privacidad</h2>
+          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;" data-i18n="docs.1.updated">Última actualización: septiembre de 2026</div>
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: clamp(30px, 2.5vw, 48px);">
+                          <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.0.h">1. Responsable del tratamiento</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.0.p.0">Responsable: Natasha Cáceres Gómez, que opera bajo la marca comercial Ipso · NIF 61759305G. Domicilio: Gran Via de les Corts Catalanes 734, 08013 Barcelona (España). Correo electrónico: contacto@ipsoglobal.com.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.0.p.1">A la fecha de esta política no se ha designado Delegado de Protección de Datos, al no concurrir ninguno de los supuestos del artículo 37 del RGPD. Si se designara, se publicarán sus datos de contacto en este mismo apartado.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.1.h">2. Datos que tratamos y origen</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.1.p.0">Datos identificativos y de contacto que el usuario facilita voluntariamente en el formulario: nombre del negocio, tipo de negocio, correo electrónico y el contenido del mensaje.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.1.p.1">Datos técnicos de navegación generados por la infraestructura del sitio: dirección IP, tipo de dispositivo y navegador, páginas visitadas y datos estadísticos agregados. No se recogen categorías especiales de datos ni datos de menores de edad.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.2.h">3. Finalidades y bases jurídicas</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.2.p.0">Atender las solicitudes de información y elaborar presupuestos, sobre la base del consentimiento del interesado y del interés legítimo en responder a su petición (artículo 6.1.a y 6.1.f del RGPD).</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.2.p.1">Gestionar la relación contractual y las obligaciones fiscales y contables derivadas de la prestación del servicio, sobre la base de la ejecución del contrato y del cumplimiento de obligaciones legales (artículo 6.1.b y 6.1.c del RGPD).</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.2.p.2">Medir el uso del sitio web con fines estadísticos y de mejora, sobre la base del consentimiento cuando se emplean cookies o identificadores no exentos, y del interés legítimo cuando la medición es agregada y no permite identificar al usuario.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.3.h">3 bis. Programas de fidelización de los locales</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.0">Algunos negocios que usan el IPSO HUB activan una tarjeta de sellos digital. Al tocar el punto, el cliente puede dejar voluntariamente su número de teléfono para acumular visitas.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.1">Datos tratados: número de teléfono y contador de visitas. No se recogen nombre, correo ni datos de pago.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.2">Responsable: el titular del local donde se registra la visita. Ipso actúa como encargado del tratamiento, con contrato conforme al artículo 28 del RGPD.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.3">Finalidad: contar las visitas del cliente en ese local y avisarle, mediante un único mensaje de WhatsApp, cuando alcance el premio fijado por el local. No se envían campañas, promociones ni recordatorios adicionales.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.4">Base jurídica: consentimiento del interesado (artículo 6.1.a del RGPD), prestado al introducir su número.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.5">Conservación: mientras el cliente participe y, como máximo, veinticuatro meses desde su última visita; después el número se elimina y solo se conservan cifras agregadas sin identificar.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.6">Comunicación a terceros: el número no se comparte con otros locales ni se usa para descuentos cruzados. Para enviar el mensaje de premio se utiliza WhatsApp (Meta Platforms Ireland Ltd.), que trata el número según sus propias condiciones.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.7">Derechos: el cliente puede pedir en cualquier momento el borrado de su número escribiendo a contacto@ipsoglobal.com o al propio local, sin perder ningún derecho ya obtenido. El resto de derechos se ejercen según la cláusula correspondiente de esta política.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.8">El número se guarda cifrado y el cliente puede borrarlo él mismo desde la opción “Borrar mis datos” del propio punto.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.3.p.9">Comparte tu visita: en todos los locales con IPSO HUB, al tocar el punto el sistema registra el toque (fecha, hora, tipo de dispositivo y ciudad aproximada; sin IP ni teléfono) y deja en el navegador del cliente un pase firmado de un solo uso que caduca a las 3 horas. Con él, el cliente puede generar, si quiere, una imagen con el nombre del local, la ciudad, su número de visita, la fecha y la hora. Si añade una foto, se procesa en su propio móvil y nunca se envía ni se guarda en los servidores de Ipso. Solo se registra que pulsó compartir, no a dónde ni qué publicó. No se trata ningún dato personal.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.4.h">3 ter. Asistente con inteligencia artificial</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.4.p.0">El IPSO HUB incluye un asistente conversacional basado en inteligencia artificial, identificado como tal en pantalla.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.4.p.1">Responde con la carta y la información que facilita cada local, mediante un modelo de lenguaje de Anthropic (Claude) que puede tratar la consulta fuera del Espacio Económico Europeo con las garantías adecuadas del apartado 6.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.4.p.2">Al asistente no se le envían el número de teléfono ni los datos de fidelización del cliente; las conversaciones se usan solo para responder y no para publicidad ni perfilado.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.5.h">4. Plazos de conservación</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.5.p.0">Los datos de las consultas se conservan mientras se gestiona la solicitud y, posteriormente, durante el plazo de prescripción de las acciones que pudieran derivarse. La documentación con relevancia fiscal se conserva durante los plazos legalmente exigidos.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.5.p.1">Los datos estadísticos de navegación se conservan de forma agregada durante un máximo de veintiséis meses.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.6.h">5. Destinatarios y encargados del tratamiento</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.6.p.0">No se ceden datos a terceros salvo obligación legal. Para prestar el servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento con contrato conforme al artículo 28 del RGPD: Cloudflare, Inc. (alojamiento del sitio y analítica agregada), FormSubmit (tramitación técnica del envío del formulario al correo de Ipso) y Anthropic (modelo de lenguaje del asistente).</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.6.p.1">Si en el futuro se incorporase una herramienta de analítica con cookies, se informará en esta política y se solicitará el consentimiento previo del usuario.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.6.p.2">Para el envío del único mensaje de premio de los programas de fidelización interviene WhatsApp (Meta Platforms Ireland Ltd.), como proveedor del canal de mensajería.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.7.h">6. Transferencias internacionales</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.7.p.0">Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En tales casos la transferencia se ampara en decisiones de adecuación de la Comisión Europea o en cláusulas contractuales tipo, con las garantías adicionales que resulten exigibles.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.8.h">7. Derechos de las personas interesadas</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.8.p.0">El interesado puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar el consentimiento prestado, escribiendo a contacto@ipsoglobal.com e indicando el derecho que ejerce.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.8.p.1">Asimismo puede presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) si considera que el tratamiento no se ajusta a la normativa vigente.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.9.h">8. Medidas de seguridad</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.9.p.0">Ipso aplica medidas técnicas y organizativas apropiadas para proteger los datos frente a accesos no autorizados, pérdida o alteración, incluidas la transmisión cifrada mediante TLS y el acceso restringido a la información recibida.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.1.clauses.10.h">9. Cambios en esta política</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.1.clauses.10.p.0">Esta política puede actualizarse para adaptarla a cambios normativos o a nuevos tratamientos. La versión vigente es la publicada en esta página, con indicación de su fecha de actualización.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    
+      <section id="{{ docs.2.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
+        <div>
+          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;" data-i18n="docs.2.title">Política de cookies</h2>
+          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;" data-i18n="docs.2.updated">Última actualización: septiembre de 2026</div>
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: clamp(30px, 2.5vw, 48px);">
+                          <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.2.clauses.0.h">1. Qué son las cookies</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.0.p.0">Una cookie es un pequeño archivo que se descarga en el dispositivo del usuario al visitar una página web y que permite almacenar y recuperar información sobre la navegación. Esta política se rige por el artículo 22.2 de la LSSI-CE y por la Guía sobre el uso de las cookies de la Agencia Española de Protección de Datos.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.2.clauses.1.h">2. Cookies utilizadas en este sitio</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.1.p.0">Cookies técnicas y de seguridad, exentas de consentimiento: son necesarias para servir el sitio, equilibrar la carga y proteger frente a tráfico malicioso. Las gestiona el proveedor de alojamiento (Cloudflare) y su duración va desde la sesión hasta un máximo de treinta minutos de inactividad.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.1.p.1">Analítica agregada sin cookies: la infraestructura del sitio genera estadísticas de visitas sin instalar cookies ni identificar a personas concretas.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.1.p.2">Este sitio no instala cookies de analítica, publicidad ni perfilado. Al no existir cookies sujetas a consentimiento, no se muestra aviso de cookies. Si en algún momento se incorporasen, se solicitaría el consentimiento previo mediante un aviso con opciones de aceptar, rechazar y configurar.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.1.p.3">En los puntos IPSO HUB (go.ipsoglobal.com) se usan únicamente cookies técnicas: el idioma elegido, el reconocimiento del cliente en la tarjeta de sellos y la comprobación de que ha tocado el punto físicamente y, en Comparte tu visita, un pase de un solo uso que caduca a las 3 horas, y una marca anónima al azar que dura 30 días y sirve solo para limitar las preguntas al asistente a 50 al día por móvil. Son necesarias para el servicio que el propio cliente solicita, no se usan para publicidad ni analítica y por ello no requieren aviso de consentimiento. El hub guarda además en el almacenamiento local del navegador el idioma elegido, las últimas preguntas al asistente y el contador de sellos, sin enviarlos a ningún servidor.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.2.clauses.2.h">3. Consentimiento</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.2.p.0">Con la configuración actual del sitio solo se utilizan cookies técnicas y de seguridad, exentas del deber de consentimiento previo conforme al artículo 22.2 de la LSSI-CE, por lo que no se muestra ningún aviso de cookies.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.2.p.1">El usuario puede en cualquier momento bloquear o eliminar las cookies desde la configuración de su navegador.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.2.clauses.3.h">4. Cómo desactivarlas en el navegador</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.3.p.0">Todos los navegadores permiten bloquear o eliminar cookies desde sus opciones de configuración de privacidad. La desactivación de las cookies técnicas puede afectar al funcionamiento de algunas partes del sitio.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.2.clauses.4.h">5. Actualizaciones</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.2.clauses.4.p.0">Esta política puede modificarse cuando cambien las cookies utilizadas o la normativa aplicable. Recomendamos revisarla periódicamente. Para cualquier duda: contacto@ipsoglobal.com.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    
+      <section id="{{ docs.3.id }}" style="margin-top: 96px; scroll-margin-top: 96px;">
+        <div>
+          <h2 style="margin: 0; font-size: clamp(28.8px, 4.1vw, 40.8px); line-height: 1.1;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.04em;" data-i18n="docs.3.title">Condiciones de contratación online</h2>
+          <div style="margin-top: 8px; font-size: 14px; color: #8A847C;" data-i18n="docs.3.updated">Última actualización: septiembre de 2026</div>
+          <div style="margin-top: 32px; display: flex; flex-direction: column; gap: clamp(30px, 2.5vw, 48px);">
+                          <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.0.h">Contratación a través de esta web</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.0.p.0">La contratación del IPSO HUB a través de esta web se realiza mediante la plataforma de pago Stripe. Al completar el pago aceptas estas condiciones y el aviso legal.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.1.h">Qué contratas</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.1.p.0">El HUB se contrata en dos versiones: HUB (99 € + IVA, pago único, sin cuota) y HUB Pro (99 € + IVA de alta y 19 € + IVA al mes, primer mes incluido).</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.1.p.1">Un alta única (99 € + IVA) que incluye un punto NFC, su configuración con los datos que nos facilites y el envío gratuito a cualquier punto de España. Puntos adicionales a 25 € + IVA cada uno. Una cuota de 19 € + IVA al mes por local, que se cobra de forma automática cada mes en la misma tarjeta.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.1.p.2">Pedir y pagar con tu TPV (opcional, solo HUB Pro): 9 € + IVA al mes por local. Se activa cuando la conexión con tu TPV funciona y se cobra con la cuota del HUB Pro, en la misma factura. Sin permanencia. IPSO no se queda nada de tus cobros.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.1.p.3">La placa y el stand de reseñas de Google se contratan con un pago único, sin cuota, e incluyen la pieza programada con tus datos y el envío. Tienen la misma garantía de 30 días de reembolso.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.1.p.4">El hub y la carta se muestran en 5 idiomas (español, catalán, inglés, francés y alemán); el asistente con IA responde en 30.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.2.h">Cambios incluidos</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.2.p.0">HUB: 1 cambio al mes incluido (carta, horario, foto o enlaces). Cambios extra: 9 €.</p>
+                  
+                    <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.2.p.1">HUB Pro: Cambios ilimitados. Precios y platos agotados los cambias tú desde la app.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.3.h">Plazos</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.3.p.0">Envío en 2-4 días laborables desde que recibimos los datos de tu local. Si el punto llega dañado o no funciona, lo reponemos sin coste.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.4.h">Garantía, cuota y baja</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.4.p.0">Si en los 30 días siguientes a la entrega el servicio no te convence, nos lo dices y te devolvemos el importe de la alta; retiramos o recogemos el punto sin coste. El primer mes está incluido: la primera cuota se cobra 30 días después del pago de la alta y, a partir de ahí, cada mes. Puedes darte de baja cuando quieras desde el portal del cliente o por WhatsApp; la baja es efectiva al final del mes ya pagado y no se cobra el siguiente. El punto sigue siendo tuyo y pasa a funcionar como HUB. Las cuotas ya cobradas no se devuelven. Al terminar, tus datos de clientes se te entregan o se eliminan, según nos indiques. Puedes cancelar, cambiar la tarjeta o descargar tus facturas desde el portal del cliente, cuyo enlace recibes en cada factura.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.5.h">Datos de tus clientes</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.5.p.0" data-i18n-html="1">El Anexo de datos de clientes del Local (art. 28 RGPD) forma parte de estas condiciones. Puedes leerlo <a href="https://go.ipsoglobal.com/contrato/plantilla" target="_blank" rel="noopener" style="color: #D8694C; text-decoration: underline; text-underline-offset: 2px;">aquí</a>.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.6.h">Empresas</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.6.p.0">Este servicio se dirige a negocios y profesionales. Al contratar declaras actuar en el ejercicio de tu actividad, por lo que no resulta de aplicación el derecho de desistimiento previsto para consumidores.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.7.h">Facturas</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.7.p.0">Recibirás la factura de cada cobro por correo electrónico, emitida a nombre y NIF que indiques en el pago.</p>
+                </div>
+              </div>
+            
+              <div>
+                <h3 style="margin: 0; font-size: 19.8px;; color: #FFFFFF; font-weight: 600; letter-spacing: -0.026em;" data-i18n="docs.3.clauses.8.h">Propiedad</h3>
+                <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                      <p data-legalp="1" style="margin: 0; font-size: 18px; line-height: 1.7; color: #BDB6AD; text-wrap: pretty;" data-i18n="docs.3.clauses.8.p.0">El software, los diseños y la marca son de Ipso. Recibes una licencia de uso mientras el servicio esté activo. El soporte físico es tuyo desde el pago de la alta.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
 
   </main>
 
@@ -263,7 +569,7 @@ html body main[data-legal][data-legal] { max-width: 808px !important; padding-le
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; font-size: 16.2px;">
           <a href="/#dudas" style="color: #8A847C;" style-hover="color: #FFFFFF;">Dudas</a>
-          <a href="https://wa.me/34603924226" target="_blank" rel="noopener" style="color: #8A847C;" style-hover="color: #FFFFFF;">{{ nCon }}</a>
+          <a href="https://wa.me/34603924226" target="_blank" rel="noopener" style="color: #8A847C;" style-hover="color: #FFFFFF;" data-i18n="nCon">Contacto</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; font-size: 16.2px;">
           <a href="/nosotros" style="color: #8A847C;" style-hover="color: #FFFFFF;">Nosotros</a>
@@ -434,6 +740,9 @@ const ES = {
         { h: "Garantía, cuota y baja", p: [
           "Si en los 30 días siguientes a la entrega el servicio no te convence, nos lo dices y te devolvemos el importe de la alta; retiramos o recogemos el punto sin coste. El primer mes está incluido: la primera cuota se cobra 30 días después del pago de la alta y, a partir de ahí, cada mes. Puedes darte de baja cuando quieras desde el portal del cliente o por WhatsApp; la baja es efectiva al final del mes ya pagado y no se cobra el siguiente. El punto sigue siendo tuyo y pasa a funcionar como HUB. Las cuotas ya cobradas no se devuelven. Al terminar, tus datos de clientes se te entregan o se eliminan, según nos indiques. Puedes cancelar, cambiar la tarjeta o descargar tus facturas desde el portal del cliente, cuyo enlace recibes en cada factura."
         ]},
+        { h: "Datos de tus clientes", p: [
+          "El Anexo de datos de clientes del Local (art. 28 RGPD) forma parte de estas condiciones. Puedes leerlo <a href=\"https://go.ipsoglobal.com/contrato/plantilla\" target=\"_blank\" rel=\"noopener\" style=\"color: #D8694C; text-decoration: underline; text-underline-offset: 2px;\">aquí</a>."
+        ]},
         { h: "Empresas", p: [
           "Este servicio se dirige a negocios y profesionales. Al contratar declaras actuar en el ejercicio de tu actividad, por lo que no resulta de aplicación el derecho de desistimiento previsto para consumidores."
         ]},
@@ -594,6 +903,9 @@ const EN = {
         ]},
         { h: "Guarantee, fee and cancellation", p: [
           "If within 30 days of delivery the service does not convince you, let us know and we refund the setup fee; we remove or collect the point at no cost. The first month is included: the first fee is charged 30 days after the setup payment and monthly thereafter. You can cancel whenever you like from the customer portal or by WhatsApp; cancellation takes effect at the end of the month already paid and the next one is not charged. The point remains yours and switches to working as a HUB. Fees already charged are not refunded. On termination, your customer data is handed over to you or deleted, as you instruct. You can cancel, change your card or download your invoices from the customer portal, linked in every invoice."
+        ]},
+        { h: "Your customers' data", p: [
+          "The Customer Data Annex of the Business (art. 28 GDPR) forms part of these terms. You can read it <a href=\"https://go.ipsoglobal.com/contrato/plantilla\" target=\"_blank\" rel=\"noopener\" style=\"color: #D8694C; text-decoration: underline; text-underline-offset: 2px;\">here</a>."
         ]},
         { h: "Businesses", p: [
           "This service is aimed at businesses and professionals. By purchasing you declare that you act in the course of your business activity, so the right of withdrawal provided for consumers does not apply."
@@ -757,6 +1069,9 @@ const CA = {
         { h: "Garantia, quota i baixa", p: [
           "Si en els 30 dies següents al lliurament el servei no et convenç, ens ho dius i et retornem l’import de l’alta; retirem o recollim el punt sense cost. El primer mes està inclòs: la primera quota es cobra 30 dies després del pagament de l’alta i, a partir d’aquí, cada mes. Pots donar-te de baixa quan vulguis des del portal del client o per WhatsApp; la baixa és efectiva al final del mes ja pagat i no es cobra el següent. El punt continua sent teu i passa a funcionar com a HUB. Les quotes ja cobrades no es retornen. En acabar, les teves dades de clients se’t lliuren o s’eliminen, segons ens indiquis. Pots cancel·lar, canviar la targeta o descarregar les teves factures des del portal del client, l’enllaç del qual reps a cada factura."
         ]},
+        { h: "Dades dels teus clients", p: [
+          "L'Annex de dades de clients del Local (art. 28 RGPD) forma part d'aquestes condicions. El pots llegir <a href=\"https://go.ipsoglobal.com/contrato/plantilla\" target=\"_blank\" rel=\"noopener\" style=\"color: #D8694C; text-decoration: underline; text-underline-offset: 2px;\">aquí</a>."
+        ]},
         { h: "Empreses", p: [
           "Aquest servei s’adreça a negocis i professionals. En contractar declares actuar en l’exercici de la teva activitat, per la qual cosa no resulta d’aplicació el dret de desistiment previst per a consumidors."
         ]},
@@ -780,18 +1095,31 @@ const FLAGS = { es: 'assets/flag-es.png?v=9ce80ef5', en: 'assets/flag-en.jpg?v=e
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { lang: 'es', menu: false, theme: 'dark' };
+  state = { lang: 'es', menu: false };
 
   componentDidMount() {
     try { const L0 = localStorage.getItem('ipso-lang'); if (L0 && ['es','en','ca'].indexOf(L0) >= 0 && L0 !== this.state.lang) { const p0 = this.state.lang; this.setState({ lang: L0 }, () => { if (this.applyLang) this.applyLang(p0); }); } } catch (e) {}
-    import('./ipso-chrome.js?v=202610211842').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); this.forceUpdate(); });
+    import('./ipso-chrome.js?v=202610212356').then((m) => { this._chrome = m; this.forceUpdate(); });
+    this._i18n();
   }
 
   componentDidUpdate() {
-    if (this._chrome) this._chrome.applyTheme(this.state.theme);
+    this._i18n();
   }
 
-  renderVals() {
+  renderVals() { const v = this._rv(); v.langCodeRef = (el) => { if (el && el.textContent !== v.langCode) el.textContent = v.langCode; }; return v; }
+
+  _i18n() {
+    const v = this._rv();
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const val = el.getAttribute('data-i18n').split('.').reduce((o, k) => (o == null ? o : o[k]), v);
+      if (typeof val !== 'string') return;
+      if (el.hasAttribute('data-i18n-html')) { if (el.innerHTML !== val) el.innerHTML = val; }
+      else if (el.textContent !== val) el.textContent = val;
+    });
+  }
+
+  _rv() {
     const L = LANGS[this.state.lang];
     return {
       nHub: ({ es: 'Productos', en: 'Products', ca: 'Productes' })[this.state.lang] || 'Productos', nRes: ({ es: 'Reseñas Google', en: 'Google Reviews', ca: 'Ressenyes Google' })[this.state.lang] || 'Reseñas Google', nPla: ({ es: 'Planes', en: 'Plans', ca: 'Plans' })[this.state.lang] || 'Planes', nCon: ({ es: 'Contacto', en: 'Contact', ca: 'Contacte' })[this.state.lang] || 'Contacto',
@@ -805,12 +1133,6 @@ class Component extends DCLogic {
       backHome: L.backHome,
       nSol: L.menu[0], nDud: L.menu[2],
       mSol: '/#planes', mPla: '/#precios', mDud: '/#dudas', mCon: '/#contacto',
-      temas: [{ id: 'dark', label: 'Oscuro' }, { id: 'light', label: 'Claro' }].map((t) => ({
-        label: t.label,
-        fg: this.state.theme === t.id ? '#000000' : (this.state.theme === 'light' ? '#6E6A64' : '#8A847C'),
-        bg: this.state.theme === t.id ? '#D8694C' : 'transparent',
-        pick: () => this.setState({ theme: t.id })
-      })),
       menuOpen: this.state.menu,
       toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
       closeMenu: () => this.setState({ menu: false }),
@@ -819,7 +1141,6 @@ class Component extends DCLogic {
       burgerT3: this.state.menu ? 'translateY(-6px) rotate(-45deg)' : 'none',
       burgerO: this.state.menu ? 0 : 1,
       iconFg: '#F2EDE6',
-      toggleTheme: () => { return; const r = document.documentElement; r.setAttribute('data-theming', '1'); clearTimeout(this._thT); this._thT = setTimeout(() => r.removeAttribute('data-theming'), 520); this.setState((s) => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })); },
       langMenuOpen: !!this.state.langMenu,
       toggleLangMenu: () => this.setState((s) => ({ langMenu: !s.langMenu })), langMenuAttr: this.state.langMenu ? '1' : '0',
       langEs: this.state.lang === 'es',

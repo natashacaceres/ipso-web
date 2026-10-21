@@ -1,92 +1,8 @@
-/* Cabecera común de IPSO: tema claro/oscuro e idiomas (ES/EN/CAT). */
+/* Cabecera común de IPSO: idiomas (ES/EN/CAT). */
 export const PAL = {
   dark:  { fg: '#F2EDE6', dim: '#8A847C', line: '#1A1A1A' },
   light: { fg: '#000000', dim: '#6E6A64', line: '#BDB6AD' }
 };
-
-const LIGHT_MAP = {
-  '244,246,243': '0,0,0',
-  '0,0,0': '242,237,230',
-  '255,255,255': '0,0,0',
-  '156,163,154': '64,68,64',
-  '139,145,138': '74,79,74',
-  '173,179,171': '64,68,64',
-  '183,189,181': '64,68,64',
-  '210,214,207': '63,68,63',
-  '226,229,222': '48,52,48',
-  '118,123,117': '74,79,74',
-  '167,173,165': '74,79,74',
-  '94,99,92': '96,101,96',
-  '195,199,192': '63,68,63',
-  '195,200,191': '63,68,63',
-  '195,200,190': '78,83,76',
-  '22,24,21': '230,232,228',
-  '26,28,25': '227,229,224',
-  '38,41,36': '210,213,207',
-  '58,62,56': '183,187,180',
-  '74,79,71': '154,160,152',
-  '6,20,26': '233,251,255'
-};
-const ACCENT_TEXT = { '43,231,255': '10,124,147', '132,240,255': '14,156,184' };
-
-function toLight(prop, value) {
-  return value.replace(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g, function (m, r, g, bl, al) {
-    const key = r + ',' + g + ',' + bl;
-    const alpha = al === undefined ? 1 : parseFloat(al);
-    let out = null;
-    if ((prop === 'color' || prop === 'caret-color') && ACCENT_TEXT[key]) out = ACCENT_TEXT[key];
-    else if (key === '255,255,255') { if (alpha === 1) out = LIGHT_MAP[key]; }
-    else if (key === '0,0,0' && !/^background|shadow/.test(prop)) out = null;
-    else if (LIGHT_MAP[key]) out = LIGHT_MAP[key];
-    if (!out) return m;
-    return al === undefined ? 'rgb(' + out.split(',').join(', ') + ')' : 'rgba(' + out.split(',').join(', ') + ', ' + al + ')';
-  });
-}
-
-const LIGHT_CSS = [
-  'html { background: #F2EDE6; }',
-  'body { color: #000000 !important; }',
-  'a:not([style]) { color: #B9533A !important; }',
-  'a:not([style]):hover { color: #B9533A !important; }',
-  'details[open] summary [data-plus] { color: #B9533A !important; }',
-  '[data-ico] { stroke: #6E6A64; }',
-  '[data-word] { filter: invert(1); }', 'header:not([data-hdrlight]) [data-word] { filter: none; }', 'header[data-hdrlight] [data-cta]:hover { color: #000000 !important; background: rgba(0,0,0,.06) !important; border-color: #000000 !important; }', 'header[data-hdrlight] nav a:hover, header[data-hdrlight] [data-navrow] > div a:hover { color: #000000 !important; }',
-  '[data-paymark] { filter: invert(1); }',
-  'html body footer:not([data-nolight]), html body footer:not([data-nolight]) p, html body footer:not([data-nolight]) span, html body footer:not([data-nolight]) a[href] { color: #6E6A64 !important; }', 'footer [data-word] { filter: none !important; }',
-  'html body footer:not([data-nolight]) a[href]:hover { color: #000000 !important; }'
-].join('\n');
-
-export function applyTheme(theme) {
-  const light = theme === 'light' || theme === 'light-baked';
-  const remap = theme === 'light';
-  let tag = document.getElementById('ipso-theme');
-  if (!tag) { tag = document.createElement('style'); tag.id = 'ipso-theme'; document.head.appendChild(tag); }
-  tag.textContent = light ? LIGHT_CSS : '';
-  document.querySelectorAll('[style]').forEach(function (el) {
-    if (el.closest('[data-nolight]')) return;
-    const now = el.getAttribute('style') || '';
-    if (now !== el.__ours) el.__base = now;
-    const base = el.__base === undefined ? now : el.__base;
-    let v = base;
-    if (remap && (!el.closest('header') || el.closest('header[data-hdrlight]'))) {
-      v = base.split(';').map(function (decl) {
-        const k = decl.indexOf(':');
-        if (k < 0) return decl;
-        const prop = decl.slice(0, k).trim();
-        const raw = decl.slice(k + 1);
-        const bang = /!\s*important\s*$/.test(raw);
-        const val = raw.replace(/!\s*important\s*$/, '').trim();
-        const lit = toLight(prop.toLowerCase(), val);
-        if (lit === val) return decl;
-        return decl.slice(0, k) + ': ' + lit + (bang ? ' !important' : '');
-      }).join(';');
-    }
-    if (v !== now) el.setAttribute('style', v);
-    el.__ours = v;
-  });
-  document.documentElement.style.background = light ? '#F2EDE6' : '#000000';
-  document.body.style.background = 'transparent';
-}
 
 /* Textos comunes de las fichas de solución. */
 const EN_PAIRS = [
@@ -95,7 +11,7 @@ const EN_PAIRS = [
   ['¿Puedo cambiar la programación más adelante?', 'Can I change the programming later?'], ['La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'The piece arrives programmed with your details. If you want unlimited changes, an assistant and a monthly report, that is the IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Each piece is one plate. Order as many as tables you want to cover.'],
   ['Soluciones', 'Solutions'], ['Cómo funciona', 'How it works'], ['Precios', 'Prices'], ['Contacto', 'Contact'], ['Punto de reseñas', 'Reviews point'], ['Dudas', 'FAQ'],
-  ['Oscuro', 'Dark'], ['Claro', 'Light'], 
+  
   ['pago único, + IVA', 'one-off, + VAT'], ['+ IVA', '+ VAT'], ['El HUB', 'The HUB'], ['Piezas', 'Pieces'], ['No, pago único. La pieza llega programada y es tuya.', 'No, one-off payment. The piece arrives programmed and is yours.'], ['Pago único. Programación incluida.', 'One-off payment. Programming included.'], ['en 2-4 días laborables', 'in 2-4 working days'], ['Garantía de reembolso 30 días', '30-day money-back guarantee'], ['incl. IVA', 'incl. VAT'], ['Con IVA:', 'With VAT:'], ['pago único', 'one-off'], ['Programación incluida · Garantía comercial 30 días', 'Programming included · 30-day commercial guarantee'],
   ['Lo quiero', 'I want it'], ['Añadir a la cesta', 'Add to basket'],
   ['Envío', 'Shipping'], ['gratuito', 'free'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'within Spain and money-back guarantee within'], ['30 días', '30 days'],
@@ -174,7 +90,7 @@ const CA_PAIRS = [
   ['¿Puedo cambiar la programación más adelante?', 'Puc canviar la programació més endavant?'], ['La pieza llega programada con tus datos. Si quieres cambios ilimitados, asistente e informe mensual, eso es el IPSO HUB.', 'La peça arriba programada amb les teves dades. Si vols canvis il·limitats, assistent i informe mensual, això és l\u2019IPSO HUB.'],
   ['Cada pieza es una placa. Pide tantas como mesas quieras cubrir.', 'Cada peça és una placa. Demana\u2019n tantes com taules vulguis cobrir.'],
   ['Soluciones', 'Solucions'], ['Cómo funciona', 'Com funciona'], ['Precios', 'Preus'], ['Contacto', 'Contacte'], ['Piezas', 'Peces'], ['No, pago único. La pieza llega programada y es tuya.', 'No, pagament únic. La peça arriba programada i és teva.'], ['Pago único. Programación incluida.', 'Pagament únic. Programació inclosa.'], ['en 2-4 días laborables', 'en 2-4 dies laborables'], ['Garantía de reembolso 30 días', 'Garantia de devolució 30 dies'], ['incl. IVA', 'IVA incl.'], ['Punto de reseñas', 'Punt de ressenyes'], ['Dudas', 'Dubtes'],
-  ['Oscuro', 'Fosc'], ['Claro', 'Clar'], 
+  
   ['pago único, + IVA', 'pagament únic, + IVA'], ['Con IVA:', 'Amb IVA:'], ['pago único', 'pagament únic'], ['Programación incluida · Garantía comercial 30 días', 'Programació inclosa · Garantia comercial 30 dies'],
   ['Lo quiero', 'El vull'], ['Añadir a la cesta', 'Afegir a la cistella'],
   ['Envío', 'Enviament'], ['gratuito', 'gratuït'], ['dentro de España y garantía de reembolso de tu dinero en hasta', 'dins d\u2019Espanya i garantia de devolució dels teus diners fins a'], ['30 días', '30 dies'],

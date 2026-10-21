@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="/favicon.png?v=2"><!-- /ipso-seo -->
   <script type="application/ld+json" data-ipso="1">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://ipsoglobal.com/#org", "name": "Ipso", "alternateName": ["IPSO", "IPSO Barcelona", "IPSO HUB", "ipsoglobal"], "url": "https://ipsoglobal.com/", "logo": "https://ipsoglobal.com/favicon.png?v=2", "slogan": "Somos el ADN de tu local.", "description": "Ipso es una empresa tecnológica de Barcelona que crea el ADN de bares, restaurantes, cafeterías, peluquerías y comercios de barrio. Un punto NFC en el mostrador (IPSO HUB) abre en el móvil del cliente el WiFi sin contraseña, la carta digital con fotos y precios, las reseñas de Google, una tarjeta de fidelización sin app y un asistente con inteligencia artificial que atiende en 30 idiomas.", "email": "contacto@ipsoglobal.com", "telephone": "+34603924226", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES"}, "areaServed": [{"@type": "City", "name": "Barcelona"}, {"@type": "Country", "name": "España"}], "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+34603924226", "email": "contacto@ipsoglobal.com", "availableLanguage": ["es", "ca", "en"]}, "knowsAbout": ["NFC para restaurantes", "carta digital NFC", "reseñas de Google con NFC", "WiFi para clientes sin contraseña", "fidelización de clientes sin app", "asistente con IA para restaurantes", "digitalización de comercios de barrio"]}, {"@type": "WebSite", "@id": "https://ipsoglobal.com/#web", "url": "https://ipsoglobal.com/", "name": "Ipso", "inLanguage": ["es", "ca", "en"], "publisher": {"@id": "https://ipsoglobal.com/#org"}}]}</script>
 <meta charset="utf-8">
-<script src="./support.js?v=202610211842"></script>
+<script src="./support.js?v=202610212356"></script>
 </head>
 <body>
 <x-dc>
@@ -80,14 +80,20 @@ html body p[style*="max-width: 62ch"], html body p[style*="max-width: 60ch"], ht
       <a href="/" style="flex: none; display: flex; align-items: center; gap: 12px; text-decoration: none;"><img src="assets/ipso-mark-clean.png?v=4b3c7c29" alt="Ipso" style="height: 38px; width: auto; display: block;"><img src="assets/ipso-word-a.png?v=22f5346e" alt="Ipso" data-word="1" style="height: 17px; width: auto; display: block;"></a>
       <div data-langmenu="1" style="flex: none; position: relative;">
         <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 7.2px; font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: .06em; color: #F2EDE6; background: transparent; border: none; padding: 4.8px 0; cursor: pointer; opacity: .82; transition: opacity 160ms ease;" style-hover="opacity: 1;">
-          <span>{{ langCode }}</span>
+          <span ref="{{ langCodeRef }}">ES</span>
         </button>
           <div data-langpanel="1" style="position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; width: 152px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms cubic-bezier(.16,.84,.44,1), visibility 160ms; background: #000000; border: 1px solid #1A1A1A; border-radius: 12px; padding: 7.2px; box-shadow: 0 24px 50px -30px rgba(0,0,0,1); display: flex; flex-direction: column; gap: 2.4px;">
-            <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button onClick="{{ l.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ l.fg }}; background: {{ l.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
-                <span>{{ l.name }}</span>
+                          <button onClick="{{ langs.0.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.0.fg }}; background: {{ langs.0.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>Español</span>
               </button>
-            </sc-for>
+            
+              <button onClick="{{ langs.1.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.1.fg }}; background: {{ langs.1.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>English</span>
+              </button>
+            
+              <button onClick="{{ langs.2.pick }}" style="display: flex; align-items: center; gap: 10.8px; width: 100%; font-family: inherit; font-size: 16.2px; font-weight: 600; text-align: left; color: {{ langs.2.fg }}; background: {{ langs.2.bg }}; border: none; border-radius: 8px; padding: 9.6px 12px; cursor: pointer; transition: background 140ms ease, color 140ms ease;" style-hover="color: #000000; background: #D8694C;">
+                <span>Català</span>
+              </button>
           </div>
       </div>
     </div>
@@ -171,15 +177,17 @@ const MOMENT = 'A';
 const LANGNAMES = { es: 'Español', en: 'English', ca: 'Català' };
 
 class Component extends DCLogic {
-  state = { lang: 'es', theme: 'dark', langMenu: false };
+  state = { lang: 'es', langMenu: false };
   componentDidMount() {
     const lang = initialLang();
     if (lang !== this.state.lang) this.setState({ lang });
     document.documentElement.lang = lang;
-    import('./ipso-chrome.js?v=202610211842').then((m) => { this._chrome = m; m.applyTheme(this.state.theme); }).catch(() => {});
+    import('./ipso-chrome.js?v=202610212356').then((m) => { this._chrome = m; }).catch(() => {});
   }
-  componentDidUpdate() { if (this._chrome) this._chrome.applyTheme(this.state.theme); }
-  renderVals() {
+  
+  renderVals() { const v = this._rv(); v.langCodeRef = (el) => { if (el && el.textContent !== v.langCode) el.textContent = v.langCode; }; return v; }
+
+  _rv() {
     const lang = this.state.lang;
     let plan = '';
     try { plan = (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase(); } catch (e) {}
