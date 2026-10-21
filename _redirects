@@ -9,3 +9,7 @@
 # Página de privacidad antigua (16 oct 2026): la privacidad está ahora en /legal
 /privacidad /legal 301
 /privacidad.html /legal 301
+
+# Direcciones legales que la gente teclea (21 oct 2026): todo está en /legal
+/cookies /legal#cookies 301
+/aviso-legal /legal#aviso-legal 301
