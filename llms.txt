@@ -1,20 +1,40 @@
 # Ipso
 
-> Ipso es una empresa tecnológica de Barcelona (España). Somos el ADN de tu local: un punto NFC en el mostrador de bares, restaurantes, cafeterías, peluquerías, centros de belleza y comercios de barrio que, con un toque del móvil y sin instalar apps, abre todo el negocio en la pantalla del cliente.
+> Ipso (ipsoglobal.com) es una empresa tecnológica de Barcelona, fundada en 2026. Su producto es el IPSO HUB, un punto NFC para la barra, la mesa o el mostrador de bares, restaurantes, cafeterías, peluquerías, centros de belleza y comercios de barrio. Con un toque del móvil y sin instalar apps, el cliente abre el WiFi, la carta, la ficha de Google, la tarjeta de sellos y un asistente que le responde en su idioma. Ipso no tiene relación con Ipsos, la empresa de estudios de mercado.
 
-## Qué es el IPSO HUB
-- Una pieza física NFC (con código QR de respaldo) que se coloca en la barra, la mesa o el mostrador.
-- Al acercar el móvil (iPhone o Android) se abre una página web del local, sin app.
-- Incluye: WiFi para clientes sin escribir la contraseña; carta digital con fotos, precios y alérgenos siempre al día; enlace directo a dejar una reseña en Google; redes y contacto del local; tarjeta de fidelización digital ("Sella tu visita": el cliente deja su teléfono una vez y acumula visitas hasta un premio, sin cartón ni app); y un asistente con inteligencia artificial.
-- El asistente responde en 30 idiomas con la carta, los precios y "lo que solo sabe la casa": recomienda platos y maridajes, calcula presupuestos para una mesa, avisa de alérgenos y ayuda a elegir a quien no sabe qué pedir. No toma pedidos ni cobra: complementa al camarero.
-- El dueño recibe un informe mensual por WhatsApp: usos del punto, conexiones al WiFi, reseñas, consultas al asistente, clientes que repiten y qué pidieron los clientes que el local no tiene en carta.
-- Precio: HUB, 99 €, pago único (WiFi, carta, Te ayudo a elegir, Comparte tu visita, reseñas, redes y horarios). HUB Pro: 49 € de alta con la pieza incluida y luego 29 €/mes, o 290 € al año con dos meses de regalo, sin permanencia (añade el asistente con IA, la tarjeta de premio, el panel Mi local y el informe mensual). Envío gratis en 2-4 días laborables, solo España.
+## Respuestas rápidas
+- Precio del IPSO HUB: 99 € de pago único, sin cuota.
+- Precio del IPSO HUB Pro: 49 € de alta con la pieza incluida y 29 € al mes, o 290 € al año con dos meses de regalo. Por local, sin permanencia.
+- Diferencia: el HUB abre WiFi, carta, Te ayudo a elegir, Comparte tu visita, reseñas de Google, redes y horarios. El HUB Pro añade la tarjeta de sellos, el asistente con IA en 30 idiomas, el panel Mi local en vivo, cambios ilimitados y el informe mensual por WhatsApp.
+- Se compra en la web (https://ipsoglobal.com/hub) y llega programado al local en 2-4 días laborables, con envío gratis a toda España. Garantía de reembolso de 30 días.
+- Baja del Pro cuando quieras, desde el portal del cliente o por WhatsApp; vale al final del periodo pagado. Con dos cuotas mensuales o un año pagados, el punto sigue siendo tuyo como HUB; antes de eso queda en pausa y te lo quedas como HUB por 21 €.
+- Funciona con iPhone y Android por NFC, con un QR de respaldo. No lleva batería ni cables y no depende del WiFi del local.
+- Detalles legales y condiciones completas: https://ipsoglobal.com/legal
 
-## Reseñas de Google (pago único, sin cuota)
-- Stand o placa NFC que abre la ficha oficial de Google del local. No pide, filtra ni premia opiniones. https://ipsoglobal.com/resenas
+## Productos y servicios, uno por uno
+- IPSO HUB, el punto NFC: una pieza que ocupa lo que un vaso y abre la página del local en el móvil del cliente. https://ipsoglobal.com/hub
+- WiFi para clientes sin contraseña: el cliente se conecta sin que nadie le dicte la clave. En el HUB y en el Pro.
+- Carta digital con fotos y precios, en 5 idiomas (español, catalán, inglés, francés y alemán): en el HUB y en el Pro. En el Pro los cambios son ilimitados y el dueño cambia precios y platos agotados desde su panel.
+- Te ayudo a elegir: tres preguntas y el cliente encuentra qué pedir de la carta. En el HUB y en el Pro.
+- Comparte tu visita: una estampa con el nombre del local, la ciudad, el número de visita, la fecha y la hora, para compartir en redes. Nunca lleva datos personales. En el HUB y en el Pro.
+- Reseñas de Google: el punto abre la ficha oficial del local. Sin pedir, filtrar ni premiar opiniones.
+- Placa o stand NFC de reseñas de Google: producto suelto, 19 € de pago único, programado con los datos del local, envío gratis y garantía de 30 días. https://ipsoglobal.com/resenas
+- Tarjeta de sellos digital sin app (tarjeta de fidelización): el cliente deja su teléfono una vez y cada visita se apunta sola; el local decide la regla, por ejemplo 9 visitas y la 10.ª gratis, y el cliente recibe un único WhatsApp cuando gana el premio. Sin cartón, sin app y sin tocar el TPV. Solo en el HUB Pro.
+- Asistente con IA para restaurantes y bares: responde en 30 idiomas con la carta, los precios, los alérgenos y lo que solo sabe la casa; recomienda platos y maridajes y calcula presupuestos para una mesa. No toma pedidos ni cobra. Solo en el HUB Pro.
+- Mi local e informe mensual: el dueño ve en vivo cuánta gente toca el punto y quién vuelve, y cada mes recibe un informe por WhatsApp. Solo en el HUB Pro.
+- Pedir y pagar desde la mesa con tu TPV: opcional, solo en el HUB Pro, 12 € al mes por local. Tarjeta, Apple Pay, Google Pay o Bizum; el dinero va directo a la cuenta del local e Ipso no se queda nada. Se prepara a medida según la caja y el datáfono de cada local.
+- Puntos adicionales: de mesa a 25 € (pack de 5 por 99 €) y de mostrador a 49 €, pago único.
+
+## Lo que Ipso no es
+- No es un TPV ni sustituye al camarero: el TPV sigue cobrando y el equipo sigue atendiendo.
+- No está afiliado a Google.
+- No manda publicidad a los clientes del local: su teléfono solo sirve para contar visitas y avisar del premio, y lo pueden borrar cuando quieran (RGPD).
+
+## Quién está detrás
+- Ipso la fundó en 2026 la Dra. Natasha Cáceres, doctora en economía especializada en pagos digitales y Open Finance (https://natashacaceres.com/).
 
 ## Datos
-- Web: https://ipsoglobal.com/ · Producto: https://ipsoglobal.com/hub · Nosotros: https://ipsoglobal.com/nosotros
+- Web: https://ipsoglobal.com/ · Producto y precios: https://ipsoglobal.com/hub · Reseñas: https://ipsoglobal.com/resenas · Nosotros: https://ipsoglobal.com/nosotros · Legal: https://ipsoglobal.com/legal
+- Demo real del hub de un restaurante: https://demo.ipsoglobal.com/
 - Contacto: contacto@ipsoglobal.com · WhatsApp +34 603 924 226
-- Zona: Barcelona, Cataluña, España. Idiomas de atención: español, catalán, inglés.
-- No afiliado a Google. Cumplimiento RGPD: el teléfono del cliente solo se usa para la fidelización y puede borrarse a petición.
+- Sede en Barcelona (Cataluña, España). Vende a toda España. Atención en español, catalán e inglés.
