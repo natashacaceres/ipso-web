@@ -77,6 +77,7 @@ const EN_PAIRS = [
   ['Se abre tu ficha oficial de Google.', 'Your official Google listing opens.'],
   
   ['El ADN de tu local.', 'The DNA of your venue.'],
+  ['Recursos', 'Resources'],
   ['Nosotros', 'About us'],
   ['Aviso legal', 'Legal notice'],
   ['Privacidad', 'Privacy'],
